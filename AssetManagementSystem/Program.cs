@@ -1,4 +1,6 @@
+using AssetManagementSystem.Context;
 using AssetManagementSystem.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,10 @@ builder.Services.AddScoped<IAssetService, AssetService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<assetManegementDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("dbstring")));
+
 
 var app = builder.Build();
 
@@ -26,3 +32,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
