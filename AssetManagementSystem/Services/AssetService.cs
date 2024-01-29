@@ -8,7 +8,8 @@ namespace AssetManagementSystem.Services
         private static List<Asset> assets = new List<Asset>
         {
             new Asset { Id = 1, Name = "Laptop" },
-            new Asset { Id = 2, Name = "Monitor" }
+            new Asset { Id = 2, Name = "Monitor" },
+            new Asset { Id = 2, Name = "Table" }
             // Add more sample assets if needed
         };
 
