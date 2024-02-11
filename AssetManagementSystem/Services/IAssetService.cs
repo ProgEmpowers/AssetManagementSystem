@@ -1,13 +1,10 @@
 ﻿using AssetManagementSystem.Models;
+using AssetManagementSystem.Models.Dtos;
 
 namespace AssetManagementSystem.Services
 {
     public interface IAssetService
     {
-        IEnumerable<Asset> GetAllAssets();
-        Asset GetAssetById(int id);
-        void AddAsset(Asset newAsset);
-        void UpdateAsset(int id, Asset updatedAsset);
-        void DeleteAsset(int id);
+        Task<Asset> AddAssetAsync(AssetDto newAsset);
     }
 }

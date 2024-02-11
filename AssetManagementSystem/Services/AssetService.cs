@@ -1,52 +1,38 @@
 ﻿using System.Collections.Generic;
+using AssetManagementSystem.Context;
 using AssetManagementSystem.Models;
+using AssetManagementSystem.Models.Dtos;
 
 namespace AssetManagementSystem.Services
 {
     public class AssetService : IAssetService
     {
-        private static List<Asset> assets = new List<Asset>
-        {
-            new Asset { Id = 1, Name = "Laptop" },
-            new Asset { Id = 2, Name = "Monitor" }
-            // Add more sample assets if needed
-        };
 
-        public IEnumerable<Asset> GetAllAssets()
+        private readonly AssetManagementDbContext _dbContext;
+
+        public AssetService(AssetManagementDbContext dbContext)
         {
-            return assets;
+            _dbContext = dbContext;
         }
 
-        public Asset GetAssetById(int id)
-        {
-            return assets.Find(a => a.Id == id);
-        }
 
-        public void AddAsset(Asset newAsset)
+        public async Task<Asset> AddAssetAsync(AssetDto newAsset)
         {
-            newAsset.Id = assets.Count + 1;
-            assets.Add(newAsset);
-        }
 
-        public void UpdateAsset(int id, Asset updatedAsset)
-        {
-            var existingAsset = assets.Find(a => a.Id == id);
-
-            if (existingAsset != null)
+            var NewAsset = new Asset()
             {
-                existingAsset.Name = updatedAsset.Name;
-                // Update other properties as needed
-            }
-        }
+                Name = newAsset.Name,
+                AssetType = newAsset.AssetType,
+                Description = newAsset.Description,
+                ImageUrl = newAsset.ImageUrl,
+                QRcode = newAsset.QRcode,
+                AssetValue = newAsset.AssetValue,
+                AssetStatus = newAsset.AssetStatus,
+            };
 
-        public void DeleteAsset(int id)
-        {
-            var existingAsset = assets.Find(a => a.Id == id);
-
-            if (existingAsset != null)
-            {
-                assets.Remove(existingAsset);
-            }
+            await _dbContext.Asset.AddAsync(NewAsset);
+            await _dbContext.SaveChangesAsync();
+            return NewAsset;
         }
     }
 }

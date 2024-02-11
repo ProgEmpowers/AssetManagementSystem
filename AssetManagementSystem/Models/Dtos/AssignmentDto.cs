@@ -2,9 +2,10 @@
 {
     public class AssignmentDto
     {
-        public string Name { get; set; }
-        public string AssetType { get; set; }
-        public byte[] Image { get; set; }
-        public string QRurl { get; set; }
+        public int Id { get; set; }
+        public DateTime MyProperty { get; set; }
+
+        public int UserId { get; set; }
+        public int AssetId { get; set; }
     }
 }
