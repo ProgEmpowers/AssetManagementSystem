@@ -11,9 +11,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AssetManagementSystem.Migrations
 {
-    [DbContext(typeof(assetmanegementDbContext))]
-    [Migration("20240208125417_Innitial Migration")]
-    partial class InnitialMigration
+    [DbContext(typeof(AssetManagementDbContext))]
+    [Migration("20240212064137_5th")]
+    partial class _5th
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,35 +60,31 @@ namespace AssetManagementSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("AssetStatus")
+                        .HasColumnType("int");
+
                     b.Property<string>("AssetType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("AssetValue")
+                    b.Property<float?>("AssetValue")
                         .HasColumnType("real");
 
-                    b.Property<byte[]>("Image")
+                    b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("varbinary(max)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LogId")
-                        .HasColumnType("int");
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("QRurl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
+                    b.Property<string>("QRcode")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("LogId");
 
                     b.ToTable("Asset");
                 });
@@ -134,6 +130,10 @@ namespace AssetManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Contract");
@@ -147,11 +147,20 @@ namespace AssetManagementSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("AssetId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("AssetId");
 
                     b.ToTable("Log");
                 });
@@ -173,6 +182,10 @@ namespace AssetManagementSystem.Migrations
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -201,9 +214,8 @@ namespace AssetManagementSystem.Migrations
                     b.Property<int>("Name")
                         .HasColumnType("int");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UserRole")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -222,6 +234,10 @@ namespace AssetManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("MobileNo")
                         .HasColumnType("int");
 
@@ -229,20 +245,13 @@ namespace AssetManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("SupplyAssetType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Vendor");
-                });
-
-            modelBuilder.Entity("AssetManagementSystem.Models.Asset", b =>
-                {
-                    b.HasOne("AssetManagementSystem.Models.Log", "Log")
-                        .WithMany()
-                        .HasForeignKey("LogId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Log");
                 });
 
             modelBuilder.Entity("AssetManagementSystem.Models.Assignment", b =>
@@ -262,6 +271,17 @@ namespace AssetManagementSystem.Migrations
                     b.Navigation("Asset");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("AssetManagementSystem.Models.Log", b =>
+                {
+                    b.HasOne("AssetManagementSystem.Models.Asset", "Asset")
+                        .WithMany()
+                        .HasForeignKey("AssetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Asset");
                 });
 #pragma warning restore 612, 618
         }

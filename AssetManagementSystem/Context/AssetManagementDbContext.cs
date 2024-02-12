@@ -4,9 +4,9 @@ using Microsoft.Identity.Client;
 
 namespace AssetManagementSystem.Context
 {
-    public class assetManegementDbContext : DbContext
+    public class AssetManagementDbContext : DbContext
     {
-        public assetManegementDbContext(DbContextOptions dbContextOptions): base(dbContextOptions)
+        public AssetManagementDbContext(DbContextOptions dbContextOptions): base(dbContextOptions)
         {
 
         }

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using AssetManagementSystem.Context;
 using AssetManagementSystem.Models;
+using AssetManagementSystem.Models.Dtos;
 using AssetManagementSystem.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,53 +18,16 @@ namespace AssetManagementSystem.Controllers
             _assetService = assetService;
         }
 
-        // GET: api/Assets
-        [HttpGet]
-        public IEnumerable<Asset> Get()
-        {
-            return _assetService.GetAllAssets();
-        }
-
-        // GET: api/Assets/5
-        [HttpGet("{id}")]
-        public ActionResult<Asset> Get(int id)
-        {
-            var asset = _assetService.GetAssetById(id);
-
-            if (asset == null)
-            {
-                return NotFound(); // 404 Not Found
-            }
-
-            return asset;
-        }
-
-        // POST: api/Assets
         [HttpPost]
-        public ActionResult Post([FromBody] Asset newAsset)
+        public async Task<IActionResult> AddAsset([FromBody] AssetDto assetDto)
         {
-            _assetService.AddAsset(newAsset);
+            if (assetDto == null)
+                return BadRequest();
 
-            // Return the newly created asset with a 201 Created status
-            return CreatedAtAction(nameof(Get), new { id = newAsset.Id }, newAsset);
+            var addedAsset = _assetService.AddAssetAsync(assetDto);
+
+            return Ok(addedAsset);
         }
 
-        // PUT: api/Assets/5
-        [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Asset updatedAsset)
-        {
-            _assetService.UpdateAsset(id, updatedAsset);
-
-            return NoContent(); // 204 No Content
-        }
-
-        // DELETE: api/Assets/5
-        [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
-        {
-            _assetService.DeleteAsset(id);
-
-            return NoContent(); // 204 No Content
-        }
     }
 }

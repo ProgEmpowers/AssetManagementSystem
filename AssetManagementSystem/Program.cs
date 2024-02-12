@@ -12,7 +12,7 @@ builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<assetManegementDbContext>(options =>
+builder.Services.AddDbContext<AssetManagementDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("dbstring")));
 
 
