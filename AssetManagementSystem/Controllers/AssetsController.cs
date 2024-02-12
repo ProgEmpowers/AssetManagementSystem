@@ -31,22 +31,34 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetallAsset()
+        public async Task<IActionResult> GetallAssets()
         {
-            var AssetsAll = await _assetService.GetAllAssetsAsync();
-            return Ok(AssetsAll);
+            var AllAssets = await _assetService.GetAllAssetsAsync();
+            return Ok(AllAssets);
         }
 
         [HttpGet]
         [Route("{id:int}")]
         public async Task<IActionResult> GetAssetById([FromRoute]int id)
         {
-            var AssetOne = await _assetService.GetAssetByIdAsync(id);
-            if (AssetOne == null)
+            var SelectedAsset = await _assetService.GetAssetByIdAsync(id);
+            if (SelectedAsset == null)
             {
                 return NotFound();
             }
-            return Ok(AssetOne);
+            return Ok(SelectedAsset);
+        }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public async Task<IActionResult> UpdateAsset([FromRoute] int id, [FromBody] AssetDto assetDto)
+        {
+            var SelectedAsset = await _assetService.UpdateAssetAsync(id,assetDto);
+            if (SelectedAsset == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedAsset);
         }
     }
 }

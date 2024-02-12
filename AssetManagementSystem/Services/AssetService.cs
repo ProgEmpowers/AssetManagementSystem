@@ -39,14 +39,30 @@ namespace AssetManagementSystem.Services
 
         public async Task<List<Asset>> GetAllAssetsAsync()
         {
-            var Assetz = await _dbContext.Asset.ToListAsync();
-            return Assetz;
+            var Assets = await _dbContext.Asset.ToListAsync();
+            return Assets;
         }
 
-        public async Task<Asset> GetAssetByIdAsync(int id)
+        public async Task<Asset?> GetAssetByIdAsync(int id)
         {
-            var Assetz = await _dbContext.Asset.FirstOrDefaultAsync(x => x.Id == id);
-            return Assetz;
+            var SelectedAsset = await _dbContext.Asset.FirstOrDefaultAsync(x => x.Id == id);
+            return SelectedAsset;
+        }
+
+        public async Task<Asset?> UpdateAssetAsync(int id , AssetDto assetDto)
+        {
+            var SelectedAsset = await _dbContext.Asset.FirstOrDefaultAsync(x => x.Id == id);
+
+            SelectedAsset.Name = assetDto.Name;
+            SelectedAsset.AssetType = assetDto.AssetType;
+            SelectedAsset.Description = assetDto.Description;
+            SelectedAsset.ImageUrl = assetDto.ImageUrl;
+            SelectedAsset.QRcode = assetDto.QRcode;
+            SelectedAsset.AssetValue = assetDto.AssetValue;
+            SelectedAsset.AssetStatus = assetDto.AssetStatus;
+
+            await _dbContext.SaveChangesAsync();
+            return SelectedAsset;
         }
     }
 }
