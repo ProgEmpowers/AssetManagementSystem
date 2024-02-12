@@ -2,6 +2,8 @@
 using AssetManagementSystem.Context;
 using AssetManagementSystem.Models;
 using AssetManagementSystem.Models.Dtos;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace AssetManagementSystem.Services
 {
@@ -33,6 +35,18 @@ namespace AssetManagementSystem.Services
             await _dbContext.Asset.AddAsync(NewAsset);
             await _dbContext.SaveChangesAsync();
             return NewAsset;
+        }
+
+        public async Task<List<Asset>> GetAllAssetsAsync()
+        {
+            var Assetz = await _dbContext.Asset.ToListAsync();
+            return Assetz;
+        }
+
+        public async Task<Asset> GetAssetByIdAsync(int id)
+        {
+            var Assetz = await _dbContext.Asset.FirstOrDefaultAsync(x => x.Id == id);
+            return Assetz;
         }
     }
 }
