@@ -4,6 +4,7 @@ using AssetManagementSystem.Models;
 using AssetManagementSystem.Models.Dtos;
 using AssetManagementSystem.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AssetManagementSystem.Controllers
 {
@@ -29,5 +30,23 @@ namespace AssetManagementSystem.Controllers
             return Ok(addedAsset);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetallAssets()
+        {
+            var AllAssets = await _assetService.GetAllAssetsAsync();
+            return Ok(AllAssets);
+        }
+
+        [HttpGet]
+        [Route("{id:int}")]
+        public async Task<IActionResult> GetAssetById([FromRoute]int id)
+        {
+            var SelectedAsset = await _assetService.GetAssetByIdAsync(id);
+            if (SelectedAsset == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedAsset);
+        }
     }
 }
