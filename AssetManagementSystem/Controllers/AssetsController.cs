@@ -24,7 +24,7 @@ namespace AssetManagementSystem.Controllers
             if (assetDto == null)
                 return BadRequest();
 
-            var addedAsset = _assetService.AddAssetAsync(assetDto);
+            var addedAsset = await _assetService.AddAssetAsync(assetDto);
 
             return Ok(addedAsset);
         }
