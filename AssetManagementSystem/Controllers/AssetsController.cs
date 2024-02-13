@@ -26,7 +26,6 @@ namespace AssetManagementSystem.Controllers
                 return BadRequest();
 
             var addedAsset = await _assetService.AddAssetAsync(assetDto);
-
             return Ok(addedAsset);
         }
 
@@ -34,8 +33,7 @@ namespace AssetManagementSystem.Controllers
         public async Task<IActionResult> GetallAssets()
         {
             var AllAssets = await _assetService.GetAllAssetsAsync();
-            var ActiveAssets = AllAssets.Where(asset => asset.IsActive == true);
-            return Ok(ActiveAssets);
+            return Ok(AllAssets);
         }
 
         [HttpGet]
@@ -43,7 +41,7 @@ namespace AssetManagementSystem.Controllers
         public async Task<IActionResult> GetAssetById([FromRoute]int id)
         {
             var SelectedAsset = await _assetService.GetAssetByIdAsync(id);
-            if (SelectedAsset == null || SelectedAsset.IsActive == false)
+            if (SelectedAsset == null)
             {
                 return NotFound();
             }
@@ -55,7 +53,7 @@ namespace AssetManagementSystem.Controllers
         public async Task<IActionResult> UpdateAsset([FromRoute] int id, [FromBody] AssetDto assetDto)
         {
             var SelectedAsset = await _assetService.UpdateAssetAsync(id, assetDto);
-            if (SelectedAsset == null || SelectedAsset.IsActive == false)
+            if (SelectedAsset == null)
             {
                 return NotFound();
             }
@@ -67,6 +65,35 @@ namespace AssetManagementSystem.Controllers
         public async Task<IActionResult> DeleteAsset([FromRoute] int id)
         {
             var SelectedAsset = await _assetService.DeleteAssetAsync(id);
+            if (SelectedAsset == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedAsset);
+        }
+
+        [HttpGet("getAllDeletedAssets")]
+        public async Task<IActionResult> GetDeletedAssets()
+        {
+            var AllAssets = await _assetService.GetAllDeletedAssetsAsync();
+            return Ok(AllAssets);
+        }
+
+        [HttpGet("getDeletedAssetById/{id:int}")]
+        public async Task<IActionResult> GetDeletedAssetById([FromRoute] int id)
+        {
+            var SelectedAsset = await _assetService.GetDeletedAssetByIdAsync(id);
+            if (SelectedAsset == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedAsset);
+        }
+
+        [HttpPut("recoverDeletedAsset/{id:int}")]
+        public async Task<IActionResult> RecoverDeletedAsset([FromRoute] int id)
+        {
+            var SelectedAsset = await _assetService.RecoverDeletedAssetAsync(id);
             if (SelectedAsset == null)
             {
                 return NotFound();
