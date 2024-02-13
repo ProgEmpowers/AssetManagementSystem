@@ -1,4 +1,5 @@
 using AssetManagementSystem.Context;
+using AssetManagementSystem.Mappings;
 using AssetManagementSystem.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAssetService, AssetService>();
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

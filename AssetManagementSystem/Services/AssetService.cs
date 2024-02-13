@@ -2,6 +2,7 @@
 using AssetManagementSystem.Context;
 using AssetManagementSystem.Models;
 using AssetManagementSystem.Models.Dtos;
+using AutoMapper;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,27 +12,18 @@ namespace AssetManagementSystem.Services
     {
 
         private readonly AssetManagementDbContext _dbContext;
+        private readonly IMapper mapper;
 
-        public AssetService(AssetManagementDbContext dbContext)
+        public AssetService(AssetManagementDbContext dbContext , IMapper mapper)
         {
             _dbContext = dbContext;
+            this.mapper = mapper;
         }
 
 
-        public async Task<Asset> AddAssetAsync(AssetDto newAsset)
+        public async Task<Asset> AddAssetAsync(AssetDto assetDto)
         {
-
-            var NewAsset = new Asset()
-            {
-                IsActive = true,
-                Name = newAsset.Name,
-                AssetType = newAsset.AssetType,
-                Description = newAsset.Description,
-                ImageUrl = newAsset.ImageUrl,
-                QRcode = newAsset.QRcode,
-                AssetValue = newAsset.AssetValue,
-                AssetStatus = newAsset.AssetStatus,
-            };
+            var NewAsset = mapper.Map<Asset>(assetDto);
 
             await _dbContext.Asset.AddAsync(NewAsset);
             await _dbContext.SaveChangesAsync();
@@ -62,14 +54,7 @@ namespace AssetManagementSystem.Services
         public async Task<Asset?> UpdateAssetAsync(int id, AssetDto assetDto)
         {
             var SelectedAsset = await _dbContext.Asset.FirstOrDefaultAsync(x => x.Id == id);
-
-            SelectedAsset.Name = assetDto.Name;
-            SelectedAsset.AssetType = assetDto.AssetType;
-            SelectedAsset.Description = assetDto.Description;
-            SelectedAsset.ImageUrl = assetDto.ImageUrl;
-            SelectedAsset.QRcode = assetDto.QRcode;
-            SelectedAsset.AssetValue = assetDto.AssetValue;
-            SelectedAsset.AssetStatus = assetDto.AssetStatus;
+            SelectedAsset = mapper.Map<Asset>(assetDto);
 
             await _dbContext.SaveChangesAsync();
             return SelectedAsset;
