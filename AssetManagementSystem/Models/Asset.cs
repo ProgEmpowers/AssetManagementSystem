@@ -14,6 +14,7 @@ namespace AssetManagementSystem.Models
         public string Description { get; set; }
         public string? ImageUrl { get; set; }
         public string? QRcode { get; set; }
+        public bool IsActive { get; set; }
         public float? AssetValue { get; set; }
         public AssetStatusEnum AssetStatus { get; set;}
     }
