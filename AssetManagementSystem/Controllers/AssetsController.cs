@@ -48,5 +48,17 @@ namespace AssetManagementSystem.Controllers
             }
             return Ok(SelectedAsset);
         }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public async Task<IActionResult> UpdateAsset([FromRoute] int id, [FromBody] AssetDto assetDto)
+        {
+            var SelectedAsset = await _assetService.UpdateAssetAsync(id, assetDto);
+            if (SelectedAsset == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedAsset);
+        }
     }
 }
