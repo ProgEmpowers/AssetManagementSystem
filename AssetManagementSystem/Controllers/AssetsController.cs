@@ -34,7 +34,8 @@ namespace AssetManagementSystem.Controllers
         public async Task<IActionResult> GetallAssets()
         {
             var AllAssets = await _assetService.GetAllAssetsAsync();
-            return Ok(AllAssets);
+            var ActiveAssets = AllAssets.Where(asset => asset.IsActive == true);
+            return Ok(ActiveAssets);
         }
 
         [HttpGet]
@@ -42,7 +43,7 @@ namespace AssetManagementSystem.Controllers
         public async Task<IActionResult> GetAssetById([FromRoute]int id)
         {
             var SelectedAsset = await _assetService.GetAssetByIdAsync(id);
-            if (SelectedAsset == null)
+            if (SelectedAsset == null || SelectedAsset.IsActive == false)
             {
                 return NotFound();
             }
@@ -54,6 +55,18 @@ namespace AssetManagementSystem.Controllers
         public async Task<IActionResult> UpdateAsset([FromRoute] int id, [FromBody] AssetDto assetDto)
         {
             var SelectedAsset = await _assetService.UpdateAssetAsync(id, assetDto);
+            if (SelectedAsset == null || SelectedAsset.IsActive == false)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedAsset);
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public async Task<IActionResult> DeleteAsset([FromRoute] int id)
+        {
+            var SelectedAsset = await _assetService.DeleteAssetAsync(id);
             if (SelectedAsset == null)
             {
                 return NotFound();

@@ -23,6 +23,7 @@ namespace AssetManagementSystem.Services
 
             var NewAsset = new Asset()
             {
+                IsActive = true,
                 Name = newAsset.Name,
                 AssetType = newAsset.AssetType,
                 Description = newAsset.Description,
@@ -35,6 +36,16 @@ namespace AssetManagementSystem.Services
             await _dbContext.Asset.AddAsync(NewAsset);
             await _dbContext.SaveChangesAsync();
             return NewAsset;
+        }
+
+        public async Task<Asset?> DeleteAssetAsync(int id)
+        {
+            var SelectedAsset = await _dbContext.Asset.FirstOrDefaultAsync(x => x.Id == id);
+
+            SelectedAsset.IsActive = false;
+
+            await _dbContext.SaveChangesAsync();
+            return SelectedAsset;
         }
 
         public async Task<List<Asset>> GetAllAssetsAsync()
@@ -63,4 +74,5 @@ namespace AssetManagementSystem.Services
             await _dbContext.SaveChangesAsync();
             return SelectedAsset;
         }
+    }
 }

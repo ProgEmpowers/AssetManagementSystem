@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AssetManagementSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class _5th : Migration
+    public partial class _6th : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,6 +38,7 @@ namespace AssetManagementSystem.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     QRcode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
                     AssetValue = table.Column<float>(type: "real", nullable: true),
                     AssetStatus = table.Column<int>(type: "int", nullable: false)
                 },
