@@ -74,5 +74,11 @@ namespace AssetManagementSystem.Services
             await _dbContext.SaveChangesAsync();
             return SelectedAsset;
         }
+
+        public async Task<List<Asset>> GetDeletedAssetsAsync()
+        {
+            var Assets = await _dbContext.Asset.ToListAsync();
+            return Assets;
+        }
     }
 }

@@ -73,5 +73,13 @@ namespace AssetManagementSystem.Controllers
             }
             return Ok(SelectedAsset);
         }
+
+        [HttpGet("deleted")]
+        public async Task<IActionResult> GetDeletedAssets()
+        {
+            var AllAssets = await _assetService.GetDeletedAssetsAsync();
+            var InActiveAssets = AllAssets.Where(asset => asset.IsActive == false);
+            return Ok(InActiveAssets);
+        }
     }
 }

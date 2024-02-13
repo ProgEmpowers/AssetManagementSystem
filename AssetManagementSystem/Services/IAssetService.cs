@@ -10,5 +10,6 @@ namespace AssetManagementSystem.Services
         Task<Asset?> GetAssetByIdAsync(int id);
         Task<Asset?> UpdateAssetAsync(int id, AssetDto assetDto);
         Task<Asset?> DeleteAssetAsync(int id);
+        Task<List<Asset>> GetDeletedAssetsAsync();
     }
 }
