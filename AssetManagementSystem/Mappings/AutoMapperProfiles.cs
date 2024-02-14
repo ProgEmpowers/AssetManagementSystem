@@ -1,0 +1,14 @@
+﻿using AssetManagementSystem.Models;
+using AssetManagementSystem.Models.Dtos;
+using AutoMapper;
+
+namespace AssetManagementSystem.Mappings
+{
+    public class AutoMapperProfiles : Profile
+    {
+        public AutoMapperProfiles()
+        {
+            CreateMap<Asset,AssetDto>().ReverseMap();
+        }
+    }
+}
