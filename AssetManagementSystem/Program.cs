@@ -1,4 +1,5 @@
 using AssetManagementSystem.Context;
+using AssetManagementSystem.Mappings;
 using AssetManagementSystem.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<AssetManagementDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("dbstring")));
+
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 
 var app = builder.Build();
