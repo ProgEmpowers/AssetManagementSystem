@@ -26,5 +26,24 @@ namespace AssetManagementSystem.Controllers
 
             return Ok(addedVendor);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetallVendors()
+        {
+            var AllVendors = await _vendorService.GetAllVendorsAsync();
+            return Ok(AllVendors);
+        }
+
+        [HttpGet]
+        [Route("{id:int}")]
+        public async Task<IActionResult> GetVendorById([FromRoute] int id)
+        {
+            var SelectedVendor = await _vendorService.GetVendorByIdAsync(id);
+            if (SelectedVendor == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedVendor);
+        }
     }
 }

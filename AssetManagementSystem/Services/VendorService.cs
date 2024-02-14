@@ -27,5 +27,17 @@ namespace AssetManagementSystem.Services
             await _dbContext.SaveChangesAsync();
             return NewVendor;
         }
+
+        public async Task<List<Vendor>> GetAllVendorsAsync()
+        {
+            var Vendors = await _dbContext.Vendor.Where(vendor => vendor.IsActive == true).ToListAsync();
+            return Vendors;
+        }
+
+        public async Task<Vendor?> GetVendorByIdAsync(int id)
+        {
+            var SelectedVendor = await _dbContext.Vendor.Where(Vendor => Vendor.IsActive == true).FirstOrDefaultAsync(x => x.Id == id);
+            return SelectedVendor;
+        }
     }
 }
