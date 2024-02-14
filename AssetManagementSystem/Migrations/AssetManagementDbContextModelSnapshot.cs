@@ -211,8 +211,9 @@ namespace AssetManagementSystem.Migrations
                     b.Property<int>("MobileNo")
                         .HasColumnType("int");
 
-                    b.Property<int>("Name")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserRole")
                         .HasColumnType("int");

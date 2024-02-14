@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssetManagementSystem.Migrations
 {
     [DbContext(typeof(AssetManagementDbContext))]
-    [Migration("20240213071639_6th")]
-    partial class _6th
+    [Migration("20240214041311_Second")]
+    partial class Second
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -214,8 +214,9 @@ namespace AssetManagementSystem.Migrations
                     b.Property<int>("MobileNo")
                         .HasColumnType("int");
 
-                    b.Property<int>("Name")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserRole")
                         .HasColumnType("int");

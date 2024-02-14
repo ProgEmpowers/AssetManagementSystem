@@ -1,5 +1,6 @@
 using AssetManagementSystem.Context;
 using AssetManagementSystem.Services;
+using AssetManagementSystem.Services.UserServices;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAssetService, AssetService>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
