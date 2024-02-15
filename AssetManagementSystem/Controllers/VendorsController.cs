@@ -57,5 +57,17 @@ namespace AssetManagementSystem.Controllers
             }
             return Ok(SelectedVendor);
         }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public async Task<IActionResult> DeleteVendor([FromRoute] int id)
+        {
+            var SelectedVendor = await _vendorService.DeleteVendorAsync(id);
+            if (SelectedVendor == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedVendor);
+        }
     }
 }
