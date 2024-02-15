@@ -39,5 +39,17 @@ namespace AssetManagementSystem.Services
             var SelectedVendor = await _dbContext.Vendor.Where(Vendor => Vendor.IsActive == true).FirstOrDefaultAsync(x => x.Id == id);
             return SelectedVendor;
         }
+
+        public async Task<Vendor?> UpdateVendorAsync(int id, VendorDto vendorDto)
+        {
+            var SelectedVendor = await _dbContext.Vendor.Where(vendor => vendor.IsActive == true).FirstOrDefaultAsync(x => x.Id == id);
+            if (SelectedVendor == null)
+            {
+                return null;
+            }
+            SelectedVendor = mapper.Map(vendorDto, SelectedVendor);
+            await _dbContext.SaveChangesAsync();
+            return SelectedVendor;
+        }
     }
 }

@@ -45,5 +45,17 @@ namespace AssetManagementSystem.Controllers
             }
             return Ok(SelectedVendor);
         }
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public async Task<IActionResult> UpdateVendor([FromRoute] int id, [FromBody] VendorDto vendorDto)
+        {
+            var SelectedVendor = await _vendorService.UpdateVendorAsync(id, vendorDto);
+            if (SelectedVendor == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedVendor);
+        }
     }
 }
