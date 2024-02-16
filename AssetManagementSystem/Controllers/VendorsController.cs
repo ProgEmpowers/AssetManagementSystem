@@ -20,9 +20,12 @@ namespace AssetManagementSystem.Controllers
         public async Task<IActionResult> AddVendor([FromBody] VendorDto vendorDto)
         {
             if (vendorDto == null)
+            {
                 return BadRequest();
+            }
 
-            var addedVendor = _vendorService.AddVendorAsync(vendorDto);
+            var addedVendor = await  _vendorService.AddVendorAsync(vendorDto);
+            
 
             return Ok(addedVendor);
         }

@@ -238,6 +238,9 @@ namespace AssetManagementSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<int>("MobileNo")
                         .HasColumnType("int");
 
