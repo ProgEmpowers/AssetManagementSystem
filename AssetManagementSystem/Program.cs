@@ -1,6 +1,7 @@
 using AssetManagementSystem.Context;
 using AssetManagementSystem.Mappings;
-using AssetManagementSystem.Services;
+using AssetManagementSystem.Services.AssetServices;
+using AssetManagementSystem.Services.VendorServices;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -8,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var logger = new LoggerConfiguration()
     .WriteTo.Console()
-    .WriteTo.File("Logs/Log.txt", rollingInterval: RollingInterval.Minute)
+    .WriteTo.File("LogsAssetManegementSystem/Log.txt", rollingInterval: RollingInterval.Day)
     .MinimumLevel.Information()
     .CreateLogger();
 builder.Logging.ClearProviders();

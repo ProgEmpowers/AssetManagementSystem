@@ -23,8 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Domains\" />
-    <Folder Include="Logs\" />
+    <Folder Include="LogsAssetManegementSystem\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AuthService\AuthService.csproj" />
   </ItemGroup>
 
 </Project>

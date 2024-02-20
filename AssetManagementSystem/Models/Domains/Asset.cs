@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AssetManagementSystem.Models
+namespace AssetManagementSystem.Models.Domains
 {
     public class Asset
     {
@@ -16,6 +16,7 @@ namespace AssetManagementSystem.Models
         public string? QRcode { get; set; }
         public bool IsActive { get; set; }
         public float? AssetValue { get; set; }
-        public AssetStatusEnum AssetStatus { get; set;}
+        public AssetStatusEnum AssetStatus { get; set; }
+        public int? UserId { get; set; }
     }
 }

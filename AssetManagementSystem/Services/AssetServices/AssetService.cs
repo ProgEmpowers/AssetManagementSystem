@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json;
 using AssetManagementSystem.Context;
-using AssetManagementSystem.Models;
+using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
 using AutoMapper;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
-namespace AssetManagementSystem.Services
+namespace AssetManagementSystem.Services.AssetServices
 {
     public class AssetService : IAssetService
     {
@@ -16,7 +16,7 @@ namespace AssetManagementSystem.Services
         private readonly IMapper mapper;
         private readonly ILogger<AssetService> logger;
 
-        public AssetService(AssetManagementDbContext dbContext , IMapper mapper , ILogger<AssetService> logger)
+        public AssetService(AssetManagementDbContext dbContext, IMapper mapper, ILogger<AssetService> logger)
         {
             _dbContext = dbContext;
             this.mapper = mapper;

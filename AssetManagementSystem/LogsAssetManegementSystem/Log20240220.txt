@@ -1,0 +1,98 @@
+2024-02-20 22:23:19.739 +05:30 [INF] Executed DbCommand (451ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [Employee2];
+2024-02-20 22:23:19.975 +05:30 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [Employee2] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2024-02-20 22:23:21.044 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-02-20 22:23:21.198 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-02-20 22:23:21.201 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-02-20 22:23:21.226 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-02-20 22:23:21.265 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-02-20 22:23:21.297 +05:30 [INF] Applying migration '20240220164021_innitial'.
+2024-02-20 22:23:21.397 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Asset] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [AssetType] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [ImageUrl] nvarchar(max) NULL,
+    [QRcode] nvarchar(max) NULL,
+    [IsActive] bit NOT NULL,
+    [AssetValue] real NULL,
+    [AssetStatus] int NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Asset] PRIMARY KEY ([Id])
+);
+2024-02-20 22:23:21.402 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contract] (
+    [Id] int NOT NULL IDENTITY,
+    [AssignedDate] datetime2 NOT NULL,
+    [Title] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Contract] PRIMARY KEY ([Id])
+);
+2024-02-20 22:23:21.407 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [SellingContract] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [Title] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [Price] int NOT NULL,
+    CONSTRAINT [PK_SellingContract] PRIMARY KEY ([Id])
+);
+2024-02-20 22:23:21.410 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] int NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [MobileNo] int NOT NULL,
+    [UserRole] int NOT NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-02-20 22:23:21.415 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Vendor] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [MobileNo] int NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [SupplyAssetType] nvarchar(max) NOT NULL,
+    [IsActive] bit NOT NULL,
+    CONSTRAINT [PK_Vendor] PRIMARY KEY ([Id])
+);
+2024-02-20 22:23:21.723 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Log] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [AssetId] int NOT NULL,
+    CONSTRAINT [PK_Log] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Log_Asset_AssetId] FOREIGN KEY ([AssetId]) REFERENCES [Asset] ([Id]) ON DELETE CASCADE
+);
+2024-02-20 22:23:21.732 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Log_AssetId] ON [Log] ([AssetId]);
+2024-02-20 22:23:21.751 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240220164021_innitial', N'8.0.1');
+2024-02-20 22:54:51.231 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-02-20 22:54:51.346 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-02-20 22:54:51.387 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];

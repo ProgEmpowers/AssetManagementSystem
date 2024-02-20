@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace AssetManagementSystem.Models
+namespace AssetManagementSystem.Models.Domains
 {
     public class Vendor
     {

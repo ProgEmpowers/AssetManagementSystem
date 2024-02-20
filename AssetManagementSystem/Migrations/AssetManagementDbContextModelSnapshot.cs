@@ -22,34 +22,7 @@ namespace AssetManagementSystem.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AssetManagementSystem.Models.Admin", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MobileNo")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Name")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Admin");
-                });
-
-            modelBuilder.Entity("AssetManagementSystem.Models.Asset", b =>
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.Asset", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,38 +57,15 @@ namespace AssetManagementSystem.Migrations
                     b.Property<string>("QRcode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Asset");
-                });
-
-            modelBuilder.Entity("AssetManagementSystem.Models.Assignment", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AssetId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("MyProperty")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AssetId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Assignment");
+                    b.ToTable("Asset", (string)null);
                 });
 
-            modelBuilder.Entity("AssetManagementSystem.Models.Contract", b =>
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.Contract", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -136,10 +86,10 @@ namespace AssetManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contract");
+                    b.ToTable("Contract", (string)null);
                 });
 
-            modelBuilder.Entity("AssetManagementSystem.Models.Log", b =>
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.Log", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -162,10 +112,10 @@ namespace AssetManagementSystem.Migrations
 
                     b.HasIndex("AssetId");
 
-                    b.ToTable("Log");
+                    b.ToTable("Log", (string)null);
                 });
 
-            modelBuilder.Entity("AssetManagementSystem.Models.SellingContract", b =>
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.SellingContract", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -189,40 +139,10 @@ namespace AssetManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SellingContract");
+                    b.ToTable("SellingContract", (string)null);
                 });
 
-            modelBuilder.Entity("AssetManagementSystem.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MobileNo")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Name")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserRole")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("User");
-                });
-
-            modelBuilder.Entity("AssetManagementSystem.Models.Vendor", b =>
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.Vendor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -254,31 +174,42 @@ namespace AssetManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vendor");
+                    b.ToTable("Vendor", (string)null);
                 });
 
-            modelBuilder.Entity("AssetManagementSystem.Models.Assignment", b =>
+            modelBuilder.Entity("AssetManagementSystem.Models.User", b =>
                 {
-                    b.HasOne("AssetManagementSystem.Models.Asset", "Asset")
-                        .WithMany()
-                        .HasForeignKey("AssetId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.HasOne("AssetManagementSystem.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Navigation("Asset");
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Navigation("User");
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MobileNo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Name")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserRole")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User", (string)null);
                 });
 
-            modelBuilder.Entity("AssetManagementSystem.Models.Log", b =>
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.Log", b =>
                 {
-                    b.HasOne("AssetManagementSystem.Models.Asset", "Asset")
+                    b.HasOne("AssetManagementSystem.Models.Domains.Asset", "Asset")
                         .WithMany()
                         .HasForeignKey("AssetId")
                         .OnDelete(DeleteBehavior.Cascade)
