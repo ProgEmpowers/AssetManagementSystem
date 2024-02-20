@@ -2,7 +2,7 @@
 using AssetManagementSystem.Context;
 using AssetManagementSystem.Models;
 using AssetManagementSystem.Models.Dtos;
-using AssetManagementSystem.Services;
+using AssetManagementSystem.Services.AssetServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
