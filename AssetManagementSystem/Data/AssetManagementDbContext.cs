@@ -12,7 +12,6 @@ namespace AssetManagementSystem.Context
 
         }
         public DbSet<Asset>Asset {  get; set; }
-        public DbSet<User>User {  get; set; }
         public DbSet<Contract>Contract {  get; set; }
         public DbSet<Log>Log {  get; set; }
         public DbSet<SellingContract>SellingContract {  get; set; }

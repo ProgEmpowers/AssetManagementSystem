@@ -62,7 +62,7 @@ namespace AssetManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Asset", (string)null);
+                    b.ToTable("Asset");
                 });
 
             modelBuilder.Entity("AssetManagementSystem.Models.Domains.Contract", b =>
@@ -86,7 +86,7 @@ namespace AssetManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Contract", (string)null);
+                    b.ToTable("Contract");
                 });
 
             modelBuilder.Entity("AssetManagementSystem.Models.Domains.Log", b =>
@@ -112,7 +112,7 @@ namespace AssetManagementSystem.Migrations
 
                     b.HasIndex("AssetId");
 
-                    b.ToTable("Log", (string)null);
+                    b.ToTable("Log");
                 });
 
             modelBuilder.Entity("AssetManagementSystem.Models.Domains.SellingContract", b =>
@@ -139,7 +139,7 @@ namespace AssetManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("SellingContract", (string)null);
+                    b.ToTable("SellingContract");
                 });
 
             modelBuilder.Entity("AssetManagementSystem.Models.Domains.Vendor", b =>
@@ -174,37 +174,7 @@ namespace AssetManagementSystem.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vendor", (string)null);
-                });
-
-            modelBuilder.Entity("AssetManagementSystem.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MobileNo")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Name")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserRole")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("User", (string)null);
+                    b.ToTable("Vendor");
                 });
 
             modelBuilder.Entity("AssetManagementSystem.Models.Domains.Log", b =>

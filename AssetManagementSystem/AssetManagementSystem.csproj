@@ -26,8 +26,4 @@
     <Folder Include="LogsAssetManegementSystem\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\AuthService\AuthService.csproj" />
-  </ItemGroup>
-
 </Project>
