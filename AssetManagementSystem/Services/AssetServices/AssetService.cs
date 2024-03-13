@@ -47,11 +47,29 @@ namespace AssetManagementSystem.Services.AssetServices
             return SelectedAsset;
         }
 
-        public async Task<List<Asset>> GetAllAssetsAsync()
+        public async Task<List<Asset>> GetAllAssetsAsync(
+            string? filterOn = null, string? filterQuery = null,
+            string? sortBy = null, bool isAscending = true,
+            int pageNumber = 1, int pageSize = 10)
         {
-            var Assets = await _dbContext.Asset.Where(asset => asset.IsActive == true).ToListAsync();
+            var Assets = _dbContext.Asset.Where(asset => asset.IsActive == true).AsQueryable();
+            if (string.IsNullOrWhiteSpace(filterOn) == false && string.IsNullOrWhiteSpace(filterQuery) == false)
+            {
+                if (filterOn.Equals("Name", StringComparison.OrdinalIgnoreCase))
+                {
+                    Assets = Assets.Where(x => x.Name.Contains(filterQuery));
+                }
+            }
+            if (string.IsNullOrWhiteSpace(sortBy) == false)
+            {
+                if (sortBy.Equals("Id", StringComparison.OrdinalIgnoreCase))
+                {
+                    Assets = isAscending ? Assets.OrderBy(x => x.Id) : Assets.OrderByDescending(x => x.Id);
+                }
+            }
+            var skipResult = (pageNumber - 1) * pageSize;
             logger.LogInformation($"Finished Get All Assets : {JsonSerializer.Serialize(Assets)}");
-            return Assets;
+            return await Assets.Skip(skipResult).Take(pageSize).ToListAsync();
         }
 
         public async Task<Asset?> GetAssetByIdAsync(int id)
@@ -73,11 +91,29 @@ namespace AssetManagementSystem.Services.AssetServices
             return SelectedAsset;
         }
 
-        public async Task<List<Asset>> GetAllDeletedAssetsAsync()
+        public async Task<List<Asset>> GetAllDeletedAssetsAsync(
+            string? filterOn = null, string? filterQuery = null,
+            string? sortBy = null, bool isAscending = true,
+            int pageNumber = 1, int pageSize = 10)
         {
-            var Assets = await _dbContext.Asset.Where(asset => asset.IsActive == false).ToListAsync();
+            var Assets = _dbContext.Asset.Where(asset => asset.IsActive == false).AsQueryable();
+            if (string.IsNullOrWhiteSpace(filterOn) == false && string.IsNullOrWhiteSpace(filterQuery) == false)
+            {
+                if (filterOn.Equals("Name", StringComparison.OrdinalIgnoreCase))
+                {
+                    Assets = Assets.Where(x => x.Name.Contains(filterQuery));
+                }
+            }
+            if (string.IsNullOrWhiteSpace(sortBy) == false)
+            {
+                if (sortBy.Equals("Id", StringComparison.OrdinalIgnoreCase))
+                {
+                    Assets = isAscending ? Assets.OrderBy(x => x.Id) : Assets.OrderByDescending(x => x.Id);
+                }
+            }
+            var skipResult = (pageNumber - 1) * pageSize;
             logger.LogInformation($"Finished Get All Deleted Assets : {JsonSerializer.Serialize(Assets)}");
-            return Assets;
+            return await Assets.Skip(skipResult).Take(pageSize).ToListAsync(); ;
         }
 
         public async Task<Asset?> GetDeletedAssetByIdAsync(int id)
