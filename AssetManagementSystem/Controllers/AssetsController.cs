@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using AssetManagementSystem.Context;
 using AssetManagementSystem.Models;
 using AssetManagementSystem.Models.Dtos;
@@ -30,9 +31,12 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetallAssets()
+        public async Task<IActionResult> GetallAssets(
+            [FromQuery] string? filterOn, [FromQuery] string? filterQuery,
+            [FromQuery] string? sortBy, [FromQuery] bool? isAscending,
+            [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var AllAssets = await _assetService.GetAllAssetsAsync();
+            var AllAssets = await _assetService.GetAllAssetsAsync(filterOn, filterQuery, sortBy, isAscending ?? true, pageNumber, pageSize);
             return Ok(AllAssets);
         }
 
@@ -73,9 +77,12 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet("getAllDeletedAssets")]
-        public async Task<IActionResult> GetDeletedAssets()
+        public async Task<IActionResult> GetDeletedAssets(
+            [FromQuery] string? filterOn, [FromQuery] string? filterQuery,
+            [FromQuery] string? sortBy, [FromQuery] bool? isAscending,
+            [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var AllAssets = await _assetService.GetAllDeletedAssetsAsync();
+            var AllAssets = await _assetService.GetAllDeletedAssetsAsync(filterOn, filterQuery, sortBy, isAscending ?? true, pageNumber, pageSize);
             return Ok(AllAssets);
         }
 

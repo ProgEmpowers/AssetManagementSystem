@@ -1,0 +1,504 @@
+2024-03-13 18:54:50.672 +05:30 [INF] Now listening on: https://localhost:7095
+2024-03-13 18:54:50.784 +05:30 [INF] Now listening on: http://localhost:5240
+2024-03-13 18:54:50.791 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-13 18:54:50.794 +05:30 [INF] Hosting environment: Development
+2024-03-13 18:54:50.798 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AssetManagementSystem
+2024-03-13 18:54:56.668 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-03-13 18:55:01.409 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 4767.9459ms
+2024-03-13 18:55:01.555 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-03-13 18:55:01.556 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-13 18:55:01.651 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 96.0058ms
+2024-03-13 18:55:01.819 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 264.0827ms
+2024-03-13 18:55:02.069 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-03-13 18:55:02.568 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 498.1833ms
+2024-03-13 18:55:21.584 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?pageNumber=1&pageSize=10 - null null
+2024-03-13 18:55:21.603 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:55:21.662 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:55:25.193 +05:30 [INF] Executed DbCommand (256ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 18:55:25.223 +05:30 [INF] Finished Get All Assets : []
+2024-03-13 18:55:25.239 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-13 18:55:25.242 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-13 18:55:25.405 +05:30 [INF] Executed DbCommand (115ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 18:55:25.443 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 18:55:25.464 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 3791.1148ms
+2024-03-13 18:55:25.467 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:55:25.480 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 3896.4942ms
+2024-03-13 18:55:43.251 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 113
+2024-03-13 18:55:43.257 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:55:43.271 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-03-13 18:55:43.730 +05:30 [INF] Executed DbCommand (72ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-03-13 18:55:43.790 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-03-13 18:55:43.798 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 524.2556ms
+2024-03-13 18:55:43.800 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:55:43.802 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 551.3047ms
+2024-03-13 18:55:52.311 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 114
+2024-03-13 18:55:52.317 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:55:52.319 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-03-13 18:55:52.455 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-03-13 18:55:52.460 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-03-13 18:55:52.463 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 140.8638ms
+2024-03-13 18:55:52.466 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:55:52.468 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 156.9996ms
+2024-03-13 18:55:56.663 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 114
+2024-03-13 18:55:56.668 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:55:56.670 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-03-13 18:55:56.687 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-03-13 18:55:56.691 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-03-13 18:55:56.695 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 21.5227ms
+2024-03-13 18:55:56.697 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:55:56.699 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 36.1233ms
+2024-03-13 18:56:01.288 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 114
+2024-03-13 18:56:01.296 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:01.298 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-03-13 18:56:01.314 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-03-13 18:56:01.318 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-03-13 18:56:01.320 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 19.1462ms
+2024-03-13 18:56:01.322 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:01.329 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 41.0657ms
+2024-03-13 18:56:06.215 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 114
+2024-03-13 18:56:06.221 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:06.224 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-03-13 18:56:06.237 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-03-13 18:56:06.242 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-03-13 18:56:06.246 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 17.399ms
+2024-03-13 18:56:06.249 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:06.250 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 35.2556ms
+2024-03-13 18:56:11.153 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 114
+2024-03-13 18:56:11.158 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:11.161 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-03-13 18:56:11.172 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-03-13 18:56:11.177 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-03-13 18:56:11.179 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 15.3397ms
+2024-03-13 18:56:11.181 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:11.183 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 30.0131ms
+2024-03-13 18:56:17.097 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 114
+2024-03-13 18:56:17.139 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:17.141 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-03-13 18:56:17.154 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-03-13 18:56:17.158 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-03-13 18:56:17.162 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 17.2676ms
+2024-03-13 18:56:17.165 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:17.168 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 71.3841ms
+2024-03-13 18:56:26.486 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 114
+2024-03-13 18:56:26.493 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:26.495 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-03-13 18:56:26.510 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-03-13 18:56:26.514 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-03-13 18:56:26.516 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 18.1308ms
+2024-03-13 18:56:26.518 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:26.520 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 35.3988ms
+2024-03-13 18:56:31.005 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 114
+2024-03-13 18:56:31.017 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:31.020 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-03-13 18:56:31.080 +05:30 [INF] Executed DbCommand (52ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-03-13 18:56:31.085 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-03-13 18:56:31.095 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 72.9583ms
+2024-03-13 18:56:31.101 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:31.103 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 99.3426ms
+2024-03-13 18:56:36.128 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 115
+2024-03-13 18:56:36.138 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:36.143 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-03-13 18:56:36.154 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-03-13 18:56:36.158 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-03-13 18:56:36.160 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 13.7969ms
+2024-03-13 18:56:36.162 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-03-13 18:56:36.164 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 36.0765ms
+2024-03-13 18:57:30.278 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Assets - application/json 170
+2024-03-13 18:57:30.291 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem)'
+2024-03-13 18:57:30.299 +05:30 [INF] Route matched with {action = "AddAsset", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddAsset(AssetManagementSystem.Models.Dtos.AssetDto) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:57:30.432 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Asset] ([AssetStatus], [AssetType], [AssetValue], [Description], [ImageUrl], [IsActive], [Name], [QRcode], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-03-13 18:57:30.455 +05:30 [INF] Finished Add Asset : {"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}
+2024-03-13 18:57:30.457 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Asset'.
+2024-03-13 18:57:30.461 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem) in 159.2581ms
+2024-03-13 18:57:30.463 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem)'
+2024-03-13 18:57:30.464 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 186.7934ms
+2024-03-13 18:57:37.963 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Assets - application/json 170
+2024-03-13 18:57:37.978 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem)'
+2024-03-13 18:57:37.980 +05:30 [INF] Route matched with {action = "AddAsset", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddAsset(AssetManagementSystem.Models.Dtos.AssetDto) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:57:37.997 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Asset] ([AssetStatus], [AssetType], [AssetValue], [Description], [ImageUrl], [IsActive], [Name], [QRcode], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-03-13 18:57:38.001 +05:30 [INF] Finished Add Asset : {"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}
+2024-03-13 18:57:38.003 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Asset'.
+2024-03-13 18:57:38.006 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem) in 23.8236ms
+2024-03-13 18:57:38.009 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem)'
+2024-03-13 18:57:38.010 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 47.3199ms
+2024-03-13 18:57:45.969 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Assets - application/json 170
+2024-03-13 18:57:45.976 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem)'
+2024-03-13 18:57:45.978 +05:30 [INF] Route matched with {action = "AddAsset", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddAsset(AssetManagementSystem.Models.Dtos.AssetDto) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:57:45.989 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Asset] ([AssetStatus], [AssetType], [AssetValue], [Description], [ImageUrl], [IsActive], [Name], [QRcode], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-03-13 18:57:45.993 +05:30 [INF] Finished Add Asset : {"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}
+2024-03-13 18:57:45.994 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Asset'.
+2024-03-13 18:57:45.996 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem) in 16.0481ms
+2024-03-13 18:57:45.998 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem)'
+2024-03-13 18:57:46.000 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 30.9952ms
+2024-03-13 18:57:58.995 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Assets - application/json 165
+2024-03-13 18:57:59.000 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem)'
+2024-03-13 18:57:59.002 +05:30 [INF] Route matched with {action = "AddAsset", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddAsset(AssetManagementSystem.Models.Dtos.AssetDto) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:57:59.015 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Asset] ([AssetStatus], [AssetType], [AssetValue], [Description], [ImageUrl], [IsActive], [Name], [QRcode], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-03-13 18:57:59.023 +05:30 [INF] Finished Add Asset : {"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}
+2024-03-13 18:57:59.025 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Asset'.
+2024-03-13 18:57:59.027 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem) in 21.7405ms
+2024-03-13 18:57:59.029 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem)'
+2024-03-13 18:57:59.031 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 36.2565ms
+2024-03-13 18:58:06.470 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Assets - application/json 165
+2024-03-13 18:58:06.476 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem)'
+2024-03-13 18:58:06.478 +05:30 [INF] Route matched with {action = "AddAsset", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddAsset(AssetManagementSystem.Models.Dtos.AssetDto) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:58:06.493 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = Single), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Asset] ([AssetStatus], [AssetType], [AssetValue], [Description], [ImageUrl], [IsActive], [Name], [QRcode], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2024-03-13 18:58:06.497 +05:30 [INF] Finished Add Asset : {"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}
+2024-03-13 18:58:06.499 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Asset'.
+2024-03-13 18:58:06.501 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem) in 18.1653ms
+2024-03-13 18:58:06.504 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem)'
+2024-03-13 18:58:06.505 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 35.5755ms
+2024-03-13 18:58:14.677 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?pageNumber=1&pageSize=10 - null null
+2024-03-13 18:58:14.682 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:58:14.687 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:58:14.767 +05:30 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 18:58:14.781 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 18:58:14.797 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 18:58:14.803 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 18:58:14.806 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 116.1266ms
+2024-03-13 18:58:14.808 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:58:14.810 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 133.0479ms
+2024-03-13 18:58:52.320 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?filterOn=q&filterQuery=assetType&pageNumber=1&pageSize=10 - null null
+2024-03-13 18:58:52.331 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:58:52.334 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:58:52.342 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 18:58:52.345 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 18:58:52.357 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 18:58:52.360 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 18:58:52.362 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 26.2287ms
+2024-03-13 18:58:52.365 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:58:52.368 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?filterOn=q&filterQuery=assetType&pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 47.2575ms
+2024-03-13 18:59:01.423 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?filterOn=q&filterQuery=assetType&pageNumber=1&pageSize=10 - null null
+2024-03-13 18:59:01.437 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:59:01.440 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:59:01.457 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 18:59:01.461 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 18:59:01.471 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 18:59:01.475 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 18:59:01.479 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 28.3814ms
+2024-03-13 18:59:01.483 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:59:01.485 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?filterOn=q&filterQuery=assetType&pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 62.7012ms
+2024-03-13 18:59:21.054 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?filterOn=q&filterQuery=assetType&isAscending=true&pageNumber=1&pageSize=10 - null null
+2024-03-13 18:59:21.059 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:59:21.061 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:59:21.073 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 18:59:21.077 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 18:59:21.089 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 18:59:21.092 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 18:59:21.094 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 28.6749ms
+2024-03-13 18:59:21.096 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:59:21.098 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?filterOn=q&filterQuery=assetType&isAscending=true&pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 44.2437ms
+2024-03-13 18:59:25.489 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?filterOn=q&filterQuery=assetType&isAscending=false&pageNumber=1&pageSize=10 - null null
+2024-03-13 18:59:25.493 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:59:25.495 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 18:59:25.500 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 18:59:25.503 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 18:59:25.509 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 18:59:25.514 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 18:59:25.516 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 18.1071ms
+2024-03-13 18:59:25.518 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 18:59:25.520 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?filterOn=q&filterQuery=assetType&isAscending=false&pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 31.0991ms
+2024-03-13 19:00:12.489 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?sortBy=id&isAscending=false&pageNumber=1&pageSize=10 - null null
+2024-03-13 19:00:12.503 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:00:12.505 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 19:00:12.513 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 19:00:12.517 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 19:00:12.526 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 19:00:12.530 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 19:00:12.533 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 25.8908ms
+2024-03-13 19:00:12.535 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:00:12.537 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?sortBy=id&isAscending=false&pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 47.991ms
+2024-03-13 19:00:18.789 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?sortBy=id&isAscending=true&pageNumber=1&pageSize=10 - null null
+2024-03-13 19:00:18.793 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:00:18.797 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 19:00:18.805 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 19:00:18.809 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 19:00:18.820 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 19:00:18.823 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 19:00:18.825 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 25.8911ms
+2024-03-13 19:00:18.830 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:00:18.832 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?sortBy=id&isAscending=true&pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 43.2868ms
+2024-03-13 19:05:55.852 +05:30 [INF] Now listening on: https://localhost:7095
+2024-03-13 19:05:55.936 +05:30 [INF] Now listening on: http://localhost:5240
+2024-03-13 19:05:55.941 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-13 19:05:55.943 +05:30 [INF] Hosting environment: Development
+2024-03-13 19:05:55.945 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AssetManagementSystem
+2024-03-13 19:06:02.986 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-03-13 19:06:04.178 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 1218.0822ms
+2024-03-13 19:06:04.555 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-03-13 19:06:04.555 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-13 19:06:04.627 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 71.8666ms
+2024-03-13 19:06:04.711 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 155.8793ms
+2024-03-13 19:06:05.098 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-03-13 19:06:05.662 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 564.7042ms
+2024-03-13 19:07:54.912 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?pageNumber=1&pageSize=10 - null null
+2024-03-13 19:07:54.951 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:07:55.039 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 19:07:58.328 +05:30 [INF] Executed DbCommand (195ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 19:07:58.539 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 19:07:58.563 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-13 19:07:58.566 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-13 19:07:58.748 +05:30 [INF] Executed DbCommand (134ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 19:07:58.801 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 19:07:58.823 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 3775.1832ms
+2024-03-13 19:07:58.826 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:07:58.842 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 3930.0716ms
+2024-03-13 19:08:17.643 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?sortBy=id&isAscending=false&pageNumber=1&pageSize=10 - null null
+2024-03-13 19:08:17.650 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:08:17.652 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 19:08:17.721 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY [a].[Id] DESC
+2024-03-13 19:08:17.725 +05:30 [INF] Finished Get All Assets : [{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 19:08:17.744 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY [a].[Id] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 19:08:17.749 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 19:08:17.752 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 96.7607ms
+2024-03-13 19:08:17.755 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:08:17.757 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?sortBy=id&isAscending=false&pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 114.5574ms
+2024-03-13 19:08:42.063 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?filterOn=name&filterQuery=d3&sortBy=id&isAscending=false&pageNumber=1&pageSize=10 - null null
+2024-03-13 19:08:42.101 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:08:42.103 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 19:08:42.441 +05:30 [INF] Executed DbCommand (105ms) [Parameters=[@__filterQuery_0_rewritten='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit) AND [a].[Name] LIKE @__filterQuery_0_rewritten ESCAPE N'\'
+ORDER BY [a].[Id] DESC
+2024-03-13 19:08:42.444 +05:30 [INF] Finished Get All Assets : [{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 19:08:42.481 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[@__filterQuery_0_rewritten='?' (Size = 4000), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit) AND [a].[Name] LIKE @__filterQuery_0_rewritten ESCAPE N'\'
+ORDER BY [a].[Id] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-03-13 19:08:42.485 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 19:08:42.489 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 382.6185ms
+2024-03-13 19:08:42.491 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:08:42.493 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?filterOn=name&filterQuery=d3&sortBy=id&isAscending=false&pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 431.1992ms
+2024-03-13 19:08:58.815 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?isAscending=false&pageNumber=1&pageSize=10 - null null
+2024-03-13 19:08:58.821 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:08:58.823 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 19:08:58.847 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 19:08:58.851 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 19:08:58.861 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 19:08:58.865 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 19:08:58.868 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 38.8112ms
+2024-03-13 19:08:58.870 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:08:58.871 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?isAscending=false&pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 57.0919ms
+2024-03-13 19:09:05.882 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?isAscending=false&pageNumber=1&pageSize=2 - null null
+2024-03-13 19:09:05.888 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:09:05.890 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 19:09:05.904 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 19:09:05.907 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 19:09:05.918 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 19:09:05.921 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 19:09:05.924 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 30.6218ms
+2024-03-13 19:09:05.926 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:09:05.928 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?isAscending=false&pageNumber=1&pageSize=2 - 200 null application/json; charset=utf-8 46.3373ms
+2024-03-13 19:09:11.632 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?isAscending=false&pageNumber=2&pageSize=2 - null null
+2024-03-13 19:09:11.636 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:09:11.638 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 19:09:11.651 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 19:09:11.655 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 19:09:11.660 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-13 19:09:11.661 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-13 19:09:11.675 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2024-03-13 19:09:11.679 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 19:09:11.681 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 38.6643ms
+2024-03-13 19:09:11.683 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:09:11.685 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?isAscending=false&pageNumber=2&pageSize=2 - 200 null application/json; charset=utf-8 54.1547ms
+2024-03-13 19:09:17.195 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?isAscending=false&pageNumber=3&pageSize=2 - null null
+2024-03-13 19:09:17.200 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:09:17.215 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-13 19:09:17.230 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-13 19:09:17.233 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-13 19:09:17.242 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-13 19:09:17.247 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-13 19:09:17.249 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 27.5575ms
+2024-03-13 19:09:17.251 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-13 19:09:17.253 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?isAscending=false&pageNumber=3&pageSize=2 - 200 null application/json; charset=utf-8 58.3117ms
