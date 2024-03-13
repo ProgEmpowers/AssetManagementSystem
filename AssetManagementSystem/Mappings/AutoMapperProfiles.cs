@@ -1,4 +1,4 @@
-﻿using AssetManagementSystem.Models;
+﻿using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
 using AutoMapper;
 

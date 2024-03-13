@@ -1,5 +1,4 @@
-﻿using AssetManagementSystem.Models.Enums;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace AssetManagementSystem.Models
 {
@@ -11,7 +10,7 @@ namespace AssetManagementSystem.Models
         public string Email { get; set; }
         public string Address { get; set; }
         public int MobileNo { get; set; }
-        public UserRoleEnum UserRole { get; set; }
+        public int UserRole { get; set; }
 
     }
 }

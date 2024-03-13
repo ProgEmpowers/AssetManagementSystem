@@ -1,11 +1,11 @@
 ﻿using AssetManagementSystem.Context;
 using AssetManagementSystem.Models.Dtos;
-using AssetManagementSystem.Models;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using AssetManagementSystem.Models.Domains;
 
-namespace AssetManagementSystem.Services
+namespace AssetManagementSystem.Services.VendorServices
 {
     public class VendorService : IVendorService
     {

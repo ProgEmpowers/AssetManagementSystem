@@ -1,7 +1,7 @@
-﻿using AssetManagementSystem.Models;
+﻿using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
 
-namespace AssetManagementSystem.Services
+namespace AssetManagementSystem.Services.AssetServices
 {
     public interface IAssetService
     {

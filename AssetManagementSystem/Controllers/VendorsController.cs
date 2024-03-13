@@ -1,5 +1,5 @@
 ﻿using AssetManagementSystem.Models.Dtos;
-using AssetManagementSystem.Services;
+using AssetManagementSystem.Services.VendorServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
