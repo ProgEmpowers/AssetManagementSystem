@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using AssetManagementSystem.Context;
+using AssetManagementSystem.CustomActionFilters;
 using AssetManagementSystem.Models;
 using AssetManagementSystem.Models.Dtos;
 using AssetManagementSystem.Services.AssetServices;
@@ -21,6 +22,7 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpPost]
+        [ValidateModel]
         public async Task<IActionResult> AddAsset([FromBody] AssetDto assetDto)
         {
             if (assetDto == null)
@@ -54,6 +56,7 @@ namespace AssetManagementSystem.Controllers
 
         [HttpPut]
         [Route("{id:int}")]
+        [ValidateModel]
         public async Task<IActionResult> UpdateAsset([FromRoute] int id, [FromBody] AssetDto assetDto)
         {
             var SelectedAsset = await _assetService.UpdateAssetAsync(id, assetDto);

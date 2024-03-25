@@ -1,0 +1,14 @@
+2024-03-25 20:27:32.241 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-03-25 20:27:32.774 +05:30 [INF] Now listening on: https://localhost:7229
+2024-03-25 20:27:32.834 +05:30 [INF] Now listening on: http://localhost:5039
+2024-03-25 20:27:32.837 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-25 20:27:32.839 +05:30 [INF] Hosting environment: Development
+2024-03-25 20:27:33.238 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AuthService
+2024-03-25 20:27:37.585 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-03-25 20:27:37.935 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 355.3391ms
+2024-03-25 20:27:37.971 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-25 20:27:37.974 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-03-25 20:27:37.996 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 25.1219ms
+2024-03-25 20:27:38.071 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 99.3421ms
+2024-03-25 20:27:38.820 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-03-25 20:27:38.840 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.4301ms
