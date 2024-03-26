@@ -1,0 +1,32 @@
+2024-03-27 00:05:48.417 +05:30 [INF] Now listening on: https://localhost:7095
+2024-03-27 00:05:48.486 +05:30 [INF] Now listening on: http://localhost:5240
+2024-03-27 00:05:48.489 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-27 00:05:48.490 +05:30 [INF] Hosting environment: Development
+2024-03-27 00:05:48.491 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AssetManagementSystem
+2024-03-27 00:05:52.451 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-03-27 00:05:53.362 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 933.3966ms
+2024-03-27 00:05:53.464 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 00:05:53.487 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 23.5902ms
+2024-03-27 00:05:53.526 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-03-27 00:05:53.610 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 83.3206ms
+2024-03-27 00:05:53.890 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-03-27 00:05:54.077 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 187.3484ms
+2024-03-27 00:55:01.630 +05:30 [INF] Now listening on: https://localhost:7095
+2024-03-27 00:55:01.667 +05:30 [INF] Now listening on: http://localhost:5240
+2024-03-27 00:55:01.670 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-27 00:55:01.671 +05:30 [INF] Hosting environment: Development
+2024-03-27 00:55:01.672 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AssetManagementSystem
+2024-03-27 00:55:08.277 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-03-27 00:55:08.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 00:55:08.428 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 35.5875ms
+2024-03-27 00:55:08.457 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-03-27 00:55:08.607 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 154.4972ms
+2024-03-27 00:55:08.780 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 511.8832ms
+2024-03-27 00:55:08.828 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 00:55:08.834 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-03-27 00:55:08.842 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 14.0006ms
+2024-03-27 00:55:08.943 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 109.0575ms
+2024-03-27 00:55:09.166 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-03-27 00:55:09.531 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-03-27 00:55:09.533 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 367.027ms
+2024-03-27 00:55:09.553 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.1141ms
