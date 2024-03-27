@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <Folder Include="Models\Enums\" />
-    <Folder Include="Services\AuthServices\" />
     <Folder Include="Services\UserServices\" />
   </ItemGroup>
 
