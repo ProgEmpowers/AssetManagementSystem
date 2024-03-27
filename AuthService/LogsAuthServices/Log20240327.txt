@@ -343,3 +343,209 @@ WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
 2024-03-27 01:25:45.181 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Register (AuthService) in 2345.601ms
 2024-03-27 01:25:45.183 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Register (AuthService)'
 2024-03-27 01:25:45.191 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register - 200 0 null 2487.7972ms
+2024-03-27 03:06:14.877 +05:30 [INF] User profile is available. Using 'C:\Users\dasun\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-27 03:06:15.261 +05:30 [INF] Now listening on: https://localhost:7229
+2024-03-27 03:06:15.262 +05:30 [INF] Now listening on: http://localhost:5039
+2024-03-27 03:06:15.265 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-27 03:06:15.266 +05:30 [INF] Hosting environment: Development
+2024-03-27 03:06:15.267 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AuthService
+2024-03-27 03:06:18.158 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-03-27 03:06:18.158 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 03:06:18.174 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-03-27 03:06:18.232 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 82.8725ms
+2024-03-27 03:06:18.485 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 311.9912ms
+2024-03-27 03:06:18.640 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-03-27 03:06:18.665 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 522.1087ms
+2024-03-27 03:06:18.704 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 03:06:18.710 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-03-27 03:06:18.719 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 14.9349ms
+2024-03-27 03:06:18.779 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.6696ms
+2024-03-27 03:06:18.875 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 234.9872ms
+2024-03-27 03:06:18.912 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-03-27 03:06:18.919 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.3299ms
+2024-03-27 03:07:45.626 +05:30 [INF] User profile is available. Using 'C:\Users\dasun\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-27 03:07:46.012 +05:30 [INF] Now listening on: https://localhost:7229
+2024-03-27 03:07:46.013 +05:30 [INF] Now listening on: http://localhost:5039
+2024-03-27 03:07:46.015 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-27 03:07:46.017 +05:30 [INF] Hosting environment: Development
+2024-03-27 03:07:46.017 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AuthService
+2024-03-27 03:07:53.712 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-03-27 03:07:54.966 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 1324.9591ms
+2024-03-27 03:07:55.026 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 03:07:55.026 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-03-27 03:07:55.045 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 18.9094ms
+2024-03-27 03:07:55.454 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 427.7217ms
+2024-03-27 03:07:55.595 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-03-27 03:07:55.894 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 299.0892ms
+2024-03-27 03:08:29.939 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/login - application/json 55
+2024-03-27 03:08:30.061 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-03-27 03:08:30.099 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-03-27 03:08:32.420 +05:30 [INF] Executed DbCommand (109ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-03-27 03:08:32.450 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-03-27 03:08:32.476 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 2371.6309ms
+2024-03-27 03:08:32.478 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-03-27 03:08:32.488 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/login - 400 null application/problem+json; charset=utf-8 2549.1273ms
+2024-03-27 03:09:11.312 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/login - application/json 56
+2024-03-27 03:09:11.324 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-03-27 03:09:11.325 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-03-27 03:09:11.382 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-03-27 03:09:11.385 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-03-27 03:09:11.386 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 59.5348ms
+2024-03-27 03:09:11.388 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-03-27 03:09:11.389 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/login - 400 null application/problem+json; charset=utf-8 76.8562ms
+2024-03-27 03:09:45.665 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/register - application/json 55
+2024-03-27 03:09:45.675 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Register (AuthService)'
+2024-03-27 03:09:45.679 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AuthService.Models.Dtos.RegisterRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-03-27 03:09:45.793 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-03-27 03:09:45.993 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2024-03-27 03:09:46.022 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-03-27 03:09:46.085 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2024-03-27 03:09:46.090 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-03-27 03:09:46.105 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-03-27 03:09:46.173 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p16='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p17='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+2024-03-27 03:09:46.189 +05:30 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-03-27 03:09:46.190 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Register (AuthService) in 509.2355ms
+2024-03-27 03:09:46.192 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Register (AuthService)'
+2024-03-27 03:09:46.194 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register - 200 0 null 528.384ms
+2024-03-27 03:09:56.471 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/login - application/json 56
+2024-03-27 03:09:56.478 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-03-27 03:09:56.479 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-03-27 03:09:56.489 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-03-27 03:09:56.627 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-03-27 03:09:56.633 +05:30 [INF] Executing OkObjectResult, writing value of type 'AuthService.Models.Dtos.LoginResponseDto'.
+2024-03-27 03:09:56.636 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 155.2094ms
+2024-03-27 03:09:56.637 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-03-27 03:09:56.639 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/login - 200 null application/json; charset=utf-8 168.5757ms
+2024-03-27 14:43:07.069 +05:30 [INF] User profile is available. Using 'C:\Users\dasun\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-27 14:43:08.363 +05:30 [INF] Now listening on: https://localhost:7229
+2024-03-27 14:43:08.365 +05:30 [INF] Now listening on: http://localhost:5039
+2024-03-27 14:43:08.369 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-27 14:43:08.371 +05:30 [INF] Hosting environment: Development
+2024-03-27 14:43:08.373 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AuthService
+2024-03-27 14:43:14.393 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-03-27 14:43:14.671 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 14:43:14.712 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-03-27 14:43:14.770 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 97.7744ms
+2024-03-27 14:43:15.194 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 481.3768ms
+2024-03-27 14:43:15.447 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 1076.0735ms
+2024-03-27 14:43:15.515 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 14:43:15.522 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 7.4696ms
+2024-03-27 14:43:15.541 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-03-27 14:43:15.562 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-03-27 14:43:15.602 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.9694ms
+2024-03-27 14:43:15.841 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 279.6907ms
+2024-03-27 14:43:15.898 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-03-27 14:43:15.911 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.5308ms
+2024-03-27 14:43:56.102 +05:30 [INF] User profile is available. Using 'C:\Users\dasun\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-27 14:43:56.861 +05:30 [INF] Now listening on: https://localhost:7229
+2024-03-27 14:43:56.865 +05:30 [INF] Now listening on: http://localhost:5039
+2024-03-27 14:43:56.873 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-27 14:43:56.877 +05:30 [INF] Hosting environment: Development
+2024-03-27 14:43:56.881 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AuthService
+2024-03-27 14:44:04.841 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-03-27 14:44:06.217 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 14:44:06.257 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 38.0334ms
+2024-03-27 14:44:06.288 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-03-27 14:44:06.362 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 1544.1363ms
+2024-03-27 14:44:06.447 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-03-27 14:44:06.447 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 14:44:06.500 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 211.6682ms
+2024-03-27 14:44:06.512 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 66.0147ms
+2024-03-27 14:44:06.550 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 102.6581ms
+2024-03-27 14:44:07.014 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-03-27 14:44:07.697 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 683.9387ms
+2024-03-27 14:44:08.352 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-03-27 14:44:08.374 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.5016ms
+2024-03-27 14:44:19.899 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 14:44:19.906 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 9.3811ms
+2024-03-27 14:44:19.940 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-03-27 14:44:19.977 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.9031ms
+2024-03-27 14:44:20.168 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-03-27 14:44:20.177 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.1259ms
+2024-03-27 14:44:28.316 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/Auth/hi - null null
+2024-03-27 14:44:28.565 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.hi (AuthService)'
+2024-03-27 14:44:28.623 +05:30 [INF] Route matched with {action = "hi", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] hi() on controller AuthService.Controllers.AuthController (AuthService).
+2024-03-27 14:44:29.383 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-03-27 14:44:29.395 +05:30 [INF] Executed action AuthService.Controllers.AuthController.hi (AuthService) in 758.8747ms
+2024-03-27 14:44:29.398 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.hi (AuthService)'
+2024-03-27 14:44:29.403 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/Auth/hi - 200 null text/plain; charset=utf-8 1087.8133ms
+2024-03-27 14:45:12.610 +05:30 [INF] User profile is available. Using 'C:\Users\dasun\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-03-27 14:45:15.347 +05:30 [INF] Now listening on: https://localhost:7229
+2024-03-27 14:45:15.350 +05:30 [INF] Now listening on: http://localhost:5039
+2024-03-27 14:45:15.358 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-27 14:45:15.365 +05:30 [INF] Hosting environment: Development
+2024-03-27 14:45:15.375 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AuthService
+2024-03-27 14:45:21.439 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-03-27 14:45:21.855 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 422.9844ms
+2024-03-27 14:45:21.910 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-03-27 14:45:21.910 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-27 14:45:21.939 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 28.971ms
+2024-03-27 14:45:22.000 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 90.4891ms
+2024-03-27 14:45:22.169 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-03-27 14:45:22.464 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 296.4562ms
+2024-03-27 14:45:38.862 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/Auth/hi - null null
+2024-03-27 14:45:39.046 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-03-27 14:45:39.057 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2024-03-27 14:45:39.059 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/Auth/hi - 401 0 null 198.3114ms
+2024-03-27 14:46:16.099 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/login - application/json 55
+2024-03-27 14:46:16.123 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-03-27 14:46:16.189 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-03-27 14:46:20.324 +05:30 [INF] Executed DbCommand (240ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-03-27 14:46:20.739 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-03-27 14:46:20.856 +05:30 [INF] Executing OkObjectResult, writing value of type 'AuthService.Models.Dtos.LoginResponseDto'.
+2024-03-27 14:46:20.873 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 4672.1463ms
+2024-03-27 14:46:20.877 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-03-27 14:46:20.895 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/login - 200 null application/json; charset=utf-8 4799.3785ms
+2024-03-27 14:46:53.292 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/Auth/hi - null null
+2024-03-27 14:46:53.403 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.hi (AuthService)'
+2024-03-27 14:46:53.415 +05:30 [INF] Route matched with {action = "hi", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] hi() on controller AuthService.Controllers.AuthController (AuthService).
+2024-03-27 14:46:53.424 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-03-27 14:46:53.427 +05:30 [INF] Executed action AuthService.Controllers.AuthController.hi (AuthService) in 9.0911ms
+2024-03-27 14:46:53.430 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.hi (AuthService)'
+2024-03-27 14:46:53.433 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/Auth/hi - 200 null text/plain; charset=utf-8 141.7577ms
