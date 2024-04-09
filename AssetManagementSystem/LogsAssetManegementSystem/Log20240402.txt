@@ -1,0 +1,13 @@
+2024-04-02 00:05:36.038 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-02 00:05:36.146 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-02 00:05:36.328 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-02 00:05:36.331 +05:30 [INF] Hosting environment: Development
+2024-04-02 00:05:36.345 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AssetManagementSystem
+2024-04-02 00:05:47.042 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-02 00:05:47.923 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 892.5599ms
+2024-04-02 00:05:48.008 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-02 00:05:48.008 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-02 00:05:48.080 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 72.267ms
+2024-04-02 00:05:48.198 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 189.7076ms
+2024-04-02 00:05:48.453 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-02 00:05:48.981 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 528.2126ms
