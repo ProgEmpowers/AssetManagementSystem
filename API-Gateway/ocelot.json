@@ -1,0 +1,69 @@
+{
+  "Routes": [
+    //AssetManegement API
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets",
+      "UpstreamHttpMethod": [ "Get", "Delete", "Put", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets"
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/{assetId}",
+      "UpstreamHttpMethod": [ "Get", "Delete", "Put", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/{assetId}"
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/Vendors",
+      "UpstreamHttpMethod": [ "Get", "Delete", "Put", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Vendors"
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/Vendors/{vendorId}",
+      "UpstreamHttpMethod": [ "Get", "Delete", "Put", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Vendors/{vendorId}"
+    },
+    //Auth Service API
+    {
+      "UpstreamPathTemplate": "/apigateway/Auth",
+      "UpstreamHttpMethod": [ "Get", "Delete", "Put", "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Auth"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:800"
+  }
+}

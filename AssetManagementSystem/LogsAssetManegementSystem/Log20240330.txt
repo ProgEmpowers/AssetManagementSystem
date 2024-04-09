@@ -1,0 +1,90 @@
+2024-03-30 05:28:21.301 +05:30 [INF] Now listening on: https://localhost:7095
+2024-03-30 05:28:21.356 +05:30 [INF] Now listening on: http://localhost:5240
+2024-03-30 05:28:21.360 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-30 05:28:21.361 +05:30 [INF] Hosting environment: Development
+2024-03-30 05:28:21.362 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AssetManagementSystem
+2024-03-30 05:28:35.862 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-03-30 05:28:36.586 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 735.2643ms
+2024-03-30 05:28:36.789 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-30 05:28:36.791 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-03-30 05:28:36.860 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 71.5554ms
+2024-03-30 05:28:37.524 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 733.055ms
+2024-03-30 05:28:37.625 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-03-30 05:28:37.909 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 284.02ms
+2024-03-30 05:29:28.583 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7095/api/Assets - null null
+2024-03-30 05:29:28.602 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-30 05:29:28.634 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-30 05:29:31.507 +05:30 [INF] Executed DbCommand (217ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-30 05:29:31.625 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":6,"Name":"dasu","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":7,"Name":"thee","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-30 05:29:31.638 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-30 05:29:31.640 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-30 05:29:31.729 +05:30 [INF] Executed DbCommand (63ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-30 05:29:31.756 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-30 05:29:31.768 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 3128.2496ms
+2024-03-30 05:29:31.771 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-30 05:29:31.777 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 3195.1322ms
+2024-03-30 05:30:33.648 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7095/api/Assets/get - null null
+2024-03-30 05:30:33.654 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7095/api/Assets/get - 404 0 null 5.8708ms
+2024-03-30 05:30:33.657 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/api/Assets/get, Response status code: 404
+2024-03-30 05:30:41.113 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7095/api/Assets/getall - null null
+2024-03-30 05:30:41.125 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7095/api/Assets/getall - 404 0 null 12.0185ms
+2024-03-30 05:30:41.128 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/api/Assets/getall, Response status code: 404
+2024-03-30 05:32:43.970 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7095/api/Assets - null null
+2024-03-30 05:32:43.987 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-30 05:32:43.989 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-30 05:32:44.024 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-30 05:32:44.026 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":6,"Name":"dasu","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":7,"Name":"thee","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-30 05:32:44.034 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-30 05:32:44.037 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-30 05:32:44.039 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 47.6794ms
+2024-03-30 05:32:44.040 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-30 05:32:44.041 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 72.6041ms
+2024-03-30 06:09:38.019 +05:30 [INF] Now listening on: https://localhost:7095
+2024-03-30 06:09:38.066 +05:30 [INF] Now listening on: http://localhost:5240
+2024-03-30 06:09:38.069 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-30 06:09:38.070 +05:30 [INF] Hosting environment: Development
+2024-03-30 06:09:38.071 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AssetManagementSystem
+2024-03-30 06:09:49.824 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-03-30 06:09:50.547 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-03-30 06:09:50.547 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-03-30 06:09:50.556 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 744.2916ms
+2024-03-30 06:09:50.646 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 98.4241ms
+2024-03-30 06:09:50.807 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 259.3907ms
+2024-03-30 06:09:50.988 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-03-30 06:09:51.406 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 418.9992ms
+2024-03-30 06:10:02.250 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7095/api/Assets - null null
+2024-03-30 06:10:02.263 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-30 06:10:02.302 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-03-30 06:10:03.965 +05:30 [INF] Executed DbCommand (120ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-03-30 06:10:04.056 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"d1","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"d2","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"d3","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"d4","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"d5","AssetType":"q","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":6,"Name":"dasu","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":7,"Name":"thee","AssetType":"string","Description":"string","ImageUrl":"string","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0}]
+2024-03-30 06:10:04.071 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-30 06:10:04.072 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-30 06:10:04.172 +05:30 [INF] Executed DbCommand (71ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-30 06:10:04.207 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-30 06:10:04.221 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 1914.0768ms
+2024-03-30 06:10:04.223 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-03-30 06:10:04.232 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 1983.1364ms
