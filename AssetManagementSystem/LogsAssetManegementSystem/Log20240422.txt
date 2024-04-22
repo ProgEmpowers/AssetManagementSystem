@@ -1,0 +1,271 @@
+2024-04-22 07:57:48.722 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 07:57:48.771 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 07:57:48.774 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 07:57:48.775 +05:30 [INF] Hosting environment: Development
+2024-04-22 07:57:48.775 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 07:58:00.979 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 07:58:01.377 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 405.0472ms
+2024-04-22 07:58:01.589 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 07:58:01.624 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 07:58:01.660 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 71.4601ms
+2024-04-22 07:58:02.515 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 890.8586ms
+2024-04-22 07:58:02.599 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 07:58:02.968 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 392.2375ms
+2024-04-22 07:58:29.134 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-22 07:58:29.149 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 07:58:29.197 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-22 07:58:37.170 +05:30 [INF] Executed DbCommand (123ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-22 07:58:37.254 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-22 07:58:37.271 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-22 07:58:37.272 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-22 07:58:37.536 +05:30 [INF] Executed DbCommand (242ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-22 07:58:37.558 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-22 07:58:37.569 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 8363.7217ms
+2024-04-22 07:58:37.571 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 07:58:37.581 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 8447.7681ms
+2024-04-22 07:59:47.884 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-22 07:59:47.892 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 07:59:47.893 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-22 07:59:48.067 +05:30 [INF] Executed DbCommand (146ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-22 07:59:48.071 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-22 07:59:48.271 +05:30 [INF] Executed DbCommand (195ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-22 07:59:48.274 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-22 07:59:48.275 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 379.1354ms
+2024-04-22 07:59:48.276 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 07:59:48.278 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 393.8099ms
+2024-04-22 07:59:56.473 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-22 07:59:56.478 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 07:59:56.479 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-22 07:59:56.666 +05:30 [INF] Executed DbCommand (132ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-22 07:59:56.678 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-22 07:59:56.870 +05:30 [INF] Executed DbCommand (188ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-22 07:59:56.873 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-22 07:59:56.875 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 392.6464ms
+2024-04-22 07:59:56.876 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 07:59:56.878 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 405.7864ms
+2024-04-22 08:00:17.358 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 08:00:17.423 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 08:00:17.427 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 08:00:17.428 +05:30 [INF] Hosting environment: Development
+2024-04-22 08:00:17.430 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 08:00:18.109 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 08:00:18.395 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 292.801ms
+2024-04-22 08:00:18.407 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 08:00:18.407 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 08:00:18.426 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 18.7378ms
+2024-04-22 08:00:18.464 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.6483ms
+2024-04-22 08:00:18.575 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 08:00:18.690 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 115.0071ms
+2024-04-22 08:00:30.575 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-22 08:00:30.586 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 08:00:30.624 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-22 08:00:33.245 +05:30 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-22 08:00:33.320 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-22 08:00:33.338 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-22 08:00:33.343 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-22 08:00:33.504 +05:30 [INF] Executed DbCommand (138ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-22 08:00:33.523 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-22 08:00:33.535 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 2901.9248ms
+2024-04-22 08:00:33.539 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 08:00:33.553 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 2978.7409ms
+2024-04-22 08:04:07.918 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-22 08:04:07.927 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 08:04:07.929 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-22 08:04:08.051 +05:30 [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-22 08:04:08.067 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-22 08:04:08.163 +05:30 [INF] Executed DbCommand (88ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-22 08:04:08.169 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-22 08:04:08.171 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 239.2111ms
+2024-04-22 08:04:08.173 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 08:04:08.175 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 257.7002ms
+2024-04-22 08:06:37.040 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 08:06:37.235 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 08:06:37.251 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 08:06:37.252 +05:30 [INF] Hosting environment: Development
+2024-04-22 08:06:37.253 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 08:06:38.372 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-22 08:06:38.482 +05:30 [INF] CORS policy execution successful.
+2024-04-22 08:06:38.492 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 08:06:38.553 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-22 08:06:42.775 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 08:06:43.571 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 796.2932ms
+2024-04-22 08:06:43.608 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 08:06:43.608 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 08:06:43.686 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 77.9897ms
+2024-04-22 08:06:43.704 +05:30 [INF] Executed DbCommand (254ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-22 08:06:44.184 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 575.6555ms
+2024-04-22 08:06:44.208 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-22 08:06:44.222 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-22 08:06:44.224 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-22 08:06:44.296 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 08:06:44.516 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 220.624ms
+2024-04-22 08:06:44.630 +05:30 [INF] Executed DbCommand (342ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-22 08:06:44.661 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-22 08:06:44.674 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 6113.9055ms
+2024-04-22 08:06:44.676 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-22 08:06:44.685 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 6329.0796ms
+2024-04-22 08:19:01.752 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 08:19:01.814 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 08:19:01.819 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 08:19:01.821 +05:30 [INF] Hosting environment: Development
+2024-04-22 08:19:01.822 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 08:19:02.525 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 08:19:02.776 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 260.6431ms
+2024-04-22 08:19:02.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 08:19:02.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 08:19:02.812 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 10.6818ms
+2024-04-22 08:19:02.876 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 74.167ms
+2024-04-22 08:19:03.024 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 08:19:03.208 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 184.3814ms
+2024-04-22 16:12:39.116 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 16:12:39.146 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 16:12:39.148 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 16:12:39.149 +05:30 [INF] Hosting environment: Development
+2024-04-22 16:12:39.150 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 16:12:46.607 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 16:12:47.405 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 801.8184ms
+2024-04-22 16:12:47.426 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 16:12:47.427 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 16:12:47.507 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 80.0983ms
+2024-04-22 16:12:48.039 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 612.1051ms
+2024-04-22 16:12:48.731 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 16:12:48.899 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 167.1595ms
+2024-04-22 16:28:28.822 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 16:28:28.851 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 16:28:28.853 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 16:28:28.853 +05:30 [INF] Hosting environment: Development
+2024-04-22 16:28:28.854 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 16:28:35.844 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 16:28:36.124 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 284.6542ms
+2024-04-22 16:28:36.155 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 16:28:36.155 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 16:28:36.171 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 12.5062ms
+2024-04-22 16:28:36.255 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 99.7714ms
+2024-04-22 16:28:36.388 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 16:28:36.559 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 170.8003ms
+2024-04-22 17:02:28.656 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 17:02:28.683 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 17:02:28.685 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 17:02:28.686 +05:30 [INF] Hosting environment: Development
+2024-04-22 17:02:28.686 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 17:02:34.840 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 17:02:35.207 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 377.0217ms
+2024-04-22 17:02:35.444 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 17:02:35.452 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 8.024ms
+2024-04-22 17:02:35.458 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 17:02:35.511 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.7363ms
+2024-04-22 17:02:35.676 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 17:02:35.805 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 129.3325ms
+2024-04-22 17:05:13.890 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 17:05:13.935 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 17:05:13.939 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 17:05:13.940 +05:30 [INF] Hosting environment: Development
+2024-04-22 17:05:13.940 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 17:05:14.695 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 17:05:14.960 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 272.7796ms
+2024-04-22 17:05:15.048 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 17:05:15.048 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 17:05:15.061 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 12.161ms
+2024-04-22 17:05:15.118 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 70.4877ms
+2024-04-22 17:05:15.498 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 17:05:15.641 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 303.8137ms
+2024-04-22 17:11:05.713 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 17:11:05.742 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 17:11:05.744 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 17:11:05.745 +05:30 [INF] Hosting environment: Development
+2024-04-22 17:11:05.745 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 17:11:12.344 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 17:11:12.659 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 322.7422ms
+2024-04-22 17:11:12.732 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 17:11:12.735 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 17:11:12.767 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 31.6916ms
+2024-04-22 17:11:12.812 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.8884ms
+2024-04-22 17:11:13.101 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 17:11:13.239 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 138.5887ms
+2024-04-22 17:23:18.104 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 17:23:18.143 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 17:23:18.145 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 17:23:18.145 +05:30 [INF] Hosting environment: Development
+2024-04-22 17:23:18.146 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 17:23:18.794 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 17:23:19.055 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 266.3773ms
+2024-04-22 17:23:19.097 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 17:23:19.098 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 17:23:19.103 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 4.7845ms
+2024-04-22 17:23:19.137 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.7213ms
+2024-04-22 17:23:19.194 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 17:23:19.301 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 107.7633ms
+2024-04-22 17:28:12.258 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 17:28:12.306 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 17:28:12.309 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 17:28:12.310 +05:30 [INF] Hosting environment: Development
+2024-04-22 17:28:12.311 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 17:28:12.631 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 17:28:12.905 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 279.1988ms
+2024-04-22 17:28:13.008 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 17:28:13.608 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 17:28:13.614 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 606.3583ms
+2024-04-22 17:28:13.653 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.8556ms
+2024-04-22 17:28:13.729 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 17:28:13.845 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 116.302ms
+2024-04-22 17:32:54.052 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-22 17:32:54.098 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-22 17:32:54.101 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-22 17:32:54.101 +05:30 [INF] Hosting environment: Development
+2024-04-22 17:32:54.102 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AssetManagementSystem
+2024-04-22 17:32:54.717 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-22 17:32:54.992 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 285.6387ms
+2024-04-22 17:32:55.021 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-22 17:32:55.021 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-22 17:32:55.028 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 6.9956ms
+2024-04-22 17:32:55.075 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.8068ms
+2024-04-22 17:32:55.152 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-22 17:32:55.311 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 158.6878ms

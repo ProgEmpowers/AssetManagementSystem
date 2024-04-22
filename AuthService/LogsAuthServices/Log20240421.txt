@@ -1,0 +1,26 @@
+2024-04-21 17:29:12.133 +05:30 [INF] User profile is available. Using 'C:\Users\Savindya\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 17:29:12.334 +05:30 [INF] Now listening on: https://localhost:7229
+2024-04-21 17:29:12.335 +05:30 [INF] Now listening on: http://localhost:5039
+2024-04-21 17:29:12.338 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 17:29:12.339 +05:30 [INF] Hosting environment: Development
+2024-04-21 17:29:12.339 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AuthService
+2024-04-21 17:29:19.009 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-04-21 17:29:19.434 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 429.1034ms
+2024-04-21 17:29:19.439 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 17:29:19.449 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 10.6048ms
+2024-04-21 17:29:19.834 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-04-21 17:29:20.278 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 443.9888ms
+2024-04-21 17:33:05.284 +05:30 [INF] User profile is available. Using 'C:\Users\Savindya\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-04-21 17:33:05.511 +05:30 [INF] Now listening on: https://localhost:7229
+2024-04-21 17:33:05.513 +05:30 [INF] Now listening on: http://localhost:5039
+2024-04-21 17:33:05.516 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 17:33:05.517 +05:30 [INF] Hosting environment: Development
+2024-04-21 17:33:05.518 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API\AssetManagementSystem\AuthService
+2024-04-21 17:33:13.258 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-04-21 17:33:13.762 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 510.1472ms
+2024-04-21 17:33:14.047 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 17:33:14.077 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 30.9663ms
+2024-04-21 17:33:14.078 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-04-21 17:33:14.528 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 449.2643ms
+2024-04-21 17:33:14.643 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-04-21 17:33:14.775 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 132.7125ms

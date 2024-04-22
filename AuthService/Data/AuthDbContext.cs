@@ -6,13 +6,13 @@ using System.Security.Principal;
 
 namespace AuthService.Data
 {
-    public class AuthDbContext : IdentityDbContext
+    public class AuthDbContext : IdentityDbContext<User>
     {
         public AuthDbContext(DbContextOptions<AuthDbContext> dbContextOptions) : base(dbContextOptions)
         {
 
         }
-        public DbSet<User> User { get; set; }
+     //   public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
