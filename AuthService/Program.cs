@@ -1,3 +1,4 @@
+using AssetManagementSystem.Models;
 using AuthService.Data;
 using AuthService.Mappings;
 using AuthService.Services.AuthServices;
@@ -58,9 +59,9 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("Authdbstring")))
 
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 
-builder.Services.AddIdentityCore<IdentityUser>()
+builder.Services.AddIdentityCore<User>()
     .AddRoles<IdentityRole>()
-    .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>("corzent")
+    .AddTokenProvider<DataProtectorTokenProvider<User>>("corzent")
     .AddEntityFrameworkStores<AuthDbContext>()
     .AddDefaultTokenProviders();
 
@@ -91,6 +92,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAutoMapper(typeof(MapperProfiles));
 
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        }
+        );
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -100,6 +112,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors();
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
