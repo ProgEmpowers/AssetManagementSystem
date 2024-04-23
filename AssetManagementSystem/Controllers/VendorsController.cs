@@ -31,9 +31,13 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetallVendors()
+        public async Task<IActionResult> GetallVendors(
+            [FromQuery] string? filterOn, [FromQuery] string? filterQuery,
+            [FromQuery] string? sortBy, [FromQuery] bool? isAscending,
+            [FromQuery] int pageNumber = 1
+            )
         {
-            var AllVendors = await _vendorService.GetAllVendorsAsync();
+            var AllVendors = await _vendorService.GetAllVendorsAsync(filterOn, filterQuery, sortBy, isAscending ?? true);
             return Ok(AllVendors);
         }
 
@@ -47,6 +51,14 @@ namespace AssetManagementSystem.Controllers
                 return NotFound();
             }
             return Ok(SelectedVendor);
+        }
+
+        [HttpGet]
+        [Route("/api/Vendors/ids&names")]
+        public async Task<IActionResult> GetVendorList()
+        {
+            var vendorList = await _vendorService.GetVendorListAsync();
+            return Ok(vendorList);
         }
 
         [HttpPut]

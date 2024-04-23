@@ -1,6 +1,8 @@
 using AssetManagementSystem.Context;
 using AssetManagementSystem.Mappings;
 using AssetManagementSystem.Services.AssetServices;
+using AssetManagementSystem.Services.ContractServices;
+using AssetManagementSystem.Services.EmailServices;
 using AssetManagementSystem.Services.VendorServices;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -18,6 +20,8 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddScoped<IVendorService,VendorService>();
+builder.Services.AddScoped<IContractService, ContractService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 
 builder.Services.AddEndpointsApiExplorer();

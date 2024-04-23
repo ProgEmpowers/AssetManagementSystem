@@ -1,0 +1,17 @@
+2024-05-13 20:54:08.270 +05:30 [INF] User profile is available. Using 'C:\Users\Haritha Randunu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-05-13 20:54:08.589 +05:30 [INF] Now listening on: https://localhost:7229
+2024-05-13 20:54:08.591 +05:30 [INF] Now listening on: http://localhost:5039
+2024-05-13 20:54:08.593 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-13 20:54:08.594 +05:30 [INF] Hosting environment: Development
+2024-05-13 20:54:08.594 +05:30 [INF] Content root path: D:\MORATUWA CAMPUS\Academic\Year 02\2nd Year Software Development Group\Codings\Backend\Project\Working\AssetManagementSystem\AuthService
+2024-05-13 20:54:15.959 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-05-13 20:54:16.369 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 417.5299ms
+2024-05-13 20:54:16.550 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-13 20:54:16.575 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-05-13 20:54:16.606 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 55.5844ms
+2024-05-13 20:54:16.888 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 313.0401ms
+2024-05-13 20:54:17.362 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-05-13 20:54:17.552 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 191.244ms
+2024-05-13 20:54:17.892 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/favicon-32x32.png - null null
+2024-05-13 20:54:17.919 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-05-13 20:54:17.921 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/favicon-32x32.png - 200 628 image/png 29.3095ms
