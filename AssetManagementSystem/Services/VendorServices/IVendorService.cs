@@ -6,8 +6,12 @@ namespace AssetManagementSystem.Services.VendorServices
     public interface IVendorService
     {
         Task<Vendor> AddVendorAsync(VendorDto newVendor);
-        Task<List<Vendor>> GetAllVendorsAsync();
+        Task<List<Vendor>> GetAllVendorsAsync(
+            string? filterOn = null, string? filterQuery = null,
+            string? sortBy = null, bool isAscending = true, 
+            int pageNumber = 1, int pageSize = 10);
         Task<Vendor?> GetVendorByIdAsync(int id);
+        Task<List<string>> GetVendorsNamesAsync();
         Task<Vendor?> UpdateVendorAsync(int id, VendorDto vendorDto);
         Task<Vendor?> DeleteVendorAsync(int id);
     }
