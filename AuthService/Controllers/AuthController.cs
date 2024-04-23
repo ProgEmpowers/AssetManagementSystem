@@ -63,7 +63,14 @@ namespace AuthService.Controllers
             {
                 UserName = request.Email?.Trim(),
                 Email = request.Email?.Trim(),
-                Address = request.Address?.Trim()
+                Address = request.Address,
+                PhoneNumber = request.PhoneNumber?.Trim(),
+                Nic = request.Nic?.Trim(),
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                JobPost = request.JobPost,
+                DateofBirth = request.DateofBirth
+
 
             };
             var identityResult = await userManager.CreateAsync(user, request.Password);
