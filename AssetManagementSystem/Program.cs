@@ -1,6 +1,7 @@
 using AssetManagementSystem.Context;
 using AssetManagementSystem.Mappings;
 using AssetManagementSystem.Services.AssetServices;
+using AssetManagementSystem.Services.NotificationServices;
 using AssetManagementSystem.Services.VendorServices;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -18,6 +19,7 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddScoped<IVendorService,VendorService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
 
 
 builder.Services.AddEndpointsApiExplorer();

@@ -69,14 +69,16 @@ namespace AuthService.Controllers
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 JobPost = request.JobPost,
-                DateofBirth = request.DateofBirth
+                DateofBirth = request.DateofBirth,
+                IsActive = true
+                
 
 
             };
             var identityResult = await userManager.CreateAsync(user, request.Password);
             if (identityResult.Succeeded)
             {
-                identityResult = await userManager.AddToRoleAsync(user, "NormalUser");
+                identityResult = await userManager.AddToRoleAsync(user, request.Role);
                 if (identityResult.Succeeded)
                 {
                     return Ok();

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AuthService.Migrations
 {
     /// <inheritdoc />
-    public partial class regis : Migration
+    public partial class _1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,6 +32,13 @@ namespace AuthService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Nic = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DateofBirth = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    JobPost = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -50,23 +57,6 @@ namespace AuthService.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "User",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<int>(type: "int", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MobileNo = table.Column<int>(type: "int", nullable: false),
-                    UserRole = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_User", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -188,8 +178,8 @@ namespace AuthService.Migrations
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "75af95a9-9273-4c9b-86aa-0a80c76f32d6", 0, "c195237a-8f96-4045-8a04-c306d2d843b7", "admin@codepulse.com", false, false, null, "ADMIN@CODEPULSE.COM", "ADMIN@CODEPULSE.COM", "AQAAAAIAAYagAAAAEBI5baR7KfA3WB3ZaeY/MwpL94q6SzZ4HMtA9d/z1LRQo1fMYxgw8dTOQ/AxPN1yhA==", null, false, "d820be9e-5b65-4218-a9fb-dd046f42501e", false, "admin@codepulse.com" });
+                columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "DateofBirth", "Email", "EmailConfirmed", "FirstName", "IsActive", "JobPost", "LastName", "LockoutEnabled", "LockoutEnd", "Nic", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "75af95a9-9273-4c9b-86aa-0a80c76f32d6", 0, null, "24e024e0-0ec0-4a01-a060-3e66b597444e", null, "admin@corzent.com", false, null, false, null, null, false, null, null, "ADMIN@CORZENT.COM", "ADMIN@CORZENT.COM", "AQAAAAIAAYagAAAAEPi2nRfzBqpBbdt0p+b46qaO7/kNmO+EfO8XxJzacCjdR0n2wi3is1stxMnHbFIF2g==", null, false, "1a90e3c3-7679-4e74-84f4-88857b17d18a", false, "admin@corzent.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
@@ -253,9 +243,6 @@ namespace AuthService.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
-
-            migrationBuilder.DropTable(
-                name: "User");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -16,5 +16,6 @@ namespace AssetManagementSystem.Context
         public DbSet<Log>Log {  get; set; }
         public DbSet<SellingContract>SellingContract {  get; set; }
         public DbSet<Vendor>Vendor {  get; set; }
+        public DbSet<Notification> Notification { get; set; }
     }
 }

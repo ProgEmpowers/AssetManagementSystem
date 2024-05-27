@@ -12,5 +12,6 @@ namespace AssetManagementSystem.Models
         public string? Nic { get; set; }
         public DateTime? DateofBirth { get; set; }
         public string? JobPost { get; set; }
+        public bool IsActive { get; set; }
     }
 }

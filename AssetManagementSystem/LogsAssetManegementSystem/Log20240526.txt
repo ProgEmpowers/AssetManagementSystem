@@ -1,0 +1,147 @@
+2024-05-26 21:14:08.319 +05:30 [INF] Now listening on: https://localhost:7095
+2024-05-26 21:14:08.370 +05:30 [INF] Now listening on: http://localhost:5240
+2024-05-26 21:14:08.373 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-26 21:14:08.374 +05:30 [INF] Hosting environment: Development
+2024-05-26 21:14:08.375 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AssetManagementSystem
+2024-05-26 21:14:15.491 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-05-26 21:14:16.439 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 960.4443ms
+2024-05-26 21:14:16.535 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-05-26 21:14:16.535 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-26 21:14:16.563 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 28.2947ms
+2024-05-26 21:14:17.091 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 556.2392ms
+2024-05-26 21:14:17.181 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-05-26 21:14:17.424 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 243.3842ms
+2024-05-26 21:14:47.168 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-05-26 21:14:47.169 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-05-26 21:14:47.168 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - null null
+2024-05-26 21:14:47.206 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:14:47.206 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:14:47.207 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - 404 0 null 39.73ms
+2024-05-26 21:14:47.214 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:14:47.214 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-05-26 21:14:47.215 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/upload.png, Response status code: 404
+2024-05-26 21:14:47.256 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-05-26 21:14:47.256 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-05-26 21:14:50.493 +05:30 [INF] Executed DbCommand (116ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:14:50.508 +05:30 [INF] Finished Get All Assets : []
+2024-05-26 21:14:50.515 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-26 21:14:50.516 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-26 21:14:50.582 +05:30 [INF] Executed DbCommand (55ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:14:50.607 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:14:50.621 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 3357.5463ms
+2024-05-26 21:14:50.623 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:14:50.633 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 3464.9935ms
+2024-05-26 21:14:51.388 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-05-26 21:14:51.392 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:14:51.399 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 4138.0575ms
+2024-05-26 21:14:51.400 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-05-26 21:14:51.402 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 4233.054ms
+2024-05-26 21:15:07.027 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-05-26 21:15:07.028 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-05-26 21:15:07.032 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - null null
+2024-05-26 21:15:07.033 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:07.033 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:07.038 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - 404 0 null 6.4646ms
+2024-05-26 21:15:07.039 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-05-26 21:15:07.040 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:15:07.045 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/upload.png, Response status code: 404
+2024-05-26 21:15:07.049 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-05-26 21:15:07.049 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-05-26 21:15:07.154 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-05-26 21:15:07.156 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:15:07.157 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 102.3769ms
+2024-05-26 21:15:07.158 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:15:07.158 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-05-26 21:15:07.161 +05:30 [INF] Finished Get All Assets : []
+2024-05-26 21:15:07.161 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 134.5553ms
+2024-05-26 21:15:07.166 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:15:07.169 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:15:07.171 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 115.0557ms
+2024-05-26 21:15:07.173 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:15:07.174 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 149.3792ms
+2024-05-26 22:59:30.107 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - null null
+2024-05-26 22:59:30.117 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-05-26 22:59:30.119 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-05-26 22:59:30.133 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - 404 0 null 29.6072ms
+2024-05-26 22:59:30.134 +05:30 [INF] CORS policy execution successful.
+2024-05-26 22:59:30.136 +05:30 [INF] CORS policy execution successful.
+2024-05-26 22:59:30.139 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/upload.png, Response status code: 404
+2024-05-26 22:59:30.139 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-05-26 22:59:30.140 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 22:59:30.143 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-05-26 22:59:30.144 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-05-26 22:59:31.182 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-05-26 22:59:31.185 +05:30 [INF] Finished Get All Assets : []
+2024-05-26 22:59:31.191 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 22:59:31.193 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:59:31.194 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 1046.9242ms
+2024-05-26 22:59:31.195 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 22:59:31.196 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 1079.3481ms
+2024-05-26 22:59:32.183 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-05-26 22:59:32.185 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:59:32.186 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 2040.915ms
+2024-05-26 22:59:32.187 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-05-26 22:59:32.188 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 2071.4483ms
+2024-05-26 23:51:44.828 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-05-26 23:51:44.831 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-05-26 23:51:44.863 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - null null
+2024-05-26 23:51:44.877 +05:30 [INF] CORS policy execution successful.
+2024-05-26 23:51:44.879 +05:30 [INF] CORS policy execution successful.
+2024-05-26 23:51:44.879 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - 404 0 null 16.6001ms
+2024-05-26 23:51:44.880 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 23:51:44.880 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-05-26 23:51:44.883 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/upload.png, Response status code: 404
+2024-05-26 23:51:44.884 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-05-26 23:51:44.884 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-05-26 23:51:45.937 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-05-26 23:51:45.940 +05:30 [INF] Finished Get All Assets : []
+2024-05-26 23:51:45.948 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 23:51:45.964 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 23:51:45.966 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 1069.0334ms
+2024-05-26 23:51:45.970 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 23:51:45.973 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 1144.8811ms
+2024-05-26 23:51:46.944 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-05-26 23:51:46.947 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 23:51:46.949 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 2050.8538ms
+2024-05-26 23:51:46.951 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-05-26 23:51:46.952 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 2120.5571ms
