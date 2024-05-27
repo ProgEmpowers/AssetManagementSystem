@@ -34,10 +34,9 @@ namespace AssetManagementSystem.Controllers
         public async Task<IActionResult> GetallVendors(
             [FromQuery] string? filterOn, [FromQuery] string? filterQuery,
             [FromQuery] string? sortBy, [FromQuery] bool? isAscending,
-            [FromQuery] int pageNumber = 1
-            )
+            [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
-            var AllVendors = await _vendorService.GetAllVendorsAsync(filterOn, filterQuery, sortBy, isAscending ?? true);
+            var AllVendors = await _vendorService.GetAllVendorsAsync(filterOn, filterQuery, sortBy, isAscending ?? true, pageNumber, pageSize);
             return Ok(AllVendors);
         }
 
