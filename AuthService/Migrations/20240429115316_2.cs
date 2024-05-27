@@ -5,7 +5,7 @@
 namespace AuthService.Migrations
 {
     /// <inheritdoc />
-    public partial class azureauth : Migration
+    public partial class _2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +15,7 @@ namespace AuthService.Migrations
                 keyColumn: "Id",
                 keyValue: "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                 columns: new[] { "ConcurrencyStamp", "PasswordHash", "SecurityStamp" },
-                values: new object[] { "b6514385-3113-43bf-97f7-3719e9f881b0", "AQAAAAIAAYagAAAAEFpmvLvAr455ZW+l1j/gu4G4TayIeFKTRQPPzBZoExwLkcgDF6PzHq8PGFNdoF3brA==", "0da4c45c-5535-43f1-8d1f-e97e9204ab83" });
+                values: new object[] { "008bbbd1-eb82-442d-9293-f259d920f831", "AQAAAAIAAYagAAAAEEjDIk8RoklmcFI9f7gNMhgVgJRK2OS8MKfsP36ZKNY9OSVRzR+EzVgznlgXIQYPPA==", "9e5db7b7-7d34-4f4c-bc91-7823ab87f359" });
         }
 
         /// <inheritdoc />
@@ -26,7 +26,7 @@ namespace AuthService.Migrations
                 keyColumn: "Id",
                 keyValue: "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                 columns: new[] { "ConcurrencyStamp", "PasswordHash", "SecurityStamp" },
-                values: new object[] { "c195237a-8f96-4045-8a04-c306d2d843b7", "AQAAAAIAAYagAAAAEBI5baR7KfA3WB3ZaeY/MwpL94q6SzZ4HMtA9d/z1LRQo1fMYxgw8dTOQ/AxPN1yhA==", "d820be9e-5b65-4218-a9fb-dd046f42501e" });
+                values: new object[] { "24e024e0-0ec0-4a01-a060-3e66b597444e", "AQAAAAIAAYagAAAAEPi2nRfzBqpBbdt0p+b46qaO7/kNmO+EfO8XxJzacCjdR0n2wi3is1stxMnHbFIF2g==", "1a90e3c3-7679-4e74-84f4-88857b17d18a" });
         }
     }
 }
