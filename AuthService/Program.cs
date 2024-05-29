@@ -1,6 +1,8 @@
+using AssetManagementSystem.Models;
 using AuthService.Data;
 using AuthService.Mappings;
 using AuthService.Services.AuthServices;
+using AuthService.Services.UserServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -56,11 +58,14 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddDbContext<AuthDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("Authdbstring")));
 
-builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+builder.Services.AddAutoMapper(typeof(MapperProfiles));
 
-builder.Services.AddIdentityCore<IdentityUser>()
+builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddIdentityCore<User>()
     .AddRoles<IdentityRole>()
-    .AddTokenProvider<DataProtectorTokenProvider<IdentityUser>>("corzent")
+    .AddTokenProvider<DataProtectorTokenProvider<User>>("corzent")
     .AddEntityFrameworkStores<AuthDbContext>()
     .AddDefaultTokenProviders();
 
@@ -91,17 +96,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAutoMapper(typeof(MapperProfiles));
 
-var MyAllocation = "_myAllocation";
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: MyAllocation,
+    options.AddDefaultPolicy(
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200")
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-        });
+            policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        }
+        );
 });
 
 var app = builder.Build();
@@ -113,13 +116,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors();
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.UseCors(MyAllocation);
 
 app.Run();

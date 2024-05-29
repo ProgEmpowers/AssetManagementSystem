@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AssetManagementSystem.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -14,7 +15,7 @@ namespace AuthService.Services.AuthServices
         {
             this.configuration = configuration;
         }
-        public string CreateJwtToken(IdentityUser user, List<string> roles)
+        public string CreateJwtToken(User user, List<string> roles)
         {
             var claims = new List<Claim>
             {
