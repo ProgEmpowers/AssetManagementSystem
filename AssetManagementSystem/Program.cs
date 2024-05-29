@@ -3,7 +3,9 @@ using AssetManagementSystem.Mappings;
 using AssetManagementSystem.Services.AssetServices;
 using AssetManagementSystem.Services.NotificationServices;
 using AssetManagementSystem.Services.VendorServices;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -56,6 +58,13 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions()
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Uploads")),
+    RequestPath = new PathString("/Uploads")
+});
 
 app.Run();
 
