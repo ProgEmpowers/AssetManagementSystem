@@ -71,7 +71,7 @@ namespace AuthService.Controllers
                 JobPost = request.JobPost,
                 DateofBirth = request.DateofBirth,
                 IsActive = true
-                
+
 
 
             };
@@ -81,7 +81,7 @@ namespace AuthService.Controllers
                 identityResult = await userManager.AddToRoleAsync(user, request.Role);
                 if (identityResult.Succeeded)
                 {
-                    return Ok();
+                    return Ok(user);
                 }
                 else
                 {

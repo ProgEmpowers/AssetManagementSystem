@@ -13,5 +13,6 @@
         public string? JobPost { get; set; }
         public string? Role { get; set; }
 
+
     }
 }
