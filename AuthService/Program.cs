@@ -91,6 +91,19 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAutoMapper(typeof(MapperProfiles));
 
+var MyAllocation = "_myAllocation";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllocation,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -106,5 +119,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(MyAllocation);
 
 app.Run();

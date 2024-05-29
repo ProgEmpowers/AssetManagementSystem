@@ -69,7 +69,7 @@ namespace AuthService.Controllers
                 identityResult = await userManager.AddToRoleAsync(user, "NormalUser");
                 if (identityResult.Succeeded)
                 {
-                    return Ok();
+                    return Ok("Success");
                 }
                 else
                 {

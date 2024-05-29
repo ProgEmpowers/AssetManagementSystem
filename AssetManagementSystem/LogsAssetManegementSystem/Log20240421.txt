@@ -1,0 +1,983 @@
+2024-04-21 00:32:53.393 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 00:32:55.620 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 00:32:55.624 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 00:32:55.630 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 00:32:55.632 +05:30 [INF] Hosting environment: Development
+2024-04-21 00:32:55.635 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 00:32:59.234 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 00:33:00.484 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 1267.4943ms
+2024-04-21 00:33:00.684 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 00:33:00.802 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 117.9475ms
+2024-04-21 00:33:01.153 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 00:33:01.461 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 308.9227ms
+2024-04-21 00:33:02.584 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 00:33:03.419 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 836.0787ms
+2024-04-21 00:33:18.424 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - null 0
+2024-04-21 00:33:18.467 +05:30 [INF] CORS policy execution failed.
+2024-04-21 00:33:18.470 +05:30 [INF] Request origin https://localhost:7095 does not have permission to access the resource.
+2024-04-21 00:33:18.479 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:33:18.567 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 00:33:19.402 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 00:33:19.421 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 837.6315ms
+2024-04-21 00:33:19.423 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:33:19.424 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 1000.6619ms
+2024-04-21 00:34:13.530 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 00:34:14.080 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 00:34:14.088 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 00:34:14.100 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 00:34:14.103 +05:30 [INF] Hosting environment: Development
+2024-04-21 00:34:14.105 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 00:34:15.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 00:34:16.537 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 735.046ms
+2024-04-21 00:34:16.655 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 00:34:16.655 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 00:34:16.712 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 57.2553ms
+2024-04-21 00:34:17.027 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 372.1735ms
+2024-04-21 00:34:18.109 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 00:34:18.764 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 655.7145ms
+2024-04-21 00:36:29.201 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - null 0
+2024-04-21 00:36:29.279 +05:30 [INF] CORS policy execution failed.
+2024-04-21 00:36:29.283 +05:30 [INF] Request origin https://localhost:7095 does not have permission to access the resource.
+2024-04-21 00:36:29.295 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:36:29.421 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 00:36:30.074 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 00:36:30.093 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 657.0608ms
+2024-04-21 00:36:30.098 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:36:30.099 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 900.743ms
+2024-04-21 00:51:01.566 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 00:51:01.957 +05:30 [INF] CORS policy execution successful.
+2024-04-21 00:51:01.977 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:51:02.333 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 00:51:11.160 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 00:51:12.193 +05:30 [INF] CORS policy execution successful.
+2024-04-21 00:51:12.212 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:51:12.228 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 00:51:14.042 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 00:51:14.052 +05:30 [INF] CORS policy execution successful.
+2024-04-21 00:51:14.055 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:51:14.058 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 00:51:24.824 +05:30 [INF] Executed DbCommand (159ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 00:51:25.150 +05:30 [INF] Executed DbCommand (81ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 00:51:25.356 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 00:51:25.369 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 00:51:25.487 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-21 00:51:25.492 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-21 00:51:25.619 +05:30 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 00:51:25.626 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 00:51:25.875 +05:30 [INF] Executed DbCommand (297ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 00:51:25.875 +05:30 [INF] Executed DbCommand (223ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 00:51:25.876 +05:30 [INF] Executed DbCommand (297ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 00:51:25.943 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 00:51:25.943 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 00:51:25.943 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 00:51:25.978 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 11914.2832ms
+2024-04-21 00:51:25.997 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:51:26.003 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 23408.8529ms
+2024-04-21 00:51:26.003 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 13771.195ms
+2024-04-21 00:51:26.009 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:51:26.011 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:51:26.025 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 499 null application/json; charset=utf-8 14865.0647ms
+2024-04-21 00:51:26.025 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 499 null application/json; charset=utf-8 24473.0053ms
+2024-04-21 00:51:26.025 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 11983.2231ms
+2024-04-21 00:51:42.474 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 00:51:42.483 +05:30 [INF] CORS policy execution successful.
+2024-04-21 00:51:42.491 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:51:42.493 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 00:51:42.732 +05:30 [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 00:51:42.739 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 00:51:42.824 +05:30 [INF] Executed DbCommand (80ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 00:51:42.830 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 00:51:42.834 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 337.3413ms
+2024-04-21 00:51:42.837 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:51:42.839 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 364.9285ms
+2024-04-21 00:52:02.317 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - text/plain;charset=UTF-8 37
+2024-04-21 00:52:02.326 +05:30 [INF] CORS policy execution successful.
+2024-04-21 00:52:02.328 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:52:02.329 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 00:52:02.458 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 00:52:02.463 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 128.3026ms
+2024-04-21 00:52:02.464 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:52:02.466 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 148.8118ms
+2024-04-21 00:53:11.366 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 00:53:11.649 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 00:53:11.652 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 00:53:11.657 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 00:53:11.659 +05:30 [INF] Hosting environment: Development
+2024-04-21 00:53:11.664 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 00:53:12.466 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 00:53:13.140 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 677.7845ms
+2024-04-21 00:53:13.221 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 00:53:13.226 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 00:53:13.329 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 107.6524ms
+2024-04-21 00:53:13.395 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 168.4443ms
+2024-04-21 00:53:14.642 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 00:53:17.436 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 2794.8232ms
+2024-04-21 00:53:23.183 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - text/plain;charset=UTF-8 37
+2024-04-21 00:53:23.211 +05:30 [INF] CORS policy execution successful.
+2024-04-21 00:53:23.219 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:53:23.278 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 00:53:23.388 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 00:53:23.407 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 113.4343ms
+2024-04-21 00:53:23.411 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:53:23.415 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 231.9381ms
+2024-04-21 00:57:05.902 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 00:57:06.717 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 00:57:06.722 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 00:57:06.730 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 00:57:06.733 +05:30 [INF] Hosting environment: Development
+2024-04-21 00:57:06.736 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 00:57:07.886 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 00:57:09.186 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 1307.1107ms
+2024-04-21 00:57:09.556 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 00:57:09.556 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 00:57:09.712 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 155.7282ms
+2024-04-21 00:57:11.353 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1797.19ms
+2024-04-21 00:57:23.497 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 00:57:23.637 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/favicon-32x32.png - null null
+2024-04-21 00:57:23.684 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-04-21 00:57:23.698 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/favicon-32x32.png - 200 628 image/png 61.0337ms
+2024-04-21 00:57:23.959 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 461.5364ms
+2024-04-21 00:57:30.528 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 00:57:30.556 +05:30 [INF] CORS policy execution successful.
+2024-04-21 00:57:30.570 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:57:30.703 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 00:57:47.662 +05:30 [INF] Executed DbCommand (125ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 00:57:47.839 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 00:57:47.850 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-21 00:57:47.852 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-21 00:57:48.080 +05:30 [INF] Executed DbCommand (173ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 00:57:48.321 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 00:57:48.595 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 17874.137ms
+2024-04-21 00:57:48.696 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:57:48.709 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 18180.3644ms
+2024-04-21 00:57:57.373 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 00:57:57.384 +05:30 [INF] CORS policy execution successful.
+2024-04-21 00:57:57.397 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:57:57.402 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 00:57:57.560 +05:30 [INF] Executed DbCommand (107ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 00:57:57.568 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 00:57:57.670 +05:30 [INF] Executed DbCommand (96ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 00:57:57.681 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 00:57:57.688 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 282.8847ms
+2024-04-21 00:57:57.771 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 00:57:57.776 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 403.4194ms
+2024-04-21 00:58:07.798 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - text/plain;charset=UTF-8 37
+2024-04-21 00:58:07.805 +05:30 [INF] CORS policy execution successful.
+2024-04-21 00:58:07.807 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:58:07.815 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 00:58:07.939 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 00:58:07.943 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 125.3485ms
+2024-04-21 00:58:07.945 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:58:07.947 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 149.063ms
+2024-04-21 00:58:55.070 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - null 0
+2024-04-21 00:58:55.080 +05:30 [INF] CORS policy execution failed.
+2024-04-21 00:58:55.082 +05:30 [INF] Request origin https://localhost:7095 does not have permission to access the resource.
+2024-04-21 00:58:55.084 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:58:55.087 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 00:58:55.092 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 00:58:55.095 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 3.7149ms
+2024-04-21 00:58:55.097 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 00:58:55.098 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 28.5864ms
+2024-04-21 01:00:41.157 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 01:00:41.181 +05:30 [INF] CORS policy execution successful.
+2024-04-21 01:00:41.184 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 01:00:41.188 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 01:00:41.966 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 01:00:42.004 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 01:00:42.147 +05:30 [INF] Executed DbCommand (100ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 01:00:42.173 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 01:00:42.185 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 990.3588ms
+2024-04-21 01:00:42.203 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 01:00:42.215 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 1059.0818ms
+2024-04-21 02:14:19.923 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 02:14:19.959 +05:30 [INF] CORS policy execution successful.
+2024-04-21 02:14:19.964 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 02:14:19.976 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 02:14:25.889 +05:30 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 02:14:25.897 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 02:14:25.974 +05:30 [INF] Executed DbCommand (71ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 02:14:25.978 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 02:14:25.982 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 6001.9197ms
+2024-04-21 02:14:25.984 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 02:14:25.986 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 6066.0828ms
+2024-04-21 11:41:13.532 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 11:41:14.005 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 11:41:14.008 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 11:41:14.010 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 11:41:14.011 +05:30 [INF] Hosting environment: Development
+2024-04-21 11:41:14.012 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 11:41:15.189 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 11:41:15.514 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 326.2421ms
+2024-04-21 11:41:15.553 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 11:41:15.553 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 11:41:15.579 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 26.1543ms
+2024-04-21 11:41:15.660 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 106.8341ms
+2024-04-21 11:41:16.147 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 11:41:16.373 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 226.5621ms
+2024-04-21 11:41:24.736 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - null 0
+2024-04-21 11:41:24.749 +05:30 [INF] CORS policy execution failed.
+2024-04-21 11:41:24.753 +05:30 [INF] Request origin https://localhost:7095 does not have permission to access the resource.
+2024-04-21 11:41:24.758 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 11:41:24.782 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 11:41:24.974 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 11:41:24.981 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 191.7914ms
+2024-04-21 11:41:24.983 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 11:41:24.984 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 248.4396ms
+2024-04-21 11:43:43.766 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 11:43:43.858 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 11:43:43.862 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 11:43:43.864 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 11:43:43.865 +05:30 [INF] Hosting environment: Development
+2024-04-21 11:43:43.866 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 11:43:44.410 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 11:43:44.593 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 183.2166ms
+2024-04-21 11:43:44.619 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 11:43:44.619 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 11:43:44.626 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 7.4524ms
+2024-04-21 11:43:44.646 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.2211ms
+2024-04-21 11:43:44.959 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 11:43:45.100 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 141.1515ms
+2024-04-21 11:44:00.126 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - null 0
+2024-04-21 11:44:00.150 +05:30 [INF] CORS policy execution failed.
+2024-04-21 11:44:00.152 +05:30 [INF] Request origin https://localhost:7095 does not have permission to access the resource.
+2024-04-21 11:44:00.159 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 11:44:00.183 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 11:44:00.243 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 11:44:00.254 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 60.2784ms
+2024-04-21 11:44:00.258 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 11:44:00.261 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 135.0947ms
+2024-04-21 12:02:41.698 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 12:02:41.793 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 12:02:41.795 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 12:02:41.797 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 12:02:41.798 +05:30 [INF] Hosting environment: Development
+2024-04-21 12:02:41.799 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 12:02:42.375 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 12:02:42.594 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 220.5098ms
+2024-04-21 12:02:42.637 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 12:02:42.637 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 12:02:42.644 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 6.579ms
+2024-04-21 12:02:42.667 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.1329ms
+2024-04-21 12:02:43.596 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 12:02:43.739 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 142.6364ms
+2024-04-21 13:10:36.822 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 13:10:37.522 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 13:10:37.525 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 13:10:37.531 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 13:10:37.533 +05:30 [INF] Hosting environment: Development
+2024-04-21 13:10:37.535 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 13:10:38.188 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 13:10:38.658 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 474.3351ms
+2024-04-21 13:10:38.791 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 13:10:38.791 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 13:10:38.807 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 15.3698ms
+2024-04-21 13:10:38.841 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.1507ms
+2024-04-21 13:10:39.305 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 13:10:39.564 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 258.8917ms
+2024-04-21 13:11:07.321 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload/Upload - null 0
+2024-04-21 13:11:07.345 +05:30 [INF] CORS policy execution failed.
+2024-04-21 13:11:07.347 +05:30 [INF] Request origin https://localhost:7095 does not have permission to access the resource.
+2024-04-21 13:11:07.356 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:11:07.404 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 13:11:07.761 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 13:11:07.779 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 360.8642ms
+2024-04-21 13:11:07.783 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:11:07.786 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload/Upload - 500 null text/plain; charset=utf-8 465.1596ms
+2024-04-21 13:11:22.329 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 13:11:22.448 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 13:11:22.453 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 13:11:22.456 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 13:11:22.458 +05:30 [INF] Hosting environment: Development
+2024-04-21 13:11:22.460 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 13:11:23.022 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 13:11:23.177 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 158.9148ms
+2024-04-21 13:11:23.225 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 13:11:23.225 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 13:11:23.241 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 15.763ms
+2024-04-21 13:11:23.259 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.9569ms
+2024-04-21 13:11:23.547 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 13:11:23.641 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 93.6183ms
+2024-04-21 13:12:32.941 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - null 0
+2024-04-21 13:12:32.969 +05:30 [INF] CORS policy execution failed.
+2024-04-21 13:12:32.972 +05:30 [INF] Request origin https://localhost:7095 does not have permission to access the resource.
+2024-04-21 13:12:32.980 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:12:33.018 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 13:12:33.075 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 13:12:33.090 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 56.4229ms
+2024-04-21 13:12:33.095 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:12:33.101 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 160.1815ms
+2024-04-21 13:17:26.561 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7095/api/Upload?File - null 0
+2024-04-21 13:17:26.570 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:17:26.573 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 13:17:26.579 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 13:17:26.733 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 154.688ms
+2024-04-21 13:17:26.736 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:17:26.740 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7095/api/Upload?File - 500 null text/plain; charset=utf-8 179.0578ms
+2024-04-21 13:18:21.242 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7095/api/Upload?File - null 0
+2024-04-21 13:18:21.254 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:18:21.256 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 13:18:21.264 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 13:18:21.267 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 5.6834ms
+2024-04-21 13:18:21.270 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:18:21.273 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7095/api/Upload?File - 500 null text/plain; charset=utf-8 31.3341ms
+2024-04-21 13:18:55.745 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7095/api/Upload - multipart/form-data; boundary=--------------------------281402962824232455440734 332562
+2024-04-21 13:18:55.752 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:18:55.755 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 13:18:55.796 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-21 13:18:55.826 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 66.6875ms
+2024-04-21 13:18:55.829 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:18:55.831 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7095/api/Upload - 200 null application/json; charset=utf-8 86.0607ms
+2024-04-21 13:20:13.526 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7095/api/Upload - multipart/form-data; boundary=--------------------------028037591396485210641777 332562
+2024-04-21 13:20:13.532 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:20:13.535 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 13:20:13.547 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-21 13:20:13.550 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 11.5167ms
+2024-04-21 13:20:13.554 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:20:13.558 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7095/api/Upload - 200 null application/json; charset=utf-8 31.4528ms
+2024-04-21 13:20:32.693 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 13:20:33.017 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 13:20:33.022 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 13:20:33.029 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 13:20:33.032 +05:30 [INF] Hosting environment: Development
+2024-04-21 13:20:33.034 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 13:20:38.492 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 13:20:38.921 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 431.9875ms
+2024-04-21 13:20:39.022 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 13:20:39.022 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 13:20:39.046 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 23.9693ms
+2024-04-21 13:20:39.113 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 91.5502ms
+2024-04-21 13:20:45.289 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 13:20:45.545 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 255.6474ms
+2024-04-21 13:20:56.515 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7095/api/Upload - multipart/form-data; boundary=--------------------------512993799739389935533989 332562
+2024-04-21 13:20:56.531 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:20:56.567 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 13:20:56.610 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-21 13:20:56.633 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 55.2621ms
+2024-04-21 13:20:56.639 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:20:56.642 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7095/api/Upload - 200 null application/json; charset=utf-8 126.9437ms
+2024-04-21 13:21:11.737 +05:30 [WRN] As of ""2024-04-21T07:51:11.7296919+00:00"", the heartbeat has been running for ""00:00:13.2139357"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2024-04-21 13:21:25.622 +05:30 [WRN] As of ""2024-04-21T07:51:25.6220252+00:00"", the heartbeat has been running for ""00:00:11.8762984"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2024-04-21 13:21:49.582 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets?pageNumber=1&pageSize=20 - null null
+2024-04-21 13:21:49.590 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 13:21:49.620 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 13:22:12.253 +05:30 [WRN] As of ""2024-04-21T07:52:12.2533323+00:00"", the heartbeat has been running for ""00:00:05.9942431"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2024-04-21 13:22:12.703 +05:30 [INF] Executed DbCommand (351ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 13:22:12.955 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 13:22:12.990 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-21 13:22:12.994 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-21 13:22:13.393 +05:30 [INF] Executed DbCommand (338ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 13:22:13.428 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 13:22:13.440 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 23814.4205ms
+2024-04-21 13:22:13.443 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 13:22:13.476 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets?pageNumber=1&pageSize=20 - 200 null application/json; charset=utf-8 23894.062ms
+2024-04-21 13:22:38.981 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7095/api/Assets - null null
+2024-04-21 13:22:38.986 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 13:22:38.988 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 13:22:39.284 +05:30 [INF] Executed DbCommand (266ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 13:22:39.297 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 13:22:39.567 +05:30 [INF] Executed DbCommand (259ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 13:22:39.573 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 13:22:39.579 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 588.8307ms
+2024-04-21 13:22:39.589 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 13:22:39.601 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 620.1664ms
+2024-04-21 13:22:43.821 +05:30 [WRN] As of ""2024-04-21T07:52:43.8214038+00:00"", the heartbeat has been running for ""00:00:02.8318346"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2024-04-21 13:23:07.537 +05:30 [INF] Request starting HTTP/1.1 GET https://localhost:7095/api/Upload - multipart/form-data; boundary=--------------------------384350158257409782645935 332562
+2024-04-21 13:23:07.546 +05:30 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2024-04-21 13:23:07.548 +05:30 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2024-04-21 13:23:07.551 +05:30 [INF] Request finished HTTP/1.1 GET https://localhost:7095/api/Upload - 405 0 null 13.9914ms
+2024-04-21 13:23:07.557 +05:30 [INF] Connection id "0HN31QUSL4LTC", Request id "0HN31QUSL4LTC:00000003": the application completed without reading the entire request body.
+2024-04-21 13:23:15.052 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7095/api/Upload - multipart/form-data; boundary=--------------------------295127182613217982877367 332562
+2024-04-21 13:23:15.061 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:23:15.066 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 13:23:15.080 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-21 13:23:15.084 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 10.4613ms
+2024-04-21 13:23:15.086 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:23:15.089 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7095/api/Upload - 200 null application/json; charset=utf-8 36.4199ms
+2024-04-21 13:23:52.956 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7095/api/Upload - multipart/form-data; boundary=--------------------------083923123510786023050773 1409
+2024-04-21 13:23:52.961 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:23:52.963 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 13:23:52.973 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-21 13:23:52.976 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 9.9047ms
+2024-04-21 13:23:52.979 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 13:23:52.981 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7095/api/Upload - 200 null application/json; charset=utf-8 24.8381ms
+2024-04-21 20:49:34.491 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-04-21 20:49:40.540 +05:30 [INF] Now listening on: https://localhost:7095
+2024-04-21 20:49:40.598 +05:30 [INF] Now listening on: http://localhost:5240
+2024-04-21 20:49:40.607 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-21 20:49:40.618 +05:30 [INF] Hosting environment: Development
+2024-04-21 20:49:40.636 +05:30 [INF] Content root path: C:\Users\PC\source\repos\AssetManagementSystem\AssetManagementSystem
+2024-04-21 20:49:41.571 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-04-21 20:49:44.543 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 2976.5818ms
+2024-04-21 20:49:44.606 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 20:49:44.657 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 50.6775ms
+2024-04-21 20:49:44.673 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 20:49:45.046 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 373.0648ms
+2024-04-21 20:49:46.416 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 20:49:46.796 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 380.648ms
+2024-04-21 20:49:55.921 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:49:55.963 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:49:55.971 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:49:56.042 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:50:05.507 +05:30 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:50:05.683 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null},{"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":true,"AssetValue":550,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:50:05.704 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-21 20:50:05.707 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-21 20:50:05.926 +05:30 [INF] Executed DbCommand (177ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:50:05.976 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:50:06.001 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 9949.293ms
+2024-04-21 20:50:06.006 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:50:06.020 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 10098.9821ms
+2024-04-21 20:52:14.949 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7095/api/Assets/35 - null null
+2024-04-21 20:52:15.460 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:52:15.879 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7095/api/Assets/35 - 204 null null 929.7951ms
+2024-04-21 20:52:15.894 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7095/api/Assets/35 - null null
+2024-04-21 20:52:19.539 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:52:19.564 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.DeleteAsset (AssetManagementSystem)'
+2024-04-21 20:52:19.598 +05:30 [INF] Route matched with {action = "DeleteAsset", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteAsset(Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:52:19.901 +05:30 [INF] Executed DbCommand (167ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit) AND [a].[Id] = @__id_0
+2024-04-21 20:52:20.360 +05:30 [INF] Executed DbCommand (155ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Asset] SET [IsActive] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-04-21 20:52:20.411 +05:30 [INF] Finished Delete Asset : {"Id":35,"Name":"Mouse","AssetType":"Mouse","Description":"This is a test","ImageUrl":"C:\\fakepath\\24.svg","QRcode":null,"IsActive":false,"AssetValue":550,"AssetStatus":0,"UserId":null}
+2024-04-21 20:52:20.414 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Asset'.
+2024-04-21 20:52:20.420 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.DeleteAsset (AssetManagementSystem) in 802.075ms
+2024-04-21 20:52:20.432 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.DeleteAsset (AssetManagementSystem)'
+2024-04-21 20:52:20.439 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7095/api/Assets/35 - 200 null application/json; charset=utf-8 4544.7288ms
+2024-04-21 20:52:20.471 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:52:20.477 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:52:20.479 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:52:20.483 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:52:20.835 +05:30 [INF] Executed DbCommand (122ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:52:20.842 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:52:20.979 +05:30 [INF] Executed DbCommand (127ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:52:20.992 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:52:20.997 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 511.13ms
+2024-04-21 20:52:21.001 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:52:21.010 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 539.4597ms
+2024-04-21 20:52:43.557 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:52:43.579 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:52:43.583 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:52:43.586 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:52:43.740 +05:30 [INF] Executed DbCommand (142ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:52:43.757 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null},{"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":10000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:52:43.887 +05:30 [INF] Executed DbCommand (118ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:52:43.893 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:52:43.897 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 306.2717ms
+2024-04-21 20:52:43.899 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:52:43.901 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 344.1838ms
+2024-04-21 20:52:56.816 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7095/api/Assets/34 - null null
+2024-04-21 20:52:56.823 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:52:56.825 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7095/api/Assets/34 - 204 null null 8.8764ms
+2024-04-21 20:52:56.830 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7095/api/Assets/34 - null null
+2024-04-21 20:52:56.838 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:52:56.839 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.DeleteAsset (AssetManagementSystem)'
+2024-04-21 20:52:56.840 +05:30 [INF] Route matched with {action = "DeleteAsset", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteAsset(Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:52:56.983 +05:30 [INF] Executed DbCommand (139ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit) AND [a].[Id] = @__id_0
+2024-04-21 20:52:57.123 +05:30 [INF] Executed DbCommand (128ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Asset] SET [IsActive] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-04-21 20:52:57.131 +05:30 [INF] Finished Delete Asset : {"Id":34,"Name":"Test","AssetType":"Monitor","Description":"This is a monitor","ImageUrl":"","QRcode":null,"IsActive":false,"AssetValue":10000,"AssetStatus":0,"UserId":null}
+2024-04-21 20:52:57.133 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Asset'.
+2024-04-21 20:52:57.136 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.DeleteAsset (AssetManagementSystem) in 294.4208ms
+2024-04-21 20:52:57.139 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.DeleteAsset (AssetManagementSystem)'
+2024-04-21 20:52:57.141 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7095/api/Assets/34 - 200 null application/json; charset=utf-8 310.8578ms
+2024-04-21 20:52:57.146 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:52:57.156 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:52:57.158 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:52:57.161 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:52:57.291 +05:30 [INF] Executed DbCommand (116ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:52:57.294 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:52:57.415 +05:30 [INF] Executed DbCommand (119ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:52:57.421 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:52:57.425 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 252.2122ms
+2024-04-21 20:52:57.428 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:52:57.431 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 284.8535ms
+2024-04-21 20:53:02.065 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:53:02.070 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:53:02.071 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:02.072 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:53:02.193 +05:30 [INF] Executed DbCommand (115ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:53:02.199 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:53:02.327 +05:30 [INF] Executed DbCommand (123ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:53:02.332 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:53:02.335 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 258.8099ms
+2024-04-21 20:53:02.337 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:02.339 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 274.1099ms
+2024-04-21 20:53:03.548 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:53:03.558 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:53:03.559 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:03.561 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:53:03.691 +05:30 [INF] Executed DbCommand (120ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:53:03.701 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:53:03.833 +05:30 [INF] Executed DbCommand (126ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:53:03.840 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:53:03.845 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 278.6545ms
+2024-04-21 20:53:03.849 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:03.850 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 302.5057ms
+2024-04-21 20:53:12.439 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:53:12.444 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:53:12.446 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:12.449 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:53:12.569 +05:30 [INF] Executed DbCommand (116ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:53:12.576 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:53:12.730 +05:30 [INF] Executed DbCommand (143ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:53:12.737 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:53:12.741 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 289.5262ms
+2024-04-21 20:53:12.744 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:12.746 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 306.9298ms
+2024-04-21 20:53:14.964 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:53:14.968 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:53:14.973 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:14.981 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:53:15.103 +05:30 [INF] Executed DbCommand (116ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:53:15.110 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:53:15.246 +05:30 [INF] Executed DbCommand (121ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:53:15.255 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:53:15.257 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 272.4713ms
+2024-04-21 20:53:15.260 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:15.263 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 299.2537ms
+2024-04-21 20:53:18.719 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:53:18.726 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:53:18.729 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:18.730 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:53:18.856 +05:30 [INF] Executed DbCommand (117ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:53:18.864 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:53:18.993 +05:30 [INF] Executed DbCommand (118ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:53:19.001 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:53:19.005 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 270.9394ms
+2024-04-21 20:53:19.008 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:19.011 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 292.8279ms
+2024-04-21 20:53:21.403 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:53:21.412 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:53:21.414 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:21.417 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:53:21.546 +05:30 [INF] Executed DbCommand (124ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:53:21.556 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:53:21.682 +05:30 [INF] Executed DbCommand (118ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:53:21.694 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:53:21.702 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 281.2298ms
+2024-04-21 20:53:21.706 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:21.709 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 306.3239ms
+2024-04-21 20:53:24.420 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:53:24.425 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:53:24.428 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:24.431 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:53:24.550 +05:30 [INF] Executed DbCommand (116ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:53:24.559 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:53:24.689 +05:30 [INF] Executed DbCommand (124ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:53:24.696 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:53:24.701 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 267.8456ms
+2024-04-21 20:53:24.706 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:53:24.708 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 287.5052ms
+2024-04-21 20:55:39.545 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 20:55:39.551 +05:30 [INF] CORS policy execution successful.
+2024-04-21 20:55:39.554 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:55:39.555 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 20:55:39.684 +05:30 [INF] Executed DbCommand (118ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 20:55:39.689 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 20:55:39.822 +05:30 [INF] Executed DbCommand (125ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 20:55:39.831 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 20:55:39.834 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 273.2751ms
+2024-04-21 20:55:39.837 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 20:55:39.841 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 296.0605ms
+2024-04-21 21:03:34.624 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-04-21 21:03:34.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 14.078ms
+2024-04-21 21:03:34.649 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-04-21 21:03:34.688 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.7372ms
+2024-04-21 21:03:35.076 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-04-21 21:03:35.101 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.2993ms
+2024-04-21 23:44:29.934 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 23:44:30.003 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:44:30.059 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:44:30.078 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 23:44:36.102 +05:30 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 23:44:36.142 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 23:44:36.277 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 23:44:36.291 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 23:44:36.303 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 6221.6649ms
+2024-04-21 23:44:36.308 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:44:36.312 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 6379.5103ms
+2024-04-21 23:44:36.313 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 23:44:36.325 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:44:36.326 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:44:36.328 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 23:44:36.411 +05:30 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 23:44:36.416 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 23:44:36.511 +05:30 [INF] Executed DbCommand (88ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 23:44:36.515 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 23:44:36.519 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 187.853ms
+2024-04-21 23:44:36.521 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:44:36.522 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 23:44:36.522 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 209.2158ms
+2024-04-21 23:44:36.527 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:44:36.533 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:44:36.535 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 23:44:36.615 +05:30 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 23:44:36.623 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 23:44:36.700 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 23:44:36.707 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 23:44:36.713 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 174.5878ms
+2024-04-21 23:44:36.717 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:44:36.721 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 199.3042ms
+2024-04-21 23:44:38.930 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 23:44:38.935 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:44:38.937 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:44:38.941 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 23:44:39.052 +05:30 [INF] Executed DbCommand (103ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 23:44:39.057 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 23:44:39.136 +05:30 [INF] Executed DbCommand (70ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 23:44:39.146 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 23:44:39.152 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 206.7914ms
+2024-04-21 23:44:39.158 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:44:39.163 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 233.3657ms
+2024-04-21 23:44:48.748 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - text/plain;charset=UTF-8 37
+2024-04-21 23:44:48.757 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:44:48.759 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:44:48.794 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 23:44:48.985 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 23:44:48.992 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 196.2982ms
+2024-04-21 23:44:48.996 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:44:49.000 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 251.5265ms
+2024-04-21 23:45:54.401 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - text/plain;charset=UTF-8 37
+2024-04-21 23:45:54.405 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:45:54.407 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:45:54.408 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 23:45:54.414 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 23:45:54.418 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 7.5062ms
+2024-04-21 23:45:54.421 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:45:54.422 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 21.5418ms
+2024-04-21 23:51:42.960 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 23:51:43.160 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:51:43.188 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:51:43.214 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 23:51:43.488 +05:30 [INF] Executed DbCommand (117ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 23:51:43.502 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 23:51:43.614 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 23:51:43.622 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 23:51:43.630 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 413.5836ms
+2024-04-21 23:51:43.638 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:51:43.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 694.3554ms
+2024-04-21 23:51:50.837 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - text/plain;charset=UTF-8 37
+2024-04-21 23:51:50.845 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:51:50.847 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:51:50.849 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 23:51:50.875 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 23:51:50.880 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 29.2937ms
+2024-04-21 23:51:50.883 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:51:50.885 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 58.4009ms
+2024-04-21 23:55:55.890 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7095/api/Upload - multipart/form-data; boundary=--------------------------716337446332678357216506 1409
+2024-04-21 23:55:55.901 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:55:55.903 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 23:55:56.018 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-21 23:55:56.090 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 184.2141ms
+2024-04-21 23:55:56.092 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:55:56.096 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7095/api/Upload - 200 null application/json; charset=utf-8 205.8663ms
+2024-04-21 23:56:21.226 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 23:56:21.412 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:56:21.420 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:56:21.423 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 23:56:22.356 +05:30 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 23:56:22.372 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 23:56:22.579 +05:30 [INF] Executed DbCommand (72ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 23:56:22.588 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 23:56:22.600 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 1168.9164ms
+2024-04-21 23:56:22.606 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:56:22.615 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 1389.0426ms
+2024-04-21 23:56:37.284 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - text/plain;charset=UTF-8 37
+2024-04-21 23:56:37.290 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:56:37.292 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:56:37.296 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 23:56:37.319 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 23:56:37.322 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 19.7664ms
+2024-04-21 23:56:37.324 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:56:37.329 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 45.2734ms
+2024-04-21 23:56:54.670 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - text/plain;charset=UTF-8 37
+2024-04-21 23:56:54.676 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:56:54.678 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:56:54.679 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 23:56:54.682 +05:30 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-04-21 23:56:54.684 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 3.3461ms
+2024-04-21 23:56:54.687 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:56:54.690 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 500 null text/plain; charset=utf-8 19.8464ms
+2024-04-21 23:58:29.358 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 23:58:30.352 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:58:30.366 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:58:30.371 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 23:58:30.470 +05:30 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 23:58:30.487 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 23:58:30.586 +05:30 [INF] Executed DbCommand (91ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 23:58:30.593 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 23:58:30.597 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 220.0038ms
+2024-04-21 23:58:30.599 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:58:30.602 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 1244.5087ms
+2024-04-21 23:58:48.993 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-04-21 23:58:49.015 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:58:49.018 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:58:49.021 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-04-21 23:58:49.124 +05:30 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-04-21 23:58:49.130 +05:30 [INF] Finished Get All Assets : [{"Id":1,"Name":"dasun","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":2,"Name":"sashi","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":3,"Name":"savin","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":4,"Name":"Lahir","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":5,"Name":"ddddd","AssetType":"string","Description":"string","ImageUrl":"assets/Laptop.png","QRcode":"string","IsActive":true,"AssetValue":0,"AssetStatus":1,"UserId":0},{"Id":28,"Name":"DELL","AssetType":"PC","Description":"Sample","ImageUrl":"","QRcode":null,"IsActive":true,"AssetValue":225000,"AssetStatus":0,"UserId":null}]
+2024-04-21 23:58:49.245 +05:30 [INF] Executed DbCommand (85ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-21 23:58:49.535 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-21 23:58:49.538 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 509.3844ms
+2024-04-21 23:58:49.624 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-04-21 23:58:49.626 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 632.6925ms
+2024-04-21 23:59:21.072 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - multipart/form-data; boundary=----WebKitFormBoundaryFf82t64v0jcOHC41 1051
+2024-04-21 23:59:21.094 +05:30 [INF] CORS policy execution successful.
+2024-04-21 23:59:21.095 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:59:21.098 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-04-21 23:59:21.112 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-04-21 23:59:21.120 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 17.5874ms
+2024-04-21 23:59:21.124 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-04-21 23:59:21.125 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 200 null application/json; charset=utf-8 52.92ms
