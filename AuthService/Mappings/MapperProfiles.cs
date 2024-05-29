@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿using AssetManagementSystem.Models;
+using AuthService.Models.Dtos;
+using AutoMapper;
 
 namespace AuthService.Mappings
 {
@@ -6,7 +8,7 @@ namespace AuthService.Mappings
     {
         public MapperProfiles()
         {
-            
+            CreateMap<User, UserDto>().ReverseMap();
         }
     }
 }

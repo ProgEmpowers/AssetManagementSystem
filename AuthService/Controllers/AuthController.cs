@@ -1,4 +1,5 @@
-﻿using AuthService.Models.Dtos;
+﻿using AssetManagementSystem.Models;
+using AuthService.Models.Dtos;
 using AuthService.Services.AuthServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -10,10 +11,10 @@ namespace AuthService.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly UserManager<IdentityUser> userManager;
+        private readonly UserManager<User> userManager;
         private readonly ITokenRepository tokenRepository;
 
-        public AuthController(UserManager<IdentityUser> userManager, ITokenRepository tokenRepository)
+        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository)
         {
             this.userManager = userManager;
             this.tokenRepository = tokenRepository;
@@ -58,18 +59,29 @@ namespace AuthService.Controllers
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto request)
         {
-            var user = new IdentityUser
+            var user = new User
             {
                 UserName = request.Email?.Trim(),
-                Email = request.Email?.Trim()
+                Email = request.Email?.Trim(),
+                Address = request.Address,
+                PhoneNumber = request.PhoneNumber?.Trim(),
+                Nic = request.Nic?.Trim(),
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                JobPost = request.JobPost,
+                DateofBirth = request.DateofBirth,
+                IsActive = true
+
+
+
             };
             var identityResult = await userManager.CreateAsync(user, request.Password);
             if (identityResult.Succeeded)
             {
-                identityResult = await userManager.AddToRoleAsync(user, "NormalUser");
+                identityResult = await userManager.AddToRoleAsync(user, request.Role);
                 if (identityResult.Succeeded)
                 {
-                    return Ok("Success");
+                    return Ok();
                 }
                 else
                 {

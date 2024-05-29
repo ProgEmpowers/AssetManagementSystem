@@ -1,6 +1,7 @@
 using AssetManagementSystem.Context;
 using AssetManagementSystem.Mappings;
 using AssetManagementSystem.Services.AssetServices;
+using AssetManagementSystem.Services.NotificationServices;
 using AssetManagementSystem.Services.VendorServices;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,7 @@ builder.Logging.AddSerilog(logger);
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddScoped<IVendorService,VendorService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
 
 
 builder.Services.AddEndpointsApiExplorer();
@@ -30,25 +32,16 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("dbstring")));
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
-var MyAllocation = "_myAllocation";
-
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: MyAllocation,
+    options.AddDefaultPolicy(
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200")
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-        });
+            policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        }
+        );
 });
 
-builder.Services.Configure<FormOptions>(o =>
-{
-    o.ValueLengthLimit = int.MaxValue;
-    o.MultipartBodyLengthLimit = int.MaxValue;
-    o.MemoryBufferThreshold = int.MaxValue;
-});
 
 var app = builder.Build();
 
@@ -59,6 +52,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

@@ -5,7 +5,7 @@
 namespace AssetManagementSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class azure1 : Migration
+    public partial class loc2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
