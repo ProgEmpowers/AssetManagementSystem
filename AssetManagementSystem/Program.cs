@@ -59,8 +59,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors(MyAllocation);
-
 app.UseStaticFiles();
 app.UseStaticFiles(new StaticFileOptions()
 {

@@ -20,14 +20,6 @@ namespace AuthService.Controllers
             this.tokenRepository = tokenRepository;
         }
 
-        [HttpGet]
-        [Route("hi")]
-        [Authorize]
-        public async Task<IActionResult> hi()
-        {
-            return Ok("hi baby");
-        }
-
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto request)

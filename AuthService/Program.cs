@@ -124,6 +124,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseCors(MyAllocation);
-
 app.Run();
