@@ -12,7 +12,9 @@ namespace AuthService.Data
         {
 
         }
-     //   public DbSet<User> User { get; set; }
+
+        public DbSet<User> User { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -57,18 +59,18 @@ namespace AuthService.Data
             builder.Entity<IdentityRole>().HasData(roles);
 
             var adminUserId = "75af95a9-9273-4c9b-86aa-0a80c76f32d6";
-            var admin = new IdentityUser()
+            var admin = new User()
             {
                 Id = adminUserId,
-                UserName = "admin@codepulse.com",
-                Email = "admin@codepulse.com",
-                NormalizedEmail = "admin@codepulse.com".ToUpper(),
-                NormalizedUserName = "admin@codepulse.com".ToUpper()
+                UserName = "admin@corzent.com",
+                Email = "admin@corzent.com",
+                NormalizedEmail = "admin@corzent.com".ToUpper(),
+                NormalizedUserName = "admin@corzent.com".ToUpper()
             };
 
-            admin.PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(admin, "Admin@12345");
+            admin.PasswordHash = new PasswordHasher<User>().HashPassword(admin, "Admin@12345");
 
-            builder.Entity<IdentityUser>().HasData(admin);
+            builder.Entity<User>().HasData(admin);
 
             var adminRole = new IdentityUserRole<string>()
             {

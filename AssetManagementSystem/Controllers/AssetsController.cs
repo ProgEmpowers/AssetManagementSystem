@@ -36,7 +36,7 @@ namespace AssetManagementSystem.Controllers
         public async Task<IActionResult> GetallAssets(
             [FromQuery] string? filterOn, [FromQuery] string? filterQuery,
             [FromQuery] string? sortBy, [FromQuery] bool? isAscending,
-            [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
+            [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 20)
         {
             var AllAssets = await _assetService.GetAllAssetsAsync(filterOn, filterQuery, sortBy, isAscending ?? true, pageNumber, pageSize);
             return Ok(AllAssets);
