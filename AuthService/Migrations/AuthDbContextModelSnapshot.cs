@@ -209,8 +209,6 @@ namespace AuthService.Migrations
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
-<<<<<<< HEAD
-=======
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
                 {
                     b.Property<string>("Id")
@@ -281,7 +279,6 @@ namespace AuthService.Migrations
                         });
                 });
 
->>>>>>> f628f50 (commit3-getall)
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
