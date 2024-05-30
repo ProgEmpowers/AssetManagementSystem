@@ -1,0 +1,911 @@
+2024-05-26 21:14:07.282 +05:30 [INF] Now listening on: https://localhost:7095
+2024-05-26 21:14:07.313 +05:30 [INF] Now listening on: http://localhost:5240
+2024-05-26 21:14:07.315 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-26 21:14:07.316 +05:30 [INF] Hosting environment: Development
+2024-05-26 21:14:07.317 +05:30 [INF] Content root path: D:\MORATUWA CAMPUS\Academic\Year 02\2nd Year Software Development Group\Codings\Backend\Project\Working\AssetManagementSystem\AssetManagementSystem
+2024-05-26 21:14:16.427 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger - null null
+2024-05-26 21:14:16.625 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger - 301 0 null 202.8678ms
+2024-05-26 21:14:16.641 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-05-26 21:14:16.746 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 104.9565ms
+2024-05-26 21:14:16.826 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/swagger-ui.css - null null
+2024-05-26 21:14:16.859 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-05-26 21:14:16.827 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/swagger-ui-bundle.js - null null
+2024-05-26 21:14:16.831 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-26 21:14:16.827 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/swagger-ui-standalone-preset.js - null null
+2024-05-26 21:14:16.878 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 50.5026ms
+2024-05-26 21:14:16.950 +05:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-05-26 21:14:16.951 +05:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-05-26 21:14:16.971 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/swagger-ui.css - 200 143943 text/css 145.6548ms
+2024-05-26 21:14:16.978 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 150.9532ms
+2024-05-26 21:14:16.995 +05:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-05-26 21:14:16.998 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 171.057ms
+2024-05-26 21:14:17.130 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 280.2711ms
+2024-05-26 21:14:17.451 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-05-26 21:14:17.513 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/favicon-32x32.png - null null
+2024-05-26 21:14:17.517 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-05-26 21:14:17.519 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/favicon-32x32.png - 200 628 image/png 6.8685ms
+2024-05-26 21:14:17.638 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 187.5546ms
+2024-05-26 21:14:32.773 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors/names - null null
+2024-05-26 21:14:32.780 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:14:32.787 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem)'
+2024-05-26 21:14:32.790 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-05-26 21:14:32.790 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:14:32.794 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - null null
+2024-05-26 21:14:32.794 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:14:32.797 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:14:32.797 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - 404 0 null 3.4602ms
+2024-05-26 21:14:32.797 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:14:32.798 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:14:32.801 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/upload.png, Response status code: 404
+2024-05-26 21:14:32.818 +05:30 [INF] Route matched with {action = "GetVendorsNames", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetVendorsNames() on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:14:32.818 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-05-26 21:14:32.818 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:14:37.686 +05:30 [INF] Executed DbCommand (120ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:14:37.744 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"PC","IsActive":true}]
+2024-05-26 21:14:37.749 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-26 21:14:37.750 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-26 21:14:37.823 +05:30 [INF] Executed DbCommand (78ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Name]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:14:37.840 +05:30 [INF] Finished Get Vendor Names : ["vendor01","vendor02","vendor03","vendor0003"]
+2024-05-26 21:14:37.848 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-05-26 21:14:37.862 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem) in 5038.9997ms
+2024-05-26 21:14:37.863 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem)'
+2024-05-26 21:14:37.869 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors/names - 200 null application/json; charset=utf-8 5096.87ms
+2024-05-26 21:14:37.965 +05:30 [INF] Executed DbCommand (122ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:14:37.970 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:14:37.972 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 5150.0404ms
+2024-05-26 21:14:37.974 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:14:37.975 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 5184.9374ms
+2024-05-26 21:14:38.108 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:14:38.111 +05:30 [INF] Finished Get All Assets : []
+2024-05-26 21:14:38.113 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-26 21:14:38.114 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-26 21:14:38.203 +05:30 [INF] Executed DbCommand (85ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:14:38.205 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:14:38.207 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 5386.0878ms
+2024-05-26 21:14:38.208 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:14:38.209 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 5420.0993ms
+2024-05-26 21:14:42.338 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:14:42.340 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:14:42.341 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:14:42.342 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:14:42.456 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:14:42.458 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"PC","IsActive":true}]
+2024-05-26 21:14:42.533 +05:30 [INF] Executed DbCommand (73ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:14:42.536 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:14:42.537 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 193.2232ms
+2024-05-26 21:14:42.539 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:14:42.540 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 202.9306ms
+2024-05-26 21:15:34.917 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7095/api/Vendors - null null
+2024-05-26 21:15:34.919 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:34.921 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7095/api/Vendors - 204 null null 4.2589ms
+2024-05-26 21:15:34.923 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 110
+2024-05-26 21:15:34.925 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:34.926 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-05-26 21:15:34.930 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:15:35.050 +05:30 [INF] Executed DbCommand (91ms) [Parameters=[@__vendorDto_MobileNo_0='?' (DbType = Int32), @__vendorDto_Email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit) AND [v].[MobileNo] = @__vendorDto_MobileNo_0 AND [v].[Email] = @__vendorDto_Email_1
+2024-05-26 21:15:35.301 +05:30 [INF] Executed DbCommand (159ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-05-26 21:15:35.323 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-05-26 21:15:35.324 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 392.5561ms
+2024-05-26 21:15:35.326 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-05-26 21:15:35.326 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 403.3195ms
+2024-05-26 21:15:35.349 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:15:35.351 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:35.352 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:15:35.353 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:15:35.433 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:15:35.436 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"PC","IsActive":true},{"Id":20,"Name":"vendor05","Address":"Colombo","MobileNo":778945678,"Email":"vendor05@gmail.com","SupplyAssetType":"","IsActive":true}]
+2024-05-26 21:15:35.513 +05:30 [INF] Executed DbCommand (74ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:15:35.515 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:15:35.515 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 160.7773ms
+2024-05-26 21:15:35.517 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:15:35.517 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 169.1906ms
+2024-05-26 21:15:40.378 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7095/api/Vendors/20 - null null
+2024-05-26 21:15:40.380 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:40.381 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7095/api/Vendors/20 - 204 null null 2.9376ms
+2024-05-26 21:15:40.383 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7095/api/Vendors/20 - null null
+2024-05-26 21:15:40.385 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:40.385 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.DeleteVendor (AssetManagementSystem)'
+2024-05-26 21:15:40.390 +05:30 [INF] Route matched with {action = "DeleteVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteVendor(Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:15:40.465 +05:30 [INF] Executed DbCommand (69ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit) AND [v].[Id] = @__id_0
+2024-05-26 21:15:40.544 +05:30 [INF] Executed DbCommand (71ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Vendor] SET [IsActive] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-05-26 21:15:40.548 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-05-26 21:15:40.549 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.DeleteVendor (AssetManagementSystem) in 158.0363ms
+2024-05-26 21:15:40.550 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.DeleteVendor (AssetManagementSystem)'
+2024-05-26 21:15:40.551 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7095/api/Vendors/20 - 200 null application/json; charset=utf-8 167.7483ms
+2024-05-26 21:15:40.553 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:15:40.555 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:40.556 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:15:40.556 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:15:40.624 +05:30 [INF] Executed DbCommand (65ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:15:40.626 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"PC","IsActive":true}]
+2024-05-26 21:15:40.695 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:15:40.697 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:15:40.698 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 140.4412ms
+2024-05-26 21:15:40.699 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:15:40.700 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 146.6259ms
+2024-05-26 21:15:40.720 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:15:40.722 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:40.723 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:15:40.724 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:15:40.800 +05:30 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:15:40.802 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"PC","IsActive":true}]
+2024-05-26 21:15:40.881 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:15:40.883 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:15:40.884 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 157.8687ms
+2024-05-26 21:15:40.885 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:15:40.886 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 166.6338ms
+2024-05-26 21:15:46.349 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7095/api/Vendors/13 - null null
+2024-05-26 21:15:46.351 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:46.352 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7095/api/Vendors/13 - 204 null null 2.6362ms
+2024-05-26 21:15:46.353 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:7095/api/Vendors/13 - application/json 79
+2024-05-26 21:15:46.356 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:46.357 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.UpdateVendor (AssetManagementSystem)'
+2024-05-26 21:15:46.360 +05:30 [INF] Route matched with {action = "UpdateVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateVendor(Int32, AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:15:46.653 +05:30 [INF] Executed DbCommand (287ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit) AND [v].[Id] = @__id_0
+2024-05-26 21:15:46.762 +05:30 [INF] Executed DbCommand (106ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Vendor] SET [SupplyAssetType] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-05-26 21:15:46.764 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-05-26 21:15:46.765 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.UpdateVendor (AssetManagementSystem) in 403.3445ms
+2024-05-26 21:15:46.767 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.UpdateVendor (AssetManagementSystem)'
+2024-05-26 21:15:46.768 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7095/api/Vendors/13 - 200 null application/json; charset=utf-8 414.5237ms
+2024-05-26 21:15:46.790 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:15:46.792 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:15:46.793 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:15:46.794 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:15:46.941 +05:30 [INF] Executed DbCommand (144ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:15:46.944 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:15:47.034 +05:30 [INF] Executed DbCommand (88ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:15:47.036 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:15:47.037 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 241.5232ms
+2024-05-26 21:15:47.038 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:15:47.039 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 248.9642ms
+2024-05-26 21:19:25.199 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7095/api/Vendors - null null
+2024-05-26 21:19:25.201 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:19:25.201 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7095/api/Vendors - 204 null null 2.534ms
+2024-05-26 21:19:25.203 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 113
+2024-05-26 21:19:25.205 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:19:25.206 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-05-26 21:19:25.207 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:19:25.304 +05:30 [INF] Executed DbCommand (94ms) [Parameters=[@__vendorDto_MobileNo_0='?' (DbType = Int32), @__vendorDto_Email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit) AND [v].[MobileNo] = @__vendorDto_MobileNo_0 AND [v].[Email] = @__vendorDto_Email_1
+2024-05-26 21:19:25.439 +05:30 [INF] Executed DbCommand (131ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-05-26 21:19:25.485 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'AssetManagementSystem.Context.AssetManagementDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'SupplyAssetType', table 'amsDB.dbo.Vendor'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:e03146d9-5804-4f72-abfe-da49527be428
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'SupplyAssetType', table 'amsDB.dbo.Vendor'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:e03146d9-5804-4f72-abfe-da49527be428
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-05-26 21:19:25.566 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 358.1401ms
+2024-05-26 21:19:25.568 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-05-26 21:19:25.571 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'SupplyAssetType', table 'amsDB.dbo.Vendor'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:e03146d9-5804-4f72-abfe-da49527be428
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at AssetManagementSystem.Services.VendorServices.VendorService.AddVendorAsync(VendorDto vendorDto) in D:\MORATUWA CAMPUS\Academic\Year 02\2nd Year Software Development Group\Codings\Backend\Project\Working\AssetManagementSystem\AssetManagementSystem\Services\VendorServices\VendorService.cs:line 39
+   at AssetManagementSystem.Controllers.VendorsController.AddVendor(VendorDto vendorDto) in D:\MORATUWA CAMPUS\Academic\Year 02\2nd Year Software Development Group\Codings\Backend\Project\Working\AssetManagementSystem\AssetManagementSystem\Controllers\VendorsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-26 21:19:25.599 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 500 null text/plain; charset=utf-8 396.4241ms
+2024-05-26 21:19:29.110 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors/names - null null
+2024-05-26 21:19:29.111 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:19:29.112 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem)'
+2024-05-26 21:19:29.113 +05:30 [INF] Route matched with {action = "GetVendorsNames", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetVendorsNames() on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:19:29.134 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:19:29.136 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - null null
+2024-05-26 21:19:29.137 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:19:29.138 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - 404 0 null 2.8955ms
+2024-05-26 21:19:29.139 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:19:29.142 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/upload.png, Response status code: 404
+2024-05-26 21:19:29.143 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:19:29.258 +05:30 [INF] Executed DbCommand (110ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:19:29.260 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:19:29.284 +05:30 [INF] Executed DbCommand (168ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Name]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:19:29.286 +05:30 [INF] Finished Get Vendor Names : ["vendor01","vendor02","vendor03","vendor0003"]
+2024-05-26 21:19:29.287 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-05-26 21:19:29.288 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem) in 173.5754ms
+2024-05-26 21:19:29.289 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem)'
+2024-05-26 21:19:29.290 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors/names - 200 null application/json; charset=utf-8 180.4073ms
+2024-05-26 21:19:29.330 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:19:29.332 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:19:29.333 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 187.0612ms
+2024-05-26 21:19:29.334 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:19:29.335 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 201.2979ms
+2024-05-26 21:19:36.912 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors/names - null null
+2024-05-26 21:19:36.914 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:19:36.914 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem)'
+2024-05-26 21:19:36.915 +05:30 [INF] Route matched with {action = "GetVendorsNames", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetVendorsNames() on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:19:36.931 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:19:36.933 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:19:36.934 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - null null
+2024-05-26 21:19:36.934 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:19:36.936 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - 404 0 null 2.1615ms
+2024-05-26 21:19:36.936 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:19:36.939 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/upload.png, Response status code: 404
+2024-05-26 21:19:37.024 +05:30 [INF] Executed DbCommand (107ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Name]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:19:37.026 +05:30 [INF] Finished Get Vendor Names : ["vendor01","vendor02","vendor03","vendor0003"]
+2024-05-26 21:19:37.027 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-05-26 21:19:37.028 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem) in 112.3531ms
+2024-05-26 21:19:37.029 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem)'
+2024-05-26 21:19:37.031 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors/names - 200 null application/json; charset=utf-8 119.2319ms
+2024-05-26 21:19:37.089 +05:30 [INF] Executed DbCommand (147ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:19:37.090 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:19:37.223 +05:30 [INF] Executed DbCommand (131ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:19:37.226 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:19:37.227 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 287.1004ms
+2024-05-26 21:19:37.228 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:19:37.229 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 298.426ms
+2024-05-26 21:20:03.155 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7095/api/Vendors - null null
+2024-05-26 21:20:03.157 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:20:03.158 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7095/api/Vendors - 204 null null 3.0138ms
+2024-05-26 21:20:03.160 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Vendors - application/json 110
+2024-05-26 21:20:03.162 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:20:03.163 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-05-26 21:20:03.164 +05:30 [INF] Route matched with {action = "AddVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddVendor(AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:20:03.280 +05:30 [INF] Executed DbCommand (112ms) [Parameters=[@__vendorDto_MobileNo_0='?' (DbType = Int32), @__vendorDto_Email_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit) AND [v].[MobileNo] = @__vendorDto_MobileNo_0 AND [v].[Email] = @__vendorDto_Email_1
+2024-05-26 21:20:03.430 +05:30 [INF] Executed DbCommand (147ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = Boolean), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Vendor] ([Address], [Email], [IsActive], [MobileNo], [Name], [SupplyAssetType])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2024-05-26 21:20:03.432 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-05-26 21:20:03.433 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem) in 267.3254ms
+2024-05-26 21:20:03.434 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.AddVendor (AssetManagementSystem)'
+2024-05-26 21:20:03.435 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Vendors - 200 null application/json; charset=utf-8 275.5204ms
+2024-05-26 21:20:03.485 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:20:03.488 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:20:03.488 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:20:03.490 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:20:03.723 +05:30 [INF] Executed DbCommand (231ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:20:03.726 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true},{"Id":22,"Name":"vendor06","Address":"Colombo","MobileNo":771234567,"Email":"vendor06@gmail.com","SupplyAssetType":"","IsActive":true}]
+2024-05-26 21:20:03.930 +05:30 [INF] Executed DbCommand (202ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:20:03.931 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:20:03.932 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 441.5111ms
+2024-05-26 21:20:03.934 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:20:03.935 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 449.7074ms
+2024-05-26 21:20:59.061 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7095/api/Vendors/22 - null null
+2024-05-26 21:20:59.063 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:20:59.064 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7095/api/Vendors/22 - 204 null null 3.4402ms
+2024-05-26 21:20:59.067 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:7095/api/Vendors/22 - application/json 80
+2024-05-26 21:20:59.069 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:20:59.070 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.UpdateVendor (AssetManagementSystem)'
+2024-05-26 21:20:59.071 +05:30 [INF] Route matched with {action = "UpdateVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateVendor(Int32, AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:20:59.145 +05:30 [INF] Executed DbCommand (70ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit) AND [v].[Id] = @__id_0
+2024-05-26 21:20:59.236 +05:30 [INF] Executed DbCommand (88ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Vendor] SET [SupplyAssetType] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-05-26 21:20:59.238 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-05-26 21:20:59.239 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.UpdateVendor (AssetManagementSystem) in 166.458ms
+2024-05-26 21:20:59.240 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.UpdateVendor (AssetManagementSystem)'
+2024-05-26 21:20:59.241 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7095/api/Vendors/22 - 200 null application/json; charset=utf-8 174.475ms
+2024-05-26 21:20:59.274 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:20:59.277 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:20:59.278 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:20:59.279 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:20:59.363 +05:30 [INF] Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:20:59.366 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true},{"Id":22,"Name":"vendor06","Address":"Colombo","MobileNo":771234567,"Email":"vendor06@gmail.com","SupplyAssetType":"Keyboard","IsActive":true}]
+2024-05-26 21:20:59.466 +05:30 [INF] Executed DbCommand (98ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:20:59.468 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:20:59.469 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 188.63ms
+2024-05-26 21:20:59.470 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:20:59.470 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 197.0056ms
+2024-05-26 21:21:10.885 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7095/api/Vendors/22 - null null
+2024-05-26 21:21:10.887 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:21:10.888 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7095/api/Vendors/22 - 204 null null 2.9104ms
+2024-05-26 21:21:10.889 +05:30 [INF] Request starting HTTP/2 PUT https://localhost:7095/api/Vendors/22 - application/json 81
+2024-05-26 21:21:10.892 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:21:10.892 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.UpdateVendor (AssetManagementSystem)'
+2024-05-26 21:21:10.893 +05:30 [INF] Route matched with {action = "UpdateVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateVendor(Int32, AssetManagementSystem.Models.Dtos.VendorDto) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:21:10.971 +05:30 [INF] Executed DbCommand (75ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit) AND [v].[Id] = @__id_0
+2024-05-26 21:21:11.065 +05:30 [INF] Executed DbCommand (91ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Vendor] SET [Name] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-05-26 21:21:11.068 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-05-26 21:21:11.069 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.UpdateVendor (AssetManagementSystem) in 174.4629ms
+2024-05-26 21:21:11.070 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.UpdateVendor (AssetManagementSystem)'
+2024-05-26 21:21:11.072 +05:30 [INF] Request finished HTTP/2 PUT https://localhost:7095/api/Vendors/22 - 200 null application/json; charset=utf-8 182.7646ms
+2024-05-26 21:21:11.093 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:21:11.096 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:21:11.097 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:21:11.098 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:21:11.176 +05:30 [INF] Executed DbCommand (75ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:21:11.178 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true},{"Id":22,"Name":"vendor006","Address":"Colombo","MobileNo":771234567,"Email":"vendor06@gmail.com","SupplyAssetType":"Keyboard","IsActive":true}]
+2024-05-26 21:21:11.287 +05:30 [INF] Executed DbCommand (107ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:21:11.289 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:21:11.290 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 190.8812ms
+2024-05-26 21:21:11.291 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:21:11.292 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 199.3908ms
+2024-05-26 21:21:20.539 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7095/api/Vendors/22 - null null
+2024-05-26 21:21:20.541 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:21:20.542 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7095/api/Vendors/22 - 204 null null 2.6589ms
+2024-05-26 21:21:20.545 +05:30 [INF] Request starting HTTP/2 DELETE https://localhost:7095/api/Vendors/22 - null null
+2024-05-26 21:21:20.547 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:21:20.547 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.DeleteVendor (AssetManagementSystem)'
+2024-05-26 21:21:20.548 +05:30 [INF] Route matched with {action = "DeleteVendor", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteVendor(Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:21:20.643 +05:30 [INF] Executed DbCommand (92ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit) AND [v].[Id] = @__id_0
+2024-05-26 21:21:20.733 +05:30 [INF] Executed DbCommand (87ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Vendor] SET [IsActive] = @p0
+OUTPUT 1
+WHERE [Id] = @p1;
+2024-05-26 21:21:20.735 +05:30 [INF] Executing OkObjectResult, writing value of type 'AssetManagementSystem.Models.Domains.Vendor'.
+2024-05-26 21:21:20.736 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.DeleteVendor (AssetManagementSystem) in 186.8618ms
+2024-05-26 21:21:20.737 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.DeleteVendor (AssetManagementSystem)'
+2024-05-26 21:21:20.739 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7095/api/Vendors/22 - 200 null application/json; charset=utf-8 194.0784ms
+2024-05-26 21:21:20.742 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:21:20.743 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:21:20.744 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:21:20.745 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:21:20.836 +05:30 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:21:20.837 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:21:20.936 +05:30 [INF] Executed DbCommand (97ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:21:20.938 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:21:20.939 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 193.0205ms
+2024-05-26 21:21:20.940 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:21:20.941 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 199.5371ms
+2024-05-26 21:21:20.962 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:21:20.965 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:21:20.966 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:21:20.967 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:21:21.055 +05:30 [INF] Executed DbCommand (85ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:21:21.058 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:21:21.140 +05:30 [INF] Executed DbCommand (81ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:21:21.142 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:21:21.143 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 174.8589ms
+2024-05-26 21:21:21.144 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:21:21.145 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 184.2211ms
+2024-05-26 21:21:38.993 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:21:38.996 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:21:38.998 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:21:38.999 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:21:39.117 +05:30 [INF] Executed DbCommand (114ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:21:39.119 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:21:39.235 +05:30 [INF] Executed DbCommand (115ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:21:39.237 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:21:39.238 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 237.0937ms
+2024-05-26 21:21:39.239 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:21:39.240 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 247.4167ms
+2024-05-26 21:22:26.146 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-05-26 21:22:26.148 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:22:26.149 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:22:26.150 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-05-26 21:22:26.227 +05:30 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:22:26.229 +05:30 [INF] Finished Get All Assets : []
+2024-05-26 21:22:26.332 +05:30 [INF] Executed DbCommand (102ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:22:26.334 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:22:26.335 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 183.1756ms
+2024-05-26 21:22:26.336 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:22:26.337 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 191.0241ms
+2024-05-26 21:22:28.587 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:22:28.590 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:22:28.591 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:22:28.592 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:22:28.663 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:22:28.665 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:22:28.742 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:22:28.744 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:22:28.746 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 152.4794ms
+2024-05-26 21:22:28.747 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:22:28.747 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 161.025ms
+2024-05-26 21:22:35.691 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-05-26 21:22:35.694 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:22:35.694 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:22:35.695 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-05-26 21:22:35.773 +05:30 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:22:35.775 +05:30 [INF] Finished Get All Assets : []
+2024-05-26 21:22:35.858 +05:30 [INF] Executed DbCommand (83ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:22:35.860 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:22:35.862 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 164.5646ms
+2024-05-26 21:22:35.863 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:22:35.864 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 173.1942ms
+2024-05-26 21:22:47.960 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:22:47.963 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:22:47.964 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:22:47.965 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:22:48.037 +05:30 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:22:48.039 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:22:48.133 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:22:48.136 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:22:48.137 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 170.1901ms
+2024-05-26 21:22:48.138 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:22:48.140 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 179.9676ms
+2024-05-26 21:22:50.420 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-05-26 21:22:50.420 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:22:50.422 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:22:50.424 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:22:50.425 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:22:50.426 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:22:50.426 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-05-26 21:22:50.427 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:22:50.509 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:22:50.509 +05:30 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:22:50.511 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:22:50.512 +05:30 [INF] Finished Get All Assets : []
+2024-05-26 21:22:50.599 +05:30 [INF] Executed DbCommand (85ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:22:50.601 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:22:50.602 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 171.4059ms
+2024-05-26 21:22:50.603 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:22:50.604 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 183.7406ms
+2024-05-26 21:22:50.641 +05:30 [INF] Executed DbCommand (125ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:22:50.643 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:22:50.644 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 215.1244ms
+2024-05-26 21:22:50.645 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:22:50.646 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 226.2747ms
+2024-05-26 21:24:51.077 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:24:51.080 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:24:51.081 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:24:51.082 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:24:51.181 +05:30 [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:24:51.183 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:24:51.302 +05:30 [INF] Executed DbCommand (117ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:24:51.303 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:24:51.304 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 221.1334ms
+2024-05-26 21:24:51.306 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:24:51.306 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 230.0919ms
+2024-05-26 21:24:59.068 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:24:59.072 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:24:59.073 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:24:59.074 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:24:59.218 +05:30 [INF] Executed DbCommand (141ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:24:59.220 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:24:59.331 +05:30 [INF] Executed DbCommand (109ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:24:59.333 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:24:59.334 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 258.2098ms
+2024-05-26 21:24:59.335 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:24:59.336 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 267.7743ms
+2024-05-26 21:25:42.999 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:25:42.999 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-05-26 21:25:43.001 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:25:43.004 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:25:43.005 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:25:43.005 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:25:43.006 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:25:43.007 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-05-26 21:25:43.092 +05:30 [INF] Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:25:43.092 +05:30 [INF] Executed DbCommand (81ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:25:43.094 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:25:43.095 +05:30 [INF] Finished Get All Assets : []
+2024-05-26 21:25:43.169 +05:30 [INF] Executed DbCommand (73ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:25:43.171 +05:30 [INF] Executed DbCommand (74ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:25:43.172 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:25:43.174 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:25:43.175 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 166.4883ms
+2024-05-26 21:25:43.180 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 169.914ms
+2024-05-26 21:25:43.181 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:25:43.182 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-05-26 21:25:43.182 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 183.1662ms
+2024-05-26 21:25:43.183 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 183.8923ms
+2024-05-26 21:25:53.342 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 21:25:53.345 +05:30 [INF] CORS policy execution successful.
+2024-05-26 21:25:53.346 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:25:53.346 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 21:25:53.428 +05:30 [INF] Executed DbCommand (78ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 21:25:53.429 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 21:25:53.526 +05:30 [INF] Executed DbCommand (96ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 21:25:53.528 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 21:25:53.529 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 181.1196ms
+2024-05-26 21:25:53.530 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 21:25:53.531 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 188.9037ms
+2024-05-26 22:19:58.390 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors/names - null null
+2024-05-26 22:19:58.399 +05:30 [INF] CORS policy execution successful.
+2024-05-26 22:19:58.401 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem)'
+2024-05-26 22:19:58.403 +05:30 [INF] Route matched with {action = "GetVendorsNames", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetVendorsNames() on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 22:19:58.409 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 22:19:58.412 +05:30 [INF] CORS policy execution successful.
+2024-05-26 22:19:58.412 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 22:19:58.413 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - null null
+2024-05-26 22:19:58.447 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 22:19:58.452 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - 404 0 null 39.0202ms
+2024-05-26 22:19:58.481 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/upload.png, Response status code: 404
+2024-05-26 22:19:59.367 +05:30 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 22:19:59.373 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 22:19:59.471 +05:30 [INF] Executed DbCommand (94ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 22:19:59.473 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:19:59.474 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 1023.791ms
+2024-05-26 22:19:59.475 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 22:19:59.475 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 1066.6316ms
+2024-05-26 22:19:59.898 +05:30 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Name]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 22:19:59.901 +05:30 [INF] Finished Get Vendor Names : ["vendor01","vendor02","vendor03","vendor0003"]
+2024-05-26 22:19:59.901 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-05-26 22:19:59.902 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem) in 1497.2509ms
+2024-05-26 22:19:59.903 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem)'
+2024-05-26 22:19:59.904 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors/names - 200 null application/json; charset=utf-8 1516.3023ms
+2024-05-26 22:41:06.835 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors/names - null null
+2024-05-26 22:41:06.842 +05:30 [INF] CORS policy execution successful.
+2024-05-26 22:41:06.843 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem)'
+2024-05-26 22:41:06.845 +05:30 [INF] Route matched with {action = "GetVendorsNames", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetVendorsNames() on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 22:41:06.857 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-05-26 22:41:06.859 +05:30 [INF] CORS policy execution successful.
+2024-05-26 22:41:06.861 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 22:41:06.862 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-05-26 22:41:06.863 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - null null
+2024-05-26 22:41:06.874 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - 404 0 null 11.1583ms
+2024-05-26 22:41:06.877 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/upload.png, Response status code: 404
+2024-05-26 22:41:07.685 +05:30 [INF] Executed DbCommand (129ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Name]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 22:41:07.687 +05:30 [INF] Finished Get Vendor Names : ["vendor01","vendor02","vendor03","vendor0003"]
+2024-05-26 22:41:07.688 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-05-26 22:41:07.689 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem) in 842.5615ms
+2024-05-26 22:41:07.690 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorsNames (AssetManagementSystem)'
+2024-05-26 22:41:07.691 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors/names - 200 null application/json; charset=utf-8 858.0715ms
+2024-05-26 22:41:08.103 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-05-26 22:41:08.107 +05:30 [INF] Finished Get All Vendors : [{"Id":8,"Name":"vendor01","Address":"Colombo","MobileNo":771234567,"Email":"vendor01@gmail.com","SupplyAssetType":"Keyboard","IsActive":true},{"Id":9,"Name":"vendor02","Address":"Kaluthara","MobileNo":771234567,"Email":"vendor02@gmail.com","SupplyAssetType":"Scanner","IsActive":true},{"Id":12,"Name":"vendor03","Address":"Jaffna","MobileNo":771234567,"Email":"vendor03@gmail.com","SupplyAssetType":"Mouse","IsActive":true},{"Id":13,"Name":"vendor0003","Address":"Matara","MobileNo":761234567,"Email":"vendor04@gmail.com","SupplyAssetType":"Monitor","IsActive":true}]
+2024-05-26 22:41:08.179 +05:30 [INF] Executed DbCommand (68ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-05-26 22:41:08.181 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-26 22:41:08.183 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 1318.295ms
+2024-05-26 22:41:08.184 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-05-26 22:41:08.185 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 1328.2189ms

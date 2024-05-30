@@ -2,6 +2,8 @@ using AssetManagementSystem.Context;
 using AssetManagementSystem.Mappings;
 using AssetManagementSystem.Services.AssetServices;
 using AssetManagementSystem.Services.NotificationServices;
+using AssetManagementSystem.Services.ContractServices;
+using AssetManagementSystem.Services.EmailServices;
 using AssetManagementSystem.Services.VendorServices;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +24,8 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddScoped<IVendorService,VendorService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<IContractService, ContractService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 
 builder.Services.AddEndpointsApiExplorer();

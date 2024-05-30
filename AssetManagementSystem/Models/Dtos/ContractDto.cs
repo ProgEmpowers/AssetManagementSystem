@@ -1,11 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace AssetManagementSystem.Models.Domains
+﻿namespace AssetManagementSystem.Models.Dtos
 {
-    public class Contract
+    public class ContractDto
     {
-        [Key]
-        public int Id { get; set; }
         public DateTime AssignedDate { get; set; }
         public string? Subject { get; set; }
         public string? Message { get; set; }
