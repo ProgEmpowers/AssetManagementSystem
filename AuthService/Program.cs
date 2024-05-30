@@ -2,6 +2,7 @@ using AssetManagementSystem.Models;
 using AuthService.Data;
 using AuthService.Mappings;
 using AuthService.Services.AuthServices;
+using AuthService.Services.UserServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -57,7 +58,10 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddDbContext<AuthDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("Authdbstring")));
 
+builder.Services.AddAutoMapper(typeof(MapperProfiles));
+
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddIdentityCore<User>()
     .AddRoles<IdentityRole>()
