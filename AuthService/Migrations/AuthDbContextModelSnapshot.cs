@@ -112,16 +112,16 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "784a12ad-caec-4588-b90d-74124cf334d6",
+                            ConcurrencyStamp = "2ed2bd73-be6b-4ecc-a2c0-8932dfe039f0",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEImKM38PVnKsRKbJYWUYHTTvv7Si+1RmUXffhGJci1WQa9+dNdnGSdJ43Rg2/i5z4g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPmVs2LtMPh3D8SITaJMfihBO5jAKm3aNKdj/p5mU1rDNam1mbN1hn18USmjgC5arA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "28ae3a69-90d4-4426-aef1-e3a275263ef5",
+                            SecurityStamp = "390ad4c6-43a6-48a2-a7f9-0be58d660cd5",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });
@@ -209,79 +209,6 @@ namespace AuthService.Migrations
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
-<<<<<<< HEAD
-=======
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("IdentityUser");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "82c85436-af99-43dc-bda3-4ed87369242c",
-                            Email = "admin@codepulse.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@CODEPULSE.COM",
-                            NormalizedUserName = "ADMIN@CODEPULSE.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMDXnpQSLIygncjtZCcZN1MVgVZmgM2YGMPfgQ7MvSfsscouynsYMhAVMianhImtFQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "c78fbff5-2c90-43cd-987e-70b4f0d9feba",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@codepulse.com"
-                        });
-                });
-
->>>>>>> f628f50 (commit3-getall)
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")

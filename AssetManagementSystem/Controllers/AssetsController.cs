@@ -110,5 +110,38 @@ namespace AssetManagementSystem.Controllers
             }
             return Ok(SelectedAsset);
         }
+
+        [HttpPost("AddDisposalAsset")]
+        [ValidateModel]
+        public async Task<IActionResult> AddDisposalAsset([FromBody] DisposalAssetDto disposalassetDto)
+        {
+            if (disposalassetDto == null)
+                return BadRequest();
+
+            var addedDisposalAsset = await _assetService.AddDisposalAssetAsync(disposalassetDto);
+            return Ok(addedDisposalAsset);
+        }
+
+        [HttpGet("GetAllDisposalAssets")]
+        public async Task<IActionResult> GetAllDisposalAssets(
+           [FromQuery] string? filterOn, [FromQuery] string? filterQuery,
+           [FromQuery] string? sortBy, [FromQuery] bool? isAscending
+           )
+        {
+            var AllDisposalAssets = await _assetService.GetAllDisposalAssetsAsync(filterOn, filterQuery, sortBy, isAscending ?? true);
+            return Ok(AllDisposalAssets);
+        }
+
+        [HttpPut(" UpdateDisposalAsset/{id:int}")]
+        [ValidateModel]
+        public async Task<IActionResult> UpdateDisposalAsset([FromRoute] int id, [FromBody] DisposalAssetDto disposalassetDto)
+        {
+            var SelecteddisposalAsset = await _assetService.UpdateDisposalAssetAsync(id, disposalassetDto);
+            if (SelecteddisposalAsset == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelecteddisposalAsset);
+        }
     }
 }

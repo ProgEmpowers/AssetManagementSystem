@@ -135,5 +135,51 @@ namespace AssetManagementSystem.Services.AssetServices
             logger.LogInformation($"Finished Recover Deleted Asset : {JsonSerializer.Serialize(SelectedAsset)}");
             return SelectedAsset;
         }
+
+        public async Task<Asset> AddDisposalAssetAsync(DisposalAssetDto disposalassetDto)
+        {
+            var NewDisposalAsset = mapper.Map<Asset>(disposalassetDto);
+            NewDisposalAsset.IsActive = true;
+            await _dbContext.Asset.AddAsync(NewDisposalAsset);
+            await _dbContext.SaveChangesAsync();
+            logger.LogInformation($"Finished Add Disposal Asset : {JsonSerializer.Serialize(NewDisposalAsset)}");
+            return NewDisposalAsset;
+        }
+
+        public async Task<List<Asset>> GetAllDisposalAssetsAsync(
+            string? filterOn = null, string? filterQuery = null,
+            string? sortBy = null, bool isAscending = true)
+        {
+            var DisposalAssets = _dbContext.Asset.Where(asset => asset.IsActive == true).AsQueryable();
+            if (string.IsNullOrWhiteSpace(filterOn) == false && string.IsNullOrWhiteSpace(filterQuery) == false)
+            {
+                if (filterOn.Equals("Name", StringComparison.OrdinalIgnoreCase))
+                {
+                    DisposalAssets = DisposalAssets.Where(x => x.Name.Contains(filterQuery));
+                }
+            }
+            if (string.IsNullOrWhiteSpace(sortBy) == false)
+            {
+                if (sortBy.Equals("Id", StringComparison.OrdinalIgnoreCase))
+                {
+                    DisposalAssets = isAscending ? DisposalAssets.OrderBy(x => x.Id) : DisposalAssets.OrderByDescending(x => x.Id);
+                }
+            }
+            logger.LogInformation($"Finished Get All Disposal Assets : {JsonSerializer.Serialize(DisposalAssets)}");
+            return await DisposalAssets.ToListAsync();
+        }
+
+        public async Task<Asset?> UpdateDisposalAssetAsync(int id, DisposalAssetDto disposalassetDto)
+        {
+            var SelecteddisposalAsset = await _dbContext.Asset.Where(asset => asset.IsActive == true).FirstOrDefaultAsync(x => x.Id == id);
+            if (SelecteddisposalAsset == null)
+            {
+                return null;
+            }
+            SelecteddisposalAsset = mapper.Map(disposalassetDto, SelecteddisposalAsset);
+            await _dbContext.SaveChangesAsync();
+            logger.LogInformation($"Finished Update a DisposalAsset : {JsonSerializer.Serialize(SelecteddisposalAsset)}");
+            return SelecteddisposalAsset;
+        }
     }
 }
