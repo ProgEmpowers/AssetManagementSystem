@@ -1,0 +1,167 @@
+2024-06-16 13:51:29.559 +05:30 [INF] Executed DbCommand (187ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [b];
+2024-06-16 13:51:29.691 +05:30 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [b] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2024-06-16 13:51:29.719 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-16 13:51:29.808 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-06-16 13:51:29.811 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-16 13:51:29.840 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-16 13:51:29.861 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-16 13:51:29.890 +05:30 [INF] Applying migration '20240616082052_a'.
+2024-06-16 13:51:30.011 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Asset] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [AssetType] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [ImageUrl] nvarchar(max) NULL,
+    [QRcode] nvarchar(max) NULL,
+    [IsActive] bit NOT NULL,
+    [AssetValue] real NULL,
+    [AssetStatus] int NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Asset] PRIMARY KEY ([Id])
+);
+2024-06-16 13:51:30.015 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contract] (
+    [Id] int NOT NULL IDENTITY,
+    [AssignedDate] datetime2 NOT NULL,
+    [Subject] nvarchar(max) NULL,
+    [Message] nvarchar(max) NULL,
+    [SupplyAssetType] nvarchar(max) NULL,
+    [IdOfVendor] int NOT NULL,
+    [VendorName] nvarchar(max) NULL,
+    CONSTRAINT [PK_Contract] PRIMARY KEY ([Id])
+);
+2024-06-16 13:51:30.018 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Notification] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [Date] nvarchar(max) NULL,
+    [Time] nvarchar(max) NULL,
+    [isRead] bit NULL,
+    CONSTRAINT [PK_Notification] PRIMARY KEY ([Id])
+);
+2024-06-16 13:51:30.022 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [SellingContract] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [Title] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [Price] int NOT NULL,
+    CONSTRAINT [PK_SellingContract] PRIMARY KEY ([Id])
+);
+2024-06-16 13:51:30.025 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Vendor] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [MobileNo] int NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [SupplyAssetType] nvarchar(max) NULL,
+    [IsActive] bit NOT NULL,
+    CONSTRAINT [PK_Vendor] PRIMARY KEY ([Id])
+);
+2024-06-16 13:51:30.086 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Log] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [AssetId] int NOT NULL,
+    CONSTRAINT [PK_Log] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Log_Asset_AssetId] FOREIGN KEY ([AssetId]) REFERENCES [Asset] ([Id]) ON DELETE CASCADE
+);
+2024-06-16 13:51:30.089 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Log_AssetId] ON [Log] ([AssetId]);
+2024-06-16 13:51:30.098 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240616082052_a', N'8.0.1');
+2024-06-16 13:51:56.578 +05:30 [WRN] The WebRootPath was not found: C:\Users\user\OneDrive\Desktop\MY NOTE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-06-16 13:51:56.684 +05:30 [INF] Now listening on: https://localhost:7095
+2024-06-16 13:51:56.687 +05:30 [INF] Now listening on: http://localhost:5240
+2024-06-16 13:51:56.689 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-16 13:51:56.691 +05:30 [INF] Hosting environment: Development
+2024-06-16 13:51:56.691 +05:30 [INF] Content root path: C:\Users\user\OneDrive\Desktop\MY NOTE\AssetManagementSystem\AssetManagementSystem
+2024-06-16 13:51:56.785 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-06-16 13:51:56.924 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 140.278ms
+2024-06-16 13:51:57.152 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-16 13:51:57.152 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-06-16 13:51:57.160 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 7.0638ms
+2024-06-16 13:51:57.187 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.1387ms
+2024-06-16 13:51:57.224 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-06-16 13:51:57.253 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/Assets" for actions - AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem),AssetManagementSystem.Controllers.AssetsController.AddDisposalAsset (AssetManagementSystem). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-06-16 13:51:57.266 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 41.4222ms
+2024-06-16 13:52:19.895 +05:30 [WRN] The WebRootPath was not found: C:\Users\user\OneDrive\Desktop\MY NOTE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-06-16 13:52:20.000 +05:30 [INF] Now listening on: https://localhost:7095
+2024-06-16 13:52:20.002 +05:30 [INF] Now listening on: http://localhost:5240
+2024-06-16 13:52:20.005 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-16 13:52:20.006 +05:30 [INF] Hosting environment: Development
+2024-06-16 13:52:20.006 +05:30 [INF] Content root path: C:\Users\user\OneDrive\Desktop\MY NOTE\AssetManagementSystem\AssetManagementSystem
+2024-06-16 13:52:20.113 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-06-16 13:52:20.250 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 138.1816ms
+2024-06-16 13:52:20.460 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-16 13:52:20.460 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-06-16 13:52:20.467 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 7.5061ms
+2024-06-16 13:52:20.494 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.4445ms
+2024-06-16 13:52:20.534 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-06-16 13:52:20.559 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "POST api/Assets" for actions - AssetManagementSystem.Controllers.AssetsController.AddAsset (AssetManagementSystem),AssetManagementSystem.Controllers.AssetsController.AddDisposalAsset (AssetManagementSystem). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-06-16 13:52:20.574 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 39.7292ms
+2024-06-16 13:56:40.296 +05:30 [WRN] The WebRootPath was not found: C:\Users\user\OneDrive\Desktop\MY NOTE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-06-16 13:56:40.445 +05:30 [INF] Now listening on: https://localhost:7095
+2024-06-16 13:56:40.446 +05:30 [INF] Now listening on: http://localhost:5240
+2024-06-16 13:56:40.449 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-16 13:56:40.450 +05:30 [INF] Hosting environment: Development
+2024-06-16 13:56:40.450 +05:30 [INF] Content root path: C:\Users\user\OneDrive\Desktop\MY NOTE\AssetManagementSystem\AssetManagementSystem
+2024-06-16 13:56:40.609 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-06-16 13:56:40.792 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 184.1229ms
+2024-06-16 13:56:40.994 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-16 13:56:41.003 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 8.7617ms
+2024-06-16 13:56:41.005 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-06-16 13:56:41.040 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.504ms
+2024-06-16 13:56:41.102 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-06-16 13:56:41.236 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 133.2229ms
+2024-06-16 13:56:46.614 +05:30 [WRN] The WebRootPath was not found: C:\Users\user\OneDrive\Desktop\MY NOTE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-06-16 13:56:46.720 +05:30 [INF] Now listening on: https://localhost:7095
+2024-06-16 13:56:46.722 +05:30 [INF] Now listening on: http://localhost:5240
+2024-06-16 13:56:46.724 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-16 13:56:46.726 +05:30 [INF] Hosting environment: Development
+2024-06-16 13:56:46.728 +05:30 [INF] Content root path: C:\Users\user\OneDrive\Desktop\MY NOTE\AssetManagementSystem\AssetManagementSystem
+2024-06-16 13:56:46.832 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-06-16 13:56:47.015 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 186.0312ms
+2024-06-16 13:56:47.218 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-06-16 13:56:47.218 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-16 13:56:47.232 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 13.082ms
+2024-06-16 13:56:47.271 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.306ms
+2024-06-16 13:56:47.330 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-06-16 13:56:47.449 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 119.969ms

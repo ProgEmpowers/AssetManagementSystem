@@ -1,0 +1,41 @@
+2024-06-16 13:56:46.689 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-16 13:56:46.759 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-16 13:56:46.764 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-16 13:56:46.765 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-16 13:56:46.805 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-16 13:56:46.827 +05:30 [INF] Applying migration '20240616082639_bt'.
+2024-06-16 13:56:46.902 +05:30 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Asset] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [AssetType] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [ImageUrl] nvarchar(max) NULL,
+    [QRcode] nvarchar(max) NULL,
+    [IsActive] bit NOT NULL,
+    [AssetValue] real NULL,
+    [AssetStatus] int NOT NULL,
+    [UserId] int NULL,
+    CONSTRAINT [PK_Asset] PRIMARY KEY ([Id])
+);
+2024-06-16 13:57:36.555 +05:30 [WRN] The WebRootPath was not found: C:\Users\user\OneDrive\Desktop\MY NOTE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-06-16 13:57:36.653 +05:30 [INF] Now listening on: https://localhost:7095
+2024-06-16 13:57:36.655 +05:30 [INF] Now listening on: http://localhost:5240
+2024-06-16 13:57:36.657 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-16 13:57:36.658 +05:30 [INF] Hosting environment: Development
+2024-06-16 13:57:36.659 +05:30 [INF] Content root path: C:\Users\user\OneDrive\Desktop\MY NOTE\AssetManagementSystem\AssetManagementSystem
+2024-06-16 13:57:36.766 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-06-16 13:57:36.916 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 149.9337ms
+2024-06-16 13:57:37.132 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-16 13:57:37.141 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-06-16 13:57:37.159 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 26.8973ms
+2024-06-16 13:57:37.200 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.7419ms
+2024-06-16 13:57:37.293 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-06-16 13:57:37.472 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 178.4209ms
