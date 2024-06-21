@@ -51,8 +51,8 @@
     },
     //Auth Service API
     {
-      "UpstreamPathTemplate": "/apigateway/Auth",
-      "UpstreamHttpMethod": [ "Get", "Delete", "Put", "Post" ],
+      "UpstreamPathTemplate": "/apigateway/Auth/login",
+      "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -60,10 +60,22 @@
           "Port": 7229
         }
       ],
-      "DownstreamPathTemplate": "/api/Auth"
+      "DownstreamPathTemplate": "/api/Auth/login"
+    },
+    {
+      "UpstreamPathTemplate": "/apigateway/User",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User"
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:800"
+    "BaseUrl": "http://localhost:5146"
   }
 }
