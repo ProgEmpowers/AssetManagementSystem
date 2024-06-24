@@ -1,0 +1,557 @@
+2024-06-21 16:48:58.764 +05:30 [INF] User profile is available. Using 'C:\Users\dasun\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-21 16:48:59.142 +05:30 [INF] Now listening on: https://localhost:7229
+2024-06-21 16:48:59.143 +05:30 [INF] Now listening on: http://localhost:5039
+2024-06-21 16:48:59.146 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-21 16:48:59.147 +05:30 [INF] Hosting environment: Development
+2024-06-21 16:48:59.150 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AuthService
+2024-06-21 16:49:01.012 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-06-21 16:49:01.523 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 515.8507ms
+2024-06-21 16:49:01.795 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-21 16:49:01.823 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 27.3162ms
+2024-06-21 16:49:01.825 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-06-21 16:49:02.011 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 186.388ms
+2024-06-21 16:49:02.171 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-06-21 16:49:02.320 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 148.9645ms
+2024-06-21 16:55:01.283 +05:30 [INF] Executed DbCommand (161ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [aq];
+2024-06-21 16:55:01.358 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [aq] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2024-06-21 16:55:02.392 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-21 16:55:02.443 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-06-21 16:55:02.444 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-21 16:55:02.457 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-21 16:55:02.468 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-21 16:55:02.480 +05:30 [INF] Applying migration '20240621112428_po'.
+2024-06-21 16:55:02.548 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2024-06-21 16:55:02.550 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [Address] nvarchar(max) NULL,
+    [FirstName] nvarchar(max) NULL,
+    [LastName] nvarchar(max) NULL,
+    [Nic] nvarchar(max) NULL,
+    [DateofBirth] datetime2 NULL,
+    [JobPost] nvarchar(max) NULL,
+    [IsActive] bit NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+2024-06-21 16:55:02.553 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);
+2024-06-21 16:55:02.703 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-21 16:55:02.709 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-21 16:55:02.713 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-21 16:55:02.716 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-21 16:55:04.552 +05:30 [INF] Executed DbCommand (108ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConcurrencyStamp', N'Name', N'NormalizedName') AND [object_id] = OBJECT_ID(N'[AspNetRoles]'))
+    SET IDENTITY_INSERT [AspNetRoles] ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (N'30415502-99f1-49cc-95b3-d0081b0e638f', N'30415502-99f1-49cc-95b3-d0081b0e638f', N'VendorManeger', N'VENDORMANEGER'),
+(N'5bc23f4f-7673-4a10-8b2f-81d11b2b631e', N'5bc23f4f-7673-4a10-8b2f-81d11b2b631e', N'NormalUser', N'NORMALUSER'),
+(N'a68e73fb-f0f6-452b-a861-b9bbad4713aa', N'a68e73fb-f0f6-452b-a861-b9bbad4713aa', N'AssetManeger', N'ASSETMANEGER'),
+(N'e5a00264-e2a2-4c67-a568-70f48d9aa34f', N'e5a00264-e2a2-4c67-a568-70f48d9aa34f', N'Admin', N'ADMIN');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConcurrencyStamp', N'Name', N'NormalizedName') AND [object_id] = OBJECT_ID(N'[AspNetRoles]'))
+    SET IDENTITY_INSERT [AspNetRoles] OFF;
+2024-06-21 16:55:04.578 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'Address', N'ConcurrencyStamp', N'DateofBirth', N'Email', N'EmailConfirmed', N'FirstName', N'IsActive', N'JobPost', N'LastName', N'LockoutEnabled', N'LockoutEnd', N'Nic', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[AspNetUsers]'))
+    SET IDENTITY_INSERT [AspNetUsers] ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [Address], [ConcurrencyStamp], [DateofBirth], [Email], [EmailConfirmed], [FirstName], [IsActive], [JobPost], [LastName], [LockoutEnabled], [LockoutEnd], [Nic], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (N'75af95a9-9273-4c9b-86aa-0a80c76f32d6', 0, NULL, N'e97847e5-8429-4128-8f8c-c2683cfbf6af', NULL, N'admin@corzent.com', CAST(0 AS bit), NULL, CAST(0 AS bit), NULL, NULL, CAST(0 AS bit), NULL, NULL, N'ADMIN@CORZENT.COM', N'ADMIN@CORZENT.COM', N'AQAAAAIAAYagAAAAEG/nQ24C+sEliDEMnPFBIU0pRu0ZcQNpWMK+9ZYjKA0HkP1whaXRd9RKTxevCixXWQ==', NULL, CAST(0 AS bit), N'0bed3761-a986-4c18-bfbe-dd927acdc8a6', CAST(0 AS bit), N'admin@corzent.com');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'Address', N'ConcurrencyStamp', N'DateofBirth', N'Email', N'EmailConfirmed', N'FirstName', N'IsActive', N'JobPost', N'LastName', N'LockoutEnabled', N'LockoutEnd', N'Nic', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[AspNetUsers]'))
+    SET IDENTITY_INSERT [AspNetUsers] OFF;
+2024-06-21 16:55:05.610 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'RoleId', N'UserId') AND [object_id] = OBJECT_ID(N'[AspNetUserRoles]'))
+    SET IDENTITY_INSERT [AspNetUserRoles] ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (N'e5a00264-e2a2-4c67-a568-70f48d9aa34f', N'75af95a9-9273-4c9b-86aa-0a80c76f32d6');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'RoleId', N'UserId') AND [object_id] = OBJECT_ID(N'[AspNetUserRoles]'))
+    SET IDENTITY_INSERT [AspNetUserRoles] OFF;
+2024-06-21 16:55:06.236 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+2024-06-21 16:55:06.285 +05:30 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2024-06-21 16:55:06.287 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+2024-06-21 16:55:06.288 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+2024-06-21 16:55:06.295 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+2024-06-21 16:55:06.302 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+2024-06-21 16:55:06.308 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2024-06-21 16:55:06.315 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240621112428_po', N'8.0.1');
+2024-06-21 16:55:06.320 +05:30 [INF] Applying migration '20240621112452_poq'.
+2024-06-21 16:55:06.345 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'54d60cec-603e-4766-ae6a-d74a50bc9859', [PasswordHash] = N'AQAAAAIAAYagAAAAEDHqbQf8S8n+ybPSCLLUv+aARyovqCUrlZIQHBODxSsKH4sieQESYMnbB3AYW8Aqfw==', [SecurityStamp] = N'1205fcfd-9155-4bbb-a921-3b78d61f6110'
+WHERE [Id] = N'75af95a9-9273-4c9b-86aa-0a80c76f32d6';
+SELECT @@ROWCOUNT;
+2024-06-21 16:55:06.681 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240621112452_poq', N'8.0.1');
+2024-06-21 16:55:54.542 +05:30 [INF] User profile is available. Using 'C:\Users\dasun\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-21 16:55:55.847 +05:30 [INF] Now listening on: https://localhost:7229
+2024-06-21 16:55:55.848 +05:30 [INF] Now listening on: http://localhost:5039
+2024-06-21 16:55:55.852 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-21 16:55:55.854 +05:30 [INF] Hosting environment: Development
+2024-06-21 16:55:55.864 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AuthService
+2024-06-21 16:56:07.478 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-06-21 16:56:07.894 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 429.9957ms
+2024-06-21 16:56:07.949 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-21 16:56:08.000 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 50.702ms
+2024-06-21 16:56:09.066 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-06-21 16:56:09.374 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 306.97ms
+2024-06-21 16:56:10.311 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-06-21 16:56:10.469 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 158.3132ms
+2024-06-21 16:56:34.992 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 16:56:35.008 +05:30 [INF] CORS policy execution successful.
+2024-06-21 16:56:35.357 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 16:56:35.384 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 16:56:38.845 +05:30 [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 16:56:38.890 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 16:56:38.903 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 3514.5765ms
+2024-06-21 16:56:38.907 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 16:56:38.913 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 3923.2905ms
+2024-06-21 16:56:45.714 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7229/api/Auth/login - application/json 54
+2024-06-21 16:56:45.718 +05:30 [INF] CORS policy execution successful.
+2024-06-21 16:56:45.722 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 16:56:45.733 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-21 16:56:45.853 +05:30 [INF] Executed DbCommand (42ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-21 16:56:46.034 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-21 16:56:46.063 +05:30 [INF] Executing OkObjectResult, writing value of type 'AuthService.Models.Dtos.LoginResponseDto'.
+2024-06-21 16:56:46.068 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 333.6477ms
+2024-06-21 16:56:46.069 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 16:56:46.072 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7229/api/Auth/login - 200 null application/json; charset=utf-8 357.4344ms
+2024-06-21 16:58:50.516 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 16:58:50.527 +05:30 [INF] CORS policy execution successful.
+2024-06-21 16:58:50.530 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 16:58:50.532 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 16:58:50.610 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 16:58:50.613 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 16:58:50.614 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 81.3373ms
+2024-06-21 16:58:50.615 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 16:58:50.616 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 102.3878ms
+2024-06-21 16:59:14.541 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7229/api/Auth/register?addAuth=true - null null
+2024-06-21 16:59:14.543 +05:30 [INF] CORS policy execution successful.
+2024-06-21 16:59:14.546 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7229/api/Auth/register?addAuth=true - 204 null null 8.4263ms
+2024-06-21 16:59:14.548 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/register?addAuth=true - application/json 124
+2024-06-21 16:59:14.551 +05:30 [INF] CORS policy execution successful.
+2024-06-21 16:59:14.615 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Register (AuthService)'
+2024-06-21 16:59:14.620 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AuthService.Models.Dtos.RegisterRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-21 16:59:14.643 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-21 16:59:14.738 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-21 16:59:14.855 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (DbType = DateTimeOffset), @p13='?' (Size = 4000), @p14='?' (Size = 256), @p15='?' (Size = 256), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [Address], [ConcurrencyStamp], [DateofBirth], [Email], [EmailConfirmed], [FirstName], [IsActive], [JobPost], [LastName], [LockoutEnabled], [LockoutEnd], [Nic], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);
+2024-06-21 16:59:14.886 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-06-21 16:59:14.932 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2024-06-21 16:59:14.938 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-06-21 16:59:14.950 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-21 16:59:15.026 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p23='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p24='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTimeOffset), @p14='?' (Size = 4000), @p15='?' (Size = 256), @p16='?' (Size = 256), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [Address] = @p3, [ConcurrencyStamp] = @p4, [DateofBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [IsActive] = @p9, [JobPost] = @p10, [LastName] = @p11, [LockoutEnabled] = @p12, [LockoutEnd] = @p13, [Nic] = @p14, [NormalizedEmail] = @p15, [NormalizedUserName] = @p16, [PasswordHash] = @p17, [PhoneNumber] = @p18, [PhoneNumberConfirmed] = @p19, [SecurityStamp] = @p20, [TwoFactorEnabled] = @p21, [UserName] = @p22
+OUTPUT 1
+WHERE [Id] = @p23 AND [ConcurrencyStamp] = @p24;
+2024-06-21 16:59:15.041 +05:30 [INF] Executing OkObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary'.
+2024-06-21 16:59:15.051 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Register (AuthService) in 428.7273ms
+2024-06-21 16:59:15.052 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Register (AuthService)'
+2024-06-21 16:59:15.054 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register?addAuth=true - 200 null application/json; charset=utf-8 505.5728ms
+2024-06-21 16:59:15.097 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 16:59:15.099 +05:30 [INF] CORS policy execution successful.
+2024-06-21 16:59:15.100 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 16:59:15.103 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 16:59:15.115 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 16:59:15.118 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 16:59:15.124 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 19.3359ms
+2024-06-21 16:59:15.126 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 16:59:15.127 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 30.4681ms
+2024-06-21 17:01:30.832 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 17:01:30.848 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:01:30.849 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:01:30.850 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 17:01:30.859 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 17:01:30.861 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 17:01:30.862 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 10.8761ms
+2024-06-21 17:01:30.863 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:01:30.864 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 35.1562ms
+2024-06-21 17:08:06.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 17:08:06.471 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:08:06.502 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:08:06.513 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 17:08:08.020 +05:30 [INF] Executed DbCommand (165ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 17:08:08.126 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 17:08:08.183 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 1660.2641ms
+2024-06-21 17:08:08.188 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:08:08.193 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 1819.3659ms
+2024-06-21 17:08:11.260 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 17:08:11.308 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:08:11.319 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:08:11.336 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 17:08:12.398 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 17:08:12.402 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 17:08:12.405 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 1062.9224ms
+2024-06-21 17:08:12.406 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:08:12.407 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 1154.7565ms
+2024-06-21 17:19:19.550 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7229/api/Auth/login - application/json 54
+2024-06-21 17:19:19.556 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:19:19.558 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 17:19:19.559 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-21 17:19:20.707 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-21 17:19:20.799 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-21 17:19:20.810 +05:30 [INF] Executing OkObjectResult, writing value of type 'AuthService.Models.Dtos.LoginResponseDto'.
+2024-06-21 17:19:20.812 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 1251.5573ms
+2024-06-21 17:19:20.813 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 17:19:20.814 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7229/api/Auth/login - 200 null application/json; charset=utf-8 1268.2726ms
+2024-06-21 17:19:34.627 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 17:19:34.637 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:19:34.638 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:19:34.640 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 17:19:34.656 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 17:19:34.659 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 17:19:34.661 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 19.5333ms
+2024-06-21 17:19:34.662 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:19:34.663 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 35.819ms
+2024-06-21 17:20:25.339 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7229/api/Auth/register?addAuth=true - null null
+2024-06-21 17:20:25.345 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:20:25.347 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7229/api/Auth/register?addAuth=true - 204 null null 8.236ms
+2024-06-21 17:20:25.350 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/register?addAuth=true - application/json 131
+2024-06-21 17:20:25.353 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:20:25.368 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Register (AuthService)'
+2024-06-21 17:20:25.369 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(AuthService.Models.Dtos.RegisterRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-21 17:20:25.378 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-21 17:20:25.458 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-21 17:20:25.505 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = DateTime2), @p5='?' (Size = 256), @p6='?' (DbType = Boolean), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (DbType = DateTimeOffset), @p13='?' (Size = 4000), @p14='?' (Size = 256), @p15='?' (Size = 256), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [Address], [ConcurrencyStamp], [DateofBirth], [Email], [EmailConfirmed], [FirstName], [IsActive], [JobPost], [LastName], [LockoutEnabled], [LockoutEnd], [Nic], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);
+2024-06-21 17:20:25.513 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-06-21 17:20:25.529 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2024-06-21 17:20:25.532 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2024-06-21 17:20:25.536 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-06-21 17:20:25.566 +05:30 [INF] Executed DbCommand (22ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p23='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p24='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (Size = 256), @p7='?' (DbType = Boolean), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (DbType = DateTimeOffset), @p14='?' (Size = 4000), @p15='?' (Size = 256), @p16='?' (Size = 256), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = Boolean), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [Address] = @p3, [ConcurrencyStamp] = @p4, [DateofBirth] = @p5, [Email] = @p6, [EmailConfirmed] = @p7, [FirstName] = @p8, [IsActive] = @p9, [JobPost] = @p10, [LastName] = @p11, [LockoutEnabled] = @p12, [LockoutEnd] = @p13, [Nic] = @p14, [NormalizedEmail] = @p15, [NormalizedUserName] = @p16, [PasswordHash] = @p17, [PhoneNumber] = @p18, [PhoneNumberConfirmed] = @p19, [SecurityStamp] = @p20, [TwoFactorEnabled] = @p21, [UserName] = @p22
+OUTPUT 1
+WHERE [Id] = @p23 AND [ConcurrencyStamp] = @p24;
+2024-06-21 17:20:25.570 +05:30 [INF] Executing OkObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary'.
+2024-06-21 17:20:25.572 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Register (AuthService) in 200.8446ms
+2024-06-21 17:20:25.573 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Register (AuthService)'
+2024-06-21 17:20:25.574 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register?addAuth=true - 200 null application/json; charset=utf-8 224.3273ms
+2024-06-21 17:20:25.595 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 17:20:25.598 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:20:25.599 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:20:25.600 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 17:20:25.610 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 17:20:25.612 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 17:20:25.615 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 11.4682ms
+2024-06-21 17:20:25.616 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:20:25.617 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 22.0946ms
+2024-06-21 17:23:14.425 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 17:23:14.428 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:23:14.429 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:23:14.446 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 17:23:14.455 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 17:23:14.459 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 17:23:14.460 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 12.7033ms
+2024-06-21 17:23:14.461 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:23:14.462 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 37.5046ms
+2024-06-21 17:41:40.558 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7229/api/Auth/login - application/json 49
+2024-06-21 17:41:40.563 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:41:40.565 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 17:41:40.566 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-21 17:41:41.250 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7229/api/Auth/login - application/json 49
+2024-06-21 17:41:41.256 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:41:41.257 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 17:41:41.259 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-21 17:41:41.604 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-21 17:41:41.680 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-06-21 17:41:41.722 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 1153.7053ms
+2024-06-21 17:41:41.724 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 17:41:41.725 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7229/api/Auth/login - 400 null application/problem+json; charset=utf-8 1167.4549ms
+2024-06-21 17:41:42.616 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-21 17:41:42.683 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-06-21 17:41:42.685 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 1424.4688ms
+2024-06-21 17:41:42.686 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 17:41:42.687 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7229/api/Auth/login - 400 null application/problem+json; charset=utf-8 1437.067ms
+2024-06-21 17:41:50.026 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7229/api/Auth/login - application/json 54
+2024-06-21 17:41:50.028 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:41:50.029 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 17:41:50.029 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-21 17:41:50.033 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-21 17:41:50.117 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-21 17:41:50.120 +05:30 [INF] Executing OkObjectResult, writing value of type 'AuthService.Models.Dtos.LoginResponseDto'.
+2024-06-21 17:41:50.122 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 91.2308ms
+2024-06-21 17:41:50.124 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 17:41:50.125 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7229/api/Auth/login - 200 null application/json; charset=utf-8 99.1528ms
+2024-06-21 17:56:04.484 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 17:56:04.527 +05:30 [INF] CORS policy execution successful.
+2024-06-21 17:56:04.536 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:56:04.545 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 17:56:05.631 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 17:56:05.638 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 17:56:05.643 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 1095.8441ms
+2024-06-21 17:56:05.644 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 17:56:05.646 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 1187.4197ms
+2024-06-21 19:09:03.865 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7229/api/Auth/login - application/json 54
+2024-06-21 19:09:03.882 +05:30 [INF] CORS policy execution successful.
+2024-06-21 19:09:03.886 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 19:09:03.895 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-21 19:09:05.144 +05:30 [INF] Executed DbCommand (76ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-21 19:09:05.249 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-21 19:09:05.263 +05:30 [INF] Executing OkObjectResult, writing value of type 'AuthService.Models.Dtos.LoginResponseDto'.
+2024-06-21 19:09:05.266 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 1369.1545ms
+2024-06-21 19:09:05.267 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 19:09:05.269 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7229/api/Auth/login - 200 null application/json; charset=utf-8 1406.2512ms
+2024-06-21 19:35:15.840 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7229/api/Auth/login - application/json 54
+2024-06-21 19:35:15.868 +05:30 [INF] CORS policy execution successful.
+2024-06-21 19:35:15.876 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 19:35:15.886 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-21 19:35:17.088 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-21 19:35:17.184 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-21 19:35:17.196 +05:30 [INF] Executing OkObjectResult, writing value of type 'AuthService.Models.Dtos.LoginResponseDto'.
+2024-06-21 19:35:17.200 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 1310.8652ms
+2024-06-21 19:35:17.201 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 19:35:17.202 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7229/api/Auth/login - 200 null application/json; charset=utf-8 1368.6004ms
+2024-06-21 19:35:20.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 19:35:20.398 +05:30 [INF] CORS policy execution successful.
+2024-06-21 19:35:20.399 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 19:35:20.400 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 19:35:20.415 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 19:35:20.420 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 19:35:20.425 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 23.6027ms
+2024-06-21 19:35:20.427 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 19:35:20.428 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 36.7033ms
+2024-06-21 19:43:40.560 +05:30 [INF] User profile is available. Using 'C:\Users\dasun\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-21 19:43:40.808 +05:30 [INF] Now listening on: https://localhost:7229
+2024-06-21 19:43:40.810 +05:30 [INF] Now listening on: http://localhost:5039
+2024-06-21 19:43:40.813 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-21 19:43:40.814 +05:30 [INF] Hosting environment: Development
+2024-06-21 19:43:40.814 +05:30 [INF] Content root path: C:\Users\dasun\OneDrive\Desktop\AssetManagementSystem\AssetManagementSystem\AuthService
+2024-06-21 19:43:45.594 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-06-21 19:43:46.053 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 471.3418ms
+2024-06-21 19:43:46.419 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-21 19:43:46.437 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 17.3292ms
+2024-06-21 19:43:46.569 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-06-21 19:43:46.685 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 115.8578ms
+2024-06-21 19:43:47.425 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-06-21 19:43:47.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 213.6326ms
+2024-06-21 19:44:51.784 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-21 19:44:51.845 +05:30 [INF] CORS policy execution successful.
+2024-06-21 19:44:52.112 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 19:44:52.152 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-21 19:44:55.514 +05:30 [INF] Executed DbCommand (144ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-21 19:44:55.634 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-21 19:44:55.658 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 3498.2126ms
+2024-06-21 19:44:55.660 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-21 19:44:55.669 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 3887.3301ms
+2024-06-21 19:45:14.631 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7229/api/Auth/login - application/json 54
+2024-06-21 19:45:14.635 +05:30 [INF] CORS policy execution successful.
+2024-06-21 19:45:14.637 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 19:45:14.647 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-21 19:45:14.748 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-21 19:45:14.878 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-21 19:45:14.899 +05:30 [INF] Executing OkObjectResult, writing value of type 'AuthService.Models.Dtos.LoginResponseDto'.
+2024-06-21 19:45:14.904 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 256.2287ms
+2024-06-21 19:45:14.906 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-21 19:45:14.907 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7229/api/Auth/login - 200 null application/json; charset=utf-8 276.3638ms

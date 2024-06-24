@@ -1,7 +1,9 @@
 using AssetManagementSystem.Models;
 using AuthService.Data;
 using AuthService.Mappings;
+using AuthService.Models.Helpter;
 using AuthService.Services.AuthServices;
+using AuthService.Services.EmailServices;
 using AuthService.Services.UserServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -62,6 +64,7 @@ builder.Services.AddAutoMapper(typeof(MapperProfiles));
 
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 builder.Services.AddIdentityCore<User>()
     .AddRoles<IdentityRole>()
@@ -106,6 +109,8 @@ builder.Services.AddCors(options =>
         }
         );
 });
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 
 var app = builder.Build();
 
