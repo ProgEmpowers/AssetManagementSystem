@@ -3,9 +3,12 @@ using AuthService.Models.Dtos;
 using AuthService.Models.Helpter;
 using AuthService.Services.AuthServices;
 using AuthService.Services.EmailServices;
+using AuthService.Services.NotificationService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using MimeKit;
 using RestSharp;
@@ -21,12 +24,14 @@ namespace AuthService.Controllers
         private readonly UserManager<User> userManager;
         private readonly ITokenRepository tokenRepository;
         private readonly IEmailService emailService;
+        private readonly IHubContext<NotificationHub, INotificationClient> _hubContext;
 
-        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository, IEmailService emailService)
+        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository, IEmailService emailService , IHubContext<NotificationHub, INotificationClient> hubContext)
         {
             this.userManager = userManager;
             this.tokenRepository = tokenRepository;
             this.emailService = emailService;
+            _hubContext = hubContext;
         }
 
 
@@ -90,8 +95,6 @@ namespace AuthService.Controllers
                 DateofBirth = request.DateofBirth,
                 IsActive = true
 
-
-
             };
 
             if(request.Password != request.ConfirmPassword)
@@ -118,8 +121,8 @@ namespace AuthService.Controllers
                 identityResult = await userManager.AddToRoleAsync(user, request.Role);
                 if (identityResult.Succeeded)
                 {
-                    //return Ok(ModelState);
                     SendRegistrationEmail(user.Email, request.Password, request.Role);
+                    //_hubContext.Clients.User(user.Id.ToString()).ReceiveNotification("You have been registered.");
                     return Ok(ModelState);
                 }
                 else
@@ -254,7 +257,7 @@ namespace AuthService.Controllers
                 });
             }
             var user = await userManager.FindByEmailAsync(resetPasswordDto.Email);
-            resetPasswordDto.Token = WebUtility.UrlDecode(resetPasswordDto.Token);
+            //resetPasswordDto.Token = WebUtility.UrlDecode(resetPasswordDto.Token);
             if(user == null)
             {
                 return BadRequest(new AuthResponseDto
@@ -279,6 +282,36 @@ namespace AuthService.Controllers
             {
                 IsSuccess = false,
                 Message = result.Errors.FirstOrDefault()!.Description,
+            });
+        }
+
+
+        [HttpPost("change-password")]
+        public async Task<ActionResult> ChangePassword(ChangePasswordDto changePasswordDto)
+        {
+            var user = await userManager.FindByEmailAsync(changePasswordDto.Email);
+            if(user == null)
+            {
+                return BadRequest(new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = "User does not exists with this email"
+                });
+            }
+            var result = await userManager.ChangePasswordAsync(user, changePasswordDto.CurrentPassword, changePasswordDto.NewPassword);
+
+            if(result.Succeeded)
+            {
+                return Ok(new AuthResponseDto
+                {
+                    IsSuccess = true,
+                    Message = "Password changed successfully"
+                });
+            }
+            return BadRequest(new AuthResponseDto
+            {
+                IsSuccess = false,
+                Message = "error happened 1"
             });
         }
     }

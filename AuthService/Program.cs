@@ -4,6 +4,7 @@ using AuthService.Mappings;
 using AuthService.Models.Helpter;
 using AuthService.Services.AuthServices;
 using AuthService.Services.EmailServices;
+using AuthService.Services.NotificationService;
 using AuthService.Services.UserServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -25,6 +26,7 @@ builder.Logging.AddSerilog(logger);
 
 // Add services to the container.
 
+builder.Services.AddSignalR();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -128,5 +130,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<NotificationHub>("/notificationHub");
 
 app.Run();
