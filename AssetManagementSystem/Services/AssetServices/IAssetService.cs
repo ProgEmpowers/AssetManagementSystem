@@ -1,6 +1,10 @@
 ﻿using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Mvc;
+=======
+using AssetManagementSystem.Models.Enums;
+>>>>>>> master
 
 namespace AssetManagementSystem.Services.AssetServices
 {
@@ -26,9 +30,16 @@ namespace AssetManagementSystem.Services.AssetServices
         Task<Asset?> GetDeletedAssetByIdAsync(int id);
         Task<Asset?> RecoverDeletedAssetAsync(int id);
 
+<<<<<<< HEAD
         Task<IEnumerable<string>> GetAssetTypesAsync();
         Task<IEnumerable<Asset>> GetAssetsByTypeAsync(string type);
 
    
+=======
+        Task<List<Asset>> GetAssetsByStatusAsync(AssetStatusEnum status);
+        Task<List<Asset>> GetAssetByUserAsync(string email);
+        Task<int> GetTotalNoOfAssetsAsync();
+        Task<int> GetNoOfAssetsByStatusAsync(AssetStatusEnum status);
+>>>>>>> master
     }
 }

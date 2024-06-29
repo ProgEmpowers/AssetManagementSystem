@@ -28,6 +28,12 @@ namespace AuthService.Controllers
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto request)
         {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var identityUser = await userManager.FindByEmailAsync(request.Email);
             if (identityUser != null)
             {
@@ -46,13 +52,16 @@ namespace AuthService.Controllers
                     };
                     return Ok(response);
                 }
+                ModelState.AddModelError("", "Password Incorrect");
+                return ValidationProblem(ModelState);
             }
-            ModelState.AddModelError("", "Email or Password Incorrect");
+            ModelState.AddModelError("", "Email Incorrect");
             return ValidationProblem(ModelState);
         }
 
         [HttpPost]
         [Route("register")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto request)
         {
             var customUserId = await _userService.GenerateUserIdAsync();
@@ -73,13 +82,26 @@ namespace AuthService.Controllers
 
 
             };
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var identityUser = await userManager.FindByEmailAsync(request.Email);
+            if (identityUser != null)
+            {
+                ModelState.AddModelError("", "Email Is Already registered");
+                return ValidationProblem(ModelState);
+            }
+
             var identityResult = await userManager.CreateAsync(user, request.Password);
             if (identityResult.Succeeded)
             {
                 identityResult = await userManager.AddToRoleAsync(user, request.Role);
                 if (identityResult.Succeeded)
                 {
-                    return Ok();
+                    return Ok(ModelState);
                 }
                 else
                 {

@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssetManagementSystem.Migrations
 {
     [DbContext(typeof(AssetManagementDbContext))]
-<<<<<<<< HEAD:AssetManagementSystem/Migrations/20240620165351_test.Designer.cs
-    [Migration("20240620165351_test")]
-    partial class test
-========
-    [Migration("20240621130247_init")]
-    partial class init
->>>>>>>> master:AssetManagementSystem/Migrations/20240621130247_init.Designer.cs
+    [Migration("20240621131710_v1")]
+    partial class v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -65,8 +60,8 @@ namespace AssetManagementSystem.Migrations
                     b.Property<string>("QRcode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
