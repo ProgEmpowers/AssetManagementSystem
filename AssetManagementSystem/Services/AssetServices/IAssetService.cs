@@ -1,5 +1,6 @@
 ﻿using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AssetManagementSystem.Services.AssetServices
 {
@@ -24,5 +25,10 @@ namespace AssetManagementSystem.Services.AssetServices
             int pageNumber = 1, int pageSize = 10);
         Task<Asset?> GetDeletedAssetByIdAsync(int id);
         Task<Asset?> RecoverDeletedAssetAsync(int id);
+
+        Task<IEnumerable<string>> GetAssetTypesAsync();
+        Task<IEnumerable<Asset>> GetAssetsByTypeAsync(string type);
+
+   
     }
 }

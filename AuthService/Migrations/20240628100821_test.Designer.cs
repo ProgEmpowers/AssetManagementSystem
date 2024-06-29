@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthService.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20240616082801_bt2")]
-    partial class bt2
+    [Migration("20240628100821_test")]
+    partial class test
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,8 +40,11 @@ namespace AuthService.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DateofBirth")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("CustomUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DateofBirth")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -51,6 +54,9 @@ namespace AuthService.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -115,19 +121,32 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2ed2bd73-be6b-4ecc-a2c0-8932dfe039f0",
+                            ConcurrencyStamp = "ef516c12-0a3e-466c-b68d-cbafe88d0aec",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPmVs2LtMPh3D8SITaJMfihBO5jAKm3aNKdj/p5mU1rDNam1mbN1hn18USmjgC5arA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMp72uSIEHS93NmDT9H0tQiyx/hnhpS8YHMBk3WIu9pj+NpJQm1d8tMGUKjJCRac/g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "390ad4c6-43a6-48a2-a7f9-0be58d660cd5",
+                            SecurityStamp = "d3caf62f-761c-4974-a2c6-246ebe7dfe8c",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });
+                });
+
+            modelBuilder.Entity("AuthService.Models.Domains.UserAsset", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AssetId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "AssetId");
+
+                    b.ToTable("UserAssets");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

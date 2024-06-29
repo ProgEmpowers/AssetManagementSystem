@@ -3,6 +3,7 @@ using System.Globalization;
 using AssetManagementSystem.Context;
 using AssetManagementSystem.CustomActionFilters;
 using AssetManagementSystem.Models;
+using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
 using AssetManagementSystem.Services.AssetServices;
 using Microsoft.AspNetCore.Mvc;
@@ -143,5 +144,22 @@ namespace AssetManagementSystem.Controllers
             }
             return Ok(SelecteddisposalAsset);
         }
+
+
+        [HttpGet("types")]
+        public async Task<ActionResult<IEnumerable<string>>> GetAssetTypes()
+        {
+            var assetTypes = await _assetService.GetAssetTypesAsync();
+            return Ok(assetTypes);
+        }
+
+        [HttpGet("type/{type}")]
+        public async Task<ActionResult<IEnumerable<Asset>>> GetAssetsByType(string type)
+        {
+            var assets = await _assetService.GetAssetsByTypeAsync(type);
+            return Ok(assets);
+        }
+
+        
     }
 }

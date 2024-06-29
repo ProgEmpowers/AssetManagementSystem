@@ -1,0 +1,84 @@
+2024-06-22 07:56:45.558 +05:30 [WRN] The WebRootPath was not found: C:\Users\Savindya\Desktop\project2\API7\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-06-22 07:56:45.758 +05:30 [INF] Now listening on: https://localhost:7095
+2024-06-22 07:56:45.759 +05:30 [INF] Now listening on: http://localhost:5240
+2024-06-22 07:56:45.761 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-22 07:56:45.762 +05:30 [INF] Hosting environment: Development
+2024-06-22 07:56:45.763 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API7\AssetManagementSystem\AssetManagementSystem
+2024-06-22 07:56:56.524 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-06-22 07:56:56.915 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 395.7214ms
+2024-06-22 07:56:56.971 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-22 07:56:56.984 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 12.7466ms
+2024-06-22 07:56:56.989 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-06-22 07:56:57.839 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 850.0787ms
+2024-06-22 07:56:57.938 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-06-22 07:56:58.121 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 184.209ms
+2024-06-22 07:57:11.317 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors/ids&names - null null
+2024-06-22 07:57:11.326 +05:30 [INF] CORS policy execution successful.
+2024-06-22 07:57:11.333 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorList (AssetManagementSystem)'
+2024-06-22 07:57:11.340 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-06-22 07:57:11.340 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-06-22 07:57:11.340 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-06-22 07:57:11.343 +05:30 [INF] CORS policy execution successful.
+2024-06-22 07:57:11.343 +05:30 [INF] CORS policy execution successful.
+2024-06-22 07:57:11.345 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-06-22 07:57:11.345 +05:30 [INF] CORS policy execution successful.
+2024-06-22 07:57:11.345 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-06-22 07:57:11.346 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-06-22 07:57:11.363 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-06-22 07:57:11.363 +05:30 [INF] Route matched with {action = "GetVendorList", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetVendorList() on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-06-22 07:57:11.363 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-06-22 07:57:11.363 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-06-22 07:57:13.447 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Name]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-06-22 07:57:13.447 +05:30 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-22 07:57:13.461 +05:30 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor] AS [v]
+2024-06-22 07:57:13.465 +05:30 [INF] Finished Get Vendor Names : []
+2024-06-22 07:57:13.471 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-06-22 07:57:13.473 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-22 07:57:13.473 +05:30 [INF] Finished Get All Vendors : []
+2024-06-22 07:57:13.478 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-06-22 07:57:13.480 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-06-22 07:57:13.481 +05:30 [INF] Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-06-22 07:57:13.483 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-22 07:57:13.483 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetVendorList (AssetManagementSystem) in 2114.8584ms
+2024-06-22 07:57:13.485 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetVendorList (AssetManagementSystem)'
+2024-06-22 07:57:13.487 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetType]
+FROM [Vendor] AS [v]
+WHERE 0 = 1
+2024-06-22 07:57:13.487 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 2120.8954ms
+2024-06-22 07:57:13.493 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-22 07:57:13.493 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-06-22 07:57:13.494 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 2126.2377ms
+2024-06-22 07:57:13.496 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-06-22 07:57:13.496 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors/ids&names - 200 null application/json; charset=utf-8 2179.2089ms
+2024-06-22 07:57:13.496 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 2157.2077ms
+2024-06-22 07:57:13.497 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 2156.987ms
+2024-06-22 07:57:13.514 +05:30 [INF] Finished Get All Assets : [{"Id":2,"Name":"lap","AssetType":"Mouse","Description":"llko","ImageUrl":"https://localhost:7095/Uploads\\Images\\Assets\\7df4084ba275901d29ac25e17784c45d.jpg","QRcode":null,"IsActive":true,"AssetValue":456,"AssetStatus":2,"UserId":"iou@gmail.com"},{"Id":3,"Name":"lap","AssetType":"PC","Description":"loll","ImageUrl":"https://localhost:7095/Uploads\\Images\\Assets\\87b6e3ebf4d64dc72392e50a9f74bf84.jpg","QRcode":null,"IsActive":true,"AssetValue":8977,"AssetStatus":0,"UserId":null}]
+2024-06-22 07:57:13.517 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-06-22 07:57:13.518 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-06-22 07:57:13.551 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-06-22 07:57:13.554 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-22 07:57:13.557 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 2192.3991ms
+2024-06-22 07:57:13.558 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-06-22 07:57:13.559 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 2219.9534ms
+2024-06-22 07:57:13.569 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - null null
+2024-06-22 07:57:13.575 +05:30 [INF] The file /Images/Assets/upload.png was not modified
+2024-06-22 07:57:13.576 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/upload.png - 304 null image/png 7.376ms

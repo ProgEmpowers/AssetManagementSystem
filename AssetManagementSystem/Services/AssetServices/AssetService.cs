@@ -5,6 +5,7 @@ using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
 using AutoMapper;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace AssetManagementSystem.Services.AssetServices
@@ -181,5 +182,20 @@ namespace AssetManagementSystem.Services.AssetServices
             logger.LogInformation($"Finished Update a DisposalAsset : {JsonSerializer.Serialize(SelecteddisposalAsset)}");
             return SelecteddisposalAsset;
         }
+
+
+        public async Task<IEnumerable<string>> GetAssetTypesAsync()
+        {
+            return await _dbContext.Asset.Select(a => a.AssetType).Distinct().ToListAsync();
+        }
+
+        public async Task<IEnumerable<Asset>> GetAssetsByTypeAsync(string type)
+        {
+            return await _dbContext.Asset.Where(a => a.AssetType == type).ToListAsync();
+        }
+
+       
+
+
     }
 }
