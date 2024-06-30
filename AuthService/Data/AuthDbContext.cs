@@ -86,6 +86,11 @@ namespace AuthService.Data
 
             builder.Entity<UserAsset>()
             .HasKey(ua => new { ua.UserId, ua.AssetId });
+
+            builder.Entity<UserAsset>()
+           .HasOne(ua => ua.User)
+           .WithMany(u => u.UserAssets)
+           .HasForeignKey(ua => ua.UserId);
         }
     }
 }

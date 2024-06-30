@@ -109,13 +109,23 @@ namespace AuthService.Services.UserServices
             return selectedUser;
         }
 
-        public async Task<UserAsset> AssignAssetToUserAsync(UserAsset userAsset)
+        public async Task<UserAsset> AssignAssetToUserAsync(AssignAssetToUserRequest request)
         {
 
            
 
   
-          userAsset.AssetAssignedTime = DateTime.Now;
+          request.AssetAssignedTime = DateTime.Now;
+
+
+            var userAsset = new UserAsset
+            {
+                UserId = request.UserId,
+                AssetId = request.AssetId,
+                AssetAssignedTime = request.AssetAssignedTime
+                
+            };
+
 
             _dbContext.UserAssets.Add(userAsset);
             await _dbContext.SaveChangesAsync();

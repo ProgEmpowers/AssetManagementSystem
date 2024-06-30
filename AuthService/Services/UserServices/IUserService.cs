@@ -15,7 +15,7 @@ namespace AuthService.Services.UserServices
         Task<User?> GetUserByIdAsync(string id);
         Task<User?> UpdateUserAsync(string id, UserUpdateDto userUpdateDto);
 
-        Task<UserAsset> AssignAssetToUserAsync(UserAsset userAsset);
+        Task<UserAsset> AssignAssetToUserAsync(AssignAssetToUserRequest request);
 
         Task<List<int>> GetAssetIdsByUserIdAsync(string userId);
 

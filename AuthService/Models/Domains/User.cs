@@ -17,12 +17,14 @@ namespace AssetManagementSystem.Models
         public string? ImageUrl { get; set; }
         public string? CustomUserId { get; set; }
 
+        public ICollection<UserAsset> UserAssets { get; set; }
+
         // List of asset IDs
         //  public List<int> AssetIds { get; set; } = new List<int>();
 
         //   public int? AssetId { get; set; }
 
-       // public ICollection<UserAsset> UserAssets { get; set; }
+        // public ICollection<UserAsset> UserAssets { get; set; }
 
     }
 }

@@ -63,11 +63,11 @@ namespace AuthService.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AssignAssetToUser(UserAsset userAsset)
+        public async Task<IActionResult> AssignAssetToUser(AssignAssetToUserRequest request)
         {
             try
             {
-                await _userService.AssignAssetToUserAsync(userAsset);
+                await _userService.AssignAssetToUserAsync(request);
                 return Ok();
             }
             catch (Exception ex)
