@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthService.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-<<<<<<<< HEAD:AuthService/Migrations/20240628100821_test.Designer.cs
-    [Migration("20240628100821_test")]
-    partial class test
-========
-    [Migration("20240621130354_init")]
+    [Migration("20240630032759_init")]
     partial class init
->>>>>>>> master:AuthService/Migrations/20240621130354_init.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -126,26 +121,16 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-<<<<<<<< HEAD:AuthService/Migrations/20240628100821_test.Designer.cs
-                            ConcurrencyStamp = "ef516c12-0a3e-466c-b68d-cbafe88d0aec",
-========
-                            ConcurrencyStamp = "0fdc9d8b-f8a5-4d30-b645-83566ec34e79",
->>>>>>>> master:AuthService/Migrations/20240621130354_init.Designer.cs
+                            ConcurrencyStamp = "97ade02b-ba0e-456e-839b-3fee3e2245c0",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-<<<<<<<< HEAD:AuthService/Migrations/20240628100821_test.Designer.cs
-                            PasswordHash = "AQAAAAIAAYagAAAAEMp72uSIEHS93NmDT9H0tQiyx/hnhpS8YHMBk3WIu9pj+NpJQm1d8tMGUKjJCRac/g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOwkp18rjegJOkfRjyDZLIaLUOI/FBbg6bkigsRJ/9WEgw8Z5F3Z94hDCEKkE9ghtQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d3caf62f-761c-4974-a2c6-246ebe7dfe8c",
-========
-                            PasswordHash = "AQAAAAIAAYagAAAAEDVH3ljEc6VfLzFearowksiUQnaz6Pmr3DLEUEwE4+pX3K4my+WIzR6mAg0e6F38jw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "90552683-3864-4774-ba11-b8d37a6fc423",
->>>>>>>> master:AuthService/Migrations/20240621130354_init.Designer.cs
+                            SecurityStamp = "2244a4a9-0e9b-457d-8d40-f52886615213",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });
@@ -158,6 +143,9 @@ namespace AuthService.Migrations
 
                     b.Property<int>("AssetId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("AssetAssignedTime")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("UserId", "AssetId");
 

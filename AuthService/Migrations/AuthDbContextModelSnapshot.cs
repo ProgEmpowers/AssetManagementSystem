@@ -118,26 +118,16 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-<<<<<<< HEAD
-                            ConcurrencyStamp = "84e47378-1ee4-4a83-93c7-6c861027ebc8",
-=======
-                            ConcurrencyStamp = "0fdc9d8b-f8a5-4d30-b645-83566ec34e79",
->>>>>>> master
+                            ConcurrencyStamp = "97ade02b-ba0e-456e-839b-3fee3e2245c0",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-<<<<<<< HEAD
-                            PasswordHash = "AQAAAAIAAYagAAAAEIIvcRwpGABYjY0V9zylFq+jFaD1SmuWdCBfULua6VW/CDZjQey4cqgR8kRGJaKXNw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOwkp18rjegJOkfRjyDZLIaLUOI/FBbg6bkigsRJ/9WEgw8Z5F3Z94hDCEKkE9ghtQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bc694acf-b3f7-4191-9140-ee03f82acf97",
-=======
-                            PasswordHash = "AQAAAAIAAYagAAAAEDVH3ljEc6VfLzFearowksiUQnaz6Pmr3DLEUEwE4+pX3K4my+WIzR6mAg0e6F38jw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "90552683-3864-4774-ba11-b8d37a6fc423",
->>>>>>> master
+                            SecurityStamp = "2244a4a9-0e9b-457d-8d40-f52886615213",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });

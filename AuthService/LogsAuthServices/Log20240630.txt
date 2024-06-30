@@ -1,0 +1,544 @@
+2024-06-30 00:00:18.989 +05:30 [INF] Executed DbCommand (960ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [Authdbservice];
+2024-06-30 00:00:19.066 +05:30 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [Authdbservice] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2024-06-30 00:00:19.083 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-30 00:00:19.133 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-06-30 00:00:19.134 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-30 00:00:19.145 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-30 00:00:19.149 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-30 00:00:19.159 +05:30 [INF] Applying migration '20240629182944_init'.
+2024-06-30 00:00:19.208 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2024-06-30 00:00:19.210 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [Address] nvarchar(max) NULL,
+    [FirstName] nvarchar(max) NULL,
+    [LastName] nvarchar(max) NULL,
+    [Nic] nvarchar(max) NULL,
+    [DateofBirth] nvarchar(max) NULL,
+    [JobPost] nvarchar(max) NULL,
+    [IsActive] bit NOT NULL,
+    [ImageUrl] nvarchar(max) NULL,
+    [CustomUserId] nvarchar(max) NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+2024-06-30 00:00:19.538 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserAssets] (
+    [UserId] nvarchar(450) NOT NULL,
+    [AssetId] int NOT NULL,
+    [AssetAssignedTime] datetime2 NULL,
+    CONSTRAINT [PK_UserAssets] PRIMARY KEY ([UserId], [AssetId])
+);
+2024-06-30 00:00:19.540 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);
+2024-06-30 00:00:19.542 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-30 00:00:19.544 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-30 00:00:21.346 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-30 00:00:21.349 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-30 00:00:22.102 +05:30 [INF] Executed DbCommand (753ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConcurrencyStamp', N'Name', N'NormalizedName') AND [object_id] = OBJECT_ID(N'[AspNetRoles]'))
+    SET IDENTITY_INSERT [AspNetRoles] ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (N'30415502-99f1-49cc-95b3-d0081b0e638f', N'30415502-99f1-49cc-95b3-d0081b0e638f', N'VendorManeger', N'VENDORMANEGER'),
+(N'5bc23f4f-7673-4a10-8b2f-81d11b2b631e', N'5bc23f4f-7673-4a10-8b2f-81d11b2b631e', N'NormalUser', N'NORMALUSER'),
+(N'a68e73fb-f0f6-452b-a861-b9bbad4713aa', N'a68e73fb-f0f6-452b-a861-b9bbad4713aa', N'AssetManeger', N'ASSETMANEGER'),
+(N'e5a00264-e2a2-4c67-a568-70f48d9aa34f', N'e5a00264-e2a2-4c67-a568-70f48d9aa34f', N'Admin', N'ADMIN');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConcurrencyStamp', N'Name', N'NormalizedName') AND [object_id] = OBJECT_ID(N'[AspNetRoles]'))
+    SET IDENTITY_INSERT [AspNetRoles] OFF;
+2024-06-30 00:00:22.454 +05:30 [INF] Executed DbCommand (126ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'Address', N'ConcurrencyStamp', N'CustomUserId', N'DateofBirth', N'Email', N'EmailConfirmed', N'FirstName', N'ImageUrl', N'IsActive', N'JobPost', N'LastName', N'LockoutEnabled', N'LockoutEnd', N'Nic', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[AspNetUsers]'))
+    SET IDENTITY_INSERT [AspNetUsers] ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [Address], [ConcurrencyStamp], [CustomUserId], [DateofBirth], [Email], [EmailConfirmed], [FirstName], [ImageUrl], [IsActive], [JobPost], [LastName], [LockoutEnabled], [LockoutEnd], [Nic], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (N'75af95a9-9273-4c9b-86aa-0a80c76f32d6', 0, NULL, N'9dac41ee-0d43-4cd3-9313-dee7a99afa43', NULL, NULL, N'admin@corzent.com', CAST(0 AS bit), NULL, NULL, CAST(0 AS bit), NULL, NULL, CAST(0 AS bit), NULL, NULL, N'ADMIN@CORZENT.COM', N'ADMIN@CORZENT.COM', N'AQAAAAIAAYagAAAAEKjr3BhAU8hsrQSED56R21VLkVkykwj7AkwLO1M+kCFlKn0oL/mx0AAng4ACRajMJA==', NULL, CAST(0 AS bit), N'dedc0486-cf68-43d1-88ef-7630f865e354', CAST(0 AS bit), N'admin@corzent.com');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'Address', N'ConcurrencyStamp', N'CustomUserId', N'DateofBirth', N'Email', N'EmailConfirmed', N'FirstName', N'ImageUrl', N'IsActive', N'JobPost', N'LastName', N'LockoutEnabled', N'LockoutEnd', N'Nic', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[AspNetUsers]'))
+    SET IDENTITY_INSERT [AspNetUsers] OFF;
+2024-06-30 00:00:23.375 +05:30 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'RoleId', N'UserId') AND [object_id] = OBJECT_ID(N'[AspNetUserRoles]'))
+    SET IDENTITY_INSERT [AspNetUserRoles] ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (N'e5a00264-e2a2-4c67-a568-70f48d9aa34f', N'75af95a9-9273-4c9b-86aa-0a80c76f32d6');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'RoleId', N'UserId') AND [object_id] = OBJECT_ID(N'[AspNetUserRoles]'))
+    SET IDENTITY_INSERT [AspNetUserRoles] OFF;
+2024-06-30 00:00:23.575 +05:30 [INF] Executed DbCommand (200ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+2024-06-30 00:00:23.696 +05:30 [INF] Executed DbCommand (121ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2024-06-30 00:00:23.698 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+2024-06-30 00:00:23.699 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+2024-06-30 00:00:23.723 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+2024-06-30 00:00:23.748 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+2024-06-30 00:00:23.773 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2024-06-30 00:00:23.859 +05:30 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240629182944_init', N'8.0.1');
+2024-06-30 00:01:01.930 +05:30 [INF] User profile is available. Using 'C:\Users\Savindya\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-30 00:01:02.164 +05:30 [INF] Now listening on: https://localhost:7229
+2024-06-30 00:01:02.164 +05:30 [INF] Now listening on: http://localhost:5039
+2024-06-30 00:01:02.166 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-30 00:01:02.166 +05:30 [INF] Hosting environment: Development
+2024-06-30 00:01:02.167 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API7\AssetManagementSystem\AuthService
+2024-06-30 00:01:08.922 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-06-30 00:01:09.456 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-06-30 00:01:09.456 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-30 00:01:09.463 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 545.532ms
+2024-06-30 00:01:09.495 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 39.322ms
+2024-06-30 00:01:09.555 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 99.1156ms
+2024-06-30 00:01:09.637 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-06-30 00:01:09.809 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 172.5292ms
+2024-06-30 00:08:15.797 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-30 00:08:15.887 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:08:16.077 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:08:16.135 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-30 00:08:18.683 +05:30 [INF] Executed DbCommand (188ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[CustomUserId], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[ImageUrl], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-30 00:08:18.710 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-30 00:08:18.720 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-30 00:08:18.722 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 2580.5452ms
+2024-06-30 00:08:18.723 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:08:18.724 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:08:18.725 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:08:18.726 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-30 00:08:18.735 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 2947.214ms
+2024-06-30 00:08:18.750 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[CustomUserId], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[ImageUrl], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-30 00:08:18.752 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-30 00:08:18.754 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 22.5219ms
+2024-06-30 00:08:18.754 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:08:18.755 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 35.1391ms
+2024-06-30 00:09:49.616 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-30 00:09:49.621 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:09:49.624 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:09:49.624 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-30 00:09:49.667 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[CustomUserId], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[ImageUrl], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-30 00:09:49.669 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-30 00:09:49.670 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 44.8447ms
+2024-06-30 00:09:49.671 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:09:49.672 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 55.4774ms
+2024-06-30 00:10:07.480 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7229/api/Auth/register - null null
+2024-06-30 00:10:07.483 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:10:07.485 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7229/api/Auth/register - 204 null null 5.0008ms
+2024-06-30 00:10:07.489 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/register - application/json 123
+2024-06-30 00:10:07.492 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:10:07.499 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-06-30 00:10:07.502 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-30 00:10:07.503 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register - 401 0 null 13.778ms
+2024-06-30 00:10:12.049 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-30 00:10:12.058 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:10:12.058 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:10:12.059 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-30 00:10:12.063 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[CustomUserId], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[ImageUrl], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-30 00:10:12.065 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-30 00:10:12.066 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 5.886ms
+2024-06-30 00:10:12.067 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:10:12.068 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 18.5057ms
+2024-06-30 00:10:15.094 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-30 00:10:15.096 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:10:15.098 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:10:15.100 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-30 00:10:15.106 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[CustomUserId], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[ImageUrl], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-30 00:10:15.110 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-30 00:10:15.111 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 10.023ms
+2024-06-30 00:10:15.112 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:10:15.113 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 19.5385ms
+2024-06-30 00:10:15.119 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-30 00:10:15.123 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:10:15.124 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:10:15.125 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-30 00:10:15.130 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[CustomUserId], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[ImageUrl], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-30 00:10:15.135 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-30 00:10:15.136 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 9.6362ms
+2024-06-30 00:10:15.137 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:10:15.138 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 18.8847ms
+2024-06-30 00:10:51.487 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-30 00:10:51.492 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:10:51.493 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:10:51.493 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-30 00:10:51.497 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[CustomUserId], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[ImageUrl], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-30 00:10:51.499 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-30 00:10:51.500 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 5.2948ms
+2024-06-30 00:10:51.500 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:10:51.501 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 13.9129ms
+2024-06-30 00:11:16.063 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7229/api/Auth/register - null null
+2024-06-30 00:11:16.065 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:11:16.065 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7229/api/Auth/register - 204 null null 2.3983ms
+2024-06-30 00:11:16.067 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/register - application/json 126
+2024-06-30 00:11:16.069 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:11:16.071 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-06-30 00:11:16.072 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-30 00:11:16.072 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register - 401 0 null 5.3579ms
+2024-06-30 00:11:19.795 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-30 00:11:19.800 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:11:19.801 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:11:19.803 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-30 00:11:19.811 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[CustomUserId], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[ImageUrl], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-30 00:11:19.820 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-30 00:11:19.821 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 16.1392ms
+2024-06-30 00:11:19.824 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-30 00:11:19.824 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:11:19.827 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:11:19.828 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 32.9407ms
+2024-06-30 00:11:19.829 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:11:19.833 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-30 00:11:19.838 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[CustomUserId], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[ImageUrl], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-30 00:11:19.840 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-30 00:11:19.842 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 6.557ms
+2024-06-30 00:11:19.843 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 00:11:19.844 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 20.3067ms
+2024-06-30 00:12:15.690 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7229/api/Auth/register - null null
+2024-06-30 00:12:15.695 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:12:15.696 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7229/api/Auth/register - 204 null null 6.5128ms
+2024-06-30 00:12:15.701 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/register - application/json 115
+2024-06-30 00:12:15.703 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:12:15.705 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-06-30 00:12:15.707 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-30 00:12:15.708 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register - 401 0 null 7.3774ms
+2024-06-30 00:15:23.052 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/register - application/json 241
+2024-06-30 00:15:23.058 +05:30 [INF] CORS policy execution successful.
+2024-06-30 00:15:23.058 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-06-30 00:15:23.059 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-30 00:15:23.059 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register - 401 0 null 7.6033ms
+2024-06-30 08:28:54.755 +05:30 [INF] User profile is available. Using 'C:\Users\Savindya\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-30 08:28:54.983 +05:30 [INF] Now listening on: https://localhost:7229
+2024-06-30 08:28:54.984 +05:30 [INF] Now listening on: http://localhost:5039
+2024-06-30 08:28:54.986 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-30 08:28:54.987 +05:30 [INF] Hosting environment: Development
+2024-06-30 08:28:54.988 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API7\AssetManagementSystem\AuthService
+2024-06-30 08:29:04.370 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-06-30 08:29:04.854 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 495.5875ms
+2024-06-30 08:29:05.004 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-06-30 08:29:05.004 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-30 08:29:05.013 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 9.1545ms
+2024-06-30 08:29:05.050 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.4975ms
+2024-06-30 08:29:05.417 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-06-30 08:29:05.583 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 166.1923ms
+2024-06-30 08:30:15.556 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/register - application/json 240
+2024-06-30 08:30:15.563 +05:30 [INF] CORS policy execution successful.
+2024-06-30 08:30:15.626 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-06-30 08:30:15.629 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-30 08:30:15.631 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register - 401 0 null 75.4448ms
+2024-06-30 08:30:38.183 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-30 08:30:38.189 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 08:30:38.213 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-30 08:30:39.617 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[CustomUserId], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[ImageUrl], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-30 08:30:39.640 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-30 08:30:39.650 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 1431.0848ms
+2024-06-30 08:30:39.651 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-30 08:30:39.656 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 1473.7173ms
+2024-06-30 08:45:43.193 +05:30 [INF] User profile is available. Using 'C:\Users\Savindya\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-30 08:45:43.381 +05:30 [INF] Now listening on: https://localhost:7229
+2024-06-30 08:45:43.383 +05:30 [INF] Now listening on: http://localhost:5039
+2024-06-30 08:45:43.385 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-30 08:45:43.385 +05:30 [INF] Hosting environment: Development
+2024-06-30 08:45:43.386 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API7\AssetManagementSystem\AuthService
+2024-06-30 08:45:44.287 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-06-30 08:45:44.625 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 343.903ms
+2024-06-30 08:45:44.631 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-30 08:45:44.631 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-06-30 08:45:44.640 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 8.018ms
+2024-06-30 08:45:44.744 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 113.4745ms
+2024-06-30 08:45:44.825 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-06-30 08:45:44.987 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 162.1243ms
+2024-06-30 08:46:35.645 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/register - application/json 240
+2024-06-30 08:46:35.653 +05:30 [INF] CORS policy execution successful.
+2024-06-30 08:46:35.703 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-06-30 08:46:35.705 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-30 08:46:35.706 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register - 401 0 null 61.6188ms
+2024-06-30 08:52:18.650 +05:30 [INF] User profile is available. Using 'C:\Users\Savindya\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-30 08:52:18.859 +05:30 [INF] Now listening on: https://localhost:7229
+2024-06-30 08:52:18.860 +05:30 [INF] Now listening on: http://localhost:5039
+2024-06-30 08:52:18.862 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-30 08:52:18.863 +05:30 [INF] Hosting environment: Development
+2024-06-30 08:52:18.864 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API7\AssetManagementSystem\AuthService
+2024-06-30 08:52:26.825 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-06-30 08:52:27.092 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 271.4128ms
+2024-06-30 08:52:27.260 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-30 08:52:27.273 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 12.8587ms
+2024-06-30 08:52:27.280 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-06-30 08:52:27.344 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 64.2799ms
+2024-06-30 08:52:27.474 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-06-30 08:52:27.581 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 107.1478ms
+2024-06-30 08:58:15.848 +05:30 [INF] Executed DbCommand (231ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [Authdbservice];
+2024-06-30 08:58:15.938 +05:30 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [Authdbservice] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2024-06-30 08:58:15.951 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-30 08:58:15.996 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-06-30 08:58:15.997 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-06-30 08:58:16.007 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-06-30 08:58:16.011 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-06-30 08:58:16.021 +05:30 [INF] Applying migration '20240630032759_init'.
+2024-06-30 08:58:16.080 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2024-06-30 08:58:16.083 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [Address] nvarchar(max) NULL,
+    [FirstName] nvarchar(max) NULL,
+    [LastName] nvarchar(max) NULL,
+    [Nic] nvarchar(max) NULL,
+    [DateofBirth] nvarchar(max) NULL,
+    [JobPost] nvarchar(max) NULL,
+    [IsActive] bit NOT NULL,
+    [ImageUrl] nvarchar(max) NULL,
+    [CustomUserId] nvarchar(max) NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+2024-06-30 08:58:16.091 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserAssets] (
+    [UserId] nvarchar(450) NOT NULL,
+    [AssetId] int NOT NULL,
+    [AssetAssignedTime] datetime2 NULL,
+    CONSTRAINT [PK_UserAssets] PRIMARY KEY ([UserId], [AssetId])
+);
+2024-06-30 08:58:16.095 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);
+2024-06-30 08:58:16.097 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-30 08:58:16.099 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [ProviderKey] nvarchar(450) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-30 08:58:17.981 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-30 08:58:17.983 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(450) NOT NULL,
+    [Name] nvarchar(450) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);
+2024-06-30 08:58:18.009 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConcurrencyStamp', N'Name', N'NormalizedName') AND [object_id] = OBJECT_ID(N'[AspNetRoles]'))
+    SET IDENTITY_INSERT [AspNetRoles] ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (N'30415502-99f1-49cc-95b3-d0081b0e638f', N'30415502-99f1-49cc-95b3-d0081b0e638f', N'VendorManeger', N'VENDORMANEGER'),
+(N'5bc23f4f-7673-4a10-8b2f-81d11b2b631e', N'5bc23f4f-7673-4a10-8b2f-81d11b2b631e', N'NormalUser', N'NORMALUSER'),
+(N'a68e73fb-f0f6-452b-a861-b9bbad4713aa', N'a68e73fb-f0f6-452b-a861-b9bbad4713aa', N'AssetManeger', N'ASSETMANEGER'),
+(N'e5a00264-e2a2-4c67-a568-70f48d9aa34f', N'e5a00264-e2a2-4c67-a568-70f48d9aa34f', N'Admin', N'ADMIN');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConcurrencyStamp', N'Name', N'NormalizedName') AND [object_id] = OBJECT_ID(N'[AspNetRoles]'))
+    SET IDENTITY_INSERT [AspNetRoles] OFF;
+2024-06-30 08:58:18.961 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'Address', N'ConcurrencyStamp', N'CustomUserId', N'DateofBirth', N'Email', N'EmailConfirmed', N'FirstName', N'ImageUrl', N'IsActive', N'JobPost', N'LastName', N'LockoutEnabled', N'LockoutEnd', N'Nic', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[AspNetUsers]'))
+    SET IDENTITY_INSERT [AspNetUsers] ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [Address], [ConcurrencyStamp], [CustomUserId], [DateofBirth], [Email], [EmailConfirmed], [FirstName], [ImageUrl], [IsActive], [JobPost], [LastName], [LockoutEnabled], [LockoutEnd], [Nic], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (N'75af95a9-9273-4c9b-86aa-0a80c76f32d6', 0, NULL, N'97ade02b-ba0e-456e-839b-3fee3e2245c0', NULL, NULL, N'admin@corzent.com', CAST(0 AS bit), NULL, NULL, CAST(0 AS bit), NULL, NULL, CAST(0 AS bit), NULL, NULL, N'ADMIN@CORZENT.COM', N'ADMIN@CORZENT.COM', N'AQAAAAIAAYagAAAAEOwkp18rjegJOkfRjyDZLIaLUOI/FBbg6bkigsRJ/9WEgw8Z5F3Z94hDCEKkE9ghtQ==', NULL, CAST(0 AS bit), N'2244a4a9-0e9b-457d-8d40-f52886615213', CAST(0 AS bit), N'admin@corzent.com');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'Address', N'ConcurrencyStamp', N'CustomUserId', N'DateofBirth', N'Email', N'EmailConfirmed', N'FirstName', N'ImageUrl', N'IsActive', N'JobPost', N'LastName', N'LockoutEnabled', N'LockoutEnd', N'Nic', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[AspNetUsers]'))
+    SET IDENTITY_INSERT [AspNetUsers] OFF;
+2024-06-30 08:58:19.964 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'RoleId', N'UserId') AND [object_id] = OBJECT_ID(N'[AspNetUserRoles]'))
+    SET IDENTITY_INSERT [AspNetUserRoles] ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (N'e5a00264-e2a2-4c67-a568-70f48d9aa34f', N'75af95a9-9273-4c9b-86aa-0a80c76f32d6');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'RoleId', N'UserId') AND [object_id] = OBJECT_ID(N'[AspNetUserRoles]'))
+    SET IDENTITY_INSERT [AspNetUserRoles] OFF;
+2024-06-30 08:58:19.969 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+2024-06-30 08:58:19.994 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+2024-06-30 08:58:19.996 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+2024-06-30 08:58:19.997 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+2024-06-30 08:58:19.999 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+2024-06-30 08:58:20.258 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+2024-06-30 08:58:20.262 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+2024-06-30 08:58:20.263 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240630032759_init', N'8.0.1');
+2024-06-30 08:59:15.671 +05:30 [INF] User profile is available. Using 'C:\Users\Savindya\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-06-30 08:59:15.925 +05:30 [INF] Now listening on: https://localhost:7229
+2024-06-30 08:59:15.935 +05:30 [INF] Now listening on: http://localhost:5039
+2024-06-30 08:59:15.938 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-30 08:59:15.939 +05:30 [INF] Hosting environment: Development
+2024-06-30 08:59:15.940 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project2\API7\AssetManagementSystem\AuthService
+2024-06-30 08:59:23.890 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-06-30 08:59:24.070 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 184.6303ms
+2024-06-30 08:59:24.076 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-06-30 08:59:24.076 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-06-30 08:59:24.085 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 9.7089ms
+2024-06-30 08:59:24.113 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.6565ms
+2024-06-30 08:59:24.166 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-06-30 08:59:24.247 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 81.0721ms
+2024-06-30 08:59:57.878 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7229/api/Auth/register - application/json 241
+2024-06-30 08:59:57.888 +05:30 [INF] CORS policy execution successful.
+2024-06-30 08:59:57.948 +05:30 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2024-06-30 08:59:57.953 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2024-06-30 08:59:57.954 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7229/api/Auth/register - 401 0 null 76.1744ms
