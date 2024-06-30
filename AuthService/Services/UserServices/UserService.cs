@@ -114,12 +114,7 @@ namespace AuthService.Services.UserServices
 
            
 
-            // Create the UserAsset relationship
-           // var userAsset = new UserAsset
-          //  {
-           //     UserId = userId,
-          //      AssetId = assetId
-          //  };
+  
           userAsset.AssetAssignedTime = DateTime.Now;
 
             _dbContext.UserAssets.Add(userAsset);
