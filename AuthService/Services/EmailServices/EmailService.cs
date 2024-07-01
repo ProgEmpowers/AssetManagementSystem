@@ -22,7 +22,7 @@ namespace AuthService.Services.EmailServices
             email.Subject = mailrequest.Subject;
             var builder = new BodyBuilder();
             builder.HtmlBody = mailrequest.Body;
-            email.Body = builder.ToMessageBody();
+            email.Body = builder.ToMessageBody(); 
 
             using var smtp = new MailKit.Net.Smtp.SmtpClient();
             smtp.Connect(emailSettings.Host, emailSettings.Port, SecureSocketOptions.StartTls);
