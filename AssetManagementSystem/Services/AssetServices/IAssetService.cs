@@ -1,6 +1,8 @@
 ﻿using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
+
 using AssetManagementSystem.Models.Enums;
+
 
 namespace AssetManagementSystem.Services.AssetServices
 {
@@ -26,9 +28,16 @@ namespace AssetManagementSystem.Services.AssetServices
         Task<Asset?> GetDeletedAssetByIdAsync(int id);
         Task<Asset?> RecoverDeletedAssetAsync(int id);
 
+
+        Task<IEnumerable<string>> GetAssetTypesAsync();
+        Task<IEnumerable<Asset>> GetAssetsByTypeAsync(string type);
+
+   
+
         Task<List<Asset>> GetAssetsByStatusAsync(AssetStatusEnum status);
         Task<List<Asset>> GetAssetByUserAsync(string email);
         Task<int> GetTotalNoOfAssetsAsync();
         Task<int> GetNoOfAssetsByStatusAsync(AssetStatusEnum status);
+
     }
 }

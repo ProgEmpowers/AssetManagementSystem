@@ -25,7 +25,7 @@ namespace AssetManagementSystem.Migrations
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     AssetValue = table.Column<float>(type: "real", nullable: true),
                     AssetStatus = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true)
+                    UserId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

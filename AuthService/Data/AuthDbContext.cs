@@ -1,4 +1,5 @@
 ﻿using AssetManagementSystem.Models;
+using AuthService.Models.Domains;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,7 @@ namespace AuthService.Data
         }
 
         public DbSet<User> User { get; set; }
+        public DbSet<UserAsset> UserAssets { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -66,6 +68,7 @@ namespace AuthService.Data
                 Email = "admin@corzent.com",
                 NormalizedEmail = "admin@corzent.com".ToUpper(),
                 NormalizedUserName = "admin@corzent.com".ToUpper()
+         
             };
 
             admin.PasswordHash = new PasswordHasher<User>().HashPassword(admin, "Admin@12345");
@@ -79,6 +82,15 @@ namespace AuthService.Data
             };
 
             builder.Entity<IdentityUserRole<string>>().HasData(adminRole);
+
+
+            builder.Entity<UserAsset>()
+            .HasKey(ua => new { ua.UserId, ua.AssetId });
+
+            builder.Entity<UserAsset>()
+           .HasOne(ua => ua.User)
+           .WithMany(u => u.UserAssets)
+           .HasForeignKey(ua => ua.UserId);
         }
     }
 }

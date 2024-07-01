@@ -9,6 +9,8 @@ namespace AuthService.Mappings
         public MapperProfiles()
         {
             CreateMap<User, UserDto>().ReverseMap();
+            
+            CreateMap<UserUpdateDto, User>();
         }
     }
 }

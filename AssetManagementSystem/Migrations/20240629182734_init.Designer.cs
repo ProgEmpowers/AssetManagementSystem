@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssetManagementSystem.Migrations
 {
     [DbContext(typeof(AssetManagementDbContext))]
-    [Migration("20240621130247_init")]
+    [Migration("20240629182734_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -60,8 +60,8 @@ namespace AssetManagementSystem.Migrations
                     b.Property<string>("QRcode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

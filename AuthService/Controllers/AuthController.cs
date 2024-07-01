@@ -1,6 +1,7 @@
 ﻿using AssetManagementSystem.Models;
 using AuthService.Models.Dtos;
 using AuthService.Services.AuthServices;
+using AuthService.Services.UserServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,11 +14,14 @@ namespace AuthService.Controllers
     {
         private readonly UserManager<User> userManager;
         private readonly ITokenRepository tokenRepository;
+        private readonly IUserService _userService;
 
-        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository)
+        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository, IUserService userService)
         {
             this.userManager = userManager;
             this.tokenRepository = tokenRepository;
+            this._userService = userService;
+
         }
 
         [HttpPost]
@@ -60,6 +64,7 @@ namespace AuthService.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto request)
         {
+            var customUserId = await _userService.GenerateUserIdAsync();
             var user = new User
             {
                 UserName = request.Email?.Trim(),
@@ -71,6 +76,7 @@ namespace AuthService.Controllers
                 LastName = request.LastName,
                 JobPost = request.JobPost,
                 DateofBirth = request.DateofBirth,
+                CustomUserId = customUserId,
                 IsActive = true
 
 
