@@ -3,8 +3,10 @@ using System.Text.Json;
 using AssetManagementSystem.Context;
 using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
+using AssetManagementSystem.Models.Enums;
 using AutoMapper;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace AssetManagementSystem.Services.AssetServices
@@ -28,6 +30,7 @@ namespace AssetManagementSystem.Services.AssetServices
         {
             var NewAsset = mapper.Map<Asset>(assetDto);
             NewAsset.IsActive = true;
+            NewAsset.AssetStatus = AssetStatusEnum.Free;
             await _dbContext.Asset.AddAsync(NewAsset);
             await _dbContext.SaveChangesAsync();
             logger.LogInformation($"Finished Add Asset : {JsonSerializer.Serialize(NewAsset)}");
@@ -78,6 +81,36 @@ namespace AssetManagementSystem.Services.AssetServices
             logger.LogInformation($"Finished Get Asset by Id : {JsonSerializer.Serialize(SelectedAsset)}");
             return SelectedAsset;
         }
+
+
+        public async Task<List<Asset>> GetAssetByUserAsync(string email)
+        {
+            var userAssets = _dbContext.Asset.Where(asset => asset.UserId == email).AsQueryable();
+            logger.LogInformation($"Finished Get Asset by User : {JsonSerializer.Serialize(userAssets)}");
+            return await userAssets.ToListAsync();
+        }
+
+        public async Task<List<Asset>> GetAssetsByStatusAsync(AssetStatusEnum status)
+        {
+            var Assets = _dbContext.Asset.Where(asset => asset.AssetStatus == status).AsQueryable();
+            logger.LogInformation($"Finished Get Asset by Status : {JsonSerializer.Serialize(Assets)}");
+            return await Assets.ToListAsync();
+        }
+
+        public async Task<int> GetTotalNoOfAssetsAsync()
+        {
+            var AssetCount = _dbContext.Asset.CountAsync();
+            logger.LogInformation($"Finished Get Total Asset Count : {JsonSerializer.Serialize(AssetCount)}");
+            return await AssetCount;
+        }
+
+        public async Task<int> GetNoOfAssetsByStatusAsync(AssetStatusEnum status)
+        {
+            var AssetCount = _dbContext.Asset.CountAsync(asset => asset.AssetStatus == status);
+            logger.LogInformation($"Finished Get Asset Count By Status : {JsonSerializer.Serialize(AssetCount)}");
+            return await AssetCount;   
+        }
+
         public async Task<Asset?> UpdateAssetAsync(int id, AssetDto assetDto)
         {
             var SelectedAsset = await _dbContext.Asset.Where(asset => asset.IsActive == true).FirstOrDefaultAsync(x => x.Id == id);
@@ -140,6 +173,8 @@ namespace AssetManagementSystem.Services.AssetServices
         {
             var NewDisposalAsset = mapper.Map<Asset>(disposalassetDto);
             NewDisposalAsset.IsActive = true;
+            NewDisposalAsset.AssetStatus = AssetStatusEnum.Disposal;
+            NewDisposalAsset.UserId = "";
             await _dbContext.Asset.AddAsync(NewDisposalAsset);
             await _dbContext.SaveChangesAsync();
             logger.LogInformation($"Finished Add Disposal Asset : {JsonSerializer.Serialize(NewDisposalAsset)}");
@@ -181,5 +216,20 @@ namespace AssetManagementSystem.Services.AssetServices
             logger.LogInformation($"Finished Update a DisposalAsset : {JsonSerializer.Serialize(SelecteddisposalAsset)}");
             return SelecteddisposalAsset;
         }
+
+
+        public async Task<IEnumerable<string>> GetAssetTypesAsync()
+        {
+            return await _dbContext.Asset.Select(a => a.AssetType).Distinct().ToListAsync();
+        }
+
+        public async Task<IEnumerable<Asset>> GetAssetsByTypeAsync(string type)
+        {
+            return await _dbContext.Asset.Where(a => a.AssetType == type).ToListAsync();
+        }
+
+       
+
+
     }
 }

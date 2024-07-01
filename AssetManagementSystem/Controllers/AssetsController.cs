@@ -3,7 +3,9 @@ using System.Globalization;
 using AssetManagementSystem.Context;
 using AssetManagementSystem.CustomActionFilters;
 using AssetManagementSystem.Models;
+using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
+using AssetManagementSystem.Models.Enums;
 using AssetManagementSystem.Services.AssetServices;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -44,7 +46,7 @@ namespace AssetManagementSystem.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
-        public async Task<IActionResult> GetAssetById([FromRoute]int id)
+        public async Task<IActionResult> GetAssetById([FromRoute] int id)
         {
             var SelectedAsset = await _assetService.GetAssetByIdAsync(id);
             if (SelectedAsset == null)
@@ -52,6 +54,43 @@ namespace AssetManagementSystem.Controllers
                 return NotFound();
             }
             return Ok(SelectedAsset);
+        }
+
+        [HttpGet("GetAssetByUserAsync/{email}")]
+        public async Task<IActionResult> GetAssetByUserAsync([FromRoute] string email)
+        {
+            var usersAssets = await _assetService.GetAssetByUserAsync(email);
+            if (usersAssets == null)
+            {
+                return NotFound();
+            }
+            return Ok(usersAssets);
+        }
+
+        [HttpGet("GetTotalNoOfAssetsAsync")]
+        public async Task<IActionResult> GetTotalNoOfAssetsAsync()
+        {
+            var count = await _assetService.GetTotalNoOfAssetsAsync();
+            return Ok(count);
+        }
+
+        [HttpGet("GetAssetsByStatusAsync/{status:int}")]
+        public async Task<IActionResult> GetAssetsByStatusAsync([FromRoute] AssetStatusEnum status)
+        {
+            var assetsList = await _assetService.GetAssetsByStatusAsync(status);
+            if (assetsList == null)
+            {
+                return NotFound();
+            }
+            return Ok(assetsList);
+        }
+
+        [HttpGet("GetNoOfAssetsByStatusAsync/{status:int}")]
+        public async Task<IActionResult> GetNoOfAssetsByStatusAsync([FromRoute] AssetStatusEnum status)
+        {
+            var assetCount = await _assetService.GetNoOfAssetsByStatusAsync(status);
+            
+            return Ok(assetCount);
         }
 
         [HttpPut]
@@ -143,5 +182,22 @@ namespace AssetManagementSystem.Controllers
             }
             return Ok(SelecteddisposalAsset);
         }
+
+
+        [HttpGet("types")]
+        public async Task<ActionResult<IEnumerable<string>>> GetAssetTypes()
+        {
+            var assetTypes = await _assetService.GetAssetTypesAsync();
+            return Ok(assetTypes);
+        }
+
+        [HttpGet("type/{type}")]
+        public async Task<ActionResult<IEnumerable<Asset>>> GetAssetsByType(string type)
+        {
+            var assets = await _assetService.GetAssetsByTypeAsync(type);
+            return Ok(assets);
+        }
+
+        
     }
 }

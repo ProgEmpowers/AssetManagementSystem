@@ -32,9 +32,9 @@
 
   <ItemGroup>
     <Folder Include="LogsAuthServices\" />
-    <Folder Include="Migrations\" />
     <Folder Include="Models\Enums\" />
     <Folder Include="Services\UserServices\" />
+    <Folder Include="Uploads\Images\Users\" />
   </ItemGroup>
 
 </Project>

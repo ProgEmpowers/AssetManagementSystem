@@ -3,6 +3,7 @@ using AuthService.Models.Dtos;
 using AuthService.Models.Helpter;
 using AuthService.Services.AuthServices;
 using AuthService.Services.EmailServices;
+using AuthService.Services.UserServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -30,13 +31,17 @@ namespace AuthService.Controllers
         private readonly ITokenRepository tokenRepository;
         private readonly IEmailService emailService;
         private readonly IConfiguration configuration;
+        private readonly IUserService _userService;
 
         public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository, IEmailService emailService, IConfiguration configuration)
+        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository, IUserService userService)
         {
             this.userManager = userManager;
             this.tokenRepository = tokenRepository;
             this.emailService = emailService;
             this.configuration = configuration;
+            this._userService = userService;
+
         }
 
 
@@ -196,6 +201,7 @@ namespace AuthService.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto request)
         {
+            var customUserId = await _userService.GenerateUserIdAsync();
             var user = new User
             {
                 UserName = request.Email?.Trim(),
@@ -207,6 +213,7 @@ namespace AuthService.Controllers
                 LastName = request.LastName,
                 JobPost = request.JobPost,
                 DateofBirth = request.DateofBirth,
+                CustomUserId = customUserId,
                 IsActive = true
 
             };
