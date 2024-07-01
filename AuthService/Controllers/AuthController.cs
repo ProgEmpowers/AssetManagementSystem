@@ -3,17 +3,22 @@ using AuthService.Models.Dtos;
 using AuthService.Models.Helpter;
 using AuthService.Services.AuthServices;
 using AuthService.Services.EmailServices;
-using AuthService.Services.NotificationService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MimeKit;
+using Newtonsoft.Json.Linq;
 using RestSharp;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Net.Mail;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace AuthService.Controllers
 {
@@ -24,14 +29,14 @@ namespace AuthService.Controllers
         private readonly UserManager<User> userManager;
         private readonly ITokenRepository tokenRepository;
         private readonly IEmailService emailService;
-        private readonly IHubContext<NotificationHub, INotificationClient> _hubContext;
+        private readonly IConfiguration configuration;
 
-        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository, IEmailService emailService , IHubContext<NotificationHub, INotificationClient> hubContext)
+        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository, IEmailService emailService, IConfiguration configuration)
         {
             this.userManager = userManager;
             this.tokenRepository = tokenRepository;
             this.emailService = emailService;
-            _hubContext = hubContext;
+            this.configuration = configuration;
         }
 
 
@@ -58,11 +63,26 @@ namespace AuthService.Controllers
 
                     var jwtToken = tokenRepository.CreateJwtToken(identityUser, roles.ToList());
 
+                    //refresh token
+                    var refreshToken = GenerateRefreshToken();
+
+                    //_= int.TryParse(configuration.GetSection("JWTSetting").GetSection("RefreshTokenValidityIn").Value!,out int RefreshTokenValidityIn);
+                    if (!int.TryParse(configuration["Jwt:RefreshTokenValidityIn"], out int refreshTokenValidityIn))
+                    {
+                        return StatusCode(StatusCodes.Status500InternalServerError, "Invalid configuration for RefreshTokenValidityIn");
+                    }
+
+                    identityUser.RefreshToken = refreshToken;
+                    identityUser.RefreshTokenExpiryTime = DateTime.UtcNow.AddMinutes(refreshTokenValidityIn);
+                    await userManager.UpdateAsync(identityUser);
+                    //
+
                     var response = new LoginResponseDto()
                     {
                         Email = request.Email,
                         Roles = roles.ToList(),
-                        Token = jwtToken
+                        Token = jwtToken,
+                        RefreshToken = refreshToken,//
                     };
                     return Ok(response);
                 }
@@ -72,6 +92,100 @@ namespace AuthService.Controllers
             ModelState.AddModelError("", "Email Incorrect");
             return ValidationProblem(ModelState);
         }
+
+        //
+        private string GenerateRefreshToken()
+        {
+            var randomNumber = new byte[32];
+            using var rng = RandomNumberGenerator.Create();
+            rng.GetBytes(randomNumber);
+            return Convert.ToBase64String(randomNumber);
+        }
+
+
+
+
+        //
+        [HttpPost]
+        [Route("refresh-token")]
+        public async Task<ActionResult<AuthResponseDto>> RefreshToken(TokenDto tokenDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            //var principal = GetPrincipalFromExpiredToken(tokenDto.Token);
+            if (string.IsNullOrEmpty(tokenDto?.Token) || string.IsNullOrEmpty(tokenDto?.RefreshToken) || string.IsNullOrEmpty(tokenDto?.Email))
+            {
+                return BadRequest("Invalid client request");
+            }
+
+            var principal = GetPrincipalFromExpiredToken(tokenDto.Token);
+            if (principal == null)
+            {
+                return BadRequest("Invalid token");
+            }
+            var user = await userManager.FindByEmailAsync(tokenDto.Email);
+            var roles = await userManager.GetRolesAsync(user);
+
+
+            if (principal is null || user is null || user.RefreshToken != tokenDto.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.UtcNow)
+                return BadRequest(new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = "Invalid client request"
+                });
+            var newJwtToken = tokenRepository.CreateJwtToken(user, roles.ToList());
+            var newRefreshToken = GenerateRefreshToken();
+            //_ = int.TryParse(configuration.GetSection("JWTSetting").GetSection("RefreshTokenValidityIn").Value!, out int RefreshTokenValidityIn);
+            if (!int.TryParse(configuration["Jwt:RefreshTokenValidityIn"], out int refreshTokenValidityIn))
+            {
+                // Handle error
+                return StatusCode(StatusCodes.Status500InternalServerError, "Invalid configuration for RefreshTokenValidityIn");
+            }
+
+            user.RefreshToken = newRefreshToken;
+            user.RefreshTokenExpiryTime = DateTime.UtcNow.AddMinutes(refreshTokenValidityIn);
+
+            await userManager.UpdateAsync(user);
+
+            var response = new LoginResponseDto()
+            {
+                Email = tokenDto.Email,
+                Roles = roles.ToList(),
+                Token = newJwtToken,
+                RefreshToken = newRefreshToken,//
+            };
+            return Ok(response);
+        }
+
+        private ClaimsPrincipal? GetPrincipalFromExpiredToken(string token)
+        {
+            if (string.IsNullOrEmpty(token))
+            {
+                throw new ArgumentNullException(nameof(token), "Token cannot be null or empty");
+            }
+
+            var tokenParameters = new TokenValidationParameters
+            {
+                ValidateAudience = false,
+                ValidateIssuer = false,
+                ValidateIssuerSigningKey = true,
+                //IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetSection("JwtSetting").GetSection("securityKey").Value!)),
+                //var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"])),
+                ValidateLifetime = false
+            };
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var principal = tokenHandler.ValidateToken(token, tokenParameters, out SecurityToken securityToken);
+
+            if (securityToken is not JwtSecurityToken jwtSecurityToken || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
+                throw new SecurityTokenException("Invalid token");
+
+            return principal;
+        }
+
 
 
 
