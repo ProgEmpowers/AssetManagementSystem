@@ -33,8 +33,7 @@ namespace AuthService.Controllers
         private readonly IConfiguration configuration;
         private readonly IUserService _userService;
 
-        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository, IEmailService emailService, IConfiguration configuration)
-        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository, IUserService userService)
+        public AuthController(UserManager<User> userManager, ITokenRepository tokenRepository, IEmailService emailService, IConfiguration configuration, IUserService userService)
         {
             this.userManager = userManager;
             this.tokenRepository = tokenRepository;

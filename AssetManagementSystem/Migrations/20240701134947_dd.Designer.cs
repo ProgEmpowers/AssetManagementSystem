@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssetManagementSystem.Migrations
 {
     [DbContext(typeof(AssetManagementDbContext))]
-    [Migration("20240621141120_poqf")]
-    partial class poqf
+    [Migration("20240701134947_dd")]
+    partial class dd
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

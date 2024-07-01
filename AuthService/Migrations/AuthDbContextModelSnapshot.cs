@@ -37,8 +37,11 @@ namespace AuthService.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("DateofBirth")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("CustomUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DateofBirth")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -121,17 +124,17 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d437135d-6508-479c-bfd1-703fe51b957d",
+                            ConcurrencyStamp = "283275c7-1861-44a0-9e5b-bd7ba6065a4b",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDdGzlMbnaLYJPu0KRnQDxkjEcRIudjw2MpHhi+Vd2pkmab9XxBGrmc0otqretwgkw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEK8baJKZefDXJHQeKDET89Jfqk/8rXj+k6mrXprYHh1GyN4zQOAPOxc8ac7iSirkjg==",
                             PhoneNumberConfirmed = false,
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SecurityStamp = "a58f67eb-601a-47dd-87a1-e9a94adf8cae",
+                            SecurityStamp = "364f4dfd-28ae-4903-84de-aa99a83dca66",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });
