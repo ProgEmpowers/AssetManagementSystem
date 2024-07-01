@@ -1,7 +1,9 @@
 using AssetManagementSystem.Models;
 using AuthService.Data;
 using AuthService.Mappings;
+using AuthService.Models.Helpter;
 using AuthService.Services.AuthServices;
+using AuthService.Services.EmailServices;
 using AuthService.Services.UserServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -22,6 +24,7 @@ builder.Logging.ClearProviders();
 builder.Logging.AddSerilog(logger);
 
 // Add services to the container.
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -62,6 +65,7 @@ builder.Services.AddAutoMapper(typeof(MapperProfiles));
 
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 builder.Services.AddIdentityCore<User>()
     .AddRoles<IdentityRole>()
@@ -86,6 +90,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         AuthenticationType = "Jwt",
         ValidateIssuer = true,
         ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero,
         ValidateAudience = true,
         ValidateIssuerSigningKey = true,
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
@@ -106,6 +111,8 @@ builder.Services.AddCors(options =>
         }
         );
 });
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 
 var app = builder.Build();
 

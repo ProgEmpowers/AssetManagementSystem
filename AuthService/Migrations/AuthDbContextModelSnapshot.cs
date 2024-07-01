@@ -91,6 +91,12 @@ namespace AuthService.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -118,16 +124,17 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e5ebd660-1fad-40f4-a996-0a8f1ac28d40",
+                            ConcurrencyStamp = "283275c7-1861-44a0-9e5b-bd7ba6065a4b",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOYGWPH7zbf2XPOosmXVXFR48NRKbA1kY8QAH+CdyTXw60IaIraes15X5/i94DrGjA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEK8baJKZefDXJHQeKDET89Jfqk/8rXj+k6mrXprYHh1GyN4zQOAPOxc8ac7iSirkjg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "35481d5b-b11c-4659-acf8-bb1beea4869e",
+                            RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SecurityStamp = "364f4dfd-28ae-4903-84de-aa99a83dca66",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });
