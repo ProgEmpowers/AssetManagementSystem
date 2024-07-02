@@ -25,6 +25,8 @@ namespace AssetManagementSystem.Models
         //   public int? AssetId { get; set; }
 
         // public ICollection<UserAsset> UserAssets { get; set; }
+        public string? RefreshToken { get; set; }
+        public DateTime RefreshTokenExpiryTime { get; set; }
 
     }
 }
