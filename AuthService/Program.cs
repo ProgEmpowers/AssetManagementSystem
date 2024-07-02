@@ -1,6 +1,7 @@
 using AssetManagementSystem.Models;
 using AuthService.Data;
 using AuthService.Mappings;
+using AuthService.Services.AssetService;
 using AuthService.Models.Helpter;
 using AuthService.Services.AuthServices;
 using AuthService.Services.EmailServices;
@@ -62,6 +63,11 @@ builder.Services.AddDbContext<AuthDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("Authdbstring")));
 
 builder.Services.AddAutoMapper(typeof(MapperProfiles));
+
+builder.Services.AddHttpClient<IAssetService, AssetService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7095/api/");
+});
 
 builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 builder.Services.AddScoped<IUserService, UserService>();

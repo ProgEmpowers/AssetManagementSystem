@@ -20,6 +20,7 @@ var logger = new LoggerConfiguration()
 builder.Logging.ClearProviders();
 builder.Logging.AddSerilog(logger);
 
+builder.Services.AddHttpClient();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddScoped<IVendorService,VendorService>();
@@ -45,7 +46,6 @@ builder.Services.AddCors(options =>
         }
         );
 });
-
 
 var app = builder.Build();
 
