@@ -7,10 +7,17 @@ namespace AssetManagementSystem.Models.Domains
         [Key]
         public int Id { get; set; }
         public DateTime AssignedDate { get; set; }
-        public string? Subject { get; set; }
-        public string? Message { get; set; }
-        public string? SupplyAssetType { get; set; }
-        public int IdOfVendor { get; set; }
-        public string? VendorName { get; set; }
+        public string? Optionals { get; set; }
+        public List<OrderedAssetType> OrderedAssetTypes { get; set; }
+        public List<int> IdOfVendors { get; set; }
+        public List<string> NameOfVendors { get; set; }
+    }
+
+    public class OrderedAssetType
+    {
+        [Key]
+        public int Id { get; set; }
+        public string OrderedAsset { get; set; }
+        public int Quantity { get; set; }
     }
 }

@@ -24,8 +24,8 @@ namespace AssetManagementSystem.Controllers
                 return BadRequest();
             }
 
-            var addedVendor = await  _vendorService.AddVendorAsync(vendorDto);
-            
+            var addedVendor = await _vendorService.AddVendorAsync(vendorDto);
+
 
             return Ok(addedVendor);
         }

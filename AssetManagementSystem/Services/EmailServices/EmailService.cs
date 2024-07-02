@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace AssetManagementSystem.Services.EmailServices
 {
-    public class EmailService: IEmailService
+    public class EmailService : IEmailService
     {
         private readonly string _smtpServer;
         private readonly int _smtpPort;
@@ -54,7 +54,7 @@ namespace AssetManagementSystem.Services.EmailServices
                 Console.WriteLine($"General Exception: {e.Message}");
                 throw;  //Rethrow or handle accordinglty.
             }
-            
+
         }
     }
 }
