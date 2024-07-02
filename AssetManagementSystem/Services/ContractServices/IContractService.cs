@@ -14,5 +14,6 @@ namespace AssetManagementSystem.Services.ContractServices
             int pageNumber = 1,
             int pageSize = 6);
         Task<Contract?> GetContractByIdAsync(int id);
+        string GetHtmlcontent(Vendor vendor, Contract contract);
     }
 }

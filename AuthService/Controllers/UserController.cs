@@ -98,9 +98,12 @@ namespace AuthService.Controllers
             var selectedAsset = await _assetService.GetAssetByIdAsync(request.AssetId);
             if (selectedAsset == null) { return NotFound(); }
 
+            var user = await _userService.GetUserByIdAsync(request.UserId);
+            if (user == null) { return NotFound("User not found!"); }
+
             var prevAsset = selectedAsset;
             selectedAsset.AssetStatus = AssetStatusEnum.Acquired;
-            selectedAsset.UserId = request.UserId;
+            selectedAsset.UserId = user.Email;
             
             var updatedAsset = await _assetService.UpdateAssetAsync(request.AssetId, selectedAsset);
             if (updatedAsset == null)
