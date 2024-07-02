@@ -1,6 +1,9 @@
-﻿using AuthService.Models.Domains;
+﻿using AssetManagementSystem.Models.Enums;
+using AuthService.Models.Domains;
 using AuthService.Models.Dtos;
+using AuthService.Services.AssetService;
 using AuthService.Services.UserServices;
+using Azure.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,9 +14,11 @@ namespace AuthService.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly IAssetService _assetService;
+        public UserController(IUserService userService, IAssetService assetService)
         {
             _userService = userService;
+            _assetService = assetService;
         }
 
 
@@ -62,7 +67,7 @@ namespace AuthService.Controllers
             return Ok(SelectedUser);
         }
 
-        [HttpPost]
+        [HttpPost("AssignAssetToUser/{request}")]
         public async Task<IActionResult> AssignAssetToUser(AssignAssetToUserRequest request)
         {
             try
@@ -85,6 +90,55 @@ namespace AuthService.Controllers
                 return NotFound();
             }
             return Ok(SelectedUser);
+        }
+
+        [HttpPost("AssignAssetAsync")]
+        public async Task<IActionResult> AssignAssetAsync(AssignAssetToUserRequest request)
+        {
+            var selectedAsset = await _assetService.GetAssetByIdAsync(request.AssetId);
+            if (selectedAsset == null) { return NotFound(); }
+
+            var prevAsset = selectedAsset;
+            selectedAsset.AssetStatus = AssetStatusEnum.Acquired;
+            selectedAsset.UserId = request.UserId;
+            
+            var updatedAsset = await _assetService.UpdateAssetAsync(request.AssetId, selectedAsset);
+            if (updatedAsset == null)
+            {
+                return BadRequest("Unable to assign, please try again!");
+            }
+
+            var response = await _userService.AssignAssetToUserAsync(request);
+            if (response == null) {
+                await _assetService.UpdateAssetAsync(request.AssetId, prevAsset);
+                return BadRequest("Unable to assign, please try again!");
+            }
+
+            return Ok();
+        }
+
+        [HttpDelete("ReleaseAsset")]
+        public async Task<IActionResult> ReleaseAsset(AssignAssetToUserRequest request)
+        {
+            var selectedAsset = await _assetService.GetAssetByIdAsync(request.AssetId);
+            if (selectedAsset == null) { return NotFound(); }
+
+            var prevAsset = selectedAsset;
+            selectedAsset.AssetStatus = AssetStatusEnum.Free;
+            selectedAsset.UserId = "";
+            var assetResponse = await _assetService.UpdateAssetAsync(request.AssetId, selectedAsset);
+            if (assetResponse == null) 
+            { 
+                return BadRequest();
+            }
+
+            var response = await _userService.DeleteUserAssetAsync(request);
+            if(response != true)
+            {
+                await _assetService.UpdateAssetAsync(request.AssetId, prevAsset);
+                return BadRequest();
+            }
+            return Ok();
         }
 
     }

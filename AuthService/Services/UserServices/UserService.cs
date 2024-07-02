@@ -141,6 +141,19 @@ namespace AuthService.Services.UserServices
                 .ToListAsync();
         }
 
+        public async Task<bool> DeleteUserAssetAsync(AssignAssetToUserRequest request)
+        {
+            var userAsset = await _dbContext.UserAssets
+                .FirstOrDefaultAsync(ua => ua.AssetId == request.AssetId && ua.UserId == request.UserId);
+            if (userAsset != null) 
+            { 
+                _dbContext.UserAssets.Remove(userAsset);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            
+            return false;
+        }
 
     }
 

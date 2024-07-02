@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthService.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20240630032759_init")]
-    partial class init
+    [Migration("20240701133743_v1")]
+    partial class v1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,16 +121,16 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "97ade02b-ba0e-456e-839b-3fee3e2245c0",
+                            ConcurrencyStamp = "acf63ee0-1373-420d-836f-99a6679023e1",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOwkp18rjegJOkfRjyDZLIaLUOI/FBbg6bkigsRJ/9WEgw8Z5F3Z94hDCEKkE9ghtQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECL3en9K+DTV1+6+mOU+CSq2A4XDi+ESUIuFeWk9TmUSSCJfuoh6ZYqnFn1Fs4WMuQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2244a4a9-0e9b-457d-8d40-f52886615213",
+                            SecurityStamp = "8f8d86be-4f8f-4813-873c-151fa4cff367",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });
@@ -322,6 +322,17 @@ namespace AuthService.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("AuthService.Models.Domains.UserAsset", b =>
+                {
+                    b.HasOne("AssetManagementSystem.Models.User", "User")
+                        .WithMany("UserAssets")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -371,6 +382,11 @@ namespace AuthService.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("AssetManagementSystem.Models.User", b =>
+                {
+                    b.Navigation("UserAssets");
                 });
 #pragma warning restore 612, 618
         }

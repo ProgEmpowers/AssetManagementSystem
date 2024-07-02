@@ -1,0 +1,41 @@
+2024-07-01 19:07:28.129 +05:30 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-01 19:07:28.280 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-01 19:07:28.285 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-01 19:07:28.286 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-01 19:07:28.409 +05:30 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-07-01 19:07:28.479 +05:30 [INF] No migrations were applied. The database is already up to date.
+2024-07-01 19:07:41.893 +05:30 [INF] User profile is available. Using 'C:\Users\PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-01 19:07:42.203 +05:30 [INF] Now listening on: https://localhost:7229
+2024-07-01 19:07:42.245 +05:30 [INF] Now listening on: http://localhost:5039
+2024-07-01 19:07:42.249 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-01 19:07:42.258 +05:30 [INF] Hosting environment: Development
+2024-07-01 19:07:42.259 +05:30 [INF] Content root path: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AuthService
+2024-07-01 19:07:42.497 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-07-01 19:07:42.745 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 246.9839ms
+2024-07-01 19:07:43.011 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-07-01 19:07:43.011 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-01 19:07:43.022 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 10.3621ms
+2024-07-01 19:07:43.048 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.2108ms
+2024-07-01 19:07:43.857 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-07-01 19:07:44.067 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 210.0332ms
+2024-07-01 19:07:52.408 +05:30 [INF] User profile is available. Using 'C:\Users\PC\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-01 19:07:52.679 +05:30 [INF] Now listening on: https://localhost:7229
+2024-07-01 19:07:52.681 +05:30 [INF] Now listening on: http://localhost:5039
+2024-07-01 19:07:52.684 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-01 19:07:52.686 +05:30 [INF] Hosting environment: Development
+2024-07-01 19:07:52.689 +05:30 [INF] Content root path: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AuthService
+2024-07-01 19:07:53.091 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/index.html - null null
+2024-07-01 19:07:53.343 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/index.html - 200 null text/html;charset=utf-8 251.0549ms
+2024-07-01 19:07:53.416 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-01 19:07:53.417 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/_vs/browserLink - null null
+2024-07-01 19:07:53.433 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_framework/aspnetcore-browser-refresh.js - 200 13758 application/javascript; charset=utf-8 15.9466ms
+2024-07-01 19:07:53.471 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.8927ms
+2024-07-01 19:07:54.304 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - null null
+2024-07-01 19:07:54.435 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 130.9154ms

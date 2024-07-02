@@ -19,6 +19,6 @@ namespace AuthService.Services.UserServices
 
         Task<List<int>> GetAssetIdsByUserIdAsync(string userId);
 
-
+        Task<bool> DeleteUserAssetAsync(AssignAssetToUserRequest request);
     }
 }

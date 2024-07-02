@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AuthService.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class v1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -59,19 +59,6 @@ namespace AuthService.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserAssets",
-                columns: table => new
-                {
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    AssetId = table.Column<int>(type: "int", nullable: false),
-                    AssetAssignedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserAssets", x => new { x.UserId, x.AssetId });
                 });
 
             migrationBuilder.CreateTable(
@@ -180,6 +167,25 @@ namespace AuthService.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "UserAssets",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    AssetId = table.Column<int>(type: "int", nullable: false),
+                    AssetAssignedTime = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserAssets", x => new { x.UserId, x.AssetId });
+                    table.ForeignKey(
+                        name: "FK_UserAssets_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
@@ -194,7 +200,7 @@ namespace AuthService.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "CustomUserId", "DateofBirth", "Email", "EmailConfirmed", "FirstName", "ImageUrl", "IsActive", "JobPost", "LastName", "LockoutEnabled", "LockoutEnd", "Nic", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "75af95a9-9273-4c9b-86aa-0a80c76f32d6", 0, null, "97ade02b-ba0e-456e-839b-3fee3e2245c0", null, null, "admin@corzent.com", false, null, null, false, null, null, false, null, null, "ADMIN@CORZENT.COM", "ADMIN@CORZENT.COM", "AQAAAAIAAYagAAAAEOwkp18rjegJOkfRjyDZLIaLUOI/FBbg6bkigsRJ/9WEgw8Z5F3Z94hDCEKkE9ghtQ==", null, false, "2244a4a9-0e9b-457d-8d40-f52886615213", false, "admin@corzent.com" });
+                values: new object[] { "75af95a9-9273-4c9b-86aa-0a80c76f32d6", 0, null, "acf63ee0-1373-420d-836f-99a6679023e1", null, null, "admin@corzent.com", false, null, null, false, null, null, false, null, null, "ADMIN@CORZENT.COM", "ADMIN@CORZENT.COM", "AQAAAAIAAYagAAAAECL3en9K+DTV1+6+mOU+CSq2A4XDi+ESUIuFeWk9TmUSSCJfuoh6ZYqnFn1Fs4WMuQ==", null, false, "8f8d86be-4f8f-4813-873c-151fa4cff367", false, "admin@corzent.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
