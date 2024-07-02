@@ -30,7 +30,7 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllContracts (
+        public async Task<IActionResult> GetAllContracts(
             [FromQuery] string? filterOn,
             [FromQuery] string? filterQuery,
             [FromQuery] string? sortBy,
@@ -49,7 +49,7 @@ namespace AssetManagementSystem.Controllers
         {
             var selectedContract = await _contractService.GetContractByIdAsync(id);
 
-            if (selectedContract == null )
+            if (selectedContract == null)
             {
                 return NotFound();
             }

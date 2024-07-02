@@ -8,10 +8,11 @@ namespace AssetManagementSystem.Mappings
     {
         public AutoMapperProfiles()
         {
-            CreateMap<Asset,AssetDto>().ReverseMap();
-            CreateMap<Vendor,VendorDto>().ReverseMap();
+            CreateMap<Asset, AssetDto>().ReverseMap();
+            CreateMap<Vendor, VendorDto>().ReverseMap();
             CreateMap<Notification, NotificationDto>().ReverseMap();
             CreateMap<Contract, ContractDto>().ReverseMap();
+            CreateMap<OrderedAssetType, OrderedAssetTypeDto>().ReverseMap();
         }
     }
 }
