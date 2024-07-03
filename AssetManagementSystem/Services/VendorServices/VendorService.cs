@@ -76,10 +76,11 @@ namespace AssetManagementSystem.Services.VendorServices
 
         public async Task<List<Vendor>> GetVendorListAsync()
         {
-            var vendors = await _dbContext.Vendor.Where(vendor => vendor.IsActive == true).Select(vendor => new Vendor
+            var vendors = await _dbContext.Vendor.Select(vendor => new Vendor
             {
                 Id = vendor.Id,
-                Name = vendor.Name
+                Name = vendor.Name,
+                IsActive = vendor.IsActive,
             }).ToListAsync();
 
             logger.LogInformation($"Finished Get Vendor Names : {JsonSerializer.Serialize(vendors)}");
@@ -109,7 +110,7 @@ namespace AssetManagementSystem.Services.VendorServices
                 }
                 if (vendorDto.MobileNo != null)
                 {
-                    var vendorHasMobileNo = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.MobileNo == vendorDto.MobileNo);
+                    /*var vendorHasMobileNo = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.MobileNo == vendorDto.MobileNo);
 
                     if (vendorDto.Email != "")
                     {
@@ -128,7 +129,7 @@ namespace AssetManagementSystem.Services.VendorServices
                         {
                             return null;
                         }
-                    }
+                    }*/
                     SelectedVendor.MobileNo = (string)vendorDto.MobileNo;
                 }
                 if (vendorDto.Address != "")
@@ -137,7 +138,7 @@ namespace AssetManagementSystem.Services.VendorServices
                 }
                 if (vendorDto.Email != "")
                 {
-                    var vendorHasEmail = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.Email == vendorDto.Email);
+                    /*var vendorHasEmail = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.Email == vendorDto.Email);
 
                     if (vendorDto.MobileNo != null)
                     {
@@ -156,7 +157,7 @@ namespace AssetManagementSystem.Services.VendorServices
                         {
                             return null;
                         }
-                    }
+                    }*/
 
                     SelectedVendor.Email = vendorDto.Email;
                 }
