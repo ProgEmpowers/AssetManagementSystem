@@ -4,6 +4,7 @@ using AuthService.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthService.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240703025839_b4")]
+    partial class b4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,11 +40,8 @@ namespace AuthService.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CustomUserId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DateofBirth")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("DateofBirth")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -51,9 +51,6 @@ namespace AuthService.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -91,12 +88,6 @@ namespace AuthService.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("RefreshToken")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("RefreshTokenExpiryTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -124,35 +115,19 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2ed2bd73-be6b-4ecc-a2c0-8932dfe039f0",
+                            ConcurrencyStamp = "bb433607-ed76-4fb3-81c7-67098e7c69ea",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPmVs2LtMPh3D8SITaJMfihBO5jAKm3aNKdj/p5mU1rDNam1mbN1hn18USmjgC5arA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBefOOwftq2TRfLvhdTcPnPgLN+YkiZlgVdOWG8ddUHzuOTcEzrDN/HebpvxVIFn4w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "390ad4c6-43a6-48a2-a7f9-0be58d660cd5",
+                            SecurityStamp = "33b4ec9c-e228-4e7b-b652-c2e2c476c617",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });
-                });
-
-            modelBuilder.Entity("AuthService.Models.Domains.UserAsset", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AssetId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("AssetAssignedTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("UserId", "AssetId");
-
-                    b.ToTable("UserAssets");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -325,17 +300,6 @@ namespace AuthService.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AuthService.Models.Domains.UserAsset", b =>
-                {
-                    b.HasOne("AssetManagementSystem.Models.User", "User")
-                        .WithMany("UserAssets")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -385,11 +349,6 @@ namespace AuthService.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("AssetManagementSystem.Models.User", b =>
-                {
-                    b.Navigation("UserAssets");
                 });
 #pragma warning restore 612, 618
         }
