@@ -142,6 +142,7 @@ namespace AuthService.Controllers
             return Ok();
         }
 
+
         [HttpDelete("ReleaseAsset")]
         public async Task<IActionResult> ReleaseAsset(AssignAssetToUserRequest request)
         {
