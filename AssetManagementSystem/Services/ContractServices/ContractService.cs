@@ -125,6 +125,20 @@ namespace AssetManagementSystem.Services.ContractServices
 
             emailTemplate.Append("</table>");
             emailTemplate.Append("</div>");
+            emailTemplate.Append('\n');
+            emailTemplate.Append("<div>");
+            emailTemplate.Append("<p>Any other Messages :-</p>");
+            emailTemplate.Append("</div>");
+            emailTemplate.Append("<div>");
+            if (contract.Optionals != null)
+            {
+                emailTemplate.Append($"<p>{contract.Optionals}</p>");
+            } else
+            {
+                emailTemplate.Append("<p>None..!</p>");
+            }
+            
+            emailTemplate.Append("</div>");
             emailTemplate.Append("<p>After receiving your quotation, we will inform you whether this order will be confirmed or not.</p>");
             emailTemplate.Append("<h2>Thank You!</h2>");
             emailTemplate.Append("<div><h4>Contact us: corzent@gmail.com</h4></div>");
