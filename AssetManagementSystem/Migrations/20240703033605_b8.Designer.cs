@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssetManagementSystem.Migrations
 {
     [DbContext(typeof(AssetManagementDbContext))]
-    [Migration("20240702044256_init")]
-    partial class init
+    [Migration("20240703033605_b8")]
+    partial class b8
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -79,24 +79,67 @@ namespace AssetManagementSystem.Migrations
                     b.Property<DateTime>("AssignedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdOfVendor")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Message")
+                    b.Property<string>("IdOfVendors")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Subject")
+                    b.Property<string>("NameOfVendors")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SupplyAssetType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VendorName")
+                    b.Property<string>("Optionals")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Contract");
+                });
+
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.DisposalAssets", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AssetStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AssetType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float?>("AssetValue")
+                        .HasColumnType("real");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Price")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("QRcode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Update")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DisposalAssets");
                 });
 
             modelBuilder.Entity("AssetManagementSystem.Models.Domains.Log", b =>
@@ -153,6 +196,31 @@ namespace AssetManagementSystem.Migrations
                     b.ToTable("Notification");
                 });
 
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.OrderedAssetType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("ContractId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("OrderedAsset")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ContractId");
+
+                    b.ToTable("OrderedAssetType");
+                });
+
             modelBuilder.Entity("AssetManagementSystem.Models.Domains.SellingContract", b =>
                 {
                     b.Property<int>("Id")
@@ -199,14 +267,16 @@ namespace AssetManagementSystem.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("MobileNo")
-                        .HasColumnType("int");
+                    b.Property<string>("MobileNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SupplyAssetType")
+                    b.Property<string>("SupplyAssetTypes")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -223,6 +293,18 @@ namespace AssetManagementSystem.Migrations
                         .IsRequired();
 
                     b.Navigation("Asset");
+                });
+
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.OrderedAssetType", b =>
+                {
+                    b.HasOne("AssetManagementSystem.Models.Domains.Contract", null)
+                        .WithMany("OrderedAssetTypes")
+                        .HasForeignKey("ContractId");
+                });
+
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.Contract", b =>
+                {
+                    b.Navigation("OrderedAssetTypes");
                 });
 #pragma warning restore 612, 618
         }

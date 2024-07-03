@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AssetManagementSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class b8 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -39,15 +39,36 @@ namespace AssetManagementSystem.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     AssignedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Subject = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SupplyAssetType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IdOfVendor = table.Column<int>(type: "int", nullable: false),
-                    VendorName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Optionals = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IdOfVendors = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NameOfVendors = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Contract", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DisposalAssets",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AssetType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    QRcode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AssetValue = table.Column<float>(type: "real", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    AssetStatus = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Update = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DisposalAssets", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,9 +112,9 @@ namespace AssetManagementSystem.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MobileNo = table.Column<int>(type: "int", nullable: false),
+                    MobileNo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SupplyAssetType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SupplyAssetTypes = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -122,23 +143,51 @@ namespace AssetManagementSystem.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "OrderedAssetType",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderedAsset = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    ContractId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderedAssetType", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_OrderedAssetType_Contract_ContractId",
+                        column: x => x.ContractId,
+                        principalTable: "Contract",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Log_AssetId",
                 table: "Log",
                 column: "AssetId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderedAssetType_ContractId",
+                table: "OrderedAssetType",
+                column: "ContractId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Contract");
+                name: "DisposalAssets");
 
             migrationBuilder.DropTable(
                 name: "Log");
 
             migrationBuilder.DropTable(
                 name: "Notification");
+
+            migrationBuilder.DropTable(
+                name: "OrderedAssetType");
 
             migrationBuilder.DropTable(
                 name: "SellingContract");
@@ -148,6 +197,9 @@ namespace AssetManagementSystem.Migrations
 
             migrationBuilder.DropTable(
                 name: "Asset");
+
+            migrationBuilder.DropTable(
+                name: "Contract");
         }
     }
 }
