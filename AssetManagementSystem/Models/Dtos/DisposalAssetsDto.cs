@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AssetManagementSystem.Models.Dtos
 {
-    public class DisposalAssetDto
+    public class DisposalAssetsDto
     {
         [Required]
         [MaxLength(5, ErrorMessage = "max")]
@@ -14,8 +14,8 @@ namespace AssetManagementSystem.Models.Dtos
         public string? ImageUrl { get; set; }
         public string? QRcode { get; set; }
         public float? AssetValue { get; set; }
+        public bool IsActive { get; set; }
         public AssetStatusEnum AssetStatus { get; set; }
-        public int? UserId { get; set; }
         public string?  Price { get; set; }
         public string? Update { get; set; }
     }

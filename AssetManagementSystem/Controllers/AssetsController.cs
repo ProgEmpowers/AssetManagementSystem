@@ -150,15 +150,15 @@ namespace AssetManagementSystem.Controllers
             return Ok(SelectedAsset);
         }
 
-        [HttpPost("AddDisposalAsset")]
+        [HttpPost("AddDisposalAssets")]
         [ValidateModel]
-        public async Task<IActionResult> AddDisposalAsset([FromBody] DisposalAssetDto disposalassetDto)
+        public async Task<IActionResult> AddDisposalAsset([FromBody] DisposalAssetsDto disposalassetsDto)
         {
-            if (disposalassetDto == null)
+            if (disposalassetsDto == null)
                 return BadRequest();
 
-            var addedDisposalAsset = await _assetService.AddDisposalAssetAsync(disposalassetDto);
-            return Ok(addedDisposalAsset);
+            var addedDisposalAssets = await _assetService.AddDisposalAssetsAsync(disposalassetsDto);
+            return Ok(addedDisposalAssets);
         }
 
         [HttpGet("GetAllDisposalAssets")]
@@ -173,14 +173,14 @@ namespace AssetManagementSystem.Controllers
 
         [HttpPut(" UpdateDisposalAsset/{id:int}")]
         [ValidateModel]
-        public async Task<IActionResult> UpdateDisposalAsset([FromRoute] int id, [FromBody] DisposalAssetDto disposalassetDto)
+        public async Task<IActionResult> UpdateDisposalAssets([FromRoute] int id, [FromBody] DisposalAssetsDto disposalassetsDto)
         {
-            var SelecteddisposalAsset = await _assetService.UpdateDisposalAssetAsync(id, disposalassetDto);
-            if (SelecteddisposalAsset == null)
+            var SelecteddisposalAssets = await _assetService.UpdateDisposalAssetsAsync(id, disposalassetsDto);
+            if (SelecteddisposalAssets == null)
             {
                 return NotFound();
             }
-            return Ok(SelecteddisposalAsset);
+            return Ok(SelecteddisposalAssets);
         }
 
 

@@ -76,26 +76,32 @@ namespace AssetManagementSystem.Services.VendorServices
 
         public async Task<List<Vendor>> GetVendorListAsync()
         {
-            var vendors = await _dbContext.Vendor.Where(vendor => vendor.IsActive == true).Select(vendor => new Vendor
+            var vendors = await _dbContext.Vendor.Select(vendor => new Vendor
             {
                 Id = vendor.Id,
-                Name = vendor.Name
+                Name = vendor.Name,
+                IsActive = vendor.IsActive,
             }).ToListAsync();
 
             logger.LogInformation($"Finished Get Vendor Names : {JsonSerializer.Serialize(vendors)}");
             return vendors;
         }
-        
+
+        public async Task<List<Vendor>> GetVendorsByIdAsync(List<int> idOfVendors)
+        {
+            return await _dbContext.Vendor.Where(v => idOfVendors.Contains(v.Id)).Select(vendor => new Vendor { Id = vendor.Id, Name = vendor.Name, Email = vendor.Email }).ToListAsync();
+        }
+
 
         public async Task<Vendor?> UpdateVendorAsync(int id, VendorDto vendorDto)
         {
-            
+
             var SelectedVendor = await _dbContext.Vendor.Where(vendor => vendor.IsActive == true).FirstOrDefaultAsync(x => x.Id == id);
 
             if (SelectedVendor == null)
             {
                 return null;
-            } 
+            }
             else
             {
                 if (vendorDto.Name != "")
@@ -104,26 +110,27 @@ namespace AssetManagementSystem.Services.VendorServices
                 }
                 if (vendorDto.MobileNo != null)
                 {
-                    var vendorHasMobileNo = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.MobileNo == vendorDto.MobileNo);
+                    /*var vendorHasMobileNo = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.MobileNo == vendorDto.MobileNo);
 
                     if (vendorDto.Email != "")
                     {
                         var vendorHasEmail = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.Email == vendorDto.Email);
 
-                        if(vendorHasMobileNo == vendorHasEmail)
-                        {
-                            return null;
-                        }
-                    } else
-                    {
-                        var vendorHasEmail = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.Email == SelectedVendor.Email);
-
-                        if(vendorHasMobileNo == vendorHasEmail)
+                        if (vendorHasMobileNo == vendorHasEmail)
                         {
                             return null;
                         }
                     }
-                    SelectedVendor.MobileNo = (int)vendorDto.MobileNo;
+                    else
+                    {
+                        var vendorHasEmail = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.Email == SelectedVendor.Email);
+
+                        if (vendorHasMobileNo == vendorHasEmail)
+                        {
+                            return null;
+                        }
+                    }*/
+                    SelectedVendor.MobileNo = (string)vendorDto.MobileNo;
                 }
                 if (vendorDto.Address != "")
                 {
@@ -131,7 +138,7 @@ namespace AssetManagementSystem.Services.VendorServices
                 }
                 if (vendorDto.Email != "")
                 {
-                    var vendorHasEmail = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.Email == vendorDto.Email);
+                    /*var vendorHasEmail = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.Email == vendorDto.Email);
 
                     if (vendorDto.MobileNo != null)
                     {
@@ -146,21 +153,21 @@ namespace AssetManagementSystem.Services.VendorServices
                     {
                         var vendorHasMobileNo = await _dbContext.Vendor.FirstOrDefaultAsync(vendor => vendor.MobileNo == SelectedVendor.MobileNo);
 
-                        if(vendorHasMobileNo == vendorHasEmail)
+                        if (vendorHasMobileNo == vendorHasEmail)
                         {
                             return null;
                         }
-                    }
+                    }*/
 
                     SelectedVendor.Email = vendorDto.Email;
                 }
-                if (vendorDto.SupplyAssetType != "")
+                if (vendorDto.SupplyAssetTypes != null)
                 {
-                    SelectedVendor.SupplyAssetType = vendorDto.SupplyAssetType;
+                    SelectedVendor.SupplyAssetTypes = vendorDto.SupplyAssetTypes;
                 }
             }
-            
-            
+
+
             await _dbContext.SaveChangesAsync();
             return SelectedVendor;
         }
