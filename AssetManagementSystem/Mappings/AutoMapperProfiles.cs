@@ -10,6 +10,7 @@ namespace AssetManagementSystem.Mappings
         {
             CreateMap<Asset, AssetDto>().ReverseMap();
             CreateMap<Vendor, VendorDto>().ReverseMap();
+            CreateMap<DisposalAssets,DisposalAssetsDto>().ReverseMap(); 
             CreateMap<Notification, NotificationDto>().ReverseMap();
             CreateMap<Contract, ContractDto>().ReverseMap();
             CreateMap<OrderedAssetType, OrderedAssetTypeDto>().ReverseMap();

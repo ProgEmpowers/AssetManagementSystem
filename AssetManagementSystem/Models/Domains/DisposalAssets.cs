@@ -1,13 +1,12 @@
 ﻿using AssetManagementSystem.Models.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace AssetManagementSystem.Models.Dtos
+namespace AssetManagementSystem.Models.Domains
 {
-    public class DisposalAssetsDto
+    public class DisposalAssets
     {
-        [Required]
-        [MaxLength(5, ErrorMessage = "max")]
-        [MinLength(3, ErrorMessage = "min")]
+        [Key]
+        public int Id { get; set; }
         public string Name { get; set; }
         public string? AssetType { get; set; }
         public string? Description { get; set; }
@@ -16,7 +15,7 @@ namespace AssetManagementSystem.Models.Dtos
         public float? AssetValue { get; set; }
         public bool IsActive { get; set; }
         public AssetStatusEnum AssetStatus { get; set; }
-        public string?  Price { get; set; }
+        public string? Price { get; set; }
         public string? Update { get; set; }
     }
 }
