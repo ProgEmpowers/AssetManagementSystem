@@ -53,6 +53,17 @@ namespace AuthService.Controllers
             return Ok(SelectedUser);
         }
 
+        [HttpGet("GetUserByEmail/{email}")]
+        public async Task<IActionResult> GetUserByEmail([FromRoute] string email)
+        {
+            var SelectedUser = await _userService.GetUserByEmailAsync(email);
+            if (SelectedUser == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedUser);
+        }
+
 
         [HttpPut]
         [Route("{id}")]
@@ -92,15 +103,29 @@ namespace AuthService.Controllers
             return Ok(SelectedUser);
         }
 
+        [HttpGet("GetAssetIdsByEmail/{email}")]
+        public async Task<ActionResult<IEnumerable<int>>> GetAssetIdsByEmail(string email)
+        {
+            var SelectedUser = await _userService.GetUserByEmailAsync(email);
+            if (SelectedUser == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedUser);
+        }
+
         [HttpPost("AssignAssetAsync")]
         public async Task<IActionResult> AssignAssetAsync(AssignAssetToUserRequest request)
         {
             var selectedAsset = await _assetService.GetAssetByIdAsync(request.AssetId);
             if (selectedAsset == null) { return NotFound(); }
 
+            var user = await _userService.GetUserByIdAsync(request.UserId);
+            if (user == null) { return NotFound("User not found!"); }
+
             var prevAsset = selectedAsset;
             selectedAsset.AssetStatus = AssetStatusEnum.Acquired;
-            selectedAsset.UserId = request.UserId;
+            selectedAsset.UserId = user.Email;
             
             var updatedAsset = await _assetService.UpdateAssetAsync(request.AssetId, selectedAsset);
             if (updatedAsset == null)
@@ -131,6 +156,13 @@ namespace AuthService.Controllers
             { 
                 return BadRequest();
             }
+
+            var selectedUser = await _userService.GetUserByEmailAsync(request.UserId);
+            if (selectedUser == null) {
+                await _assetService.UpdateAssetAsync(request.AssetId, prevAsset);
+                return NotFound();
+            }
+            request.UserId = selectedUser.Id;
 
             var response = await _userService.DeleteUserAssetAsync(request);
             if(response != true)

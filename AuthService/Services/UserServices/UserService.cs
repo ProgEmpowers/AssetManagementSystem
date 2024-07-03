@@ -141,6 +141,14 @@ namespace AuthService.Services.UserServices
                 .ToListAsync();
         }
 
+        public async Task<User?> GetUserByEmailAsync(string email)
+        {
+            var SelectedUser = await _dbContext.Users
+                .FirstOrDefaultAsync(ua => ua.Email == email);
+            _logger.LogInformation($"Finished Get Employee by Email : {JsonSerializer.Serialize(SelectedUser)}");
+            return SelectedUser;
+        }
+
         public async Task<bool> DeleteUserAssetAsync(AssignAssetToUserRequest request)
         {
             var userAsset = await _dbContext.UserAssets

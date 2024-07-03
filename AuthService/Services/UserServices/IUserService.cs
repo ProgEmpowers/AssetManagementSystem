@@ -13,6 +13,7 @@ namespace AuthService.Services.UserServices
 
         Task<User?> DeleteUserAsync(string id);
         Task<User?> GetUserByIdAsync(string id);
+        Task<User?> GetUserByEmailAsync(string email);
         Task<User?> UpdateUserAsync(string id, UserUpdateDto userUpdateDto);
 
         Task<UserAsset> AssignAssetToUserAsync(AssignAssetToUserRequest request);
