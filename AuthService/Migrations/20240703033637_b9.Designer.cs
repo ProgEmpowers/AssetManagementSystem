@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthService.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    [Migration("20240702044110_init")]
-    partial class init
+    [Migration("20240703033637_b9")]
+    partial class b9
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -127,17 +127,17 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5f990943-6e9a-4784-bcb0-398d6e199788",
+                            ConcurrencyStamp = "e7d397b7-bcf0-4ea8-8d92-8b940e98b25e",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6+YHPBwM8vKj5s6Xm3ba9o6vXdiIJ8WMfdMlCg5NR2uMoLWNoptw5YLLcV58+7ew==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMwsFKAVEEi4yAhCspe0Ohl/ELbCgdtIVTv2YROzr3bTi5BQJuiloJkP5MxS/MoWcA==",
                             PhoneNumberConfirmed = false,
                             RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SecurityStamp = "610967f7-02b8-4edd-85b6-5073ae1bdfb1",
+                            SecurityStamp = "22069568-8ee8-401d-81bc-932034074914",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });

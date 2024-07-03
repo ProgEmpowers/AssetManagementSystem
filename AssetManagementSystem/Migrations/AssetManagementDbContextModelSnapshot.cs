@@ -131,9 +131,6 @@ namespace AssetManagementSystem.Migrations
                     b.Property<string>("Update")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("DisposalAssets");

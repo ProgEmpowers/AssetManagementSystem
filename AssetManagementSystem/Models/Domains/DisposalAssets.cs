@@ -15,7 +15,6 @@ namespace AssetManagementSystem.Models.Domains
         public float? AssetValue { get; set; }
         public bool IsActive { get; set; }
         public AssetStatusEnum AssetStatus { get; set; }
-        public int? UserId { get; set; }
         public string? Price { get; set; }
         public string? Update { get; set; }
     }

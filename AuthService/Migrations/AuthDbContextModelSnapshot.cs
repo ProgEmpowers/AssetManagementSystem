@@ -124,16 +124,17 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2ed2bd73-be6b-4ecc-a2c0-8932dfe039f0",
+                            ConcurrencyStamp = "b02de218-8e69-4158-9d70-e9bb98a74c9b",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPmVs2LtMPh3D8SITaJMfihBO5jAKm3aNKdj/p5mU1rDNam1mbN1hn18USmjgC5arA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJ2s1smzhobh96LNIraIFPxylvwrTzjEv5EE3YDxzAoue+qWVnSjEyvShpr9c1wtrA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "390ad4c6-43a6-48a2-a7f9-0be58d660cd5",
+                            RefreshTokenExpiryTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SecurityStamp = "55044c85-7f95-4630-80ad-b26e1ad096bf",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssetManagementSystem.Migrations
 {
     [DbContext(typeof(AssetManagementDbContext))]
-    [Migration("20240702153139_update contractdto")]
-    partial class updatecontractdto
+    [Migration("20240703034650_b11")]
+    partial class b11
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,6 +93,50 @@ namespace AssetManagementSystem.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Contract");
+                });
+
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.DisposalAssets", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AssetStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AssetType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float?>("AssetValue")
+                        .HasColumnType("real");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Price")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("QRcode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Update")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DisposalAssets");
                 });
 
             modelBuilder.Entity("AssetManagementSystem.Models.Domains.Log", b =>

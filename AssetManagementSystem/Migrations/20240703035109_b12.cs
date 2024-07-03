@@ -5,7 +5,7 @@
 namespace AssetManagementSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class b7 : Migration
+    public partial class b12 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

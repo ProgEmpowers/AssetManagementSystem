@@ -8,7 +8,6 @@ namespace AssetManagementSystem.Models.Dtos
         [Required]
         [MaxLength(5, ErrorMessage = "max")]
         [MinLength(3, ErrorMessage = "min")]
-        public int Id { get; set; }
         public string Name { get; set; }
         public string? AssetType { get; set; }
         public string? Description { get; set; }
@@ -17,7 +16,6 @@ namespace AssetManagementSystem.Models.Dtos
         public float? AssetValue { get; set; }
         public bool IsActive { get; set; }
         public AssetStatusEnum AssetStatus { get; set; }
-        public int? UserId { get; set; }
         public string?  Price { get; set; }
         public string? Update { get; set; }
     }
