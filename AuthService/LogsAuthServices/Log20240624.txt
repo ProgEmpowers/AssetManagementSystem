@@ -1,0 +1,274 @@
+2024-06-24 00:05:28.894 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:05:28.919 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:05:28.935 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:05:28.939 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:05:28.968 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:05:28.972 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:05:28.976 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 29.9264ms
+2024-06-24 00:05:28.979 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:05:28.984 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 97.3844ms
+2024-06-24 00:05:40.704 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7229/api/Auth/login - application/json 54
+2024-06-24 00:05:40.707 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:05:40.708 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-24 00:05:40.708 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-24 00:05:40.722 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-24 00:05:40.813 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-24 00:05:40.816 +05:30 [INF] Executing OkObjectResult, writing value of type 'AuthService.Models.Dtos.LoginResponseDto'.
+2024-06-24 00:05:40.818 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 108.5999ms
+2024-06-24 00:05:40.820 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-24 00:05:40.822 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7229/api/Auth/login - 200 null application/json; charset=utf-8 117.9955ms
+2024-06-24 00:07:08.268 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:07:08.284 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:07:08.287 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:07:08.289 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:07:08.310 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:07:08.313 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:07:08.316 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 23.5095ms
+2024-06-24 00:07:08.322 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:07:08.332 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 65.7834ms
+2024-06-24 00:07:09.602 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:07:09.607 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:07:09.609 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:07:09.610 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:07:09.617 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:07:09.623 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:07:09.626 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 12.6642ms
+2024-06-24 00:07:09.628 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:07:09.630 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 28.3863ms
+2024-06-24 00:07:15.352 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:07:15.357 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:07:15.360 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:07:15.361 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:07:15.367 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:07:15.371 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:07:15.373 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 7.7841ms
+2024-06-24 00:07:15.381 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:07:15.383 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 31.2334ms
+2024-06-24 00:08:56.866 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:08:56.879 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:08:56.880 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:08:56.882 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:08:56.897 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:08:56.900 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:08:56.901 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 17.7148ms
+2024-06-24 00:08:56.914 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:08:56.915 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 50.4815ms
+2024-06-24 00:09:03.701 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:09:03.704 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:09:03.706 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:09:03.708 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:09:03.715 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:09:03.718 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:09:03.721 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 9.9549ms
+2024-06-24 00:09:03.724 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:09:03.727 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 26.1894ms
+2024-06-24 00:09:05.085 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:09:05.091 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:09:05.095 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:09:05.100 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:09:05.106 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:09:05.118 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:09:05.121 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 18.7532ms
+2024-06-24 00:09:05.124 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:09:05.131 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 47.0548ms
+2024-06-24 00:09:06.569 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:09:06.579 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:09:06.581 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:09:06.583 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:09:06.589 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:09:06.593 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:09:06.595 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 9.8787ms
+2024-06-24 00:09:06.597 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:09:06.600 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 31.0681ms
+2024-06-24 00:12:50.939 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:12:50.954 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:12:50.956 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:12:50.959 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:12:50.974 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:12:50.976 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:12:50.980 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 19.3378ms
+2024-06-24 00:12:50.991 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:12:50.995 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 57.2486ms
+2024-06-24 00:12:54.499 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:12:54.503 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:12:54.505 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:12:54.509 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:12:54.517 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:12:54.521 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:12:54.525 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 12.9625ms
+2024-06-24 00:12:54.531 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:12:54.533 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 34.2409ms
+2024-06-24 00:27:46.818 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:27:46.828 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:27:46.829 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:27:46.831 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:27:46.937 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:27:46.941 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:27:46.943 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 110.1723ms
+2024-06-24 00:27:46.962 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:27:46.964 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 150.8445ms
+2024-06-24 00:28:36.300 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:28:36.314 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:28:36.315 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:28:36.318 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:28:36.325 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:28:36.328 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:28:36.329 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 9.7889ms
+2024-06-24 00:28:36.332 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:28:36.342 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 41.473ms
+2024-06-24 00:28:51.543 +05:30 [INF] Request starting HTTP/1.1 POST https://localhost:7229/api/Auth/login - application/json 54
+2024-06-24 00:28:51.548 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:28:51.549 +05:30 [INF] Executing endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-24 00:28:51.550 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthService.Models.Dtos.LoginRequestDto) on controller AuthService.Controllers.AuthController (AuthService).
+2024-06-24 00:28:51.558 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-06-24 00:28:51.644 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-06-24 00:28:51.649 +05:30 [INF] Executing OkObjectResult, writing value of type 'AuthService.Models.Dtos.LoginResponseDto'.
+2024-06-24 00:28:51.650 +05:30 [INF] Executed action AuthService.Controllers.AuthController.Login (AuthService) in 98.3002ms
+2024-06-24 00:28:51.652 +05:30 [INF] Executed endpoint 'AuthService.Controllers.AuthController.Login (AuthService)'
+2024-06-24 00:28:51.655 +05:30 [INF] Request finished HTTP/1.1 POST https://localhost:7229/api/Auth/login - 200 null application/json; charset=utf-8 112.2523ms
+2024-06-24 00:37:02.414 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:37:02.427 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:37:02.429 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:37:02.435 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:37:02.576 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:37:02.587 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:37:02.590 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 152.9235ms
+2024-06-24 00:37:02.591 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:37:02.592 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 179.3664ms
+2024-06-24 00:37:36.000 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:37:36.020 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:37:36.022 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:37:36.025 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:37:36.038 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:37:36.042 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:37:36.045 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 16.9539ms
+2024-06-24 00:37:36.054 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:37:36.062 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 61.9005ms
+2024-06-24 00:38:30.787 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:38:30.800 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:38:30.801 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:38:30.803 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:38:30.812 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:38:30.815 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:38:30.816 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 11.543ms
+2024-06-24 00:38:30.818 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:38:30.830 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 45.7555ms
+2024-06-24 00:38:33.582 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:38:33.592 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:38:33.593 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:38:33.594 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:38:33.599 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:38:33.601 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:38:33.603 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 7.2503ms
+2024-06-24 00:38:33.605 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:38:33.607 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 24.8957ms
+2024-06-24 00:38:35.674 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:38:35.680 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:38:35.681 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:38:35.684 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:38:35.697 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:38:35.701 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:38:35.713 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 24.1398ms
+2024-06-24 00:38:35.719 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:38:35.723 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 49.2951ms
+2024-06-24 00:38:37.367 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:38:37.373 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:38:37.375 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:38:37.378 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:38:37.385 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:38:37.389 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:38:37.392 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 9.752ms
+2024-06-24 00:38:37.398 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:38:37.399 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 32.0248ms
+2024-06-24 00:42:56.965 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:42:56.976 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:42:56.977 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:42:56.978 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:42:57.084 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:42:57.138 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:42:57.140 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 158.7086ms
+2024-06-24 00:42:57.151 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:42:57.155 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 190.9175ms
+2024-06-24 00:45:28.037 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7229/api/User - null null
+2024-06-24 00:45:28.044 +05:30 [INF] CORS policy execution successful.
+2024-06-24 00:45:28.045 +05:30 [INF] Executing endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:45:28.047 +05:30 [INF] Route matched with {action = "GetallUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallUsers() on controller AuthService.Controllers.UserController (AuthService).
+2024-06-24 00:45:28.055 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[DateofBirth], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[IsActive], [a].[JobPost], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nic], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-06-24 00:45:28.059 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[AssetManagementSystem.Models.User, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AuthService.Models.Dtos.UserDto, AuthService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-24 00:45:28.061 +05:30 [INF] Executed action AuthService.Controllers.UserController.GetallUsers (AuthService) in 11.0387ms
+2024-06-24 00:45:28.063 +05:30 [INF] Executed endpoint 'AuthService.Controllers.UserController.GetallUsers (AuthService)'
+2024-06-24 00:45:28.070 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7229/api/User - 200 null application/json; charset=utf-8 38.5006ms

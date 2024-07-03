@@ -4,6 +4,7 @@ using AuthService.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthService.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240703025226_b2")]
+    partial class b2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,16 +115,16 @@ namespace AuthService.Migrations
                         {
                             Id = "75af95a9-9273-4c9b-86aa-0a80c76f32d6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bb433607-ed76-4fb3-81c7-67098e7c69ea",
+                            ConcurrencyStamp = "5799d270-b990-4a5a-ac3d-28dd339ad79c",
                             Email = "admin@corzent.com",
                             EmailConfirmed = false,
                             IsActive = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@CORZENT.COM",
                             NormalizedUserName = "ADMIN@CORZENT.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBefOOwftq2TRfLvhdTcPnPgLN+YkiZlgVdOWG8ddUHzuOTcEzrDN/HebpvxVIFn4w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFzDahZEB3E5ASiLFnsC08BgVso9jeCtA2DeZmK1/CPGnIwIjUV/bcOUkrWSwjJTPQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "33b4ec9c-e228-4e7b-b652-c2e2c476c617",
+                            SecurityStamp = "b17e4013-2e83-4a20-8cdb-3d219296890b",
                             TwoFactorEnabled = false,
                             UserName = "admin@corzent.com"
                         });

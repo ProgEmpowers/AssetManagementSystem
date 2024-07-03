@@ -136,21 +136,21 @@ namespace AssetManagementSystem.Services.AssetServices
             return SelectedAsset;
         }
 
-        public async Task<Asset> AddDisposalAssetAsync(DisposalAssetDto disposalassetDto)
+        public async Task<DisposalAssets> AddDisposalAssetsAsync(DisposalAssetsDto disposalassetDto)
         {
-            var NewDisposalAsset = mapper.Map<Asset>(disposalassetDto);
-            NewDisposalAsset.IsActive = true;
-            await _dbContext.Asset.AddAsync(NewDisposalAsset);
+            var NewDisposalAssets = mapper.Map<DisposalAssets>(disposalassetDto);
+            NewDisposalAssets.IsActive = true;
+            await _dbContext.DisposalAssets.AddAsync(NewDisposalAssets);
             await _dbContext.SaveChangesAsync();
-            logger.LogInformation($"Finished Add Disposal Asset : {JsonSerializer.Serialize(NewDisposalAsset)}");
-            return NewDisposalAsset;
+            logger.LogInformation($"Finished Add Disposal Asset : {JsonSerializer.Serialize(NewDisposalAssets)}");
+            return NewDisposalAssets;
         }
 
-        public async Task<List<Asset>> GetAllDisposalAssetsAsync(
+        public async Task<List<DisposalAssets>> GetAllDisposalAssetsAsync(
             string? filterOn = null, string? filterQuery = null,
             string? sortBy = null, bool isAscending = true)
         {
-            var DisposalAssets = _dbContext.Asset.Where(asset => asset.IsActive == true).AsQueryable();
+            var DisposalAssets = _dbContext.DisposalAssets.Where(disposalasset => disposalasset.IsActive == true).AsQueryable();
             if (string.IsNullOrWhiteSpace(filterOn) == false && string.IsNullOrWhiteSpace(filterQuery) == false)
             {
                 if (filterOn.Equals("Name", StringComparison.OrdinalIgnoreCase))
@@ -169,17 +169,17 @@ namespace AssetManagementSystem.Services.AssetServices
             return await DisposalAssets.ToListAsync();
         }
 
-        public async Task<Asset?> UpdateDisposalAssetAsync(int id, DisposalAssetDto disposalassetDto)
+        public async Task<DisposalAssets?> UpdateDisposalAssetsAsync(int id, DisposalAssetsDto disposalassetDto)
         {
-            var SelecteddisposalAsset = await _dbContext.Asset.Where(asset => asset.IsActive == true).FirstOrDefaultAsync(x => x.Id == id);
-            if (SelecteddisposalAsset == null)
+            var SelecteddisposalAssets = await _dbContext.DisposalAssets.Where(disposalasset => disposalasset.IsActive == true).FirstOrDefaultAsync(x => x.Id == id);
+            if (SelecteddisposalAssets == null)
             {
                 return null;
             }
-            SelecteddisposalAsset = mapper.Map(disposalassetDto, SelecteddisposalAsset);
+            SelecteddisposalAssets = mapper.Map(disposalassetDto, SelecteddisposalAssets);
             await _dbContext.SaveChangesAsync();
-            logger.LogInformation($"Finished Update a DisposalAsset : {JsonSerializer.Serialize(SelecteddisposalAsset)}");
-            return SelecteddisposalAsset;
+            logger.LogInformation($"Finished Update a DisposalAsset : {JsonSerializer.Serialize(SelecteddisposalAssets)}");
+            return SelecteddisposalAssets;
         }
     }
 }

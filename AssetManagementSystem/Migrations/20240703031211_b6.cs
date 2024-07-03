@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AssetManagementSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class bt : Migration
+    public partial class b6 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -48,6 +48,29 @@ namespace AssetManagementSystem.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Contract", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DisposalAssets",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AssetType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    QRcode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AssetValue = table.Column<float>(type: "real", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    AssetStatus = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    Price = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Update = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DisposalAssets", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -133,6 +156,9 @@ namespace AssetManagementSystem.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Contract");
+
+            migrationBuilder.DropTable(
+                name: "DisposalAssets");
 
             migrationBuilder.DropTable(
                 name: "Log");
