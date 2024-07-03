@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssetManagementSystem.Migrations
 {
     [DbContext(typeof(AssetManagementDbContext))]
-    [Migration("20240703033605_b8")]
-    partial class b8
+    [Migration("20240703191809_s")]
+    partial class s
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -133,9 +133,6 @@ namespace AssetManagementSystem.Migrations
 
                     b.Property<string>("Update")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

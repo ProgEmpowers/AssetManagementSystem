@@ -144,5 +144,56 @@ namespace AuthService.Controllers
             return Ok();
         }
 
+        [HttpGet("count/{roleName}")]
+        public async Task<int> GetRoleUserCount(string roleName)
+        {
+            try
+            {
+                var userCount = await _userService.GetUserCountInRoleAsync(roleName);
+                return userCount;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+
+        [HttpGet("deleted")]
+        public async Task<IActionResult> GetDeletedUsers()
+        {
+            var DeletedUsers = await _userService.GetDeletedUsersAsync();
+            return Ok(DeletedUsers);
+        }
+
+        [HttpGet("GetUserByEmail/{email}")]
+        public async Task<IActionResult> GetUserByEmail([FromRoute] string email)
+        {
+            var SelectedUser = await _userService.GetUserByEmailAsync(email);
+            if (SelectedUser == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedUser);
+        }
+
+        [HttpGet("WithRole")]
+        public async Task<IActionResult> GetAllUsersWithRole()
+        {
+            var usersWithRole = await _userService.GetAllUsersWithRoleAsync();
+            return Ok(usersWithRole);
+        }
+
+        [HttpPut("recoverDeletedUser/{id}")]
+        public async Task<IActionResult> RecoverDeletedUser([FromRoute] string id)
+        {
+            var SelectedUser = await _userService.RecoverDeletedUserAsync(id);
+            if (SelectedUser == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedUser);
+        }
+
     }
 }
