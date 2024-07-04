@@ -58,6 +58,13 @@ namespace AuthService.Controllers
             }
 
             var identityUser = await userManager.FindByEmailAsync(request.Email);
+
+            if (identityUser.IsActive == false)
+            {
+                ModelState.AddModelError("", "This is a deleted user");
+                return ValidationProblem(ModelState);
+            }
+
             if (identityUser != null)
             {
                 var checkPasswordResult = await userManager.CheckPasswordAsync(identityUser, request.Password);
