@@ -7,6 +7,7 @@ using AssetManagementSystem.Models.Domains;
 using AssetManagementSystem.Models.Dtos;
 using AssetManagementSystem.Models.Enums;
 using AssetManagementSystem.Services.AssetServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,6 +26,7 @@ namespace AssetManagementSystem.Controllers
 
         [HttpPost]
         [ValidateModel]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> AddAsset([FromBody] AssetDto assetDto)
         {
             if (assetDto == null)
@@ -36,6 +38,7 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> GetallAssets(
             [FromQuery] string? filterOn, [FromQuery] string? filterQuery,
             [FromQuery] string? sortBy, [FromQuery] bool? isAscending,
@@ -97,6 +100,7 @@ namespace AssetManagementSystem.Controllers
         [HttpPut]
         [Route("{id:int}")]
         [ValidateModel]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> UpdateAsset([FromRoute] int id, [FromBody] AssetDto assetDto)
         {
             var SelectedAsset = await _assetService.UpdateAssetAsync(id, assetDto);
@@ -109,6 +113,7 @@ namespace AssetManagementSystem.Controllers
 
         [HttpDelete]
         [Route("{id:int}")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> DeleteAsset([FromRoute] int id)
         {
             var SelectedAsset = await _assetService.DeleteAssetAsync(id);
@@ -120,6 +125,7 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet("getAllDeletedAssets")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> GetDeletedAssets(
             [FromQuery] string? filterOn, [FromQuery] string? filterQuery,
             [FromQuery] string? sortBy, [FromQuery] bool? isAscending,
@@ -130,6 +136,7 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet("getDeletedAssetById/{id:int}")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> GetDeletedAssetById([FromRoute] int id)
         {
             var SelectedAsset = await _assetService.GetDeletedAssetByIdAsync(id);
@@ -141,6 +148,7 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpPut("recoverDeletedAsset/{id:int}")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> RecoverDeletedAsset([FromRoute] int id)
         {
             var SelectedAsset = await _assetService.RecoverDeletedAssetAsync(id);
@@ -212,6 +220,7 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpDelete("DeleteAssetType/{type}")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> DeleteAssetType([FromRoute] AssetTypeDto type)
         {
             var deletedType = await _assetService.DeleteAssetTypeAsync(type);

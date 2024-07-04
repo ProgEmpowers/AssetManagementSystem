@@ -1,9 +1,13 @@
 {
   "Routes": [
-    //AssetManegement API
+    //AssetManegement API //
+
+    //         asset controller
+
+    //add asset
     {
       "UpstreamPathTemplate": "/apigateway/Assets",
-      "UpstreamHttpMethod": [ "Get", "Delete", "Put", "Post" ],
+      "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -13,9 +17,10 @@
       ],
       "DownstreamPathTemplate": "/api/Assets"
     },
+    //get all asset
     {
-      "UpstreamPathTemplate": "/apigateway/Assets/{assetId}",
-      "UpstreamHttpMethod": [ "Get", "Delete", "Put", "Post" ],
+      "UpstreamPathTemplate": "/apigateway/Assets",
+      "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -23,11 +28,294 @@
           "Port": 7095
         }
       ],
-      "DownstreamPathTemplate": "/api/Assets/{assetId}"
+      "DownstreamPathTemplate": "/api/Assets"
     },
+    //get asset by id
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/{id:int}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/{id:int}"
+    },
+    //get asset by user async
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/GetAssetByUserAsync/{email}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/GetAssetByUserAsync/{email}"
+    },
+    //GetTotalNoOfAssetsAsync
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/GetTotalNoOfAssetsAsync",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/GetTotalNoOfAssetsAsync"
+    },
+    //get asset by status
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/GetAssetsByStatusAsync/{status:int}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/GetAssetsByStatusAsync/{status:int}"
+    },
+    //get no of assets by status
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/GetNoOfAssetsByStatusAsync/{status:int}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/GetNoOfAssetsByStatusAsync/{status:int}"
+    },
+    //update asset
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/{id:int}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/{id:int}"
+    },
+    //delete asset
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/{id:int}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/{id:int}"
+    },
+    //get all deleted assets
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/getAllDeletedAssets",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/getAllDeletedAssets"
+    },
+    //get deleted asset by id
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/getDeletedAssetById/{id:int}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/getDeletedAssetById/{id:int}"
+    },
+    //recover deleted asset
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/recoverDeletedAsset/{id:int}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/recoverDeletedAsset/{id:int}"
+    },
+    //add disposal asset
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/AddDisposalAssets",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/AddDisposalAssets"
+    },
+    //get all disposal asset
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/GetAllDisposalAssets",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/GetAllDisposalAssets"
+    },
+    //update disposal asset
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/UpdateDisposalAsset/{id:int}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets"
+    },
+    //get types
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/types",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/types"
+    },
+    //get assets by type
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/type/{type}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/type/{type}"
+    },
+    //add asset type
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/AddAssetType",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/AddAssetType"
+    },
+    //delete asset type
+    {
+      "UpstreamPathTemplate": "/apigateway/Assets/DeleteAssetType/{type}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Assets/DeleteAssetType/{type}"
+    },
+
+    //          contracts controller 
+
+    //post contract
+    {
+      "UpstreamPathTemplate": "/apigateway/Contracts",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Contracts"
+    },
+    //get all contracts
+    {
+      "UpstreamPathTemplate": "/apigateway/Contracts",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Contracts"
+    },
+    //get contract by id
+    {
+      "UpstreamPathTemplate": "/apigateway/Contracts/{id:int}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Contracts/{id:int}"
+    },
+
+    //         upload controller
+
+    //post upload
+    {
+      "UpstreamPathTemplate": "/apigateway/Upload",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Upload"
+    },
+
+    //           vendors controller
+
+    //post vendor
     {
       "UpstreamPathTemplate": "/apigateway/Vendors",
-      "UpstreamHttpMethod": [ "Get", "Delete", "Put", "Post" ],
+      "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -37,9 +325,10 @@
       ],
       "DownstreamPathTemplate": "/api/Vendors"
     },
+    //get all vendors
     {
-      "UpstreamPathTemplate": "/apigateway/Vendors/{vendorId}",
-      "UpstreamHttpMethod": [ "Get", "Delete", "Put", "Post" ],
+      "UpstreamPathTemplate": "/apigateway/Vendors",
+      "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -47,9 +336,68 @@
           "Port": 7095
         }
       ],
-      "DownstreamPathTemplate": "/api/Vendors/{vendorId}"
+      "DownstreamPathTemplate": "/api/Vendors"
     },
-    //Auth Service API
+    //get vendor by id
+    {
+      "UpstreamPathTemplate": "/apigateway/Vendors/{id:int}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Vendors/{id:int}"
+    },
+    //get vendor list
+    {
+      "UpstreamPathTemplate": "/apigateway/Vendors/ids&names",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Vendors/ids&names"
+    },
+    //update vendor
+    {
+      "UpstreamPathTemplate": "/apigateway/Vendors/{id:int}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Vendors/{id:int}"
+    },
+    //delete vendor
+    {
+      "UpstreamPathTemplate": "/apigateway/Vendors/{id:int}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7095
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Vendors/{id:int}"
+    },
+
+
+
+    //Auth Service API //
+
+    //         auth controller
+
+    //login
     {
       "UpstreamPathTemplate": "/apigateway/Auth/login",
       "UpstreamHttpMethod": [ "Post" ],
@@ -62,6 +410,75 @@
       ],
       "DownstreamPathTemplate": "/api/Auth/login"
     },
+    //register
+    {
+      "UpstreamPathTemplate": "/apigateway/Auth/register",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Auth/register"
+    },
+    //forgotpassword
+    {
+      "UpstreamPathTemplate": "/apigateway/Auth/forgot-password",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Auth/forgot-password"
+    },
+    //reset password
+    {
+      "UpstreamPathTemplate": "/apigateway/Auth/reset-password",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Auth/reset-password"
+    },
+    //refresh token
+    {
+      "UpstreamPathTemplate": "/apigateway/Auth/refresh-token",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Auth/refresh-token"
+    },
+    //change-password
+    {
+      "UpstreamPathTemplate": "/apigateway/Auth/change-password",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Auth/change-password"
+    },
+
+    //          user controller
+
+    //getalluser
     {
       "UpstreamPathTemplate": "/apigateway/User",
       "UpstreamHttpMethod": [ "Get" ],
@@ -73,6 +490,191 @@
         }
       ],
       "DownstreamPathTemplate": "/api/User"
+    },
+    //deleteuser
+    {
+      "UpstreamPathTemplate": "/apigateway/User/{id}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/{id}"
+    },
+    //get user by id
+    {
+      "UpstreamPathTemplate": "/apigateway/User/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/{id}"
+    },
+    //get user by email
+    {
+      "UpstreamPathTemplate": "/apigateway/User/GetUserByEmail/{email}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/GetUserByEmail/{email}"
+    },
+    //update user
+    {
+      "UpstreamPathTemplate": "/apigateway/User/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/{id}"
+    },
+    //assign asset to user
+    {
+      "UpstreamPathTemplate": "/apigateway/User/AssignAssetToUser/{request}",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/AssignAssetToUser/{request}"
+    },
+    //get asset id by user id
+    {
+      "UpstreamPathTemplate": "/apigateway/User/GetAssetIdsByUserId/{userId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/GetAssetIdsByUserId/{userId}"
+    },
+    //get asset by email
+    {
+      "UpstreamPathTemplate": "/apigateway/User/GetAssetIdsByEmail/{email}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/GetAssetIdsByEmail/{email}"
+    },
+    //assign asset async
+    {
+      "UpstreamPathTemplate": "/apigateway/User/AssignAssetAsync",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/AssignAssetAsync"
+    },
+    //Release Asset
+    {
+      "UpstreamPathTemplate": "/apigateway/User/ReleaseAsset",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/ReleaseAsset"
+    },
+    //get role user count
+    {
+      "UpstreamPathTemplate": "/apigateway/User/count/{roleName}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/count/{roleName}"
+    },
+    //get deleted users
+    {
+      "UpstreamPathTemplate": "/apigateway/User/deleted",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/deleted"
+    },
+    //get all users with role
+    {
+      "UpstreamPathTemplate": "/apigateway/User/WithRole",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/WithRole"
+    },
+    //recover deleted user
+    {
+      "UpstreamPathTemplate": "/apigateway/User/recoverDeletedUser/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/recoverDeletedUser/{id}"
+    },
+
+    //         upload controller 
+
+    //upload
+    {
+      "UpstreamPathTemplate": "/apigateway/Uploads",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7229
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Uploads"
     }
   ],
   "GlobalConfiguration": {
