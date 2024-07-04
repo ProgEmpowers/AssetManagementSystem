@@ -92,21 +92,21 @@ namespace AssetManagementSystem.Services.AssetServices
 
         public async Task<List<Asset>> GetAssetsByStatusAsync(AssetStatusEnum status)
         {
-            var Assets = _dbContext.Asset.Where(asset => asset.AssetStatus == status).AsQueryable();
+            var Assets = _dbContext.Asset.Where(asset => asset.AssetStatus == status && asset.IsActive==true).AsQueryable();
             logger.LogInformation($"Finished Get Asset by Status : {JsonSerializer.Serialize(Assets)}");
             return await Assets.ToListAsync();
         }
 
         public async Task<int> GetTotalNoOfAssetsAsync()
         {
-            var AssetCount = _dbContext.Asset.CountAsync();
+            var AssetCount = _dbContext.Asset.Where(asset => asset.IsActive == true).CountAsync();
             logger.LogInformation($"Finished Get Total Asset Count : {JsonSerializer.Serialize(AssetCount)}");
             return await AssetCount;
         }
 
         public async Task<int> GetNoOfAssetsByStatusAsync(AssetStatusEnum status)
         {
-            var AssetCount = _dbContext.Asset.CountAsync(asset => asset.AssetStatus == status);
+            var AssetCount = _dbContext.Asset.CountAsync(asset => asset.AssetStatus == status && asset.IsActive == true);
             logger.LogInformation($"Finished Get Asset Count By Status : {JsonSerializer.Serialize(AssetCount)}");
             return await AssetCount;   
         }
@@ -225,8 +225,6 @@ namespace AssetManagementSystem.Services.AssetServices
         {
             return await _dbContext.Asset.Where(a => a.AssetType == type).ToListAsync();
         }
-
-       
 
 
     }
