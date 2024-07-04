@@ -67,7 +67,8 @@ namespace AuthService.Data
                 UserName = "admin@corzent.com",
                 Email = "admin@corzent.com",
                 NormalizedEmail = "admin@corzent.com".ToUpper(),
-                NormalizedUserName = "admin@corzent.com".ToUpper()
+                NormalizedUserName = "admin@corzent.com".ToUpper(),
+                IsActive = true,
          
             };
 
