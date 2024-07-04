@@ -1279,3 +1279,948 @@ FROM [AssetType] AS [a]
 2024-07-04 17:21:28.441 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.DeleteAssetType (AssetManagementSystem) in 2.7061ms
 2024-07-04 17:21:28.442 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.DeleteAssetType (AssetManagementSystem)'
 2024-07-04 17:21:28.444 +05:30 [INF] Request finished HTTP/2 DELETE https://localhost:7095/api/Assets/DeleteAssetType/string - 400 null application/problem+json; charset=utf-8 15.0227ms
+2024-07-04 23:22:00.206 +05:30 [INF] Executed DbCommand (1,496ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [x];
+2024-07-04 23:22:00.543 +05:30 [INF] Executed DbCommand (297ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [x] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2024-07-04 23:22:00.564 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-04 23:22:00.890 +05:30 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-07-04 23:22:00.891 +05:30 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-04 23:22:00.904 +05:30 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-04 23:22:00.911 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-07-04 23:22:00.921 +05:30 [INF] Applying migration '20240704175145_s'.
+2024-07-04 23:22:01.079 +05:30 [INF] Executed DbCommand (117ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Asset] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [AssetType] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [ImageUrl] nvarchar(max) NULL,
+    [QRcode] nvarchar(max) NULL,
+    [IsActive] bit NOT NULL,
+    [AssetValue] real NULL,
+    [DateCreated] nvarchar(max) NULL,
+    [AssetStatus] int NOT NULL,
+    [UserId] nvarchar(max) NULL,
+    CONSTRAINT [PK_Asset] PRIMARY KEY ([Id])
+);
+2024-07-04 23:22:01.081 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AssetType] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_AssetType] PRIMARY KEY ([Id])
+);
+2024-07-04 23:22:01.114 +05:30 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Contract] (
+    [Id] int NOT NULL IDENTITY,
+    [AssignedDate] datetime2 NOT NULL,
+    [Optionals] nvarchar(max) NULL,
+    [IdOfVendors] nvarchar(max) NOT NULL,
+    [NameOfVendors] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Contract] PRIMARY KEY ([Id])
+);
+2024-07-04 23:22:01.117 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [DisposalAssets] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [AssetType] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [ImageUrl] nvarchar(max) NULL,
+    [QRcode] nvarchar(max) NULL,
+    [AssetValue] real NULL,
+    [IsActive] bit NOT NULL,
+    [AssetStatus] int NOT NULL,
+    [Price] nvarchar(max) NULL,
+    [Update] nvarchar(max) NULL,
+    CONSTRAINT [PK_DisposalAssets] PRIMARY KEY ([Id])
+);
+2024-07-04 23:22:01.120 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Notification] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(max) NULL,
+    [Description] nvarchar(max) NULL,
+    [Date] nvarchar(max) NULL,
+    [Time] nvarchar(max) NULL,
+    [isRead] bit NULL,
+    CONSTRAINT [PK_Notification] PRIMARY KEY ([Id])
+);
+2024-07-04 23:22:01.421 +05:30 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [SellingContract] (
+    [Id] int NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [Title] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [Price] int NOT NULL,
+    CONSTRAINT [PK_SellingContract] PRIMARY KEY ([Id])
+);
+2024-07-04 23:22:01.474 +05:30 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Vendor] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [MobileNo] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [SupplyAssetTypes] nvarchar(max) NOT NULL,
+    [IsActive] bit NOT NULL,
+    CONSTRAINT [PK_Vendor] PRIMARY KEY ([Id])
+);
+2024-07-04 23:22:01.488 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Log] (
+    [Id] int NOT NULL IDENTITY,
+    [Title] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NOT NULL,
+    [AssetId] int NOT NULL,
+    CONSTRAINT [PK_Log] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Log_Asset_AssetId] FOREIGN KEY ([AssetId]) REFERENCES [Asset] ([Id]) ON DELETE CASCADE
+);
+2024-07-04 23:22:01.491 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [OrderedAssetType] (
+    [Id] int NOT NULL IDENTITY,
+    [OrderedAsset] nvarchar(max) NOT NULL,
+    [Quantity] int NOT NULL,
+    [ContractId] int NULL,
+    CONSTRAINT [PK_OrderedAssetType] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_OrderedAssetType_Contract_ContractId] FOREIGN KEY ([ContractId]) REFERENCES [Contract] ([Id])
+);
+2024-07-04 23:22:03.086 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Log_AssetId] ON [Log] ([AssetId]);
+2024-07-04 23:22:03.088 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_OrderedAssetType_ContractId] ON [OrderedAssetType] ([ContractId]);
+2024-07-04 23:22:03.132 +05:30 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240704175145_s', N'8.0.1');
+2024-07-04 23:24:23.167 +05:30 [WRN] The WebRootPath was not found: C:\Users\Savindya\Desktop\project3\Api-new-new-new\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-07-04 23:24:23.358 +05:30 [INF] Now listening on: https://localhost:7095
+2024-07-04 23:24:23.359 +05:30 [INF] Now listening on: http://localhost:5240
+2024-07-04 23:24:23.362 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-04 23:24:23.363 +05:30 [INF] Hosting environment: Development
+2024-07-04 23:24:23.364 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project3\Api-new-new-new\AssetManagementSystem\AssetManagementSystem
+2024-07-04 23:24:34.926 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 23:24:36.547 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 1601.6515ms
+2024-07-04 23:24:36.589 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 23:24:36.628 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 39.3682ms
+2024-07-04 23:24:36.680 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 23:24:37.904 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1224.2317ms
+2024-07-04 23:24:38.016 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 23:24:38.309 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 293.8503ms
+2024-07-04 23:28:59.929 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-07-04 23:28:59.929 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-07-04 23:28:59.929 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/types - null null
+2024-07-04 23:28:59.929 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-07-04 23:28:59.932 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - null null
+2024-07-04 23:28:59.933 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - null null
+2024-07-04 23:28:59.941 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - null null
+2024-07-04 23:28:59.976 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/usericon.jpg - null null
+2024-07-04 23:29:00.043 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:29:00.043 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:29:00.043 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:29:00.043 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:29:00.043 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:29:00.043 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:29:00.043 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:29:00.047 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/usericon.jpg - 404 0 null 70.8508ms
+2024-07-04 23:29:00.051 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:29:00.051 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetAssetTypes (AssetManagementSystem)'
+2024-07-04 23:29:00.051 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:29:00.051 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:29:00.051 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:29:00.051 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:29:00.051 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:29:00.052 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/usericon.jpg, Response status code: 404
+2024-07-04 23:29:00.150 +05:30 [INF] Route matched with {action = "GetTotalNoOfAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTotalNoOfAssetsAsync() on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:29:00.150 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-07-04 23:29:00.150 +05:30 [INF] Route matched with {action = "GetAssetTypes", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[System.String]]] GetAssetTypes() on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:29:00.155 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:29:00.155 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:29:00.155 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-07-04 23:29:00.156 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:29:03.067 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor] AS [v]
+2024-07-04 23:29:03.067 +05:30 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:29:03.067 +05:30 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:29:03.067 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:29:03.067 +05:30 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-07-04 23:29:03.067 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Name]
+FROM [AssetType] AS [a]
+2024-07-04 23:29:03.086 +05:30 [INF] Finished Get All Assets : []
+2024-07-04 23:29:03.086 +05:30 [INF] Executed DbCommand (52ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:29:03.090 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":287,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:29:03.090 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":286,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:29:03.090 +05:30 [INF] Finished Get Total Asset Count : {"Result":0,"Id":285,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:29:03.090 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-04 23:29:03.094 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-04 23:29:03.095 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:29:03.095 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-07-04 23:29:03.095 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:29:03.095 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:29:03.095 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:29:03.098 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:29:03.102 +05:30 [INF] Finished Get All Vendors : []
+2024-07-04 23:29:03.104 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-04 23:29:03.105 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 2947.1045ms
+2024-07-04 23:29:03.105 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetAssetTypes (AssetManagementSystem) in 2941.4165ms
+2024-07-04 23:29:03.105 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 2935.7887ms
+2024-07-04 23:29:03.105 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem) in 2948.1071ms
+2024-07-04 23:29:03.105 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 2940.2611ms
+2024-07-04 23:29:03.105 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-04 23:29:03.106 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:29:03.107 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetAssetTypes (AssetManagementSystem)'
+2024-07-04 23:29:03.107 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-07-04 23:29:03.107 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:29:03.108 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:29:03.109 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:29:03.114 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:29:03.118 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE 0 = 1
+2024-07-04 23:29:03.119 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - 200 null application/json; charset=utf-8 3186.4945ms
+2024-07-04 23:29:03.119 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/types - 200 null application/json; charset=utf-8 3235.998ms
+2024-07-04 23:29:03.119 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 3189.794ms
+2024-07-04 23:29:03.119 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - 200 null application/json; charset=utf-8 3187.1754ms
+2024-07-04 23:29:03.119 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - 200 null application/json; charset=utf-8 3180.9675ms
+2024-07-04 23:29:03.119 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 2956.8735ms
+2024-07-04 23:29:03.121 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:29:03.130 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:29:03.131 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 2967.631ms
+2024-07-04 23:29:03.131 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 3241.9723ms
+2024-07-04 23:29:03.132 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:29:03.134 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-07-04 23:29:03.135 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 3251.8891ms
+2024-07-04 23:29:03.137 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:29:03.138 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:29:03.139 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-07-04 23:29:03.186 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor] AS [v]
+2024-07-04 23:29:03.189 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:29:03.191 +05:30 [INF] Finished Get All Vendors : []
+2024-07-04 23:29:03.194 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE 0 = 1
+2024-07-04 23:29:03.196 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:29:03.197 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 56.7731ms
+2024-07-04 23:29:03.198 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:29:03.199 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 64.9463ms
+2024-07-04 23:31:14.601 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - null null
+2024-07-04 23:31:14.607 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - 404 0 null 6.7793ms
+2024-07-04 23:31:14.608 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/images.png, Response status code: 404
+2024-07-04 23:31:18.342 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - null null
+2024-07-04 23:31:18.344 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - 404 0 null 2.4372ms
+2024-07-04 23:31:18.346 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/images.png, Response status code: 404
+2024-07-04 23:31:25.398 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - multipart/form-data; boundary=----WebKitFormBoundaryAXJHDF1BmISLzsaR 38999
+2024-07-04 23:31:25.405 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:31:25.406 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-07-04 23:31:25.412 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-07-04 23:31:25.436 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-07-04 23:31:25.443 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 28.9057ms
+2024-07-04 23:31:25.444 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-07-04 23:31:25.445 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 200 null application/json; charset=utf-8 47.507ms
+2024-07-04 23:31:25.449 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/propic.jpg - null null
+2024-07-04 23:31:25.472 +05:30 [INF] Sending file. Request path: '/Images/Assets/propic.jpg'. Physical path: 'C:\Users\Savindya\Desktop\project3\Api-new-new-new\AssetManagementSystem\AssetManagementSystem\Uploads\Images\Assets\propic.jpg'
+2024-07-04 23:31:25.473 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/propic.jpg - 200 38815 image/jpeg 24.1057ms
+2024-07-04 23:31:30.260 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - null null
+2024-07-04 23:31:30.261 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - 404 0 null 1.6655ms
+2024-07-04 23:31:30.263 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/images.png, Response status code: 404
+2024-07-04 23:33:31.789 +05:30 [WRN] The WebRootPath was not found: C:\Users\Savindya\Desktop\project3\Api-new-new-new\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-07-04 23:33:32.024 +05:30 [INF] Now listening on: https://localhost:7095
+2024-07-04 23:33:32.025 +05:30 [INF] Now listening on: http://localhost:5240
+2024-07-04 23:33:32.027 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-04 23:33:32.028 +05:30 [INF] Hosting environment: Development
+2024-07-04 23:33:32.029 +05:30 [INF] Content root path: C:\Users\Savindya\Desktop\project3\Api-new-new-new\AssetManagementSystem\AssetManagementSystem
+2024-07-04 23:33:32.933 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 23:33:33.274 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 347.4822ms
+2024-07-04 23:33:33.284 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 23:33:33.284 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 23:33:33.315 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 31.7342ms
+2024-07-04 23:33:33.397 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 113.6703ms
+2024-07-04 23:33:33.643 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 23:33:33.904 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 261.7438ms
+2024-07-04 23:33:42.294 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - null null
+2024-07-04 23:33:42.303 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - 404 0 null 9.1247ms
+2024-07-04 23:33:42.307 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/images.png, Response status code: 404
+2024-07-04 23:33:54.541 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - multipart/form-data; boundary=----WebKitFormBoundaryTGalybtN87NWN1mF 38999
+2024-07-04 23:33:54.550 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:33:54.552 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-07-04 23:33:54.566 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-07-04 23:33:54.591 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-07-04 23:33:54.600 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 29.2088ms
+2024-07-04 23:33:54.601 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-07-04 23:33:54.602 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 200 null application/json; charset=utf-8 60.5447ms
+2024-07-04 23:33:54.611 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/propic.jpg - null null
+2024-07-04 23:33:54.625 +05:30 [INF] Sending file. Request path: '/Images/Assets/propic.jpg'. Physical path: 'C:\Users\Savindya\Desktop\project3\Api-new-new-new\AssetManagementSystem\AssetManagementSystem\Uploads\Images\Assets\propic.jpg'
+2024-07-04 23:33:54.627 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/propic.jpg - 200 38815 image/jpeg 15.7816ms
+2024-07-04 23:35:44.288 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - null null
+2024-07-04 23:35:44.290 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - 404 0 null 2.2278ms
+2024-07-04 23:35:44.292 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/images.png, Response status code: 404
+2024-07-04 23:36:02.887 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - null null
+2024-07-04 23:36:02.896 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - 404 0 null 9.3101ms
+2024-07-04 23:36:02.898 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/images.png, Response status code: 404
+2024-07-04 23:36:09.968 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Upload - multipart/form-data; boundary=----WebKitFormBoundaryfHBzkYxcf6vPYUKw 2405
+2024-07-04 23:36:09.972 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:36:09.972 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-07-04 23:36:09.973 +05:30 [INF] Route matched with {action = "upload", controller = "Upload"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] upload() on controller AssetManagementSystem.Controllers.UploadController (AssetManagementSystem).
+2024-07-04 23:36:09.976 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-07-04 23:36:09.977 +05:30 [INF] Executed action AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem) in 2.9994ms
+2024-07-04 23:36:09.978 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.UploadController.upload (AssetManagementSystem)'
+2024-07-04 23:36:09.979 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Upload - 200 null application/json; charset=utf-8 11.2464ms
+2024-07-04 23:36:09.987 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/usericon.jpg - null null
+2024-07-04 23:36:09.990 +05:30 [INF] Sending file. Request path: '/Images/Assets/usericon.jpg'. Physical path: 'C:\Users\Savindya\Desktop\project3\Api-new-new-new\AssetManagementSystem\AssetManagementSystem\Uploads\Images\Assets\usericon.jpg'
+2024-07-04 23:36:09.991 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/usericon.jpg - 200 2219 image/jpeg 3.8947ms
+2024-07-04 23:36:15.300 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-07-04 23:36:15.300 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - null null
+2024-07-04 23:36:15.300 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - null null
+2024-07-04 23:36:15.300 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-07-04 23:36:15.306 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - null null
+2024-07-04 23:36:15.300 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-07-04 23:36:15.311 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:36:15.342 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:36:15.345 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:36:15.345 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:36:15.346 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:36:15.348 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:36:15.348 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:36:15.349 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:36:15.349 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:36:15.350 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:36:15.351 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:36:15.351 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:36:15.356 +05:30 [INF] Route matched with {action = "GetTotalNoOfAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTotalNoOfAssetsAsync() on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:36:15.356 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-07-04 23:36:15.362 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:36:15.362 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:36:15.362 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-07-04 23:36:15.362 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:36:17.404 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:36:17.404 +05:30 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor] AS [v]
+2024-07-04 23:36:17.404 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:36:17.404 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:36:17.404 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-07-04 23:36:17.427 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:36:17.429 +05:30 [INF] Finished Get Total Asset Count : {"Result":0,"Id":397,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:36:17.429 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":398,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:36:17.429 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":399,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:36:17.429 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:36:17.430 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:36:17.430 +05:30 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:36:17.431 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:36:17.433 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 2073.7663ms
+2024-07-04 23:36:17.435 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem) in 2077.0342ms
+2024-07-04 23:36:17.435 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 2069.4468ms
+2024-07-04 23:36:17.435 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 2071.5123ms
+2024-07-04 23:36:17.436 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:36:17.437 +05:30 [INF] Finished Get All Assets : []
+2024-07-04 23:36:17.437 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:36:17.437 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:36:17.438 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:36:17.439 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:36:17.443 +05:30 [INF] Finished Get All Vendors : []
+2024-07-04 23:36:17.444 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-04 23:36:17.447 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-04 23:36:17.447 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - 200 null application/json; charset=utf-8 2147.1226ms
+2024-07-04 23:36:17.447 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - 200 null application/json; charset=utf-8 2146.6055ms
+2024-07-04 23:36:17.447 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - 200 null application/json; charset=utf-8 2143.5742ms
+2024-07-04 23:36:17.447 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-04 23:36:17.447 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 2147.1198ms
+2024-07-04 23:36:17.454 +05:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-07-04 23:36:17.456 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-07-04 23:36:17.458 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:36:17.460 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 2091.3638ms
+2024-07-04 23:36:17.462 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:36:17.462 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 2162.7219ms
+2024-07-04 23:36:17.464 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE 0 = 1
+2024-07-04 23:36:17.466 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:36:17.468 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 2100.5405ms
+2024-07-04 23:36:17.469 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:36:17.470 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 2169.8252ms
+2024-07-04 23:36:19.237 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/propic.jpg - null null
+2024-07-04 23:36:19.241 +05:30 [INF] The file /Images/Assets/propic.jpg was not modified
+2024-07-04 23:36:19.241 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/propic.jpg - 304 null image/jpeg 4.7393ms
+2024-07-04 23:38:07.081 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-07-04 23:38:07.081 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-07-04 23:38:07.125 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:38:07.088 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - null null
+2024-07-04 23:38:07.088 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-07-04 23:38:07.095 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - null null
+2024-07-04 23:38:07.129 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - null null
+2024-07-04 23:38:07.137 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:38:07.138 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:38:07.140 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:38:07.143 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:38:07.145 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:38:07.149 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:38:07.152 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:38:07.153 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:38:07.154 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:38:07.154 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:38:07.155 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:38:07.156 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:38:07.158 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-07-04 23:38:07.163 +05:30 [INF] Route matched with {action = "GetTotalNoOfAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTotalNoOfAssetsAsync() on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:38:07.164 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-07-04 23:38:07.166 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:38:07.167 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:38:07.238 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-07-04 23:38:07.238 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:38:07.238 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:38:07.247 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:38:07.252 +05:30 [INF] Finished Get All Assets : []
+2024-07-04 23:38:07.254 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 73.5919ms
+2024-07-04 23:38:07.249 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":591,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:38:07.260 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:38:07.261 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:38:07.238 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor] AS [v]
+2024-07-04 23:38:07.238 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:38:07.238 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:38:07.250 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/propic.jpg - null null
+2024-07-04 23:38:07.262 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 173.6586ms
+2024-07-04 23:38:07.263 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-07-04 23:38:07.263 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 81.2917ms
+2024-07-04 23:38:07.267 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":587,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:38:07.268 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:38:07.268 +05:30 [INF] Finished Get Total Asset Count : {"Result":0,"Id":584,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:38:07.269 +05:30 [INF] The file /Images/Assets/propic.jpg was not modified
+2024-07-04 23:38:07.271 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:38:07.271 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:38:07.272 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:38:07.273 +05:30 [INF] Finished Get All Vendors : []
+2024-07-04 23:38:07.274 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:38:07.275 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/propic.jpg - 304 null image/jpeg 25.0713ms
+2024-07-04 23:38:07.276 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 114.9244ms
+2024-07-04 23:38:07.281 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem) in 103.2654ms
+2024-07-04 23:38:07.277 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - 200 null application/json; charset=utf-8 183.3566ms
+2024-07-04 23:38:07.278 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 93.4075ms
+2024-07-04 23:38:07.283 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE 0 = 1
+2024-07-04 23:38:07.283 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:38:07.284 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:38:07.285 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:38:07.286 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:38:07.287 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 206.2365ms
+2024-07-04 23:38:07.287 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - 200 null application/json; charset=utf-8 199.223ms
+2024-07-04 23:38:07.288 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - 200 null application/json; charset=utf-8 161.0459ms
+2024-07-04 23:38:07.289 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 119.1625ms
+2024-07-04 23:38:07.296 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:38:07.297 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 215.7034ms
+2024-07-04 23:38:43.272 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - null null
+2024-07-04 23:38:43.274 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - 404 0 null 2.3552ms
+2024-07-04 23:38:43.276 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/images.png, Response status code: 404
+2024-07-04 23:39:06.959 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-07-04 23:39:06.959 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-07-04 23:39:06.970 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:39:06.959 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - null null
+2024-07-04 23:39:06.959 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-07-04 23:39:06.965 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - null null
+2024-07-04 23:39:06.971 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - null null
+2024-07-04 23:39:06.977 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:39:06.978 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:39:06.979 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:39:06.981 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:39:06.985 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:39:06.988 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:39:06.988 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:39:06.989 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:39:06.989 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:39:06.990 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:39:06.990 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:39:06.991 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:39:06.992 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-07-04 23:39:06.995 +05:30 [INF] Route matched with {action = "GetTotalNoOfAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTotalNoOfAssetsAsync() on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:39:06.996 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-07-04 23:39:06.999 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:39:07.004 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-07-04 23:39:07.038 +05:30 [INF] Finished Get All Assets : []
+2024-07-04 23:39:06.998 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:39:07.040 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:39:06.999 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:39:07.046 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 45.436ms
+2024-07-04 23:39:07.046 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-07-04 23:39:07.048 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:39:07.047 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:39:07.006 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:39:07.040 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor] AS [v]
+2024-07-04 23:39:07.050 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:39:07.051 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 91.6809ms
+2024-07-04 23:39:07.053 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:39:07.054 +05:30 [INF] Finished Get Total Asset Count : {"Result":0,"Id":756,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:39:07.060 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 66.2368ms
+2024-07-04 23:39:07.053 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":834,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:39:07.060 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:39:07.065 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":847,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:39:07.066 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:39:07.066 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:39:07.067 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:39:07.067 +05:30 [INF] Finished Get All Vendors : []
+2024-07-04 23:39:07.068 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:39:07.068 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem) in 66.8546ms
+2024-07-04 23:39:07.069 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 110.2613ms
+2024-07-04 23:39:07.070 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 25.77ms
+2024-07-04 23:39:07.071 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 23.8047ms
+2024-07-04 23:39:07.072 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:39:07.072 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE 0 = 1
+2024-07-04 23:39:07.074 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:39:07.074 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:39:07.075 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - 200 null application/json; charset=utf-8 115.5534ms
+2024-07-04 23:39:07.076 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:39:07.077 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - 200 null application/json; charset=utf-8 112.1456ms
+2024-07-04 23:39:07.077 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - 200 null application/json; charset=utf-8 106.6376ms
+2024-07-04 23:39:07.079 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 75.2996ms
+2024-07-04 23:39:07.082 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:39:07.083 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 123.7293ms
+2024-07-04 23:41:23.163 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - null null
+2024-07-04 23:41:23.163 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-07-04 23:41:23.163 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-07-04 23:41:23.183 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:41:23.163 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - null null
+2024-07-04 23:41:23.163 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-07-04 23:41:23.177 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:41:23.169 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - null null
+2024-07-04 23:41:23.184 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/usericon.jpg - null null
+2024-07-04 23:41:23.185 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:41:23.186 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:41:23.187 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:41:23.189 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:41:23.189 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:41:23.191 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:41:23.193 +05:30 [INF] The file /Images/Assets/usericon.jpg was not modified
+2024-07-04 23:41:23.194 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:41:23.195 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-07-04 23:41:23.195 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:41:23.196 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:41:23.201 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-07-04 23:41:23.203 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:41:23.205 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor] AS [v]
+2024-07-04 23:41:23.204 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:41:23.210 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-07-04 23:41:23.197 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:41:23.198 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:41:23.200 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/usericon.jpg - 304 null image/jpeg 15.7654ms
+2024-07-04 23:41:23.214 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:41:23.216 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:41:23.216 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:41:23.218 +05:30 [INF] Route matched with {action = "GetTotalNoOfAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTotalNoOfAssetsAsync() on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:41:23.215 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:41:23.222 +05:30 [INF] Finished Get All Vendors : []
+2024-07-04 23:41:23.223 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 16.9107ms
+2024-07-04 23:41:23.225 +05:30 [INF] Finished Get All Assets : []
+2024-07-04 23:41:23.229 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":967,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:41:23.233 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE 0 = 1
+2024-07-04 23:41:23.232 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:41:23.234 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:41:23.229 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:41:23.220 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:41:23.235 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-07-04 23:41:23.235 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:41:23.236 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 73.4588ms
+2024-07-04 23:41:23.237 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 28.036ms
+2024-07-04 23:41:23.238 +05:30 [INF] Finished Get Total Asset Count : {"Result":0,"Id":993,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:41:23.241 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":980,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:41:23.245 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:41:23.246 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 43.3345ms
+2024-07-04 23:41:23.249 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:41:23.250 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:41:23.251 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:41:23.252 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 37.6949ms
+2024-07-04 23:41:23.253 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:41:23.253 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - 200 null application/json; charset=utf-8 90.6485ms
+2024-07-04 23:41:23.254 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem) in 28.1145ms
+2024-07-04 23:41:23.255 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 38.297ms
+2024-07-04 23:41:23.257 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:41:23.258 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 95.3402ms
+2024-07-04 23:41:23.264 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:41:23.264 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:41:23.266 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 102.9179ms
+2024-07-04 23:41:23.268 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - 200 null application/json; charset=utf-8 99.3285ms
+2024-07-04 23:41:23.269 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - 200 null application/json; charset=utf-8 106.6495ms
+2024-07-04 23:42:05.310 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - null null
+2024-07-04 23:42:05.314 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/Uploads/Images/Assets/images.png - 404 0 null 4.6593ms
+2024-07-04 23:42:05.316 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7095/Uploads/Images/Assets/images.png, Response status code: 404
+2024-07-04 23:42:50.398 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-07-04 23:42:50.399 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-07-04 23:42:50.399 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetAssetByUserAsync/savindyaabeysingha23@gmail.com - null null
+2024-07-04 23:42:50.399 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-07-04 23:42:50.411 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:42:50.412 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:42:50.414 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:42:50.415 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:42:50.416 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:42:50.417 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:42:50.419 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetAssetByUserAsync (AssetManagementSystem)'
+2024-07-04 23:42:50.420 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:42:50.421 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:42:50.422 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-07-04 23:42:50.427 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-07-04 23:42:50.432 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:42:50.438 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor] AS [v]
+2024-07-04 23:42:50.429 +05:30 [INF] Route matched with {action = "GetAssetByUser", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssetByUserAsync(System.String) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:42:50.441 +05:30 [INF] Finished Get All Assets : []
+2024-07-04 23:42:50.442 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-07-04 23:42:50.445 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:42:50.448 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:42:50.449 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-07-04 23:42:50.449 +05:30 [INF] Finished Get All Vendors : []
+2024-07-04 23:42:50.451 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 12.2793ms
+2024-07-04 23:42:50.454 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:42:50.457 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:42:50.457 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE 0 = 1
+2024-07-04 23:42:50.460 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 31.4154ms
+2024-07-04 23:42:50.463 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 63.0035ms
+2024-07-04 23:42:50.468 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:42:50.468 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:42:50.474 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 77.1993ms
+2024-07-04 23:42:50.475 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[UserId] = @__email_0
+2024-07-04 23:42:50.475 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 43.7012ms
+2024-07-04 23:42:50.479 +05:30 [INF] Finished Get Asset by User : []
+2024-07-04 23:42:50.479 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:42:50.481 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 81.5944ms
+2024-07-04 23:42:50.488 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[UserId] = @__email_0
+2024-07-04 23:42:50.490 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:42:50.491 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetAssetByUserAsync (AssetManagementSystem) in 45.9875ms
+2024-07-04 23:42:50.492 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetAssetByUserAsync (AssetManagementSystem)'
+2024-07-04 23:42:50.493 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetAssetByUserAsync/savindyaabeysingha23@gmail.com - 200 null application/json; charset=utf-8 94.5382ms
+2024-07-04 23:44:33.534 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetAssetByUserAsync/savindyaabeysingha23@gmail.com - null null
+2024-07-04 23:44:33.541 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:33.542 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetAssetByUserAsync (AssetManagementSystem)'
+2024-07-04 23:44:33.543 +05:30 [INF] Route matched with {action = "GetAssetByUser", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssetByUserAsync(System.String) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:44:33.548 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[UserId] = @__email_0
+2024-07-04 23:44:33.551 +05:30 [INF] Finished Get Asset by User : []
+2024-07-04 23:44:33.553 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[UserId] = @__email_0
+2024-07-04 23:44:33.555 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:44:33.555 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetAssetByUserAsync (AssetManagementSystem) in 11.1174ms
+2024-07-04 23:44:33.556 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetAssetByUserAsync (AssetManagementSystem)'
+2024-07-04 23:44:33.557 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetAssetByUserAsync/savindyaabeysingha23@gmail.com - 200 null application/json; charset=utf-8 23.2579ms
+2024-07-04 23:44:37.876 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-07-04 23:44:37.876 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-07-04 23:44:37.876 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-07-04 23:44:37.878 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetAssetByUserAsync/savindyaabeysingha23@gmail.com - null null
+2024-07-04 23:44:37.884 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:37.888 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:37.889 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:37.892 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:37.892 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:44:37.893 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:44:37.893 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:44:37.894 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetAssetByUserAsync (AssetManagementSystem)'
+2024-07-04 23:44:37.895 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:44:37.896 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-07-04 23:44:37.897 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-07-04 23:44:37.903 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:44:37.898 +05:30 [INF] Route matched with {action = "GetAssetByUser", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssetByUserAsync(System.String) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:44:37.907 +05:30 [INF] Finished Get All Assets : []
+2024-07-04 23:44:37.904 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-07-04 23:44:37.907 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor] AS [v]
+2024-07-04 23:44:37.910 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[UserId] = @__email_0
+2024-07-04 23:44:37.911 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-07-04 23:44:37.911 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:44:37.916 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:44:37.916 +05:30 [INF] Finished Get Asset by User : []
+2024-07-04 23:44:37.918 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:44:37.919 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 17.5897ms
+2024-07-04 23:44:37.923 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 23.4651ms
+2024-07-04 23:44:37.921 +05:30 [INF] Finished Get All Vendors : []
+2024-07-04 23:44:37.924 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:44:37.924 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[UserId] = @__email_0
+2024-07-04 23:44:37.926 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:44:37.927 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 51.6374ms
+2024-07-04 23:44:37.927 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE 0 = 1
+2024-07-04 23:44:37.928 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:44:37.929 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 53.3946ms
+2024-07-04 23:44:37.931 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:44:37.931 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetAssetByUserAsync (AssetManagementSystem) in 23.5725ms
+2024-07-04 23:44:37.933 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 29.5386ms
+2024-07-04 23:44:37.934 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetAssetByUserAsync (AssetManagementSystem)'
+2024-07-04 23:44:37.935 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:44:37.935 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetAssetByUserAsync/savindyaabeysingha23@gmail.com - 200 null application/json; charset=utf-8 57.6268ms
+2024-07-04 23:44:37.936 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 60.202ms
+2024-07-04 23:44:43.608 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - null null
+2024-07-04 23:44:43.608 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets - null null
+2024-07-04 23:44:43.611 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Notifications - null null
+2024-07-04 23:44:43.611 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - null null
+2024-07-04 23:44:43.612 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - null null
+2024-07-04 23:44:43.612 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - null null
+2024-07-04 23:44:43.612 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:43.614 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:43.615 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:43.617 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:43.618 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:43.620 +05:30 [INF] CORS policy execution successful.
+2024-07-04 23:44:43.620 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:44:43.621 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:44:43.621 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:44:43.622 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:44:43.622 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:44:43.623 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:44:43.624 +05:30 [INF] Route matched with {action = "GetallVendors", controller = "Vendors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallVendors(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.VendorsController (AssetManagementSystem).
+2024-07-04 23:44:43.625 +05:30 [INF] Route matched with {action = "GetallAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallAssets(System.String, System.String, System.String, System.Nullable`1[System.Boolean], Int32, Int32) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:44:43.628 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:44:43.626 +05:30 [INF] Route matched with {action = "GetallNotifications", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetallNotifications() on controller AssetManagementSystem.Controllers.NotificationsController (AssetManagementSystem).
+2024-07-04 23:44:43.639 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:44:43.639 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Vendor] AS [v]
+2024-07-04 23:44:43.641 +05:30 [INF] Finished Get All Assets : []
+2024-07-04 23:44:43.642 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [n].[Id], [n].[Date], [n].[Description], [n].[Time], [n].[Title], [n].[isRead]
+FROM [Notification] AS [n]
+2024-07-04 23:44:43.653 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE [v].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:44:43.629 +05:30 [INF] Route matched with {action = "GetNoOfAssetsByStatus", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetNoOfAssetsByStatusAsync(AssetManagementSystem.Models.Enums.AssetStatusEnum) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:44:43.627 +05:30 [INF] Route matched with {action = "GetTotalNoOfAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTotalNoOfAssetsAsync() on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 23:44:43.654 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetStatus], [a].[AssetType], [a].[AssetValue], [a].[DateCreated], [a].[Description], [a].[ImageUrl], [a].[IsActive], [a].[Name], [a].[QRcode], [a].[UserId]
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-07-04 23:44:43.655 +05:30 [INF] Finished Get All Vendors : []
+2024-07-04 23:44:43.654 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Notification, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:44:43.665 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Asset, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:44:43.642 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:44:43.665 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:44:43.667 +05:30 [INF] Executed action AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem) in 27.7615ms
+2024-07-04 23:44:43.674 +05:30 [INF] Finished Get Total Asset Count : {"Result":0,"Id":1548,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:44:43.668 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem) in 32.1808ms
+2024-07-04 23:44:43.670 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":1459,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:44:43.668 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Asset] AS [a]
+WHERE [a].[AssetStatus] = @__status_0 AND [a].[IsActive] = CAST(1 AS bit)
+2024-07-04 23:44:43.674 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.NotificationsController.GetallNotifications (AssetManagementSystem)'
+2024-07-04 23:44:43.670 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [v].[Id], [v].[Address], [v].[Email], [v].[IsActive], [v].[MobileNo], [v].[Name], [v].[SupplyAssetTypes]
+FROM [Vendor] AS [v]
+WHERE 0 = 1
+2024-07-04 23:44:43.675 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:44:43.676 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetallAssets (AssetManagementSystem)'
+2024-07-04 23:44:43.677 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:44:43.679 +05:30 [INF] Finished Get Asset Count By Status : {"Result":0,"Id":1537,"Exception":null,"Status":5,"IsCanceled":false,"IsCompleted":true,"IsCompletedSuccessfully":true,"CreationOptions":0,"AsyncState":null,"IsFaulted":false}
+2024-07-04 23:44:43.680 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Notifications - 200 null application/json; charset=utf-8 69.1792ms
+2024-07-04 23:44:43.682 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AssetManagementSystem.Models.Domains.Vendor, AssetManagementSystem, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-04 23:44:43.684 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem) in 23.772ms
+2024-07-04 23:44:43.685 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets - 200 null application/json; charset=utf-8 77.2618ms
+2024-07-04 23:44:43.686 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 48.869ms
+2024-07-04 23:44:43.687 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-07-04 23:44:43.689 +05:30 [INF] Executed action AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem) in 58.9236ms
+2024-07-04 23:44:43.690 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetTotalNoOfAssetsAsync (AssetManagementSystem)'
+2024-07-04 23:44:43.694 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:44:43.695 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem) in 37.8699ms
+2024-07-04 23:44:43.697 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.VendorsController.GetallVendors (AssetManagementSystem)'
+2024-07-04 23:44:43.698 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetTotalNoOfAssetsAsync - 200 null application/json; charset=utf-8 86.6107ms
+2024-07-04 23:44:43.699 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/2 - 200 null application/json; charset=utf-8 87.4483ms
+2024-07-04 23:44:43.700 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetNoOfAssetsByStatusAsync (AssetManagementSystem)'
+2024-07-04 23:44:43.701 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Vendors?pageNumber=1&pageSize=10 - 200 null application/json; charset=utf-8 93.5084ms
+2024-07-04 23:44:43.705 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/GetNoOfAssetsByStatusAsync/1 - 200 null application/json; charset=utf-8 93.7231ms

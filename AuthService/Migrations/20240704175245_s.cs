@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AuthService.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class s : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -202,7 +202,7 @@ namespace AuthService.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Address", "ConcurrencyStamp", "CustomUserId", "DateofBirth", "Email", "EmailConfirmed", "FirstName", "ImageUrl", "IsActive", "JobPost", "LastName", "LockoutEnabled", "LockoutEnd", "Nic", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "RefreshToken", "RefreshTokenExpiryTime", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "75af95a9-9273-4c9b-86aa-0a80c76f32d6", 0, null, "41e11e76-5d48-4d8d-b9fe-348bb484e3f3", null, null, "admin@corzent.com", false, null, null, false, null, null, false, null, null, "ADMIN@CORZENT.COM", "ADMIN@CORZENT.COM", "AQAAAAIAAYagAAAAEB7/uTT+zFgLCmTiphK7VmusSsW51RW25GR9xSPxuE+T581eFTHrSdWVd3J0091kRA==", null, false, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "99f30a10-d3be-4ff9-9114-1a77acb831d6", false, "admin@corzent.com" });
+                values: new object[] { "75af95a9-9273-4c9b-86aa-0a80c76f32d6", 0, null, "66546f7e-6c20-4d58-8a36-531d0a6f50e7", null, null, "admin@corzent.com", false, null, null, true, null, null, false, null, null, "ADMIN@CORZENT.COM", "ADMIN@CORZENT.COM", "AQAAAAIAAYagAAAAEGT46OgZPSXlOPUDBhlaJbEzA6RrKIgc7flO1zU5cllToY1TBN0J9FEdeHCJmxYPLQ==", null, false, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "3569d607-ccbc-45c0-8518-4430354ecc11", false, "admin@corzent.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

@@ -7,7 +7,7 @@
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? Nic { get; set; }
-
+        public string? ImageUrl { get; set; }
         public string? PhoneNumber { get; set; }
         public string? DateofBirth { get; set; }
         public string? JobPost { get; set; }

@@ -9,9 +9,13 @@
 
   <ItemGroup>
     <Compile Remove="Services\NewFolder\**" />
+    <Compile Remove="Uploads\**" />
     <Content Remove="Services\NewFolder\**" />
+    <Content Remove="Uploads\**" />
     <EmbeddedResource Remove="Services\NewFolder\**" />
+    <EmbeddedResource Remove="Uploads\**" />
     <None Remove="Services\NewFolder\**" />
+    <None Remove="Uploads\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,10 +43,8 @@
 
   <ItemGroup>
     <Folder Include="LogsAuthServices\" />
-    <Folder Include="Migrations\" />
     <Folder Include="Models\Enums\" />
     <Folder Include="Services\UserServices\" />
-    <Folder Include="Uploads\Images\Users\" />
   </ItemGroup>
 
 </Project>
