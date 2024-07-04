@@ -8,6 +8,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 
 namespace AssetManagementSystem.Services.AssetServices
 {
@@ -31,6 +32,7 @@ namespace AssetManagementSystem.Services.AssetServices
             var NewAsset = mapper.Map<Asset>(assetDto);
             NewAsset.IsActive = true;
             NewAsset.AssetStatus = AssetStatusEnum.Free;
+            NewAsset.DateCreated = DateAndTime.Now.ToString();
             await _dbContext.Asset.AddAsync(NewAsset);
             await _dbContext.SaveChangesAsync();
             logger.LogInformation($"Finished Add Asset : {JsonSerializer.Serialize(NewAsset)}");
@@ -92,21 +94,21 @@ namespace AssetManagementSystem.Services.AssetServices
 
         public async Task<List<Asset>> GetAssetsByStatusAsync(AssetStatusEnum status)
         {
-            var Assets = _dbContext.Asset.Where(asset => asset.AssetStatus == status).AsQueryable();
+            var Assets = _dbContext.Asset.Where(asset => asset.AssetStatus == status && asset.IsActive==true).AsQueryable();
             logger.LogInformation($"Finished Get Asset by Status : {JsonSerializer.Serialize(Assets)}");
             return await Assets.ToListAsync();
         }
 
         public async Task<int> GetTotalNoOfAssetsAsync()
         {
-            var AssetCount = _dbContext.Asset.CountAsync();
+            var AssetCount = _dbContext.Asset.Where(asset => asset.IsActive == true).CountAsync();
             logger.LogInformation($"Finished Get Total Asset Count : {JsonSerializer.Serialize(AssetCount)}");
             return await AssetCount;
         }
 
         public async Task<int> GetNoOfAssetsByStatusAsync(AssetStatusEnum status)
         {
-            var AssetCount = _dbContext.Asset.CountAsync(asset => asset.AssetStatus == status);
+            var AssetCount = _dbContext.Asset.CountAsync(asset => asset.AssetStatus == status && asset.IsActive == true);
             logger.LogInformation($"Finished Get Asset Count By Status : {JsonSerializer.Serialize(AssetCount)}");
             return await AssetCount;   
         }
@@ -215,18 +217,41 @@ namespace AssetManagementSystem.Services.AssetServices
             return SelecteddisposalAssets;
         }
 
-
-        public async Task<IEnumerable<string>> GetAssetTypesAsync()
-        {
-            return await _dbContext.Asset.Select(a => a.AssetType).Distinct().ToListAsync();
-        }
-
         public async Task<IEnumerable<Asset>> GetAssetsByTypeAsync(string type)
         {
             return await _dbContext.Asset.Where(a => a.AssetType == type).Where(asset => asset.IsActive == true).Where(a => a.AssetStatus == AssetStatusEnum.Free).ToListAsync();
         }
 
-       
+
+        public async Task<AssetType?> AddAssetTypeAsync(AssetTypeDto type)
+        {
+            var newAssetType = mapper.Map<AssetType>(type);
+            var name = newAssetType.Name;
+            var check = await _dbContext.AssetType.FirstOrDefaultAsync(a => a.Name == name);
+            if (check != null)
+            {
+                return null;
+            }
+            await _dbContext.AssetType.AddAsync(newAssetType);
+            await _dbContext.SaveChangesAsync();
+            logger.LogInformation($"Finished Add Asset Type: {JsonSerializer.Serialize(newAssetType)}");
+            return newAssetType;
+        }
+
+        public async Task<List<string>> GetAssetTypesAsync()
+        {
+            var types = _dbContext.AssetType.Select(type => type.Name).AsQueryable();
+            return await types.ToListAsync();
+        }
+
+        public async Task<AssetType> DeleteAssetTypeAsync(AssetTypeDto name)
+        {
+            var type = mapper.Map<AssetType>(name);
+            var selectedType = await _dbContext.AssetType.FirstOrDefaultAsync(a => a.Name == name.Name);
+            _dbContext.AssetType.Remove(selectedType);
+            await _dbContext.SaveChangesAsync();
+            return type;
+        }
 
 
     }

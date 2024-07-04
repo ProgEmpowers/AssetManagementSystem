@@ -53,6 +53,17 @@ namespace AuthService.Controllers
             return Ok(SelectedUser);
         }
 
+        [HttpGet("GetUserByEmail/{email}")]
+        public async Task<IActionResult> GetUserByEmail([FromRoute] string email)
+        {
+            var SelectedUser = await _userService.GetUserByEmailAsync(email);
+            if (SelectedUser == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedUser);
+        }
+
 
         [HttpPut]
         [Route("{id}")]
@@ -92,6 +103,17 @@ namespace AuthService.Controllers
             return Ok(SelectedUser);
         }
 
+        [HttpGet("GetAssetIdsByEmail/{email}")]
+        public async Task<ActionResult<IEnumerable<int>>> GetAssetIdsByEmail(string email)
+        {
+            var SelectedUser = await _userService.GetUserByEmailAsync(email);
+            if (SelectedUser == null)
+            {
+                return NotFound();
+            }
+            return Ok(SelectedUser);
+        }
+
         [HttpPost("AssignAssetAsync")]
         public async Task<IActionResult> AssignAssetAsync(AssignAssetToUserRequest request)
         {
@@ -120,6 +142,7 @@ namespace AuthService.Controllers
             return Ok();
         }
 
+
         [HttpDelete("ReleaseAsset")]
         public async Task<IActionResult> ReleaseAsset(AssignAssetToUserRequest request)
         {
@@ -134,6 +157,13 @@ namespace AuthService.Controllers
             { 
                 return BadRequest();
             }
+
+            var selectedUser = await _userService.GetUserByEmailAsync(request.UserId);
+            if (selectedUser == null) {
+                await _assetService.UpdateAssetAsync(request.AssetId, prevAsset);
+                return NotFound();
+            }
+            request.UserId = selectedUser.Id;
 
             var response = await _userService.DeleteUserAssetAsync(request);
             if(response != true)
@@ -166,16 +196,6 @@ namespace AuthService.Controllers
             return Ok(DeletedUsers);
         }
 
-        [HttpGet("GetUserByEmail/{email}")]
-        public async Task<IActionResult> GetUserByEmail([FromRoute] string email)
-        {
-            var SelectedUser = await _userService.GetUserByEmailAsync(email);
-            if (SelectedUser == null)
-            {
-                return NotFound();
-            }
-            return Ok(SelectedUser);
-        }
 
         [HttpGet("WithRole")]
         public async Task<IActionResult> GetAllUsersWithRole()

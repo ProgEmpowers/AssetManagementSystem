@@ -13,6 +13,7 @@ namespace AuthService.Services.UserServices
 
         Task<User?> DeleteUserAsync(string id);
         Task<User?> GetUserByIdAsync(string id);
+        Task<User?> GetUserByEmailAsync(string email);
         Task<User?> UpdateUserAsync(string id, UserUpdateDto userUpdateDto);
 
         Task<UserAsset> AssignAssetToUserAsync(AssignAssetToUserRequest request);
@@ -22,8 +23,6 @@ namespace AuthService.Services.UserServices
         Task<bool> DeleteUserAssetAsync(AssignAssetToUserRequest request);
         Task<int> GetUserCountInRoleAsync(string roleName);
         Task<IEnumerable<UserWithRoleDto>> GetDeletedUsersAsync();
-        Task<User?> GetUserByEmailAsync(string email);
-
         Task<List<UserWithRoleDto>> GetAllUsersWithRoleAsync();
         Task<User?> RecoverDeletedUserAsync(string id);
     }
