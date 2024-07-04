@@ -13,6 +13,7 @@
         public string? JobPost { get; set; }
         public string? CustomUserId { get; set; }
 
-        public int? AssetId { get; set; }   
+        public int? AssetId { get; set; }
+        public string? ImageUrl { get; set; }
     }
 }

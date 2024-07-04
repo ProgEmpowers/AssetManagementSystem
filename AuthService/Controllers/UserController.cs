@@ -4,6 +4,7 @@ using AuthService.Models.Dtos;
 using AuthService.Services.AssetService;
 using AuthService.Services.UserServices;
 using Azure.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,7 @@ namespace AuthService.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> GetallUsers()
         {
             var AllUsers = await _userService.GetAllUsersAsync();
@@ -31,6 +33,7 @@ namespace AuthService.Controllers
 
         [HttpDelete]
         [Route("{id}")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> DeleteUser(string id)
         {
             var SelectedUser = await _userService.DeleteUserAsync(id);
@@ -43,6 +46,7 @@ namespace AuthService.Controllers
 
         [HttpGet]
         [Route("{id}")]
+        [Authorize(Roles = "NormalUser,Admin,VendorManeger,AssetManeger")]
         public async Task<IActionResult> GetUserById([FromRoute] string id)
         {
             var SelectedUser = await _userService.GetUserByIdAsync(id);
@@ -54,6 +58,7 @@ namespace AuthService.Controllers
         }
 
         [HttpGet("GetUserByEmail/{email}")]
+        [Authorize(Roles = "NormalUser,Admin,VendorManeger,AssetManeger")]
         public async Task<IActionResult> GetUserByEmail([FromRoute] string email)
         {
             var SelectedUser = await _userService.GetUserByEmailAsync(email);
@@ -67,6 +72,7 @@ namespace AuthService.Controllers
 
         [HttpPut]
         [Route("{id}")]
+        [Authorize(Roles = "NormalUser,Admin,VendorManeger,AssetManeger")]
 
         public async Task<IActionResult> UpdateUser([FromRoute] string id, [FromBody] UserUpdateDto request)
         {
@@ -79,6 +85,7 @@ namespace AuthService.Controllers
         }
 
         [HttpPost("AssignAssetToUser/{request}")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> AssignAssetToUser(AssignAssetToUserRequest request)
         {
             try
@@ -93,6 +100,8 @@ namespace AuthService.Controllers
         }
 
         [HttpGet("GetAssetIdsByUserId/{userId}")]
+        [Authorize(Roles = "NormalUser,Admin,VendorManeger,AssetManeger")]
+
         public async Task<ActionResult<IEnumerable<int>>> GetAssetIdsByUserId(string userId)
         {
             var SelectedUser = await _userService.GetAssetIdsByUserIdAsync(userId);
@@ -104,6 +113,7 @@ namespace AuthService.Controllers
         }
 
         [HttpGet("GetAssetIdsByEmail/{email}")]
+        [Authorize(Roles = "NormalUser,Admin,VendorManeger,AssetManeger")]
         public async Task<ActionResult<IEnumerable<int>>> GetAssetIdsByEmail(string email)
         {
             var SelectedUser = await _userService.GetUserByEmailAsync(email);
@@ -115,6 +125,7 @@ namespace AuthService.Controllers
         }
 
         [HttpPost("AssignAssetAsync")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> AssignAssetAsync(AssignAssetToUserRequest request)
         {
             var selectedAsset = await _assetService.GetAssetByIdAsync(request.AssetId);
@@ -144,6 +155,7 @@ namespace AuthService.Controllers
 
 
         [HttpDelete("ReleaseAsset")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> ReleaseAsset(AssignAssetToUserRequest request)
         {
             var selectedAsset = await _assetService.GetAssetByIdAsync(request.AssetId);
@@ -175,6 +187,7 @@ namespace AuthService.Controllers
         }
 
         [HttpGet("count/{roleName}")]
+        [Authorize(Roles = "NormalUser,Admin,VendorManeger,AssetManeger")]
         public async Task<int> GetRoleUserCount(string roleName)
         {
             try
@@ -190,6 +203,7 @@ namespace AuthService.Controllers
 
 
         [HttpGet("deleted")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> GetDeletedUsers()
         {
             var DeletedUsers = await _userService.GetDeletedUsersAsync();
@@ -198,6 +212,7 @@ namespace AuthService.Controllers
 
 
         [HttpGet("WithRole")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> GetAllUsersWithRole()
         {
             var usersWithRole = await _userService.GetAllUsersWithRoleAsync();
@@ -205,6 +220,7 @@ namespace AuthService.Controllers
         }
 
         [HttpPut("recoverDeletedUser/{id}")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> RecoverDeletedUser([FromRoute] string id)
         {
             var SelectedUser = await _userService.RecoverDeletedUserAsync(id);

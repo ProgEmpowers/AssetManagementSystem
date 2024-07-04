@@ -204,7 +204,7 @@ namespace AuthService.Controllers
 
         [HttpPost]
         [Route("register")]
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,AssetManeger")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto request)
         {
             var customUserId = await _userService.GenerateUserIdAsync();
