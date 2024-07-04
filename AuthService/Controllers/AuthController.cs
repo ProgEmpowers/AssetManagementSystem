@@ -217,12 +217,6 @@ namespace AuthService.Controllers
 
             };
 
-            if(request.Password != request.ConfirmPassword)
-            {
-                ModelState.AddModelError("", "different passwords");
-                return ValidationProblem(ModelState);
-            }
-
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -235,13 +229,15 @@ namespace AuthService.Controllers
                 return ValidationProblem(ModelState);
             }
 
-            var identityResult = await userManager.CreateAsync(user, request.Password);
+            var pass = PasswordGenerator.GeneratePassword();
+
+            var identityResult = await userManager.CreateAsync(user, pass);
             if (identityResult.Succeeded)
             {
                 identityResult = await userManager.AddToRoleAsync(user, request.Role);
                 if (identityResult.Succeeded)
                 {
-                    SendRegistrationEmail(user.Email, request.Password, request.Role);
+                    SendRegistrationEmail(user.Email, pass, request.Role);
                     //_hubContext.Clients.User(user.Id.ToString()).ReceiveNotification("You have been registered.");
                     return Ok(ModelState);
                 }
@@ -268,6 +264,50 @@ namespace AuthService.Controllers
             }
             return ValidationProblem(ModelState);
         }
+
+
+
+        public static class PasswordGenerator
+        {
+            public static string GeneratePassword()
+            {
+                const int length = 6;
+                const int uniqueChars = 1;
+
+                const string lowerChars = "abcdefghijklmnopqrstuvwxyz";
+                const string upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                const string digitChars = "0123456789";
+
+                Random random = new Random();
+
+                StringBuilder passwordBuilder = new StringBuilder();
+
+                // Ensure at least one lowercase, one uppercase, and one digit character
+                passwordBuilder.Append(lowerChars[random.Next(lowerChars.Length)]);
+                passwordBuilder.Append(upperChars[random.Next(upperChars.Length)]);
+                passwordBuilder.Append(digitChars[random.Next(digitChars.Length)]);
+
+                // Fill the rest of the password length with a mix of characters
+                string allChars = lowerChars + upperChars + digitChars;
+                for (int i = 3; i < length; i++)
+                {
+                    passwordBuilder.Append(allChars[random.Next(allChars.Length)]);
+                }
+
+                // Shuffle the password to ensure randomness
+                string password = new string(passwordBuilder.ToString().OrderBy(_ => random.Next()).ToArray());
+
+                // Ensure there is exactly one unique character
+                if (password.Distinct().Count() < uniqueChars)
+                {
+                    password = GeneratePassword();
+                }
+
+                return password;
+            }
+        }
+
+
 
 
 
