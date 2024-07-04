@@ -223,7 +223,7 @@ namespace AssetManagementSystem.Services.AssetServices
 
         public async Task<IEnumerable<Asset>> GetAssetsByTypeAsync(string type)
         {
-            return await _dbContext.Asset.Where(a => a.AssetType == type).ToListAsync();
+            return await _dbContext.Asset.Where(a => a.AssetType == type).Where(asset => asset.IsActive == true).Where(a => a.AssetStatus == AssetStatusEnum.Free).ToListAsync();
         }
 
        

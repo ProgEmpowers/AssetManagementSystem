@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AssetManagementSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class b8 : Migration
+    public partial class s : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -62,7 +62,6 @@ namespace AssetManagementSystem.Migrations
                     AssetValue = table.Column<float>(type: "real", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     AssetStatus = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true),
                     Price = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Update = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
