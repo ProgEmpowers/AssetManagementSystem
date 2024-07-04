@@ -63,6 +63,9 @@ namespace AssetManagementSystem.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Vendor")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Asset");

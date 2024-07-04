@@ -10,19 +10,19 @@ namespace AssetManagementSystem.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "DateCreated",
+            migrationBuilder.RenameColumn(
+                name: "vendor",
                 table: "Asset",
-                type: "nvarchar(max)",
-                nullable: true);
+                newName: "Vendor");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "DateCreated",
-                table: "Asset");
+            migrationBuilder.RenameColumn(
+                name: "Vendor",
+                table: "Asset",
+                newName: "vendor");
         }
     }
 }
