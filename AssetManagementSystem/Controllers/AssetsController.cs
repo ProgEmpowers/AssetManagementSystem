@@ -31,6 +31,7 @@ namespace AssetManagementSystem.Controllers
                 return BadRequest();
 
             var addedAsset = await _assetService.AddAssetAsync(assetDto);
+    
             return Ok(addedAsset);
         }
 
@@ -185,7 +186,7 @@ namespace AssetManagementSystem.Controllers
 
 
         [HttpGet("types")]
-        public async Task<ActionResult<IEnumerable<string>>> GetAssetTypes()
+        public async Task<ActionResult<List<string>>> GetAssetTypes()
         {
             var assetTypes = await _assetService.GetAssetTypesAsync();
             return Ok(assetTypes);
@@ -198,6 +199,25 @@ namespace AssetManagementSystem.Controllers
             return Ok(assets);
         }
 
-        
+
+        [HttpPost("AddAssetType")]
+        public async Task<IActionResult> AddAssetTypeAsync(AssetTypeDto type)
+        {
+            var assetType = await _assetService.AddAssetTypeAsync(type);
+            if (assetType == null)
+            {
+                return BadRequest("Type already exist!");   
+            }
+            return Ok(assetType);
+        }
+
+        [HttpDelete("DeleteAssetType/{type}")]
+        public async Task<IActionResult> DeleteAssetType([FromRoute] AssetTypeDto type)
+        {
+            var deletedType = await _assetService.DeleteAssetTypeAsync(type);
+            if (deletedType == null) { return BadRequest(); }
+            return Ok(deletedType);
+        }
+
     }
 }

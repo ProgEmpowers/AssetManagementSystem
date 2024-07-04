@@ -16,6 +16,7 @@ namespace AssetManagementSystem.Models.Domains
         public string? QRcode { get; set; }
         public bool IsActive { get; set; }
         public float? AssetValue { get; set; }
+        public string? DateCreated { get; set; }
         public AssetStatusEnum AssetStatus { get; set; }
         public string? UserId { get; set; }
     }
