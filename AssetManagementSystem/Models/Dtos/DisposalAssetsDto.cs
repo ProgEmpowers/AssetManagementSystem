@@ -6,7 +6,7 @@ namespace AssetManagementSystem.Models.Dtos
     public class DisposalAssetsDto
     {
         [Required]
-        [MaxLength(5, ErrorMessage = "max")]
+        [MaxLength(15, ErrorMessage = "max")]
         [MinLength(3, ErrorMessage = "min")]
         public string Name { get; set; }
         public string? AssetType { get; set; }

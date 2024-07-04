@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AssetManagementSystem.Migrations
 {
     [DbContext(typeof(AssetManagementDbContext))]
-    [Migration("20240704085641_init")]
+    [Migration("20240704143109_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -43,6 +43,9 @@ namespace AssetManagementSystem.Migrations
                     b.Property<float?>("AssetValue")
                         .HasColumnType("real");
 
+                    b.Property<string>("DateCreated")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -66,6 +69,23 @@ namespace AssetManagementSystem.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Asset");
+                });
+
+            modelBuilder.Entity("AssetManagementSystem.Models.Domains.AssetType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AssetType");
                 });
 
             modelBuilder.Entity("AssetManagementSystem.Models.Domains.Contract", b =>
