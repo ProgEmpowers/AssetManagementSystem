@@ -17,5 +17,6 @@ namespace AssetManagementSystem.Models.Dtos
         public string? DateCreated { get; set; }
         public AssetStatusEnum AssetStatus { get; set; }
         public string? UserId { get; set; }
+        public string? Vendor { get; set; }
     }
 }
