@@ -18,7 +18,6 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin,VendorManeger")]
         public async Task<IActionResult> AddContract([FromBody] ContractDto contractDto)
         {
             if (contractDto == null)
@@ -32,7 +31,6 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin,VendorManeger")]
         public async Task<IActionResult> GetAllContracts(
             [FromQuery] string? filterOn,
             [FromQuery] string? filterQuery,
@@ -48,7 +46,6 @@ namespace AssetManagementSystem.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
-        [Authorize(Roles = "Admin,VendorManeger")]
         public async Task<IActionResult> GetContractById([FromRoute] int id)
         {
             var selectedContract = await _contractService.GetContractByIdAsync(id);
