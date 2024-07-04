@@ -18,7 +18,6 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin,VendorManeger")]
         public async Task<IActionResult> AddVendor([FromBody] VendorDto vendorDto)
         {
             if (vendorDto == null)
@@ -33,7 +32,6 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin,VendorManeger")]
         public async Task<IActionResult> GetallVendors(
             [FromQuery] string? filterOn, [FromQuery] string? filterQuery,
             [FromQuery] string? sortBy, [FromQuery] bool? isAscending,
@@ -44,8 +42,7 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet]
-        [Route("{id:int}")]
-        [Authorize(Roles = "Admin,VendorManeger")]
+        [Route("{id:int}")] 
         public async Task<IActionResult> GetVendorById([FromRoute] int id)
         {
             var SelectedVendor = await _vendorService.GetVendorByIdAsync(id);
@@ -57,8 +54,7 @@ namespace AssetManagementSystem.Controllers
         }
 
         [HttpGet]
-        [Route("ids&names")]
-        [Authorize(Roles = "Admin,VendorManeger")]
+        [Route("/api/Vendors/ids&names")]     
         public async Task<IActionResult> GetVendorList()
         {
             var vendorList = await _vendorService.GetVendorListAsync();
@@ -67,7 +63,6 @@ namespace AssetManagementSystem.Controllers
 
         [HttpPut]
         [Route("{id:int}")]
-        [Authorize(Roles = "Admin,VendorManeger")]
         public async Task<IActionResult> UpdateVendor([FromRoute] int id, [FromBody] VendorDto vendorDto)
         {
             var SelectedVendor = await _vendorService.UpdateVendorAsync(id, vendorDto);
@@ -80,7 +75,6 @@ namespace AssetManagementSystem.Controllers
 
         [HttpDelete]
         [Route("{id:int}")]
-        [Authorize(Roles = "Admin,VendorManeger")]
         public async Task<IActionResult> DeleteVendor([FromRoute] int id)
         {
             var SelectedVendor = await _vendorService.DeleteVendorAsync(id);
