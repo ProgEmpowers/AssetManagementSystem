@@ -3,6 +3,7 @@ using AuthService.Data;
 using AuthService.Models.Domains;
 using AuthService.Models.Dtos;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Http;
@@ -15,16 +16,19 @@ namespace AuthService.Services.UserServices
         private readonly AuthDbContext _dbContext;
         private readonly IMapper _mapper;
         private readonly ILogger<UserService> _logger;
-        
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
 
-        public UserService(AuthDbContext dbContext, IMapper mapper, ILogger<UserService> logger )
+
+        public UserService(AuthDbContext dbContext, IMapper mapper, ILogger<UserService> logger, UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
 
             this._dbContext = dbContext;
             this._mapper = mapper;
             this._logger = logger;
-         
+            this._userManager = userManager;
+            this._roleManager = roleManager;
 
         }
 
@@ -161,6 +165,106 @@ namespace AuthService.Services.UserServices
             }
             
             return false;
+        }
+
+
+        public async Task<int> GetUserCountInRoleAsync(string roleName)
+        {
+            // Check if the role exists
+            var roleExists = await _roleManager.RoleExistsAsync(roleName);
+            if (!roleExists)
+            {
+                throw new Exception("Role does not exist.");
+            }
+
+            // Get users in the specified role
+            var usersInRole = await _userManager.GetUsersInRoleAsync(roleName);
+
+            var activeUsersInRole = usersInRole.Where(u => u.IsActive).ToList();
+
+            // Return the count of users in the role
+            return activeUsersInRole.Count;
+        }
+
+
+        public async Task<IEnumerable<UserWithRoleDto>> GetDeletedUsersAsync()
+        {
+            var users = await _userManager.Users.Where(user => user.IsActive == false).OrderBy(user => user.CustomUserId).ToListAsync();
+            var userWithRole = new List<UserWithRoleDto>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+                var role = roles.FirstOrDefault(); // Assuming each user has only one role
+                userWithRole.Add(new UserWithRoleDto
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    Address = user.Address,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Nic = user.Nic,
+                    DateofBirth = user.DateofBirth,
+                    JobPost = user.JobPost,
+                    IsActive = user.IsActive,
+                    ImageUrl = user.ImageUrl,
+                    CustomUserId = user.CustomUserId,
+                    Role = role
+                });
+            }
+
+            return userWithRole;
+        }
+
+        public async Task<User?> GetUserByEmailAsync(string email)
+        {
+            var SelectedUser = await _dbContext.User.FirstOrDefaultAsync(x => x.Email == email);
+            _logger.LogInformation($"Finished Get Employee by Email : {JsonSerializer.Serialize(SelectedUser)}");
+            return SelectedUser;
+        }
+
+        public async Task<List<UserWithRoleDto>> GetAllUsersWithRoleAsync()
+        {
+            var users = await _userManager.Users.Where(user => user.IsActive == true).OrderBy(user => user.CustomUserId).Where(u => u.Email != "admin@corzent.com").ToListAsync();
+            var userWithRole = new List<UserWithRoleDto>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+                var role = roles.FirstOrDefault(); // Assuming each user has only one role
+                userWithRole.Add(new UserWithRoleDto
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    Address = user.Address,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Nic = user.Nic,
+                    DateofBirth = user.DateofBirth,
+                    JobPost = user.JobPost,
+                    IsActive = user.IsActive,
+                    ImageUrl = user.ImageUrl,
+                    CustomUserId = user.CustomUserId,
+                    Role = role
+                });
+            }
+
+            return userWithRole;
+        }
+
+        public async Task<User?> RecoverDeletedUserAsync(string id)
+        {
+            var SelectedUser = await _dbContext.User.Where(u => u.IsActive == false).FirstOrDefaultAsync(x => x.Id == id);
+            if (SelectedUser == null)
+            {
+                return null;
+            }
+            SelectedUser.IsActive = true;
+            await _dbContext.SaveChangesAsync();
+            _logger.LogInformation($"Finished Recover Deleted User : {JsonSerializer.Serialize(SelectedUser)}");
+            return SelectedUser;
         }
 
     }
