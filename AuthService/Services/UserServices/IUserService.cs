@@ -23,8 +23,6 @@ namespace AuthService.Services.UserServices
         Task<bool> DeleteUserAssetAsync(AssignAssetToUserRequest request);
         Task<int> GetUserCountInRoleAsync(string roleName);
         Task<IEnumerable<UserWithRoleDto>> GetDeletedUsersAsync();
-        Task<User?> GetUserByEmailAsync(string email);
-
         Task<List<UserWithRoleDto>> GetAllUsersWithRoleAsync();
         Task<User?> RecoverDeletedUserAsync(string id);
     }

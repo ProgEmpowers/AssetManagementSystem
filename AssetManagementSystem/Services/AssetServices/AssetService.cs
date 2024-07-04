@@ -8,6 +8,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 
 namespace AssetManagementSystem.Services.AssetServices
 {
@@ -31,6 +32,7 @@ namespace AssetManagementSystem.Services.AssetServices
             var NewAsset = mapper.Map<Asset>(assetDto);
             NewAsset.IsActive = true;
             NewAsset.AssetStatus = AssetStatusEnum.Free;
+            NewAsset.DateCreated = DateAndTime.Now.ToString();
             await _dbContext.Asset.AddAsync(NewAsset);
             await _dbContext.SaveChangesAsync();
             logger.LogInformation($"Finished Add Asset : {JsonSerializer.Serialize(NewAsset)}");
@@ -215,15 +217,40 @@ namespace AssetManagementSystem.Services.AssetServices
             return SelecteddisposalAssets;
         }
 
-
-        public async Task<IEnumerable<string>> GetAssetTypesAsync()
-        {
-            return await _dbContext.Asset.Select(a => a.AssetType).Distinct().ToListAsync();
-        }
-
         public async Task<IEnumerable<Asset>> GetAssetsByTypeAsync(string type)
         {
             return await _dbContext.Asset.Where(a => a.AssetType == type).Where(asset => asset.IsActive == true).Where(a => a.AssetStatus == AssetStatusEnum.Free).ToListAsync();
+        }
+
+
+        public async Task<AssetType?> AddAssetTypeAsync(AssetTypeDto type)
+        {
+            var newAssetType = mapper.Map<AssetType>(type);
+            var name = newAssetType.Name;
+            var check = await _dbContext.AssetType.FirstOrDefaultAsync(a => a.Name == name);
+            if (check != null)
+            {
+                return null;
+            }
+            await _dbContext.AssetType.AddAsync(newAssetType);
+            await _dbContext.SaveChangesAsync();
+            logger.LogInformation($"Finished Add Asset Type: {JsonSerializer.Serialize(newAssetType)}");
+            return newAssetType;
+        }
+
+        public async Task<List<string>> GetAssetTypesAsync()
+        {
+            var types = _dbContext.AssetType.Select(type => type.Name).AsQueryable();
+            return await types.ToListAsync();
+        }
+
+        public async Task<AssetType> DeleteAssetTypeAsync(AssetTypeDto name)
+        {
+            var type = mapper.Map<AssetType>(name);
+            var selectedType = await _dbContext.AssetType.FirstOrDefaultAsync(a => a.Name == name.Name);
+            _dbContext.AssetType.Remove(selectedType);
+            await _dbContext.SaveChangesAsync();
+            return type;
         }
 
 

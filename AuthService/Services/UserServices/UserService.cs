@@ -217,13 +217,6 @@ namespace AuthService.Services.UserServices
             return userWithRole;
         }
 
-        public async Task<User?> GetUserByEmailAsync(string email)
-        {
-            var SelectedUser = await _dbContext.User.FirstOrDefaultAsync(x => x.Email == email);
-            _logger.LogInformation($"Finished Get Employee by Email : {JsonSerializer.Serialize(SelectedUser)}");
-            return SelectedUser;
-        }
-
         public async Task<List<UserWithRoleDto>> GetAllUsersWithRoleAsync()
         {
             var users = await _userManager.Users.Where(user => user.IsActive == true).OrderBy(user => user.CustomUserId).Where(u => u.Email != "admin@corzent.com").ToListAsync();

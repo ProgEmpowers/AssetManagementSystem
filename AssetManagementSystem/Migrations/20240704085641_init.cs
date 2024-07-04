@@ -6,11 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AssetManagementSystem.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:AssetManagementSystem/Migrations/20240704043922_init.cs
     public partial class init : Migration
-========
-    public partial class d : Migration
->>>>>>>> 07/04:AssetManagementSystem/Migrations/20240704064023_d.cs
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -1,0 +1,220 @@
+2024-07-04 15:34:08.785 +05:30 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-04 15:34:08.843 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-04 15:34:08.846 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-07-04 15:34:08.847 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-07-04 15:34:08.904 +05:30 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-07-04 15:34:08.931 +05:30 [INF] Applying migration '20240704100337_v3'.
+2024-07-04 15:34:09.026 +05:30 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AssetType] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_AssetType] PRIMARY KEY ([Id])
+);
+2024-07-04 15:34:09.043 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240704100337_v3', N'8.0.1');
+2024-07-04 16:25:37.266 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-07-04 16:25:37.469 +05:30 [INF] Now listening on: https://localhost:7095
+2024-07-04 16:25:37.515 +05:30 [INF] Now listening on: http://localhost:5240
+2024-07-04 16:25:37.522 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-04 16:25:37.596 +05:30 [INF] Hosting environment: Development
+2024-07-04 16:25:37.600 +05:30 [INF] Content root path: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem
+2024-07-04 16:25:38.425 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:25:38.863 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 441.8128ms
+2024-07-04 16:25:39.223 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:25:39.223 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:25:39.233 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 9.9033ms
+2024-07-04 16:25:39.269 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.2606ms
+2024-07-04 16:25:40.668 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:25:40.823 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 155.4382ms
+2024-07-04 16:27:02.617 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-07-04 16:27:02.784 +05:30 [INF] Now listening on: https://localhost:7095
+2024-07-04 16:27:02.785 +05:30 [INF] Now listening on: http://localhost:5240
+2024-07-04 16:27:02.788 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-04 16:27:02.790 +05:30 [INF] Hosting environment: Development
+2024-07-04 16:27:02.791 +05:30 [INF] Content root path: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem
+2024-07-04 16:27:03.325 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:27:03.880 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 563.1625ms
+2024-07-04 16:27:04.082 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:27:04.094 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 11.8235ms
+2024-07-04 16:27:04.201 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:27:04.855 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 653.465ms
+2024-07-04 16:27:05.582 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:27:05.764 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 182.3841ms
+2024-07-04 16:27:08.749 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:27:08.762 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 12.5788ms
+2024-07-04 16:27:08.788 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:27:08.789 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:27:08.794 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 5.8522ms
+2024-07-04 16:27:08.814 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.347ms
+2024-07-04 16:27:08.953 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:27:08.963 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.9005ms
+2024-07-04 16:27:23.905 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/api/Assets/types - null null
+2024-07-04 16:27:23.919 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.GetAssetTypes (AssetManagementSystem)'
+2024-07-04 16:27:23.940 +05:30 [INF] Route matched with {action = "GetAssetTypes", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[System.String]]] GetAssetTypes() on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 16:27:30.412 +05:30 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT DISTINCT [a].[AssetType]
+FROM [Asset] AS [a]
+2024-07-04 16:27:30.436 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-07-04 16:27:30.445 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.GetAssetTypes (AssetManagementSystem) in 6499.5896ms
+2024-07-04 16:27:30.447 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.GetAssetTypes (AssetManagementSystem)'
+2024-07-04 16:27:30.453 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/api/Assets/types - 200 null application/json; charset=utf-8 6547.7102ms
+2024-07-04 16:30:57.244 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-07-04 16:30:57.511 +05:30 [INF] Now listening on: https://localhost:7095
+2024-07-04 16:30:57.524 +05:30 [INF] Now listening on: http://localhost:5240
+2024-07-04 16:30:57.596 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-04 16:30:57.653 +05:30 [INF] Hosting environment: Development
+2024-07-04 16:30:57.659 +05:30 [INF] Content root path: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem
+2024-07-04 16:30:58.090 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:30:58.328 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 239.417ms
+2024-07-04 16:30:58.363 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:30:58.363 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:30:58.372 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 9.1516ms
+2024-07-04 16:30:58.407 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.7482ms
+2024-07-04 16:30:59.167 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:30:59.320 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 152.8459ms
+2024-07-04 16:32:10.665 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-07-04 16:32:11.042 +05:30 [INF] Now listening on: https://localhost:7095
+2024-07-04 16:32:11.108 +05:30 [INF] Now listening on: http://localhost:5240
+2024-07-04 16:32:11.130 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-04 16:32:11.158 +05:30 [INF] Hosting environment: Development
+2024-07-04 16:32:11.159 +05:30 [INF] Content root path: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem
+2024-07-04 16:32:12.042 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:32:12.541 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 501.7351ms
+2024-07-04 16:32:12.579 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:32:12.581 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:32:12.635 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 56.6282ms
+2024-07-04 16:32:12.704 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 121.9835ms
+2024-07-04 16:32:13.129 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:32:13.328 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 198.0382ms
+2024-07-04 16:32:18.654 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:32:18.663 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 8.9491ms
+2024-07-04 16:32:18.684 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:32:18.687 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:32:18.689 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 4.5381ms
+2024-07-04 16:32:18.697 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.2657ms
+2024-07-04 16:32:18.836 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:32:18.852 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.2888ms
+2024-07-04 16:32:40.416 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7095/api/Assets/AddAssetType/monitor - null 0
+2024-07-04 16:32:40.429 +05:30 [INF] CORS policy execution successful.
+2024-07-04 16:32:40.437 +05:30 [INF] Executing endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAssetTypeAsync (AssetManagementSystem)'
+2024-07-04 16:32:40.463 +05:30 [INF] Route matched with {action = "AddAssetType", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddAssetTypeAsync(System.String) on controller AssetManagementSystem.Controllers.AssetsController (AssetManagementSystem).
+2024-07-04 16:32:40.651 +05:30 [INF] Executed action AssetManagementSystem.Controllers.AssetsController.AddAssetTypeAsync (AssetManagementSystem) in 183.2622ms
+2024-07-04 16:32:40.655 +05:30 [INF] Executed endpoint 'AssetManagementSystem.Controllers.AssetsController.AddAssetTypeAsync (AssetManagementSystem)'
+2024-07-04 16:32:40.656 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+String -> AssetType
+System.String -> AssetManagementSystem.Models.Domains.AssetType
+   at lambda_method20(Closure, Object, AssetType, ResolutionContext)
+   at AssetManagementSystem.Services.AssetServices.AssetService.AddAssetTypeAsync(String type) in C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem\Services\AssetServices\AssetService.cs:line 228
+   at AssetManagementSystem.Controllers.AssetsController.AddAssetTypeAsync(String type) in C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem\Controllers\AssetsController.cs:line 206
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-07-04 16:32:40.689 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7095/api/Assets/AddAssetType/monitor - 500 null text/plain; charset=utf-8 272.7326ms
+2024-07-04 16:33:56.251 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-07-04 16:33:56.359 +05:30 [INF] Now listening on: https://localhost:7095
+2024-07-04 16:33:56.362 +05:30 [INF] Now listening on: http://localhost:5240
+2024-07-04 16:33:56.366 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-04 16:33:56.367 +05:30 [INF] Hosting environment: Development
+2024-07-04 16:33:56.368 +05:30 [INF] Content root path: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem
+2024-07-04 16:33:56.945 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:33:57.224 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 280.891ms
+2024-07-04 16:33:57.278 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:33:57.278 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:33:57.287 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 9.3214ms
+2024-07-04 16:33:57.318 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.5305ms
+2024-07-04 16:33:58.342 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:33:58.457 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 115.5016ms
+2024-07-04 16:34:30.081 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-07-04 16:34:30.243 +05:30 [INF] Now listening on: https://localhost:7095
+2024-07-04 16:34:30.246 +05:30 [INF] Now listening on: http://localhost:5240
+2024-07-04 16:34:30.248 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-04 16:34:30.249 +05:30 [INF] Hosting environment: Development
+2024-07-04 16:34:30.250 +05:30 [INF] Content root path: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem
+2024-07-04 16:34:30.518 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:34:30.707 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 188.5636ms
+2024-07-04 16:34:30.736 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:34:30.741 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 4.8932ms
+2024-07-04 16:34:30.784 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:34:30.816 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 31.5108ms
+2024-07-04 16:34:31.779 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:34:31.866 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 86.6435ms
+2024-07-04 16:34:53.050 +05:30 [WRN] The WebRootPath was not found: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem\wwwroot. Static files may be unavailable.
+2024-07-04 16:34:53.263 +05:30 [INF] Now listening on: https://localhost:7095
+2024-07-04 16:34:53.378 +05:30 [INF] Now listening on: http://localhost:5240
+2024-07-04 16:34:53.381 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-04 16:34:53.388 +05:30 [INF] Hosting environment: Development
+2024-07-04 16:34:53.389 +05:30 [INF] Content root path: C:\Users\PC\Desktop\Project\BE\AssetManagementSystem\AssetManagementSystem
+2024-07-04 16:34:53.572 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:34:53.694 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:34:53.788 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 217.0666ms
+2024-07-04 16:34:53.797 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 102.7519ms
+2024-07-04 16:34:53.823 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:34:53.828 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 5.0018ms
+2024-07-04 16:34:53.845 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:34:53.905 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.0818ms
+2024-07-04 16:34:54.993 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:34:55.242 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 249.3946ms
+2024-07-04 16:35:02.077 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:35:02.090 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 13.1126ms
+2024-07-04 16:35:02.114 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:35:02.114 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:35:02.116 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 2.5511ms
+2024-07-04 16:35:02.127 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.0947ms
+2024-07-04 16:35:02.261 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:35:02.290 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.3201ms
+2024-07-04 16:35:47.779 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:35:47.784 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 4.9239ms
+2024-07-04 16:35:47.817 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:35:47.817 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:35:47.827 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 9.1857ms
+2024-07-04 16:35:47.828 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.7949ms
+2024-07-04 16:35:48.071 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:35:48.099 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.9158ms
+2024-07-04 16:37:04.871 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:37:05.483 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 612.3053ms
+2024-07-04 16:37:06.307 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:37:06.323 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 16.6548ms
+2024-07-04 16:37:06.332 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:37:06.355 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.0336ms
+2024-07-04 16:37:07.438 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:37:07.492 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 54.2653ms
+2024-07-04 16:41:43.519 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:41:44.045 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 526.4635ms
+2024-07-04 16:41:44.826 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:41:45.019 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:41:45.526 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 705.0125ms
+2024-07-04 16:41:46.229 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1208.0849ms
+2024-07-04 16:41:47.737 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:41:48.454 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 716.9554ms
+2024-07-04 16:43:35.154 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/index.html - null null
+2024-07-04 16:43:35.376 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/index.html - 200 null text/html;charset=utf-8 218.7355ms
+2024-07-04 16:43:35.544 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-04 16:43:35.544 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/_vs/browserLink - null null
+2024-07-04 16:43:35.626 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_framework/aspnetcore-browser-refresh.js - 200 13778 application/javascript; charset=utf-8 81.9192ms
+2024-07-04 16:43:36.396 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/_vs/browserLink - 200 null text/javascript; charset=UTF-8 852.7147ms
+2024-07-04 16:43:36.793 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - null null
+2024-07-04 16:43:36.855 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7095/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 61.9848ms

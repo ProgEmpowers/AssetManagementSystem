@@ -19,5 +19,6 @@ namespace AssetManagementSystem.Context
         public DbSet<Vendor> Vendor { get; set; }
         public DbSet<Notification> Notification { get; set; }
         public DbSet<DisposalAssets> DisposalAssets { get; set; }
+        public DbSet<AssetType> AssetType { get; set; }
     }
 }

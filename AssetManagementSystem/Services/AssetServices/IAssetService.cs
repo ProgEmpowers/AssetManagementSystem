@@ -28,8 +28,6 @@ namespace AssetManagementSystem.Services.AssetServices
         Task<Asset?> GetDeletedAssetByIdAsync(int id);
         Task<Asset?> RecoverDeletedAssetAsync(int id);
 
-
-        Task<IEnumerable<string>> GetAssetTypesAsync();
         Task<IEnumerable<Asset>> GetAssetsByTypeAsync(string type);
 
    
@@ -38,6 +36,10 @@ namespace AssetManagementSystem.Services.AssetServices
         Task<List<Asset>> GetAssetByUserAsync(string email);
         Task<int> GetTotalNoOfAssetsAsync();
         Task<int> GetNoOfAssetsByStatusAsync(AssetStatusEnum status);
+
+        Task<AssetType> AddAssetTypeAsync(AssetTypeDto? assetTypeDto);
+        Task<List<string>> GetAssetTypesAsync();
+        Task<AssetType> DeleteAssetTypeAsync(AssetTypeDto name);
 
     }
 }

@@ -196,16 +196,6 @@ namespace AuthService.Controllers
             return Ok(DeletedUsers);
         }
 
-        [HttpGet("GetUserByEmail/{email}")]
-        public async Task<IActionResult> GetUserByEmail([FromRoute] string email)
-        {
-            var SelectedUser = await _userService.GetUserByEmailAsync(email);
-            if (SelectedUser == null)
-            {
-                return NotFound();
-            }
-            return Ok(SelectedUser);
-        }
 
         [HttpGet("WithRole")]
         public async Task<IActionResult> GetAllUsersWithRole()
